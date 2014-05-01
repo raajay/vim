@@ -18,7 +18,9 @@ map \\ :s/^#//<CR>
 " run
 map <F5> :!python "%:p"<CR>
 
-" pydiction support
+" auto complete
+set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
 
 " Customized macros for Raajay
 call IMAP('FUN',"def <++> (<+params+>):\n<++>\<CR>return <++>",'python')
