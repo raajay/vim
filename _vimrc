@@ -68,8 +68,13 @@ set autochdir
 " set backup directory and swap directory to avoid storing the files in the 
 " same location as the source. The double slash at the end ensures that the 
 " full path of the file is used and hence avoid conflicts. 
-"set backupdir=~/.vim/vimbackup//
-"set dir=~/.vim/vimswap//
+if has('win32') || has('win64')
+    set backupdir=~/vimfiles/vimbackup//
+    set dir=~/vimfiles/vimswap//
+else
+    set backupdir=~/.vim/vimbackup//
+    set dir=~/.vim/vimswap//
+endif
 
 " removing the following as vim hangs at times because of this
 "if has("autocmd") 
