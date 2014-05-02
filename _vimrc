@@ -47,20 +47,10 @@ elseif has('gui_running')
     set lines=50  " specifies the height of the GVim window
     set guifont=Terminus\ 11
 else
-    highlight clear SpellBad
-    highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
-    highlight clear SpellCap
-    highlight SpellCap term=underline cterm=underline
-    highlight clear SpellRare
-    highlight SpellRare term=underline cterm=underline
-    highlight clear SpellLocal
-    highlight SpellLocal term=underline cterm=underline
-    hi CursorColumn term=reverse ctermbg=240
-    hi CursorLine term=reverse ctermbg=240 cterm=bold
-    hi ColorColumn ctermbg=240
-    hi LineNr ctermfg=240
-    hi Folded ctermfg=14 ctermbg=232
-    hi MatchParen cterm=bold ctermfg=16
+    let g:solarized_termtrans=1
+    let g:solarized_italic=0
+    let g:solarized_termcolors=256
+    colorscheme solarized
 end
 
 " spell checking setup for both GUI and Terminal
