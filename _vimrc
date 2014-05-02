@@ -79,8 +79,6 @@ else
     set backupdir=~/.vim/vimbackup//
     set dir=~/.vim/vimswap//
 endif
-set nobackup
-set noswapfile
 
 " removing the following as vim hangs at times because of this
 "if has("autocmd") 
@@ -143,5 +141,7 @@ let g:syntastic_mode_map={ 'mode': 'passive',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': ['html', 'cpp', 'h', 'py'] }
 
+" Import local files
+"
 " Pathogen Settings - Used to handle the various plug-ins
 call pathogen#infect()
