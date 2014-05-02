@@ -33,7 +33,11 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-if has('gui_running')
+if hostname() == "MacAir"
+    let g:solarized_termtrans=1
+    let g:solarized_termcolors=256
+    colorscheme solarized
+elseif has('gui_running')
     let g:solarized_italic=0
     colorscheme solarized 
     set guioptions-=m  " removes the menu bar
@@ -75,6 +79,8 @@ else
     set backupdir=~/.vim/vimbackup//
     set dir=~/.vim/vimswap//
 endif
+set nobackup
+set noswapfile
 
 " removing the following as vim hangs at times because of this
 "if has("autocmd") 
