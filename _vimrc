@@ -95,8 +95,8 @@ map :W :wz<BS>
 map :Q :qz<BS>
 map :B :bz<BS>
 
-set splitright # the new windows opens on the right
-set splitbelow # horizontal split below
+set splitright  "the new windows opens on the right
+set splitbelow  "horizontal split below
 " window navigation
 nnoremap <C-j> <C-w>j
 nnoremap <C-h> <C-w>h
