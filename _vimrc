@@ -6,6 +6,7 @@ set background=dark
 set backspace=eol,indent,start
 set nowrap
 set ruler
+set pastetoggle=<F2>
 
 syntax on
 filetype plugin on
@@ -134,6 +135,7 @@ let g:syntastic_mode_map={ 'mode': 'passive',
             \ 'passive_filetypes': ['html', 'cpp', 'h', 'py'] }
 
 " Import local files
-"
+source ~/.vim/_local_vimrc
+
 " Pathogen Settings - Used to handle the various plug-ins
 call pathogen#infect()
