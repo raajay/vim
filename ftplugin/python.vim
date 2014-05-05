@@ -19,7 +19,6 @@ map \\ :s/^#//<CR>
 map <F5> :!python "%:p"<CR>
 
 " auto complete
-set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 
 " Customized macros for Raajay
