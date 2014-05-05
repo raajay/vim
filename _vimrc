@@ -118,6 +118,12 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.tex set ft=tex
 endif
 
+"super tab settings
+let g:SuperTabDefaultCompletionType = "context"
+
+"jedi-vim settings
+let g:jedi#popup_on_dot = 0
+
 " let g:Imap_DeleteEmptyPlaceHolders=0
 set winaltkeys=no 
 
