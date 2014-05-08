@@ -18,6 +18,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
+" position cursor in the center
+set scrolloff=999
 
 set autoindent
 set incsearch
@@ -123,6 +125,7 @@ let g:SuperTabDefaultCompletionType = "context"
 
 "jedi-vim settings
 let g:jedi#popup_on_dot = 0
+let g:jedi#use_tabs_not_buffers = 0
 
 " let g:Imap_DeleteEmptyPlaceHolders=0
 set winaltkeys=no 
@@ -141,7 +144,11 @@ let g:syntastic_mode_map={ 'mode': 'passive',
             \ 'passive_filetypes': ['html', 'cpp', 'h', 'py'] }
 
 " Import local files
-source ~/.vim/_local_vimrc
+if has('win32') || has('win64')
+    source ~\vimfiles\_local_vimrc
+else 
+    source ~/.vim/_local_vimrc
+endif
 
 " Pathogen Settings - Used to handle the various plug-ins
 call pathogen#infect()
