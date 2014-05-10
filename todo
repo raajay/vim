@@ -1,3 +1,4 @@
 1. Learn about recording and common use cases
 2. Learn about registers and marking - without these, you are not doing a
 good job of using Vim.
+3. Check out the scrolloff option - to retain context always

@@ -18,8 +18,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
+
 " position cursor in the center
-set scrolloff=999
+"set scrolloff=999
 
 set autoindent
 set incsearch
