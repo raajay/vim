@@ -49,7 +49,7 @@ elseif has('gui_running')
     set guioptions-=r  " removes the scroll bar
     set columns=87  " specifies the width of the GVim window
     set lines=50  " specifies the height of the GVim window
-    set guifont=Terminus\ 11
+    set guifont=Consolas:h10:cANSI
 else
     let g:solarized_termtrans=1
     let g:solarized_italic=0
@@ -99,7 +99,7 @@ map :W :wz<BS>
 map :Q :qz<BS>
 map :B :bz<BS>
 
-set splitright  "the new windows opens on the right
+"set splitright  "the new windows opens on the right
 set splitbelow  "horizontal split below
 " window navigation
 nnoremap <C-j> <C-w>j
