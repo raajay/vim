@@ -121,6 +121,9 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.tex set ft=tex
 endif
 
+" NERDTree settings
+let NERDTreeIgnore = ['\.pyc$', '\.o$']
+
 "super tab settings
 let g:SuperTabDefaultCompletionType = "context"
 
