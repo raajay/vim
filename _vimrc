@@ -43,7 +43,7 @@ if hostname() == "MacAir"
     colorscheme solarized
 elseif has('gui_running')
     let g:solarized_italic=0
-    colorscheme solarized 
+    colorscheme solarized
     set guioptions-=m  " removes the menu bar
     set guioptions-=T  " removes the tool bar
     set guioptions-=r  " removes the scroll bar
@@ -63,9 +63,9 @@ set spell
 " files and directories
 set autochdir
 
-" set backup directory and swap directory to avoid storing the files in the 
-" same location as the source. The double slash at the end ensures that the 
-" full path of the file is used and hence avoid conflicts. 
+" set backup directory and swap directory to avoid storing the files in the
+" same location as the source. The double slash at the end ensures that the
+" full path of the file is used and hence avoid conflicts.
 if has('win32') || has('win64')
     set backupdir=~/vimfiles/vimbackup//
     set dir=~/vimfiles/vimswap//
@@ -75,7 +75,7 @@ else
 endif
 
 " removing the following as vim hangs at times because of this
-"if has("autocmd") 
+"if has("autocmd")
 "    " sources ~/.vimrc immediately after save
 "    autocmd bufwritepost ~/.vimrc source $MYVIMRC
 "endif
@@ -83,6 +83,9 @@ endif
 " block indent general - 4 spaces
 map > :s/^/\ \ \ \ /<CR>
 map < :s/^\ \ \ \ //<CR>
+
+" remove trailing characters
+map <F12> :%s/\ +$//g<CR>
 
 " remembering the previous edits - this is a gem
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -101,11 +104,6 @@ map :B :bz<BS>
 
 "set splitright  "the new windows opens on the right
 set splitbelow  "horizontal split below
-" window navigation
-nnoremap <C-j> <C-w>j
-nnoremap <C-h> <C-w>h
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " C-y copies to global buffer, copying across applications
 nnoremap <C-y> "+y
@@ -114,6 +112,7 @@ nnoremap <C-p> "+gP
 vnoremap <C-p> "+gP
 
 set timeoutlen=3000
+set ttimeoutlen=50
 
 " Vim - latex settings
 set grepprg=grep\ -nH\ $*
@@ -121,8 +120,15 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.tex set ft=tex
 endif
 
+" vim-airline settings
+set laststatus=2 " to display the status line always
+
+" Tagbar plugin
+map <F4> <Esc>:TagbarToggle<CR>
+
 " NERDTree settings
-let NERDTreeIgnore = ['\.pyc$', '\.o$']
+map <F3> <Esc>:NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
 
 "super tab settings
 let g:SuperTabDefaultCompletionType = "context"
@@ -132,7 +138,7 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#use_tabs_not_buffers = 0
 
 " let g:Imap_DeleteEmptyPlaceHolders=0
-set winaltkeys=no 
+set winaltkeys=no
 
 " clang_complete settings
 let g:clang_use_library = 1
@@ -150,7 +156,7 @@ let g:syntastic_mode_map={ 'mode': 'passive',
 " Import local files
 if has('win32') || has('win64')
     source ~\vimfiles\_local_vimrc
-else 
+else
     source ~/.vim/_local_vimrc
 endif
 
