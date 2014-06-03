@@ -41,6 +41,7 @@ if hostname() == "MacAir"
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
     colorscheme solarized
+    set guifont=Consolas:h10:cANSI
 elseif has('gui_running')
     let g:solarized_italic=0
     colorscheme solarized 
