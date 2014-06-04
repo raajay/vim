@@ -129,7 +129,12 @@ map <F4> <Esc>:TagbarToggle<CR>
 
 " NERDTree settings
 map <F3> <Esc>:NERDTreeToggle<CR>
+command Nt execute NERDTree
+
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
+let g:nerdtree_tabs_open_on_gui_startup = 0
+let g:nerdtree_tabs_open_on_new_tabs = 0
+let g:nerdtree_tabs_autoclose = 0
 
 "super tab settings
 let g:SuperTabDefaultCompletionType = "context"
