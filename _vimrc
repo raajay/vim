@@ -128,6 +128,7 @@ if has("autocmd")
 endif
 
 " vim-airline settings
+let g:airline_theme = 'airlineish'
 let g:airline_powerline_fonts = 0
 let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
