@@ -5,11 +5,10 @@ set mouse=a
 set background=dark
 set backspace=eol,indent,start
 set nowrap
-set noruler
+set ruler
+set noerrorbells novisualbell t_vb=
 set pastetoggle=<F2>
 set hidden
-set visualbell
-set t_vb=
 
 syntax on
 filetype plugin on
@@ -29,7 +28,9 @@ set incsearch
 " set hlsearch
 " set smartindent #interferes with python indenting
 
-set colorcolumn=80 " highlights the 80th column
+if exists('+colorcolumn')
+    set colorcolumn=80 " highlights the 80th column
+endif
 set textwidth=72  " automatically breaks line after 80 characters
 
 set cursorline
@@ -42,11 +43,13 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 if hostname() == "MacAir"
+    set t_Co=256
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
     colorscheme solarized
     set guifont=Consolas:h10:cANSI
 elseif has('gui_running')
+    set t_Co=256
     let g:solarized_italic=0
     colorscheme solarized
     set guioptions-=m  " removes the menu bar
