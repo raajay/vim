@@ -8,7 +8,7 @@ set nowrap
 set noruler
 set pastetoggle=<F2>
 set hidden
-set visualbell 
+set visualbell
 set t_vb=
 
 syntax on
@@ -21,7 +21,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
-set laststatus=2 " to display the status line always
 
 " position cursor in the center
 "set scrolloff=999
@@ -35,6 +34,7 @@ set textwidth=72  " automatically breaks line after 80 characters
 
 set cursorline
 set cursorcolumn
+set laststatus=2 " to display the status line always
 set showtabline=2 " to show the tab line always
 
 if $COLORTERM == 'gnome-terminal'
@@ -131,6 +131,7 @@ endif
 let g:airline_powerline_fonts = 0
 let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 let g:airline_left_sep = '>>'
 let g:airline_right_sep = '<<'
 
