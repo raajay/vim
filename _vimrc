@@ -5,9 +5,11 @@ set mouse=a
 set background=dark
 set backspace=eol,indent,start
 set nowrap
-set ruler
+set noruler
 set pastetoggle=<F2>
 set hidden
+set visualbell 
+set t_vb=
 
 syntax on
 filetype plugin on
@@ -19,6 +21,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
+set laststatus=2 " to display the status line always
 
 " position cursor in the center
 "set scrolloff=999
@@ -32,7 +35,7 @@ set textwidth=72  " automatically breaks line after 80 characters
 
 set cursorline
 set cursorcolumn
-set showtabline " to show the tab line always
+set showtabline=2 " to show the tab line always
 
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
@@ -88,7 +91,7 @@ map > :s/^/\ \ \ \ /<CR>
 map < :s/^\ \ \ \ //<CR>
 
 " remove trailing characters
-map <F12> :%s/\ +$//g<CR>
+map <F12> :%s/\ *$//g<CR>
 
 " remembering the previous edits - this is a gem
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -116,6 +119,7 @@ vnoremap <C-p> "+gP
 
 set timeoutlen=3000
 set ttimeoutlen=50
+set updatetime=400 " time taken by vim-bufferline to redraw
 
 " Vim - latex settings
 set grepprg=grep\ -nH\ $*
@@ -124,7 +128,9 @@ if has("autocmd")
 endif
 
 " vim-airline settings
-set laststatus=2 " to display the status line always
+let g:airline_powerline_fonts = 0
+let g:airline_section_c = '%t'
+let g:airline#extensions#tabline#enabled = 1
 
 " Tagbar plugin
 map <F4> <Esc>:TagbarToggle<CR>
