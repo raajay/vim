@@ -1,6 +1,7 @@
 " basic setup
 set nocompatible
 set number
+set relativenumber
 set mouse=a
 set background=dark
 set backspace=eol,indent,start
@@ -195,6 +196,16 @@ if has('win32') || has('win64')
 else
     source ~/.vim/_local_vimrc
 endif
+
+" number toggle
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunc
+noremap <F7> :call NumberToggle()<cr>
 
 " Pathogen Settings - Used to handle the various plug-ins
 call pathogen#infect()
