@@ -95,7 +95,7 @@ map > :s/^/\ \ \ \ /<CR>
 map < :s/^\ \ \ \ //<CR>
 
 " remove trailing characters
-map <F12> :%s/\ *$//g<CR>
+map <F12> :%s/\ *$//g<CR><C-o>
 
 " remembering the previous edits - this is a gem
 set viminfo='10,\"100,:20,%,n~/.viminfo
