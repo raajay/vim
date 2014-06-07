@@ -19,7 +19,6 @@ map \\ :s/^#//<CR>
 map <F5> :!python "%:p"<CR>
 
 " auto complete
-let g:SuperTabDefaultCompletionType = "context"
 
 " Customized macros for Raajay
 call IMAP('FUN',"def <++> (<+params+>):\n<++>\<CR>return <++>",'python')

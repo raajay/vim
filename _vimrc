@@ -157,7 +157,8 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeShowLineNumbers = 1
 
 "super tab settings
-let g:SuperTabDefaultCompletionType = "context"
+" TODO figure this shit out
+
 
 "jedi-vim settings
 let g:jedi#popup_on_dot = 0
