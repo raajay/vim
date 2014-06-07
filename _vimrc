@@ -157,7 +157,9 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeShowLineNumbers = 1
 
 "super tab settings
-" TODO figure this shit out
+" TODO figure this shit out - partially done
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = '<c-p>'
 
 
 "jedi-vim settings
