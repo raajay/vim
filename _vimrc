@@ -49,6 +49,7 @@ let g:solarized_italic=1
 
 if has('win32') || has('win64')
     let g:vim_folder = '~/vimfiles/'
+    "let g:llvm_folder = "/unsup/llvm-3.3/lib"
 else
     let g:vim_folder = '~/.vim/'
 endif
@@ -150,7 +151,7 @@ set winaltkeys=no
 
 " clang_complete settings
 let g:clang_use_library = 1
-let g:clang_library_path="/unsup/llvm-3.3/lib" "TODO: this should go under conditions
+let g:clang_library_path="/unsup/llvm-3.3/lib"
 let g:clang_complete_auto = 0 " use <TAB> to complete
 let g:clang_complete_copen = 1 "show clang errors in quick fix
 
@@ -176,15 +177,14 @@ map <leader>ev <Esc>:vsplit $MYVIMRC<cr>
 map <leader>sv <Esc>:source $MYVIMRC<cr>
 " TODO add mapping for bashrc
 
-" F-Keys mappings
 " NERDTree settings
-map <F3> <Esc>:NERDTreeToggle<CR>
+map <leader>nt <Esc>:NERDTreeToggle<cr>
 " Tagbar settings
-map <F4> <Esc>:TagbarToggle<CR>
+map <leader>tt <Esc>:TagbarToggle<CR>
 " toggle relative numbers
 noremap <F7> :call NumberToggle()<cr>
 " remove trailing characters
-map <F12> :%s/\ *$//g<CR><C-o>
+map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 
 " Pathogen Settings - Used to handle the various plug-ins
 call pathogen#infect()
