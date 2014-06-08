@@ -162,15 +162,6 @@ let g:syntastic_mode_map={ 'mode': 'passive',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': ['html', 'cpp', 'h', 'py'] }
 
-" number toggle
-function! NumberToggle()
-    if(&relativenumber == 1)
-        set norelativenumber
-    else
-        set relativenumber
-    endif
-endfunc
-
 " customized file openings
 let mapleader = ","
 map <leader>ev <Esc>:vsplit $MYVIMRC<cr>
@@ -182,7 +173,7 @@ map <leader>nt <Esc>:NERDTreeToggle<cr>
 " Tagbar settings
 map <leader>tt <Esc>:TagbarToggle<CR>
 " toggle relative numbers
-noremap <F7> :call NumberToggle()<cr>
+noremap <F7> :set relativenumber!<cr>
 " remove trailing characters
 map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 
