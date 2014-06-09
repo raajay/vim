@@ -76,7 +76,7 @@ if has("autocmd")
 endif
 
 if has('gui_running')
-    "set guifont=Consolas:h10:cANSI
+    set guifont=Consolas:h10:cANSI
     set guioptions-=m  " removes the menu bar
     set guioptions-=T  " removes the tool bar
     set guioptions-=r  " removes the scroll bar
