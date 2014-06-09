@@ -168,10 +168,10 @@ let g:open_todo = 0
 function! OpenToDo()
     if g:open_todo == 0
         let g:open_todo = 1
-        :vsplit ~/Dropbox/todo/todo.txt<cr>
+        :vsplit ~/Dropbox/todo/todo.txt
     elseif g:open_todo == 1
         let g:open_todo = 0
-        :bdelete ~/Dropbox/todo/todo.txt<cr>
+        :bdelete ~/Dropbox/todo/todo.txt
     endif
 endfunc
 
