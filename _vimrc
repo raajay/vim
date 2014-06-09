@@ -162,8 +162,22 @@ let g:syntastic_mode_map={ 'mode': 'passive',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': ['html', 'cpp', 'h', 'py'] }
 
+
+" TODO write a function to toggle todo list
+let g:open_todo = 0
+function! OpenToDo()
+    if g:open_todo == 0
+        let g:open_todo = 1
+        :vsplit ~/Dropbox/todo/todo.txt<cr>
+    elseif g:open_todo == 1
+        let g:open_todo = 0
+        :bdelete ~/Dropbox/todo/todo.txt<cr>
+    endif
+endfunc
+
 " customized file openings
 let mapleader = ","
+map <leader>a <Esc>:call OpenToDo()<cr>
 map <leader>ev <Esc>:vsplit $MYVIMRC<cr>
 map <leader>sv <Esc>:source $MYVIMRC<cr>
 " TODO add mapping for bashrc
