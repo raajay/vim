@@ -193,3 +193,4 @@ map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 
 " Pathogen Settings - Used to handle the various plug-ins
 call pathogen#infect()
+call pathogen#helptags()
