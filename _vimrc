@@ -79,7 +79,8 @@ if has('gui_running')
     set guifont=Consolas:h10:cANSI
     set guioptions-=m  " removes the menu bar
     set guioptions-=T  " removes the tool bar
-    set guioptions-=r  " removes the scroll bar
+    set guioptions-=L  " removes the left scroll bar with Nerd Tree
+    set guioptions-=r  " removes the right scroll bar
     set guioptions-=e  " removes the tab label
     " set columns=87  " specifies the width of the GVim window
     " set lines=50  " specifies the height of the GVim window
@@ -134,6 +135,7 @@ let g:SuperTabContextDefaultCompletionType = '<c-p>'
 "jedi-vim settings
 let g:jedi#popup_on_dot = 0
 let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#rename_command = ""
 
 " this is put under jedi vim because with out this jedi-vim seems to
 " throw errors
