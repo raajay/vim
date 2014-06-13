@@ -178,6 +178,7 @@ endfunc
 " customized file openings
 let mapleader = ","
 map <leader>a <Esc>:call OpenToDo()<cr>
+map <leader>b <Esc>Opdb.set_trace()<Esc>
 map <leader>ev <Esc>:vsplit $MYVIMRC<cr>
 map <leader>sv <Esc>:source $MYVIMRC<cr>
 " TODO add mapping for bashrc

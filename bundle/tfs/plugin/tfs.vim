@@ -32,7 +32,6 @@
 "
 
 if has ('win32')
-
 "
 " TFS will be 32 bit even if vim is 64 bit
 "
@@ -47,7 +46,10 @@ endif
 "
 " Work out which versions of tf.exe and tfpt.exe are available
 "
-if (filereadable(s:pfiles.'\Microsoft Visual Studio 11.0\Common7\IDE\TF.exe'))
+if (filereadable(s:pfiles.'\Microsoft Visual Studio 12.0\Common7\IDE\TF.exe'))
+    let s:tfs_tf='"'.s:pfiles.'\Microsoft Visual Studio 12.0\Common7\IDE\TF.exe"'
+    let s:tfs_recurse_command='/recursive'
+elseif (filereadable(s:pfiles.'\Microsoft Visual Studio 11.0\Common7\IDE\TF.exe'))
     let s:tfs_tf='"'.s:pfiles.'\Microsoft Visual Studio 11.0\Common7\IDE\TF.exe"'
     let s:tfs_recurse_command='/recursive'
 elseif (filereadable(s:pfiles.'\Microsoft Visual Studio 10.0\Common7\IDE\TF.exe'))
