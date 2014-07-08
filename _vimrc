@@ -31,7 +31,7 @@ if exists('+colorcolumn')
     set colorcolumn=80 " highlights the 80th column
 endif
 
-set textwidth=75  " automatically breaks line after 80 characters
+"set textwidth=75  " automatically breaks line after 80 characters
 set cursorline    " highlights the row the cursor is on
 set cursorcolumn  " highlights the current column
 set laststatus=2 " to display the status line always
