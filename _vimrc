@@ -42,14 +42,13 @@ set autochdir " change to the directory of the current file
 set splitbelow  "horizontal split below
 
 set t_Co=256 " everything is a 256 color terminal
-colorscheme solarized " never change
-let g:solarized_termtrans=0
 let g:solarized_termcolors=256
+let g:solarized_termtrans=0
 let g:solarized_italic=1
+colorscheme solarized " never change
 
 if has('win32') || has('win64')
     let g:vim_folder = '~/vimfiles/'
-    "let g:llvm_folder = "/unsup/llvm-3.3/lib"
 else
     let g:vim_folder = '~/.vim/'
 endif
@@ -158,13 +157,16 @@ if has('mac')
 else
     let g:clang_library_path="/unsup/llvm-3.3/lib"
 endif
-
 let g:clang_complete_auto = 0 " use <TAB> to complete
 let g:clang_complete_copen = 1 "show clang errors in quick fix
 
 " syntastic settings
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_include_dirs = ["/unsup/llvm-3.3/include"]
+if has('mac')
+    let g:syntastic_cpp_include_dirs = ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"]
+else
+    let g:syntastic_cpp_include_dirs = ["/unsup/llvm-3.3/include"]
+endif
 let g:syntastic_mode_map={ 'mode': 'passive',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': ['html', 'cpp', 'h', 'py'] }
