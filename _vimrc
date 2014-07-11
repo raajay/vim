@@ -153,7 +153,12 @@ set winaltkeys=no
 
 " clang_complete settings
 let g:clang_use_library = 1
-let g:clang_library_path="/unsup/llvm-3.3/lib"
+if has('mac')
+    let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
+else
+    let g:clang_library_path="/unsup/llvm-3.3/lib"
+endif
+
 let g:clang_complete_auto = 0 " use <TAB> to complete
 let g:clang_complete_copen = 1 "show clang errors in quick fix
 
