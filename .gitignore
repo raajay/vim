@@ -3,3 +3,5 @@ _local_vimrc
 *.swp
 *.swo
 *tags
+
+.netrwhist
