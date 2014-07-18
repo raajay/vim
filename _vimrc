@@ -1,29 +1,29 @@
-set nocompatible " do not force it to be vi compatible
-set number
-set relativenumber " this is awesome! Line numbers relative to current line
-set mouse=a
-set background=dark
-set backspace=eol,indent,start
-set nowrap
-set ruler
-set noerrorbells novisualbell t_vb=
-set pastetoggle=<F2> " disable indenting while pasting code
-set hidden " allows us to move away from unsaved buffers
+set nocompatible                    " do not force it to be vi compatible
+set number                          " set line numbers
+set relativenumber                  " this is awesome! Line numbers relative to current line
+set numberwidth=5                   " the number of columns for line numbers
+set mouse=a                         " enable mouse clicks for all modes
+set background=dark                 " use a dark background [can use any color]
+set backspace=eol,indent,start      " characters that backspace can erase
+set nowrap                          " do not wrap lines
+set ruler                           " ruler format can be set; but I use vim-airline
+set noerrorbells novisualbell t_vb= " I have no idea what to do here
+set pastetoggle=<F2>                " disable indenting while pasting code
+set hidden                          " allows us to move away from unsaved buffers
 
-syntax on
-filetype plugin on
-filetype indent on
+syntax on                           " Switch on syntax highlighting
+filetype plugin on                  " Detect filetype plugin and source them
+filetype indent on                  " Indent based on filetypes
 
-" setting the general tab setting to 4 spaces. In specific cases like latex,
-" I forcefully change it to 2 spaces in ftplugin
-set tabstop=4
-set shiftwidth=4
+" setting the general tab setting to 4 spaces.
+set tabstop=4     " One tab is 4 spaces
+set shiftwidth=4  " Indent to use 4 spaces
 set expandtab     " no more tabs; replace with spaces
-set softtabstop=4 " backspace can take 4 spaces
+set softtabstop=4 " backspace can run over 4 spaces in one key press
 
-set scrolloff=3 " retain 3 lines for context while scrolling
-set autoindent  " automatically indent the files
-set incsearch
+set scrolloff=3   " retain 3 lines for context while scrolling
+set autoindent    " automatically indent the files
+set incsearch     " search before we press enter for search
 " set hlsearch
 " set smartindent " interferes with python indenting
 
@@ -31,17 +31,17 @@ if exists('+colorcolumn')
     set colorcolumn=80 " highlights the 80th column
 endif
 
-"set textwidth=75  " automatically breaks line after 80 characters
-set cursorline    " highlights the row the cursor is on
-set cursorcolumn  " highlights the current column
-set laststatus=2 " to display the status line always
-set showtabline=2 " to show the tab line always
-set spell " spell check, XXX where is the dictionary
-set autochdir " change to the directory of the current file
-"set splitright  "the new windows opens on the right
-set splitbelow  "horizontal split below
+set textwidth=78    " automatically breaks line after 80 characters
+set cursorline      " highlights the row the cursor is on
+set cursorcolumn    " highlights the current column
+set laststatus=2    " to display the status line always
+set showtabline=2   " to show the tab line always
+set spell           " spell check, XXX where is the dictionary
+set autochdir       " change to the directory of the current file
+"set splitright     " the new windows opens on the right
+set splitbelow      " horizontal split below
 
-set t_Co=256 " everything is a 256 color terminal
+set t_Co=256        " everything is a 256 color terminal
 let g:solarized_termcolors=256
 let g:solarized_termtrans=0
 let g:solarized_italic=1
@@ -157,8 +157,8 @@ if has('mac')
 else
     let g:clang_library_path="/unsup/llvm-3.3/lib"
 endif
-let g:clang_complete_auto = 0 " use <TAB> to complete
-let g:clang_complete_copen = 1 "show clang errors in quick fix
+let g:clang_complete_auto = 0       " use <TAB> to complete
+let g:clang_complete_copen = 1      " show clang errors in quick fix
 
 " syntastic settings
 let g:syntastic_cpp_check_header = 1
@@ -170,7 +170,6 @@ endif
 let g:syntastic_mode_map={ 'mode': 'passive',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': ['html', 'cpp', 'h', 'py'] }
-
 
 " TODO write a function to toggle todo list
 let g:open_todo = 0
