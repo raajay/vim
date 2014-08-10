@@ -171,6 +171,19 @@ let g:syntastic_mode_map={ 'mode': 'passive',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': ['html', 'cpp', 'h', 'py'] }
 
+" ctrlp plugin
+if has('win32') || has('win64')
+    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
+    set runtimepath^=~/vimfiles/bundle/ctrlp.vim
+else
+    set wildignore+=*/tmp/*,*.so,*.zip,*.swp
+    set runtimepath^=~/.vim/bundle/ctrlp.vim
+endif
+
+" omnisharp
+let g:OmniSharp_timeout = 1
+set noshowmatch
+autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
 " TODO write a function to toggle todo list
 let g:open_todo = 0
