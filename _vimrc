@@ -168,7 +168,7 @@ else
     let g:syntastic_cpp_include_dirs = ["/unsup/llvm-3.3/include"]
 endif
 let g:syntastic_mode_map={ 'mode': 'passive',
-            \ 'active_filetypes': [],
+            \ 'active_filetypes': ['cs'],
             \ 'passive_filetypes': ['html', 'cpp', 'h', 'py'] }
 
 " ctrlp plugin
