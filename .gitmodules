@@ -25,3 +25,6 @@
 [submodule "bundle/Omnisharp"]
 	path = bundle/Omnisharp
 	url = https://github.com/nosami/Omnisharp.git
+[submodule "bundle/delmitmate"]
+	path = bundle/delmitmate
+	url = git://github.com/Raimondi/delimitMate.git
