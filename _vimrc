@@ -201,9 +201,9 @@ endfunc
 let mapleader = ","
 map <leader>a <Esc>:call OpenToDo()<cr>
 map <leader>b <Esc>Opdb.set_trace()<Esc>
-map <leader>ev <Esc>:vsplit $MYVIMRC<cr>
+map <leader>ev <Esc>:edit $MYVIMRC<cr>
 map <leader>sv <Esc>:source $MYVIMRC<cr>
-" TODO add mapping for bashrc
+map <leader>eb <Esc>:edit ~/.bashrc<cr>
 
 " NERDTree settings
 map <leader>nt <Esc>:NERDTreeToggle<cr>
