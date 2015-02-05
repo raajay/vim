@@ -5,7 +5,7 @@ set numberwidth=5                   " the number of columns for line numbers
 set mouse=a                         " enable mouse clicks for all modes
 set background=dark                 " use a dark background [can use any color]
 set backspace=eol,indent,start      " characters that backspace can erase
-set nowrap                          " do not wrap lines
+set wrap                          " do not wrap lines
 set ruler                           " ruler format can be set; but I use vim-airline
 set noerrorbells novisualbell t_vb= " I have no idea what to do here
 set pastetoggle=<F2>                " disable indenting while pasting code
@@ -31,7 +31,7 @@ if exists('+colorcolumn')
     set colorcolumn=80 " highlights the 80th column
 endif
 
-set textwidth=78    " automatically breaks line after 80 characters
+set textwidth=0    " automatically breaks line after 80 characters
 set cursorline      " highlights the row the cursor is on
 set cursorcolumn    " highlights the current column
 set laststatus=2    " to display the status line always
@@ -126,7 +126,6 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeShowLineNumbers = 1
 
 "super tab settings
-" TODO figure this shit out - partially done
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-p>'
 
@@ -147,7 +146,6 @@ if has("multi_byte")
     set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-" let g:Imap_DeleteEmptyPlaceHolders=0
 set winaltkeys=no
 
 " clang_complete settings
@@ -168,8 +166,8 @@ else
     let g:syntastic_cpp_include_dirs = ["/unsup/llvm-3.3/include"]
 endif
 let g:syntastic_mode_map={ 'mode': 'passive',
-            \ 'active_filetypes': ['cs'],
-            \ 'passive_filetypes': ['html', 'cpp', 'h', 'py'] }
+            \ 'active_filetypes': ['cs', 'py'],
+            \ 'passive_filetypes': ['html', 'cpp', 'h'] }
 
 " ctrlp plugin
 if has('win32') || has('win64')
@@ -184,6 +182,7 @@ endif
 let g:OmniSharp_timeout = 1
 set noshowmatch
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+set completeopt=longest,menuone
 
 " TODO write a function to toggle todo list
 let g:open_todo = 0
