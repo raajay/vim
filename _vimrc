@@ -106,6 +106,11 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.tex set ft=tex
 endif
 
+" GAMS - syntax settings
+if has("autocmd")
+    autocmd BufRead,BufNewFile *.gms set ft=gams
+endif
+
 " vim-airline settings
 let g:airline_theme = 'airlineish'
 let g:airline_powerline_fonts = 0
