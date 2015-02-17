@@ -77,8 +77,14 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") < line("$") | exe "normal! g'\"" | endif
 endif
 
-if has('gui_running')
-    set guifont=Monospace
+if has("gui_running")
+    if has("gui_gtk2")
+        set guifont=Monospace\ 9
+    elseif has("gui_macvim")
+        set guifont=Menlo\ Regular:h12
+    elseif has("gui_win32")
+        set guifont=Consolas:h11:cANSI
+    endif
     set guioptions-=m  " removes the menu bar
     set guioptions-=T  " removes the tool bar
     set guioptions-=L  " removes the left scroll bar with Nerd Tree
