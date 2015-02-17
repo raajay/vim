@@ -8,6 +8,9 @@ set backspace=eol,indent,start      " characters that backspace can erase
 set wrap                          " do not wrap lines
 set ruler                           " ruler format can be set; but I use vim-airline
 set noerrorbells novisualbell t_vb= " I have no idea what to do here
+au GUIEnter * set vb t_vb=          " Values get reset when GUI starts
+                                    " Reset them once that is done
+
 set pastetoggle=<F2>                " disable indenting while pasting code
 set hidden                          " allows us to move away from unsaved buffers
 
@@ -75,7 +78,7 @@ if has("autocmd")
 endif
 
 if has('gui_running')
-    set guifont=Consolas:h10:cANSI
+    set guifont=Monospace
     set guioptions-=m  " removes the menu bar
     set guioptions-=T  " removes the tool bar
     set guioptions-=L  " removes the left scroll bar with Nerd Tree
@@ -186,8 +189,30 @@ endif
 " omnisharp
 let g:OmniSharp_timeout = 1
 set noshowmatch
-autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
-set completeopt=longest,menuone
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
+let g:SuperTabClosePreviewOnPopupClose = 1
+set completeopt=longest,menuone,preview
+let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
+augroup omnisharp_commands
+    autocmd!
+    autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+    autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
+    autocmd BufEnter, TextChanged,InsertLeave *.cs SyntasticCheck
+
+    " automatically add file to project
+    "autocmd BufWritePost *.cs call OmniSharp#AddToProject()
+    "
+    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+    autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
+    autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
+    autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
+    autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
+    autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
+    " still incomplete
+
+augroup END
 
 " TODO write a function to toggle todo list
 let g:open_todo = 0
@@ -204,7 +229,7 @@ endfunc
 " customized file openings
 let mapleader = ","
 map <leader>a <Esc>:call OpenToDo()<cr>
-map <leader>b <Esc>Opdb.set_trace()<Esc>
+"map <leader>b <Esc>Opdb.set_trace()<Esc>
 map <leader>ev <Esc>:edit $MYVIMRC<cr>
 map <leader>sv <Esc>:source $MYVIMRC<cr>
 map <leader>eb <Esc>:edit ~/.bashrc<cr>
