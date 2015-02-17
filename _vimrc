@@ -98,6 +98,7 @@ endif
 map :W :wz<BS>
 map :Q :qz<BS>
 map :B :bz<BS>
+cnoremap sudow w !sudo tee % > /dev/null
 
 " C-y copies to global buffer, copying across applications
 nnoremap <C-y> "+y
