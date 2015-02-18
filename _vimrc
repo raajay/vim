@@ -223,9 +223,8 @@ endif
 "
 "augroup END
 
-
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf= g:vim_folder + "bundle/YouCompleteMe/ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
 " TODO write a function to toggle todo list
 let g:open_todo = 0
