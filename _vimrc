@@ -114,12 +114,12 @@ set updatetime=400 " time taken by vim-bufferline to redraw
 set grepprg=grep\ -nH\ $*
 if has("autocmd")
     autocmd BufRead,BufNewFile *.tex set ft=tex
-    autocmd BufRead,BufNewFile *.lst set ft=lst
 endif
 
 " GAMS - syntax settings
 if has("autocmd")
     autocmd BufRead,BufNewFile *.gms set ft=gams
+    autocmd BufRead,BufNewFile *.lst set ft=lst
 endif
 
 " vim-airline settings
