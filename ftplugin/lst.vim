@@ -130,6 +130,7 @@ set foldenable
 set foldmethod=manual
 set foldminlines=0
 set foldtext=
+set autoread
 let idx=0
 let lastline= line("$")
 let nfold=0
