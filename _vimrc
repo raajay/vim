@@ -83,7 +83,7 @@ if has("gui_running")
     elseif has("gui_macvim")
         set guifont=Menlo\ Regular:h12
     elseif has("gui_win32")
-        set guifont=Consolas:h11:cANSI
+        set guifont=Consolas:h9:cANSI
     endif
     set guioptions-=m  " removes the menu bar
     set guioptions-=T  " removes the tool bar
@@ -114,6 +114,7 @@ set updatetime=400 " time taken by vim-bufferline to redraw
 set grepprg=grep\ -nH\ $*
 if has("autocmd")
     autocmd BufRead,BufNewFile *.tex set ft=tex
+    autocmd BufRead,BufNewFile *.lst set ft=lst
 endif
 
 " GAMS - syntax settings
