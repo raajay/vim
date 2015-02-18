@@ -251,6 +251,12 @@ noremap <F7> :set relativenumber!<cr>
 " remove trailing characters
 map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 
+" disable certain plugins
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'Omnisharp')
+call add(g:pathogen_disabled, 'jedi-vim')
+call add(g:pathogen_disabled, 'clang_complete')
+
 " Pathogen Settings - Used to handle the various plug-ins
 call pathogen#infect()
 call pathogen#helptags()
