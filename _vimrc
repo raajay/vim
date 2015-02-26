@@ -5,7 +5,7 @@ set numberwidth=5                   " the number of columns for line numbers
 set mouse=a                         " enable mouse clicks for all modes
 set background=dark                 " use a dark background [can use any color]
 set backspace=eol,indent,start      " characters that backspace can erase
-set wrap                          " do not wrap lines
+set nowrap                          " do not wrap lines
 set ruler                           " ruler format can be set; but I use vim-airline
 set noerrorbells novisualbell t_vb= " I have no idea what to do here
 au GUIEnter * set vb t_vb=          " Values get reset when GUI starts
@@ -86,6 +86,7 @@ if has("gui_running")
     elseif has("gui_win32")
         set guifont=Consolas:h9:cANSI
     endif
+
     set guioptions-=m  " removes the menu bar
     set guioptions-=T  " removes the tool bar
     set guioptions-=L  " removes the left scroll bar with Nerd Tree
@@ -195,7 +196,7 @@ else
     set runtimepath^=~/.vim/bundle/ctrlp.vim
 endif
 
-" omnisharp
+" omnisharp -- Migrated to using OmniSharp through YouCompleteMe
 "let g:OmniSharp_timeout = 1
 "set noshowmatch
 "let g:SuperTabDefaultCompletionType = 'context'
@@ -257,7 +258,7 @@ map <leader>nt <Esc>:NERDTreeToggle<cr>
 " Tagbar settings
 map <leader>tt <Esc>:TagbarToggle<CR>
 " toggle relative numbers
-noremap <F7> :set relativenumber!<cr>
+map <leader>rn :set relativenumber!<cr>
 " remove trailing characters
 map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 
