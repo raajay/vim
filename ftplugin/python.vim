@@ -6,6 +6,7 @@ set softtabstop=4
 
 set autoindent
 set colorcolumn=79
+set textwidth=79
 
 " block indent
 map > :s/^/\ \ \ \ /<CR>
