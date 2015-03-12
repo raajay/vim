@@ -44,13 +44,19 @@ set autochdir       " change to the directory of the current file
 set splitbelow      " horizontal split below
 
 if has('gui_running')
+    let g:my_background='light'
+else
+    let g:my_background='light'
+end
+
+if(g:my_background == 'light')
     set background=light
 else
     set background=dark
-end
+endif
 
 set t_Co=256        " everything is a 256 color terminal
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 let g:solarized_termtrans=0
 let g:solarized_italic=1
 colorscheme solarized " never change
@@ -130,11 +136,7 @@ if has("autocmd")
 endif
 
 " vim-airline settings
-if has('gui_running')
-    let g:airline_theme = 'solarized'
-else
-    let g:airline_theme = 'airlineish'
-endif
+let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 0
 let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
@@ -242,7 +244,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 
-" TODO write a function to toggle todo list
+" Function to toggle the to-do list
 let g:open_todo = 0
 function! OpenToDo()
     if g:open_todo == 0
@@ -254,22 +256,40 @@ function! OpenToDo()
     endif
 endfunc
 
+" Function to toggle between light and dark background
+function! ToggleBG()
+    if g:my_background=="light"
+        let g:my_background="dark"
+        set background=dark
+    else
+        let g:my_background="light"
+        set background=light
+    endif
+endfunc
+
+
 " customized file openings
 let mapleader = ","
 map <leader>a <Esc>:call OpenToDo()<cr>
 "map <leader>b <Esc>Opdb.set_trace()<Esc>
+" edit vimrc
 map <leader>ev <Esc>:edit $MYVIMRC<cr>
+" source vimrc
 map <leader>sv <Esc>:source $MYVIMRC<cr>
+" editbash
 map <leader>eb <Esc>:edit ~/.bashrc<cr>
+" toggle relative numbers
+map <leader>rn :set relativenumber!<cr>
+" remove trailing characters
+map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
+" toggle background
+map <leader>g <Esc>:call ToggleBG()<cr>
 
 " NERDTree settings
 map <leader>nt <Esc>:NERDTreeToggle<cr>
 " Tagbar settings
 map <leader>tt <Esc>:TagbarToggle<CR>
-" toggle relative numbers
-map <leader>rn :set relativenumber!<cr>
-" remove trailing characters
-map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
+
 
 " disable certain plugins
 let g:pathogen_disabled = []
