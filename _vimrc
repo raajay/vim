@@ -3,7 +3,6 @@ set number                          " set line numbers
 set relativenumber                  " this is awesome! Line numbers relative to current line
 set numberwidth=5                   " the number of columns for line numbers
 set mouse=a                         " enable mouse clicks for all modes
-set background=dark                 " use a dark background [can use any color]
 set backspace=eol,indent,start      " characters that backspace can erase
 set nowrap                          " do not wrap lines
 set ruler                           " ruler format can be set; but I use vim-airline
@@ -43,6 +42,12 @@ set spell           " spell check, XXX where is the dictionary
 set autochdir       " change to the directory of the current file
 "set splitright     " the new windows opens on the right
 set splitbelow      " horizontal split below
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+end
 
 set t_Co=256        " everything is a 256 color terminal
 let g:solarized_termcolors=256
@@ -125,7 +130,11 @@ if has("autocmd")
 endif
 
 " vim-airline settings
-let g:airline_theme = 'airlineish'
+if has('gui_running')
+    let g:airline_theme = 'solarized'
+else
+    let g:airline_theme = 'airlineish'
+endif
 let g:airline_powerline_fonts = 0
 let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
