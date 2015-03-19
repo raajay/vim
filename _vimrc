@@ -33,7 +33,7 @@ if exists('+colorcolumn')
     set colorcolumn=80 " highlights the 80th column
 endif
 
-set textwidth=0    " automatically breaks line after 80 characters
+set textwidth=0     " no text width (moved to ft specific)
 set cursorline      " highlights the row the cursor is on
 set cursorcolumn    " highlights the current column
 set laststatus=2    " to display the status line always
@@ -271,7 +271,6 @@ endfunc
 " customized file openings
 let mapleader = ","
 map <leader>a <Esc>:call OpenToDo()<cr>
-"map <leader>b <Esc>Opdb.set_trace()<Esc>
 " edit vimrc
 map <leader>ev <Esc>:edit $MYVIMRC<cr>
 " source vimrc
@@ -284,6 +283,9 @@ map <leader>rn :set relativenumber!<cr>
 map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 " toggle background
 map <leader>g <Esc>:call ToggleBG()<cr>
+" reload file
+map <leader>re <Esc>:checktime<cr>
+
 
 " NERDTree settings
 map <leader>nt <Esc>:NERDTreeToggle<cr>
