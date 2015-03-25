@@ -19,9 +19,3 @@ map \\ :s/^#//<CR>
 " run
 map <F5> :!python "%:p"<CR>
 
-" auto complete
-
-" Customized macros for Raajay
-call IMAP('FUN',"def <++> (<+params+>):\n<++>\<CR>return <++>",'python')
-call IMAP('SIF',"if (<+condition+>):\<CR><++>",'python')
-call IMAP('SWH',"while (<+condition+>):\<CR><++>",'python')
