@@ -12,6 +12,7 @@ au GUIEnter * set vb t_vb=          " Values get reset when GUI starts
 
 set pastetoggle=<F2>                " disable indenting while pasting code
 set hidden                          " allows us to move away from unsaved buffers
+set noshowmatch                     " do not jump to matching brace
 
 syntax on                           " Switch on syntax highlighting
 filetype plugin on                  " Detect filetype plugin and source them
@@ -121,7 +122,7 @@ vnoremap <C-p> "+gP
 
 set timeoutlen=3000
 set ttimeoutlen=50
-set updatetime=400 " time taken by vim-bufferline to redraw
+set updatetime=1000 " time taken by vim-bufferline to redraw
 
 " Vim - latex settings
 set grepprg=grep\ -nH\ $*
@@ -209,7 +210,6 @@ endif
 
 " omnisharp -- Migrated to using OmniSharp through YouCompleteMe
 "let g:OmniSharp_timeout = 1
-"set noshowmatch
 "let g:SuperTabDefaultCompletionType = 'context'
 "let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 "let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
@@ -232,11 +232,22 @@ endif
 "    autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
 "    autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
 "    " still incomplete
-"
 "augroup END
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+
+" Eclim
+let g:EclimCompletionMethod='omnifunc'
+
+" Delimitmate
+let delimitMate_expand_cr = 1
+
+" vim-rooter
+let g:rooter_autocmd_patterns = '*.java'
+let g:rooter_patterns = ['build.gradle', '.git', './git/']
+let g:rooter_use_lcd = 1
+let g:rooter_manual_only = 1
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -268,7 +279,6 @@ function! ToggleBG()
 endfunc
 
 
-" customized file openings
 let mapleader = ","
 map <leader>a <Esc>:call OpenToDo()<cr>
 " edit vimrc
@@ -277,14 +287,17 @@ map <leader>ev <Esc>:edit $MYVIMRC<cr>
 map <leader>sv <Esc>:source $MYVIMRC<cr>
 " editbash
 map <leader>eb <Esc>:edit ~/.bashrc<cr>
+
 " toggle relative numbers
 map <leader>rn :set relativenumber!<cr>
 " remove trailing characters
 map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 " toggle background
-map <leader>g <Esc>:call ToggleBG()<cr>
+map <leader>cc <Esc>:call ToggleBG()<cr>
 " reload file
 map <leader>re <Esc>:checktime<cr>
+command Bak :w %.bak
+
 
 
 " NERDTree settings
@@ -298,6 +311,7 @@ let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'Omnisharp')
 call add(g:pathogen_disabled, 'jedi-vim')
 call add(g:pathogen_disabled, 'clang_complete')
+call add(g:pathogen_disabled, 'syntastic')
 
 " Pathogen Settings - Used to handle the various plug-ins
 call pathogen#infect()
