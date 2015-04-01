@@ -124,17 +124,16 @@ set timeoutlen=3000
 set ttimeoutlen=50
 set updatetime=1000 " time taken by vim-bufferline to redraw
 
-" Vim - latex settings
-set grepprg=grep\ -nH\ $*
+" file type detection
 if has("autocmd")
     autocmd BufRead,BufNewFile *.tex set ft=tex
-endif
-
-" GAMS - syntax settings
-if has("autocmd")
     autocmd BufRead,BufNewFile *.gms set ft=gams
     autocmd BufRead,BufNewFile *.lst set ft=lst
+    autocmd BufRead,BufNewFile *.gradle set ft=groovy
 endif
+
+" Vim - latex settings
+set grepprg=grep\ -nH\ $*
 
 " vim-airline settings
 let g:airline_theme = 'solarized'
@@ -247,7 +246,10 @@ let delimitMate_expand_cr = 1
 let g:rooter_autocmd_patterns = '*.java'
 let g:rooter_patterns = ['build.gradle', '.git', './git/']
 let g:rooter_use_lcd = 1
-let g:rooter_manual_only = 1
+"let g:rooter_manual_only = 1
+
+" ctrl-p
+let g:ctrlp_custom_ignore = {'file': '\.class$\|\.exe$\|\.pyc$'}
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -296,8 +298,7 @@ map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 map <leader>cc <Esc>:call ToggleBG()<cr>
 " reload file
 map <leader>re <Esc>:checktime<cr>
-command Bak :w %.bak
-
+command! Bak :w %.bak
 
 
 " NERDTree settings
