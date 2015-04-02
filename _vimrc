@@ -1,6 +1,7 @@
 set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
-set relativenumber                  " this is awesome! Line numbers relative to current line
+set norelativenumber                " relative line numbers are awesome. 
+                                    " we will use it when needed with ,rn map
 set numberwidth=5                   " the number of columns for line numbers
 set mouse=a                         " enable mouse clicks for all modes
 set backspace=eol,indent,start      " characters that backspace can erase
@@ -247,6 +248,8 @@ let g:rooter_autocmd_patterns = '*.java'
 let g:rooter_patterns = ['build.gradle', '.git', './git/']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
+
+" git gutter settings
 
 " ctrl-p
 let g:ctrlp_custom_ignore = {'file': '\.class$\|\.exe$\|\.pyc$'}

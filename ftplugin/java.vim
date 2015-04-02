@@ -29,7 +29,7 @@ map <leader>gi <Esc>:JavaSearch -x implementors -i<cr>
 " Find references
 map <leader>fr <Esc>:JavaSearch -x references -i<cr>
 " Re-factor rename
-map <leader>rn <Esc>:JavaRename<Space>
+map <leader>re <Esc>:JavaRename<Space>
 " Auto import package
 map <leader>pi <Esc>:JavaImport<cr>
 " Format the source file
