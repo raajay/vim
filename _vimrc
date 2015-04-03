@@ -316,6 +316,7 @@ call add(g:pathogen_disabled, 'Omnisharp')
 call add(g:pathogen_disabled, 'jedi-vim')
 call add(g:pathogen_disabled, 'clang_complete')
 call add(g:pathogen_disabled, 'syntastic')
+call add(g:pathogen_disabled, 'vim-gitgutter')
 
 " Pathogen Settings - Used to handle the various plug-ins
 call pathogen#infect()
