@@ -9,7 +9,7 @@ set nowrap                          " do not wrap lines
 set ruler                           " ruler format can be set; but I use vim-airline
 set noerrorbells novisualbell t_vb= " I have no idea what to do here
 au GUIEnter * set vb t_vb=          " Values get reset when GUI starts
-                                    " Reset them once that is done
+                                    " Set them once we enter GUIEnter
 
 set pastetoggle=<F2>                " disable indenting while pasting code
 set hidden                          " allows us to move away from unsaved buffers
@@ -309,6 +309,10 @@ map <leader>nt <Esc>:NERDTreeToggle<cr>
 " Tagbar settings
 map <leader>tt <Esc>:TagbarToggle<CR>
 
+" navigation settings
+" map <leader>nn <Esc><c-w><c-n>
+map <leader>pp <Esc><c-w><c-p>
+
 
 " disable certain plugins
 let g:pathogen_disabled = []
@@ -320,7 +324,7 @@ call add(g:pathogen_disabled, 'vim-gitgutter')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
-elseif
+else
     call add(g:pathogen_disabled, 'YouCompleteMe-Windows')
 end
 
