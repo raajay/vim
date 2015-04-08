@@ -5,8 +5,8 @@ set expandtab
 set softtabstop=4
 
 set autoindent
-set colorcolumn=80
-set textwidth=79
+set colorcolumn=120
+set textwidth=119
 set noautochdir
 
 " block indent
