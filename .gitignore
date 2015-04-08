@@ -1,7 +1,6 @@
 *.pyc
 _local_vimrc
-*.swp
-*.swo
+*.sw[a-z]
 *tags
 
 .netrwhist
