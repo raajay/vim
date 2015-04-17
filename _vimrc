@@ -1,6 +1,6 @@
 set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
-set norelativenumber                " relative line numbers are awesome. 
+set norelativenumber                " relative line numbers are awesome.
                                     " we will use it when needed with ,rn map
 set numberwidth=5                   " the number of columns for line numbers
 set mouse=a                         " enable mouse clicks for all modes
@@ -46,7 +46,7 @@ set autochdir       " change to the directory of the current file
 set splitbelow      " horizontal split below
 
 if has('gui_running')
-    let g:my_background='light'
+    let g:my_background='dark'
 else
     let g:my_background='light'
 end
@@ -236,6 +236,8 @@ endif
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_warning_symbol = '>'
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Eclim
 let g:EclimCompletionMethod='omnifunc'
@@ -244,8 +246,8 @@ let g:EclimCompletionMethod='omnifunc'
 let delimitMate_expand_cr = 1
 
 " vim-rooter
-let g:rooter_autocmd_patterns = '*.java'
-let g:rooter_patterns = ['build.gradle', '.git', './git/']
+let g:rooter_autocmd_patterns = '*.java,*.tex'
+let g:rooter_patterns = ['.gradlemain', '.latexmain']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 
@@ -277,9 +279,11 @@ function! ToggleBG()
     if g:my_background=="light"
         let g:my_background="dark"
         set background=dark
+        let g:airline_theme = 'solarized'
     else
         let g:my_background="light"
         set background=light
+        let g:airline_theme = 'solarized'
     endif
 endfunc
 
@@ -308,6 +312,9 @@ command! Bak :w %.bak
 map <leader>nt <Esc>:NERDTreeToggle<cr>
 " Tagbar settings
 map <leader>tt <Esc>:TagbarToggle<CR>
+
+" Tabularize - helps in alignment
+map <leader>tb <Esc>:Tabularize<Space>
 
 " navigation settings
 " map <leader>nn <Esc><c-w><c-n>
