@@ -1,4 +1,5 @@
-set autoread
+setlocal autoread
+
 if has("autocmd")
     au FocusGained,BufEnter *.lst :silent! checktime
 endif

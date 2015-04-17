@@ -1,94 +1,90 @@
 " indent
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set softtabstop=4
+setlocal tabstop=4
+setlocal shiftwidth=4
+setlocal expandtab
+setlocal softtabstop=4
 
-set autoindent
-set colorcolumn=120
-set textwidth=119
-set noautochdir
+setlocal autoindent
+setlocal colorcolumn=120
+setlocal textwidth=119
+setlocal noautochdir
 
 " block indent
-map > :s/^/\ \ \ \ /<CR>
-map < :s/^\ \ \ \ //<CR>
+map <buffer> > :s/^/\ \ \ \ /<CR>
+map <buffer> < :s/^\ \ \ \ //<CR>
 
 " commenting
-map // :s/^/\/\//<CR>
-map \\ :s/^\/\///<CR>
+map <buffer> // :s/^/\/\//<CR>
+map <buffer> \\ :s/^\/\///<CR>
 
 " run
-map <F5> :!javac "%:p"<CR> :!java "%:r"<CR>
+map <buffer> <F5> :!javac "%:p"<CR> :!java "%:r"<CR>
 set omnifunc=javacomplete#Complete
 set completefunc=javacomplete#CompleteParamsInfo
 
 " Goto declaration
-map <leader>gd <Esc>:JavaSearch -x declarations -i<cr>
+map <buffer> <leader>gd <Esc>:JavaSearch -x declarations -i<cr>
 " Goto implementation
-map <leader>gi <Esc>:JavaSearch -x implementors -i<cr>
+map <buffer> <leader>gi <Esc>:JavaSearch -x implementors -i<cr>
 " Find references
-map <leader>fr <Esc>:JavaSearch -x references -i<cr>
+map <buffer> <leader>fr <Esc>:JavaSearch -x references -i<cr>
 " Re-factor rename
-map <leader>re <Esc>:JavaRename<Space>
+map <buffer> <leader>re <Esc>:JavaRename<Space>
 " Auto import package
-map <leader>pi <Esc>:JavaImport<cr>
+map <buffer> <leader>pi <Esc>:JavaImport<cr>
 " Format the source file
-map <leader>fm <Esc>:%JavaFormat<cr> 
+map <buffer> <leader>fm <Esc>:%JavaFormat<cr> 
 
 " new class
-map <leader>nc <Esc>:JavaNew class<Space>
+map <buffer> <leader>nc <Esc>:JavaNew class<Space>
 " New interface
-map <leader>ni <Esc>:JavaNew @interface<Space>
+map <buffer> <leader>ni <Esc>:JavaNew @interface<Space>
 
 " Implement method
-map <leader>im <Esc>:JavaImpl<cr>
+map <buffer> <leader>im <Esc>:JavaImpl<cr>
 " Create constructor
-map <leader>ic <Esc>:JavaConstructor<cr>
+map <buffer> <leader>ic <Esc>:JavaConstructor<cr>
 " Create get/set
-map <leader>is <Esc>:JavaGetSet<cr>
+map <buffer> <leader>is <Esc>:JavaGetSet<cr>
 " create get
-map <leader>ig <Esc>:JavaGet<cr>
+map <buffer> <leader>ig <Esc>:JavaGet<cr>
 
 " List problems 
-map <leader>el <Esc>:ProjectProblems<cr>
+map <buffer> <leader>el <Esc>:ProjectProblems<cr>
 
 " Debug Start
-map <leader>dd <Esc>:JavaDebugStart localhost 5005<cr>
+map <buffer> <leader>dd <Esc>:JavaDebugStart localhost 5005<cr>
 " Debug status
-map <leader>ds <Esc>:JavaDebugStatus<cr>
+map <buffer> <leader>ds <Esc>:JavaDebugStatus<cr>
 
 " Breakpoint toggle
-map <leader>bt <Esc>:JavaDebugBreakpointToggle<cr>
+map <buffer> <leader>bt <Esc>:JavaDebugBreakpointToggle<cr>
 " Breakpoint delete 
-map <leader>bd <Esc>:JavaDebugBreakpointToggle!<cr>
+map <buffer> <leader>bd <Esc>:JavaDebugBreakpointToggle!<cr>
 " Breakpoint list
-map <leader>bl <Esc>:JavaDebugBreakpointsList<cr>
+map <buffer> <leader>bl <Esc>:JavaDebugBreakpointsList<cr>
 " Break point remove from file
-map <leader>br <Esc>:JavaDebugBreakpointRemove<cr>
+map <buffer> <leader>br <Esc>:JavaDebugBreakpointRemove<cr>
 " Break point remove from entire project
-map <leader>bR <Esc>:JavaDebugBreakpointRemove!<cr>
+map <buffer> <leader>bR <Esc>:JavaDebugBreakpointRemove!<cr>
 
 " Step over break point
-map <leader>so <Esc>:JavaDebugStep over<cr>
+map <buffer> <leader>so <Esc>:JavaDebugStep over<cr>
 " Step into break point
-map <leader>si <Esc>:JavaDebugStep into<cr>
+map <buffer> <leader>si <Esc>:JavaDebugStep into<cr>
 " Step return
-map <leader>sr <Esc>:JavaDebugStep return<cr>
+map <buffer> <leader>sr <Esc>:JavaDebugStep return<cr>
 
 " Java doc add
-map <leader>ca <Esc>:JavaDocComment<cr>
+map <buffer> <leader>ca <Esc>:JavaDocComment<cr>
 " Java doc show
-map <leader>cs <Esc>:JavaDocPreview<cr>
+map <buffer> <leader>cs <Esc>:JavaDocPreview<cr>
 
 " other misc
-map <leader>o <Esc>:Only<cr>
+map <buffer> <leader>o <Esc>:Only<cr>
 " organize
-map <leader>q <Esc>:JavaImportOrganize<cr>
+map <buffer> <leader>q <Esc>:JavaImportOrganize<cr>
 
 " build
 compiler gradle
-map <leader>rr <Plug>RooterChangeToRootDirectory<cr>:compiler gradle<cr>:make build<cr>
-
-
-" control p
-let g:ctrlp_root_markers = ['build.gradle']
+map <buffer> <leader>rr <Plug>RooterChangeToRootDirectory<cr>:compiler gradle<cr>:make build<cr>

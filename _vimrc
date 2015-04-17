@@ -2,6 +2,7 @@ set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
 set norelativenumber                " relative line numbers are awesome.
                                     " we will use it when needed with ,rn map
+
 set numberwidth=5                   " the number of columns for line numbers
 set mouse=a                         " enable mouse clicks for all modes
 set backspace=eol,indent,start      " characters that backspace can erase
@@ -28,8 +29,8 @@ set softtabstop=4 " backspace can run over 4 spaces in one key press
 set scrolloff=3   " retain 3 lines for context while scrolling
 set autoindent    " automatically indent the files
 set incsearch     " search before we press enter for search
-" set hlsearch
-" set smartindent " interferes with python indenting
+" set hlsearch    " highlight search
+" set smartindent " removed since it interferes with python commenting
 
 if exists('+colorcolumn')
     set colorcolumn=80 " highlights the 80th column
@@ -76,11 +77,11 @@ exec "set backupdir=".g:vim_folder."vimbackup//"
 exec "set dir=".g:vim_folder."vimswap//"
 exec "source ".g:local_vimrc
 
-" Commenting and folding has been moved to specific ftplugins
-
-" block indent general - 4 spaces
+" Block indent general mapping - overridden in ftplugins
 map > :s/^/\ \ \ \ /<CR>
 map < :s/^\ \ \ \ //<CR>
+
+" Commenting in specific plugins
 
 " remembering the previous edits - this is a gem
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -100,13 +101,13 @@ if has("gui_running")
         set guifont=Consolas:h9:cANSI
     endif
 
-    set guioptions-=m  " removes the menu bar
-    set guioptions-=T  " removes the tool bar
-    set guioptions-=L  " removes the left scroll bar with Nerd Tree
-    set guioptions-=r  " removes the right scroll bar
-    set guioptions-=e  " removes the tab label
-    " set columns=87  " specifies the width of the GVim window
-    " set lines=50  " specifies the height of the GVim window
+    set guioptions-=m " removes the menu bar
+    set guioptions-=T " removes the tool bar
+    set guioptions-=L " removes the left scroll bar with Nerd Tree
+    set guioptions-=r " removes the right scroll bar
+    set guioptions-=e " removes the tab label
+    set columns=87    " specifies the width of the GVim window
+    set lines=50      " specifies the height of the GVim window
 endif
 
 " mappings to avoid common mistakes in Vim
@@ -123,7 +124,7 @@ vnoremap <C-p> "+gP
 
 set timeoutlen=3000
 set ttimeoutlen=50
-set updatetime=1000 " time taken by vim-bufferline to redraw
+set updatetime=300 " time taken by vim-bufferline to redraw
 
 " file type detection
 if has("autocmd")
@@ -131,6 +132,8 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.gms set ft=gams
     autocmd BufRead,BufNewFile *.lst set ft=lst
     autocmd BufRead,BufNewFile *.gradle set ft=groovy
+    autocmd BufRead,BufNewFile *_vimrc set ft=vimrc
+    autocmd BufRead,BufNewFile *bash* set ft=bash
 endif
 
 " Vim - latex settings
@@ -208,31 +211,6 @@ else
     set runtimepath^=~/.vim/bundle/ctrlp.vim
 endif
 
-" omnisharp -- Migrated to using OmniSharp through YouCompleteMe
-"let g:OmniSharp_timeout = 1
-"let g:SuperTabDefaultCompletionType = 'context'
-"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-"let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
-"let g:SuperTabClosePreviewOnPopupClose = 1
-"set completeopt=longest,menuone,preview
-"let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
-"augroup omnisharp_commands
-"    autocmd!
-"    autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
-"    autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
-"    autocmd BufEnter, TextChanged,InsertLeave *.cs SyntasticCheck
-"
-"    " automatically add file to project
-"    "autocmd BufWritePost *.cs call OmniSharp#AddToProject()
-"    "
-"    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-"    autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
-"    autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
-"    autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
-"    autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
-"    autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
-"    " still incomplete
-"augroup END
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
@@ -307,9 +285,9 @@ map <leader>cc <Esc>:call ToggleBG()<cr>
 map <leader>re <Esc>:checktime<cr>
 command! Bak :w %.bak
 
-
 " NERDTree settings
 map <leader>nt <Esc>:NERDTreeToggle<cr>
+
 " Tagbar settings
 map <leader>tt <Esc>:TagbarToggle<CR>
 
@@ -317,11 +295,9 @@ map <leader>tt <Esc>:TagbarToggle<CR>
 map <leader>tb <Esc>:Tabularize<Space>
 
 " navigation settings
-" map <leader>nn <Esc><c-w><c-n>
 map <leader>pp <Esc><c-w><c-p>
 
-
-" disable certain plugins
+" Disable certain plugins
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'Omnisharp')
 call add(g:pathogen_disabled, 'jedi-vim')

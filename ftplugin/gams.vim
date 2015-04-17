@@ -1,8 +1,8 @@
 " commenting
-map // :s/^/\*/<CR>
-map \\ :s/^\*//<CR>
+map <buffer> // :s/^/\*\ /<CR>
+map <buffer> \\ :s/^\*\ //<CR>
 
-set textwidth=80
+setlocal textwidth=80
 
-map <leader>rr <Esc>:!gams %<cr>
-map <leader>ll <Esc>:vs %:r.lst<cr>
+map <buffer> <leader>rr <Esc>:!gams %<cr>
+map <buffer> <leader>ll <Esc>:vs %:r.lst<cr>

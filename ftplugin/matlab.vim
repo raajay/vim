@@ -1,7 +1,7 @@
-set nospell
-set colorcolumn=81
+setlocal nospell
+setlocal colorcolumn=81
 
 
 " commenting
-map // :s/^/%/<CR>
-map \\ :s/^%//<CR>
+map <buffer> // :s/^/%/<CR>
+map <buffer> \\ :s/^%//<CR>
