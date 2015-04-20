@@ -132,8 +132,6 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.gms set ft=gams
     autocmd BufRead,BufNewFile *.lst set ft=lst
     autocmd BufRead,BufNewFile *.gradle set ft=groovy
-    autocmd BufRead,BufNewFile *_vimrc set ft=vimrc
-    autocmd BufRead,BufNewFile *bash* set ft=bash
 endif
 
 " Vim - latex settings
