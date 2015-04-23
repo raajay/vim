@@ -19,6 +19,3 @@ map <buffer> \\ :s/^%//<CR>
 set iskeyword+=_,;
 
 setlocal efm+=%E%f:%l:\ %m
-
-" highlighting. We do not need matching parentheses in latex. 
-hi MatchParen ctermbg=none ctermfg=none cterm=none
