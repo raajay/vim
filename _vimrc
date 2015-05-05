@@ -47,7 +47,7 @@ set autochdir       " change to the directory of the current file
 set splitbelow      " horizontal split below
 
 if has('gui_running')
-    let g:my_background='dark'
+    let g:my_background='light'
 else
     let g:my_background='light'
 end
@@ -223,7 +223,7 @@ let delimitMate_expand_cr = 1
 
 " vim-rooter
 let g:rooter_autocmd_patterns = '*.java,*.tex'
-let g:rooter_patterns = ['.gradlemain', '.latexmain']
+let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 
