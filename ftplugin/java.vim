@@ -15,7 +15,7 @@ map <buffer> < :s/^\ \ \ \ //<CR>
 
 " commenting
 map <buffer> // :s/^/\/\//<CR>
-map <buffer> \\ :s/^\s*\/\///<CR>
+map <buffer> \\ :s/^\(\s*\)\/\//\1/<CR>
 
 " run
 map <buffer> <F5> :!javac "%:p"<CR> :!java "%:r"<CR>

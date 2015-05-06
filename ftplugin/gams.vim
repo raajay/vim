@@ -1,6 +1,6 @@
 " commenting
 map <buffer> // :s/^/\*\ /<CR>
-map <buffer> \\ :s/^\s*\*\ //<CR>
+map <buffer> \\ :s/^\(\s*\)\*\ /\1/<CR>
 
 setlocal textwidth=80
 
