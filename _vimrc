@@ -266,6 +266,8 @@ endfunc
 
 let mapleader = ","
 map <leader>a <Esc>:call OpenToDo()<cr>
+" push vim to the background and give shell access
+map <leader>q <Esc><c-z>
 " edit vimrc
 map <leader>ev <Esc>:edit $MYVIMRC<cr>
 " source vimrc
