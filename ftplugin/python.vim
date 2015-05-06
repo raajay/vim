@@ -14,7 +14,7 @@ map <buffer> < :s/^\ \ \ \ //<CR>
 
 " commenting
 map <buffer> // :s/^/#/<CR>
-map <buffer> \\ :s/^#//<CR>
+map <buffer> \\ :s/^\s*#//<CR>
 
 " run
 map <F5> :!python "%:p"<CR>
