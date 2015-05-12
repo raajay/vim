@@ -46,11 +46,7 @@ set autochdir       " change to the directory of the current file
 "set splitright     " the new windows opens on the right
 set splitbelow      " horizontal split below
 
-if has('gui_running')
-    let g:my_background='light'
-else
-    let g:my_background='light'
-end
+let g:my_background='light'
 
 if(g:my_background == 'light')
     set background=light
