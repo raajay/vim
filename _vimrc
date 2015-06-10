@@ -300,6 +300,7 @@ call add(g:pathogen_disabled, 'jedi-vim')
 call add(g:pathogen_disabled, 'clang_complete')
 call add(g:pathogen_disabled, 'syntastic')
 call add(g:pathogen_disabled, 'vim-gitgutter')
+call add(g:pathogen_disabled, 'vim-instant-markdown')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
