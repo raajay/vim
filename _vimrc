@@ -36,15 +36,15 @@ if exists('+colorcolumn')
     set colorcolumn=80 " highlights the 80th column
 endif
 
-set textwidth=0     " no text width (moved to ft specific)
-set cursorline      " highlights the row the cursor is on
-set cursorcolumn    " highlights the current column
-set laststatus=2    " to display the status line always
-set showtabline=2   " to show the tab line always
-set spell           " spell check, XXX where is the dictionary
-set autochdir       " change to the directory of the current file
-"set splitright     " the new windows opens on the right
-set splitbelow      " horizontal split below
+set textwidth=0   " no text width (moved to ft specific)
+set cursorline    " highlights the row the cursor is on
+set cursorcolumn  " highlights the current column
+set laststatus=2  " to display the status line always
+set showtabline=2 " to show the tab line always
+set spell         " spell check, XXX where is the dictionary
+set autochdir     " change to the directory of the current file
+set splitright    " the new windows opens on the right
+set splitbelow    " horizontal split below
 
 let g:my_background='light'
 
@@ -55,7 +55,6 @@ else
 endif
 
 set t_Co=256        " everything is a 256 color terminal
-"let g:solarized_termcolors=256
 let g:solarized_termtrans=0
 let g:solarized_italic=1
 colorscheme solarized " never change
@@ -301,6 +300,7 @@ call add(g:pathogen_disabled, 'jedi-vim')
 call add(g:pathogen_disabled, 'clang_complete')
 call add(g:pathogen_disabled, 'syntastic')
 call add(g:pathogen_disabled, 'vim-gitgutter')
+call add(g:pathogen_disabled, 'vim-instant-markdown')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
