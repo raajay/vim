@@ -269,7 +269,7 @@ map <leader>q <Esc><c-z>
 map <leader>ev <Esc>:edit $MYVIMRC<cr>
 " source vimrc
 map <leader>sv <Esc>:source $MYVIMRC<cr>
-" editbash
+" edit bash
 map <leader>eb <Esc>:edit ~/.bashrc<cr>
 
 " toggle relative numbers
@@ -288,10 +288,10 @@ map <leader>nt <Esc>:NERDTreeToggle<cr>
 " Tagbar settings
 map <leader>tt <Esc>:TagbarToggle<CR>
 
-" Tabularize - helps in alignment
+" Tabularize - Helps in alignment
 map <leader>tb <Esc>:Tabularize<Space>
 
-" navigation settings
+" Navigation Settings
 map <leader>pp <Esc><c-w><c-p>
 
 " Disable certain plugins
