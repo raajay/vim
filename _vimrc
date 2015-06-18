@@ -101,8 +101,8 @@ if has("gui_running")
     set guioptions-=L " removes the left scroll bar with Nerd Tree
     set guioptions-=r " removes the right scroll bar
     set guioptions-=e " removes the tab label
-    set columns=87    " specifies the width of the GVim window
-    set lines=50      " specifies the height of the GVim window
+    set columns=90    " specifies the width of the GVim window
+    set lines=120     " specifies the height of the GVim window
 endif
 
 " mappings to avoid common mistakes in Vim
