@@ -46,7 +46,7 @@ set autochdir     " change to the directory of the current file
 set splitright    " the new windows opens on the right
 set splitbelow    " horizontal split below
 
-let g:my_background='light'
+let g:my_background='dark'
 
 if(g:my_background == 'light')
     set background=light
@@ -157,11 +157,6 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-p>'
 
 
-"jedi-vim settings
-let g:jedi#popup_on_dot = 0
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#rename_command = ""
-
 " this is put under jedi vim because with out this jedi-vim seems to
 " throw errors
 if has("multi_byte")
@@ -174,27 +169,6 @@ if has("multi_byte")
 endif
 
 set winaltkeys=no
-
-" clang_complete settings
-let g:clang_use_library = 1
-if has('mac')
-    let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
-else
-    let g:clang_library_path="/unsup/llvm-3.3/lib"
-endif
-let g:clang_complete_auto = 0       " use <TAB> to complete
-let g:clang_complete_copen = 1      " show clang errors in quick fix
-
-" syntastic settings
-let g:syntastic_cpp_check_header = 1
-if has('mac')
-    let g:syntastic_cpp_include_dirs = ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"]
-else
-    let g:syntastic_cpp_include_dirs = ["/unsup/llvm-3.3/include"]
-endif
-let g:syntastic_mode_map={ 'mode': 'passive',
-            \ 'active_filetypes': ['cs', 'py'],
-            \ 'passive_filetypes': ['html', 'cpp', 'h'] }
 
 " ctrlp plugin
 if has('win32') || has('win64')
@@ -222,8 +196,6 @@ let g:rooter_autocmd_patterns = '*.java,*.tex'
 let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
-
-" git gutter settings
 
 " ctrl-p
 let g:ctrlp_custom_ignore = {'file': '\.class$\|\.exe$\|\.pyc$'}
@@ -295,12 +267,6 @@ map <leader>pp <Esc><c-w><c-p>
 
 " Disable certain plugins
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'Omnisharp')
-call add(g:pathogen_disabled, 'jedi-vim')
-call add(g:pathogen_disabled, 'clang_complete')
-call add(g:pathogen_disabled, 'syntastic')
-call add(g:pathogen_disabled, 'vim-gitgutter')
-call add(g:pathogen_disabled, 'vim-instant-markdown')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
