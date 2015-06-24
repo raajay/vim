@@ -47,6 +47,7 @@ set splitright    " the new windows opens on the right
 set splitbelow    " horizontal split below
 
 let g:my_background='dark'
+hi Normal ctermbg=None
 
 if(g:my_background == 'light')
     set background=light
