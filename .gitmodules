@@ -31,3 +31,6 @@
 [submodule "bundle/vim-rooter"]
 	path = bundle/vim-rooter
 	url = https://github.com/raajay/vim-rooter.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
