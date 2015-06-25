@@ -60,7 +60,11 @@ let g:solarized_termtrans=0
 let g:solarized_italic=1
 colorscheme solarized " never change
 
-if has('win32') || has('win64')
+
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "sansa"
+    let g:vim_folder = "/scratch/raajay/vimfiles/"
+elseif has('win32') || has('win64')
     let g:vim_folder = '~/vimfiles/'
 else
     let g:vim_folder = '~/.vim/'
@@ -129,6 +133,7 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.lst set ft=lst
     autocmd BufRead,BufNewFile *.gradle set ft=groovy
     autocmd BufRead,BufNewFile *.md set ft=markdown
+    autocmd BufRead,BufNewFile *.scala set ft=scala
 endif
 
 " Vim - latex settings
