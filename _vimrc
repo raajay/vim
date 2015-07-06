@@ -49,7 +49,7 @@ set splitbelow    " horizontal split below
 let g:my_background='dark'
 hi Normal ctermbg=None
 
-if(g:my_background == 'light')
+if(g:my_background == 'dark')
     set background=light
 else
     set background=dark
