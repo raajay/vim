@@ -185,13 +185,13 @@ else
     set runtimepath^=~/.vim/bundle/ctrlp.vim
 endif
 
-
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_warning_symbol = '>'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_server_log_level = 'debug'
 let g:ycm_server_keep_logfiles = 1
+let g:ycm_path_to_python_interpreter='/usr/bin/python'
 
 " Eclim
 let g:EclimCompletionMethod='omnifunc'
