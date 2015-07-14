@@ -39,6 +39,7 @@ endif
 set textwidth=0   " no text width (moved to ft specific)
 set cursorline    " highlights the row the cursor is on
 set cursorcolumn  " highlights the current column
+set lazyredraw    " to speed up the effects of highlighting row or column
 set laststatus=2  " to display the status line always
 set showtabline=2 " to show the tab line always
 set spell         " spell check, XXX where is the dictionary
@@ -49,7 +50,7 @@ set splitbelow    " horizontal split below
 let g:my_background='dark'
 hi Normal ctermbg=None
 
-if(g:my_background == 'dark')
+if(g:my_background == 'light')
     set background=light
 else
     set background=dark
