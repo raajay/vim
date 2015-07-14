@@ -75,7 +75,7 @@ let g:vimrc = g:vim_folder . '_vimrc'
 let g:local_vimrc = g:vim_folder . '_local_vimrc'
 exec "set backupdir=".g:vim_folder."vimbackup//"
 exec "set dir=".g:vim_folder."vimswap//"
-exec "source ".g:local_vimrc
+"exec "source ".g:local_vimrc
 
 " Block indent general mapping - overridden in ftplugins
 map > :s/^/\ \ \ \ /<CR>
