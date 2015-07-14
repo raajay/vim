@@ -276,6 +276,8 @@ map <leader>pp <Esc><c-w><c-p>
 
 " Disable certain plugins
 let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'vim-session')
+call add(g:pathogen_disabled, 'vim-misc')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
