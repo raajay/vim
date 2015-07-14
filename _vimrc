@@ -134,6 +134,7 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.gradle set ft=groovy
     autocmd BufRead,BufNewFile *.md set ft=markdown
     autocmd BufRead,BufNewFile *.scala set ft=scala
+    autocmd BufRead,BufNewFile _bash* set ft=sh
 endif
 
 " Vim - latex settings
