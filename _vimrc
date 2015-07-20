@@ -115,6 +115,8 @@ endif
 map :W :wz<BS>
 map :Q :qz<BS>
 map :B :bz<BS>
+
+" sudo write
 cnoremap sudow w !sudo tee % > /dev/null
 
 " C-y copies to global buffer, copying across applications
@@ -218,6 +220,18 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
+" Tagbar
+let g:tagbar_type_tex = {
+    \ 'ctagstype' : 'latex',
+    \ 'kinds' : [
+    \ 's:sections',
+    \ 'g:graphics:0:0',
+    \ 'l:labels',
+    \ 'r:refs:1:0',
+    \ 'p:pagerefs:1:0'
+    \ ],
+    \ 'sort' : 0,
+    \ }
 
 " Function to toggle the to-do list
 let g:open_todo = 0
@@ -264,6 +278,8 @@ map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 map <leader>cc <Esc>:call ToggleBG()<cr>
 " reload file
 map <leader>re <Esc>:checktime<cr>
+
+" Take a backup of a file
 command! Bak :w %.bak
 
 " NERDTree settings
