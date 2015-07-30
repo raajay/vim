@@ -47,7 +47,7 @@ set autochdir     " change to the directory of the current file
 set splitright    " the new windows opens on the right
 set splitbelow    " horizontal split below
 
-let g:my_background='dark'
+let g:my_background='light'
 hi Normal ctermbg=None
 
 if(g:my_background == 'light')
@@ -138,6 +138,7 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.md set ft=markdown
     autocmd BufRead,BufNewFile *.scala set ft=scala
     autocmd BufRead,BufNewFile _bash* set ft=sh
+    autocmd BufRead,BufNewFile *.mutt set ft=muttrc
 endif
 
 " Vim - latex settings
