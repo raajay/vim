@@ -47,7 +47,10 @@ set autochdir     " change to the directory of the current file
 set splitright    " the new windows opens on the right
 set splitbelow    " horizontal split below
 
-let g:my_background='light'
+let g:my_background='dark'
+let g:my_colorscheme='solarized'
+
+
 hi Normal ctermbg=None
 
 if(g:my_background == 'light')
@@ -56,11 +59,21 @@ else
     set background=dark
 endif
 
-set t_Co=256        " everything is a 256 color terminal
-let g:solarized_termtrans=0
-let g:solarized_italic=1
-colorscheme solarized " never change
+set t_Co=256
 
+if(g:my_colorscheme == 'solarized')
+
+    let g:solarized_termtrans=0
+    let g:solarized_italic=1
+    let g:airline_theme=g:my_colorscheme
+    colorscheme solarized
+
+elseif(g:my_colorscheme == 'molokai')
+
+    let g:airline_theme=g:my_colorscheme
+    colorscheme molokai
+
+endif
 
 let hostname = substitute(system('hostname'), '\n', '', '')
 if hostname == "sansa"
@@ -145,7 +158,6 @@ endif
 set grepprg=grep\ -nH\ $*
 
 " vim-airline settings
-let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 0
 let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
@@ -251,12 +263,11 @@ function! ToggleBG()
     if g:my_background=="light"
         let g:my_background="dark"
         set background=dark
-        let g:airline_theme = 'solarized'
     else
         let g:my_background="light"
         set background=light
-        let g:airline_theme = 'solarized'
     endif
+    let g:airline_theme = g:my_colorscheme
 endfunc
 
 
