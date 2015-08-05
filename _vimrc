@@ -164,7 +164,7 @@ set grepprg=grep\ -nH\ $*
 "let g:airline_right_sep = '<<'  " separator used on the right side of airline
 " some fancy stuff
 let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
+let g:airline_right_sep = '◀ '
 "" setting this will avoid displaying all buffers and display only current buffer
 "let g:airline_section_c = '%t'
 let g:airline_powerline_fonts = 0
@@ -198,7 +198,9 @@ let g:airline#extensions#whitespace#mixed_indent_format = 'mi[%s]'
 " The next two lines are required for status line integration
 let g:bufferline_echo = 0 " avoid displaying in the command line
 autocmd VimEnter * let &statusline='%{bufferline#refresh_status()}' .bufferline#get_status_string()
-" TODO avoid highlighting the current buffer
+let g:airline_section_b = '%{getcwd()." (".airline#util#wrap(airline#extensions#branch#get_head(),0).")"}'
+
+
 let g:bufferline_active_buffer_left = '['
 let g:bufferline_active_buffer_right = ']'
 let g:bufferline_active_highlight = 'airline_c_bold'
@@ -252,6 +254,7 @@ let g:ctrlp_user_command = 'find %s -type f \( -name "*.tex" -o -name "*.py" -o 
 let g:CommandTMaxDepth = 20
 let g:CommandTMaxHeight = 10
 let g:CommandTMatchWindowReverse = 1
+let g:CommandTTraverseSCM='pwd'
 
 " YouCompleteMe settings
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
@@ -271,8 +274,8 @@ let g:EclimCompletionMethod='omnifunc'
 let delimitMate_expand_cr = 1
 
 " vim-rooter settings
-let g:rooter_autocmd_patterns = '*.java,*.tex'
-let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain', '.main']
+"let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
+let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain', '.main', '.git', '.git/']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 
