@@ -248,6 +248,11 @@ let g:ctrlp_max_files=10000
 let g:ctrlp_max_depth=40
 let g:ctrlp_user_command = 'find %s -type f \( -name "*.tex" -o -name "*.py" -o -name "*.java" -o -name "*.q" \)'
 
+" Command-T settings
+let g:CommandTMaxDepth = 20
+let g:CommandTMaxHeight = 10
+let g:CommandTMatchWindowReverse = 1
+
 " YouCompleteMe settings
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_warning_symbol = '>'
@@ -349,11 +354,14 @@ map <leader>tb <Esc>:Tabularize<Space>
 " Navigation Settings
 map <leader>pp <Esc><c-w><c-p>
 
+" Tasklist invocation (,t is mapped to Command-T)
+map <leader>v <Plug>TaskList
+
 " Disable certain plugins
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-session')
 call add(g:pathogen_disabled, 'vim-misc')
-"call add(g:pathogen_disabled, 'vim-bufferline')
+call add(g:pathogen_disabled, 'ctrlp.vim')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
