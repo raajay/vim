@@ -33,7 +33,7 @@ map <buffer> <leader>re <Esc>:JavaRename<Space>
 " Auto import package
 map <buffer> <leader>pi <Esc>:JavaImport<cr>
 " Format the source file
-map <buffer> <leader>fm <Esc>:%JavaFormat<cr> 
+map <buffer> <leader>fm <Esc>:%JavaFormat<cr>
 
 " new class
 map <buffer> <leader>nc <Esc>:JavaNew class<Space>
@@ -49,7 +49,7 @@ map <buffer> <leader>is <Esc>:JavaGetSet<cr>
 " create get
 map <buffer> <leader>ig <Esc>:JavaGet<cr>
 
-" List problems 
+" List problems
 map <buffer> <leader>el <Esc>:ProjectProblems<cr>
 
 " Debug Start
@@ -59,7 +59,7 @@ map <buffer> <leader>ds <Esc>:JavaDebugStatus<cr>
 
 " Breakpoint toggle
 map <buffer> <leader>bt <Esc>:JavaDebugBreakpointToggle<cr>
-" Breakpoint delete 
+" Breakpoint delete
 map <buffer> <leader>bd <Esc>:JavaDebugBreakpointToggle!<cr>
 " Breakpoint list
 map <buffer> <leader>bl <Esc>:JavaDebugBreakpointsList<cr>
