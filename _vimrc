@@ -245,6 +245,8 @@ endif
 let g:ctrlp_custom_ignore = {'file': '\.class$\|\.exe$\|\.pyc$', 'dir': '\v[\/]\.(git|hg|svn|bzr)$'}
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_max_files=10000
+let g:ctrlp_max_depth=40
+let g:ctrlp_user_command = 'find %s -type f \( -name "*.tex" -o -name "*.py" -o -name "*.java" -o -name "*.q" \)'
 
 " YouCompleteMe settings
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
