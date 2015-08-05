@@ -47,8 +47,10 @@ set autochdir     " change to the directory of the current file
 set splitright    " the new windows opens on the right
 set splitbelow    " horizontal split below
 
+let mapleader = ","
 let g:my_background='dark'
 let g:my_colorscheme='solarized'
+let g:my_airlinetheme = 'solarized'
 
 
 hi Normal ctermbg=None
@@ -65,12 +67,12 @@ if(g:my_colorscheme == 'solarized')
 
     let g:solarized_termtrans=0
     let g:solarized_italic=1
-    let g:airline_theme=g:my_colorscheme
+    let g:airline_theme=g:my_airlinetheme
     colorscheme solarized
 
 elseif(g:my_colorscheme == 'molokai')
 
-    let g:airline_theme=g:my_colorscheme
+    let g:airline_theme=g:my_airlinetheme
     colorscheme molokai
 
 endif
@@ -140,7 +142,7 @@ vnoremap <C-p> "+gP
 
 set timeoutlen=3000
 set ttimeoutlen=50
-set updatetime=300 " time taken by vim-bufferline to redraw
+set updatetime=30 " time taken by bufferline to redraw
 
 " file type detection
 if has("autocmd")
@@ -158,14 +160,53 @@ endif
 set grepprg=grep\ -nH\ $*
 
 " vim-airline settings
+"let g:airline_left_sep = '>>'   " separator used on the left side of airline
+"let g:airline_right_sep = '<<'  " separator used on the right side of airline
+" some fancy stuff
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+"" setting this will avoid displaying all buffers and display only current buffer
+"let g:airline_section_c = '%t'
 let g:airline_powerline_fonts = 0
-let g:airline_section_c = '%t'
+
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
-let g:airline_left_sep = '>>'
-let g:airline_right_sep = '<<'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
 
+" vim-airline-tabline settings
+let g:airline#extensions#tabline#show_buffers = 1       " show buffers in the tabline
+let g:airline#extensions#tabline#tab_nr_type = 2        " splits and tab number
+let g:airline#extensions#tabline#buffer_idx_mode = 1    " allow navigation using hot keys
+" mappings to use for selecting buffers
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
 
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#overwrite_variables = 0
+
+let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
+let g:airline#extensions#whitespace#mixed_indent_format = 'mi[%s]'
+
+" vim-bufferline settings
+" The next two lines are required for status line integration
+let g:bufferline_echo = 0 " avoid displaying in the command line
+autocmd VimEnter * let &statusline='%{bufferline#refresh_status()}' .bufferline#get_status_string()
+" TODO avoid highlighting the current buffer
+let g:bufferline_active_buffer_left = '['
+let g:bufferline_active_buffer_right = ']'
+let g:bufferline_active_highlight = 'airline_c_bold'
+let g:bufferline_inactive_highlight = 'airline_c'
+let g:bufferline_modified = '+'
+let g:bufferline_excludes = [] " TODO include the auto generated files
+
+" NERDTree settings
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_open_on_new_tabs = 0
@@ -193,7 +234,7 @@ endif
 
 set winaltkeys=no
 
-" ctrlp plugin
+" ctrlp settings
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
     set runtimepath^=~/vimfiles/bundle/ctrlp.vim
@@ -201,8 +242,11 @@ else
     set wildignore+=*/tmp/*,*.so,*.zip,*.swp
     set runtimepath^=~/.vim/bundle/ctrlp.vim
 endif
+let g:ctrlp_custom_ignore = {'file': '\.class$\|\.exe$\|\.pyc$', 'dir': '\v[\/]\.(git|hg|svn|bzr)$'}
+let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_max_files=10000
 
-" YouCompleteMe
+" YouCompleteMe settings
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_warning_symbol = '>'
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -213,27 +257,25 @@ if(hostname() == "dove.cs.wisc.edu")
     let g:clang_library_path="/unsup/llvm-3.3/lib"
 endif
 
-" Eclim
+" Eclim settings
 let g:EclimCompletionMethod='omnifunc'
 
-" Delimitmate
+" Delimitmate settings
 let delimitMate_expand_cr = 1
 
-" vim-rooter
+" vim-rooter settings
 let g:rooter_autocmd_patterns = '*.java,*.tex'
 let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain', '.main']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 
-" ctrl-p
-let g:ctrlp_custom_ignore = {'file': '\.class$\|\.exe$\|\.pyc$'}
 
-" UltiSnips
+" UltiSnips settings
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-" Tagbar
+" Tagbar settings
 let g:tagbar_type_tex = {
     \ 'ctagstype' : 'latex',
     \ 'kinds' : [
@@ -267,11 +309,10 @@ function! ToggleBG()
         let g:my_background="light"
         set background=light
     endif
-    let g:airline_theme = g:my_colorscheme
+    let g:airline_theme = g:my_airlinetheme
 endfunc
 
 
-let mapleader = ","
 map <leader>a <Esc>:call OpenToDo()<cr>
 " push vim to the background and give shell access
 map <leader>q <Esc><c-z>
@@ -310,6 +351,7 @@ map <leader>pp <Esc><c-w><c-p>
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-session')
 call add(g:pathogen_disabled, 'vim-misc')
+"call add(g:pathogen_disabled, 'vim-bufferline')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
