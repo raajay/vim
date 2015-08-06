@@ -6,7 +6,7 @@ setlocal softtabstop=4
 
 setlocal autoindent
 setlocal colorcolumn=79
-setlocal textwidth=79
+setlocal textwidth=0
 
 " block indent
 map <buffer> > :s/^/\ \ \ \ /<CR>
