@@ -337,6 +337,10 @@ map <leader>eb <Esc>:edit ~/.bashrc<cr>
 map <leader>rn :set relativenumber!<cr>
 " remove trailing characters
 map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
+" replace tabs with 4 spaces
+map <leader>rt4 <Esc>:%s/\t/\ \ \ \ /g<cr><c-o>
+" replace tabs with 2 spaces
+map <leader>rt4 <Esc>:%s/\t/\ \ /g<cr><c-o>
 " toggle background
 map <leader>cc <Esc>:call ToggleBG()<cr>
 " reload file
