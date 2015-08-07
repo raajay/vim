@@ -48,7 +48,7 @@ set splitright    " the new windows opens on the right
 set splitbelow    " horizontal split below
 
 let mapleader = ","
-let g:my_background='dark'
+let g:my_background='light'
 let g:my_colorscheme='solarized'
 let g:my_airlinetheme = 'solarized'
 
