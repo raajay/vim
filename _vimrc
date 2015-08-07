@@ -160,11 +160,10 @@ endif
 set grepprg=grep\ -nH\ $*
 
 " vim-airline settings
-"let g:airline_left_sep = '>>'   " separator used on the left side of airline
-"let g:airline_right_sep = '<<'  " separator used on the right side of airline
-" some fancy stuff
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀ '
+let g:airline_left_sep = '>>'   " separator used on the left side of airline
+let g:airline_right_sep = '<<'  " separator used on the right side of airline
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '◀ '
 let g:airline_powerline_fonts = 0
 let g:airline_section_b = '%{getcwd()." (".airline#util#wrap(airline#extensions#branch#get_head(),0).")"}'
 " setting this will avoid displaying all buffers and display only current buffer
