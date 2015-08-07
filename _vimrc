@@ -165,13 +165,16 @@ set grepprg=grep\ -nH\ $*
 " some fancy stuff
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀ '
-"" setting this will avoid displaying all buffers and display only current buffer
-"let g:airline_section_c = '%t'
 let g:airline_powerline_fonts = 0
+let g:airline_section_b = '%{getcwd()." (".airline#util#wrap(airline#extensions#branch#get_head(),0).")"}'
+" setting this will avoid displaying all buffers and display only current buffer
+"let g:airline_section_c = '%t'
+let g:airline_section_c = '%{expand("%:p")}' " full file name
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " vim-airline-tabline settings
 let g:airline#extensions#tabline#show_buffers = 1       " show buffers in the tabline
@@ -188,7 +191,7 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 
-let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
 let g:airline#extensions#bufferline#overwrite_variables = 0
 
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
@@ -196,17 +199,14 @@ let g:airline#extensions#whitespace#mixed_indent_format = 'mi[%s]'
 
 " vim-bufferline settings
 " The next two lines are required for status line integration
-let g:bufferline_echo = 0 " avoid displaying in the command line
-autocmd VimEnter * let &statusline='%{bufferline#refresh_status()}' .bufferline#get_status_string()
-let g:airline_section_b = '%{getcwd()." (".airline#util#wrap(airline#extensions#branch#get_head(),0).")"}'
-
-
-let g:bufferline_active_buffer_left = '['
-let g:bufferline_active_buffer_right = ']'
-let g:bufferline_active_highlight = 'airline_c_bold'
-let g:bufferline_inactive_highlight = 'airline_c'
-let g:bufferline_modified = '+'
-let g:bufferline_excludes = [] " TODO include the auto generated files
+"let g:bufferline_echo = 0 " avoid displaying in the command line
+"autocmd VimEnter * let &statusline='%{bufferline#refresh_status()}' .bufferline#get_status_string()
+"let g:bufferline_active_buffer_left = '['
+"let g:bufferline_active_buffer_right = ']'
+"let g:bufferline_active_highlight = 'airline_c_bold'
+"let g:bufferline_inactive_highlight = 'airline_c'
+"let g:bufferline_modified = '+'
+"let g:bufferline_excludes = [] " TODO include the auto generated files
 
 " NERDTree settings
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
@@ -370,6 +370,7 @@ let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-session')
 call add(g:pathogen_disabled, 'vim-misc')
 call add(g:pathogen_disabled, 'ctrlp.vim')
+call add(g:pathogen_disabled, 'vim-bufferline')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
