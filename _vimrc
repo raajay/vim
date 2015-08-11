@@ -368,7 +368,7 @@ map <leader>v <Plug>TaskList
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-session')
 call add(g:pathogen_disabled, 'vim-misc')
-call add(g:pathogen_disabled, 'ctrlp.vim')
+call add(g:pathogen_disabled, 'vim-ctrlp')
 call add(g:pathogen_disabled, 'vim-bufferline')
 
 if has('win32') || has('win64')
