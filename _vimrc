@@ -163,14 +163,21 @@ set grepprg=grep\ -nH\ $*
 " vim-airline settings
 let g:airline_left_sep = '>'   " separator used on the left side of airline
 let g:airline_right_sep = '<'  " separator used on the right side of airline
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '◀ '
 let g:airline_powerline_fonts = 0
-let g:airline_section_b = '%{getcwd()." (".airline#util#wrap(airline#extensions#branch#get_head(),0).")"}'
+let g:airline_section_b = '%{pathshorten(getcwd())." (".airline#util#wrap(airline#extensions#branch#get_head(),0).")"}'
 " setting this will avoid displaying all buffers and display only current buffer
 "let g:airline_section_c = '%t'
-let g:airline_section_c = '%{expand("%:p")}' " full file name
-let g:airline#extensions#default#section_truncate_width = { 'c' : 20 }
+"
+"      \ [ 'x', 'y', 'z', 'warning' ]
+let g:airline_section_c = '%{pathshorten(expand("%:p"))}' " full file name
+let g:airline#extensions#default#layout = [
+      \ [ 'a', 'b', 'c' ],
+      \ [ 'x', 'z', 'warning' ]
+      \ ]
+
+" Not sure what exactly happens in the next command. It is possible that the
+" entire section is removed if window width is less than 20
+"let g:airline#extensions#default#section_truncate_width = { 'c' : 20 }
 let g:airline_mode_map = {
     \ '__' : '-',
     \ 'n'  : 'N',
