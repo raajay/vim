@@ -36,21 +36,22 @@ if exists('+colorcolumn')
     set colorcolumn=80 " highlights the 80th column
 endif
 
-set textwidth=0   " no text width (moved to ft specific)
-set cursorline    " highlights the row the cursor is on
-set cursorcolumn  " highlights the current column
-set lazyredraw    " to speed up the effects of highlighting row or column
-set laststatus=2  " to display the status line always
-set showtabline=2 " to show the tab line always
-set spell         " spell check, XXX where is the dictionary
-set autochdir     " change to the directory of the current file
-set splitright    " the new windows opens on the right
-set splitbelow    " horizontal split below
+set textwidth=0         " no text width (moved to ft specific)
+set cursorline          " highlights the row the cursor is on
+set cursorcolumn        " highlights the current column
+set lazyredraw          " to speed up the effects of highlighting row or column
+set laststatus=2        " to display the status line always
+set showtabline=2       " to show the tab line always
+set spell               " spell check, XXX where is the dictionary
+set autochdir           " change to the directory of the current file
+set splitright          " the new windows opens on the right
+set splitbelow          " horizontal split below
+set termencoding=utf-8
 
 let mapleader = ","
 let g:my_background='light'
 let g:my_colorscheme='solarized'
-let g:my_airlinetheme = 'solarized'
+let g:my_airlinetheme = 'airlineish'
 
 
 hi Normal ctermbg=None
@@ -160,8 +161,8 @@ endif
 set grepprg=grep\ -nH\ $*
 
 " vim-airline settings
-let g:airline_left_sep = '>>'   " separator used on the left side of airline
-let g:airline_right_sep = '<<'  " separator used on the right side of airline
+let g:airline_left_sep = '>'   " separator used on the left side of airline
+let g:airline_right_sep = '<'  " separator used on the right side of airline
 "let g:airline_left_sep = '▶'
 "let g:airline_right_sep = '◀ '
 let g:airline_powerline_fonts = 0
@@ -169,6 +170,20 @@ let g:airline_section_b = '%{getcwd()." (".airline#util#wrap(airline#extensions#
 " setting this will avoid displaying all buffers and display only current buffer
 "let g:airline_section_c = '%t'
 let g:airline_section_c = '%{expand("%:p")}' " full file name
+let g:airline#extensions#default#section_truncate_width = { 'c' : 20 }
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'VB',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
@@ -370,6 +385,7 @@ call add(g:pathogen_disabled, 'vim-session')
 call add(g:pathogen_disabled, 'vim-misc')
 call add(g:pathogen_disabled, 'vim-ctrlp')
 call add(g:pathogen_disabled, 'vim-bufferline')
+"call add(g:pathogen_disabled, 'eclim')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
