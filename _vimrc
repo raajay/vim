@@ -49,7 +49,7 @@ set splitbelow          " horizontal split below
 set termencoding=utf-8
 
 let mapleader = ","
-let g:my_background='light'
+let g:my_background='dark'
 let g:my_colorscheme='solarized'
 let g:my_airlinetheme = 'airlineish'
 
