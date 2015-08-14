@@ -161,19 +161,29 @@ endif
 set grepprg=grep\ -nH\ $*
 
 " vim-airline settings
-let g:airline_left_sep = '>'   " separator used on the left side of airline
-let g:airline_right_sep = '<'  " separator used on the right side of airline
-let g:airline_powerline_fonts = 1
 let g:airline_section_b = '%{pathshorten(getcwd())." (".airline#util#wrap(airline#extensions#branch#get_head(),0).")"}'
-" setting this will avoid displaying all buffers and display only current buffer
-"let g:airline_section_c = '%t'
-"
-"      \ [ 'x', 'y', 'z', 'warning' ]
 let g:airline_section_c = '%{pathshorten(expand("%:p"))}' " full file name
+"      \ [ 'x', 'y', 'z', 'warning' ]
 let g:airline#extensions#default#layout = [
       \ [ 'a', 'b', 'c' ],
       \ [ 'x', 'z', 'warning' ]
       \ ]
+
+" vim-airline-symbols
+if !exists('g:airline_symbols')
+      let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '>'   " separator used on the left side of airline
+let g:airline_right_sep = '<'  " separator used on the right side of airline
+let g:airline_powerline_fonts = 1
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 " Not sure what exactly happens in the next command. It is possible that the
 " entire section is removed if window width is less than 20
@@ -192,12 +202,11 @@ let g:airline_mode_map = {
     \ '' : 'S',
     \ }
 
+" vim-airline-tabline settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#fnamemod = ':t'
-
-" vim-airline-tabline settings
 let g:airline#extensions#tabline#show_buffers = 1       " show buffers in the tabline
 let g:airline#extensions#tabline#tab_nr_type = 2        " splits and tab number
 let g:airline#extensions#tabline#buffer_idx_mode = 1    " allow navigation using hot keys
