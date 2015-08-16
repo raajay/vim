@@ -48,11 +48,28 @@ set splitright          " the new windows opens on the right
 set splitbelow          " horizontal split below
 set termencoding=utf-8
 
-let mapleader = ","
-let g:my_background='dark'
-let g:my_colorscheme='solarized'
-let g:my_airlinetheme = 'airlineish'
+" update the variables with environment variables
+let mapleader=$LEADER
+let g:my_background=$BACKGROUND
+let g:my_colorscheme=$COLORSCHEME
+let g:my_airlinetheme=$AIRLINE_THEME
 
+" default values for configuration variables
+if (mapleader == '')
+    let mapleader=','
+endif
+
+if (g:my_background == '')
+    let g:my_background='light'
+endif
+
+if (g:my_colorscheme == '')
+    let g:my_colorscheme='solarized'
+endif
+
+if (g:my_airlinetheme == '')
+    let g:my_airlinetheme = 'solarized'
+endif
 
 hi Normal ctermbg=None
 
