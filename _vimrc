@@ -190,13 +190,12 @@ let g:airline#extensions#default#layout = [
 if !exists('g:airline_symbols')
       let g:airline_symbols = {}
 endif
-let g:airline_left_sep = '>'   " separator used on the left side of airline
-let g:airline_right_sep = '<'  " separator used on the right side of airline
 let g:airline_powerline_fonts = 1
-" powerline symbols
+
+" Power line symbols - just used for separation
 let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
+let g:airline_left_alt_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
@@ -323,7 +322,7 @@ let delimitMate_expand_cr = 1
 
 " vim-rooter settings
 "let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
-let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain', '.main', '.git', '.git/']
+let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain', 'pom.xml', '.main', '.git', '.git/']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 
