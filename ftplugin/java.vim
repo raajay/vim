@@ -6,7 +6,7 @@ setlocal softtabstop=2
 
 setlocal autoindent
 setlocal colorcolumn=80
-setlocal textwidth=119
+setlocal textwidth=79
 setlocal noautochdir
 
 " block indent
