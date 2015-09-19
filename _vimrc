@@ -6,7 +6,7 @@ set norelativenumber                " relative line numbers are awesome.
 set numberwidth=5                   " the number of columns for line numbers
 set mouse=a                         " enable mouse clicks for all modes
 set backspace=eol,indent,start      " characters that backspace can erase
-set nowrap                          " do not wrap lines
+set wrap                            " do not wrap lines
 set ruler                           " ruler format can be set; but I use vim-airline
 set noerrorbells novisualbell t_vb= " I have no idea what to do here
 au GUIEnter * set vb t_vb=          " Values get reset when GUI starts
@@ -322,7 +322,7 @@ let delimitMate_expand_cr = 1
 
 " vim-rooter settings
 "let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
-let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain', 'pom.xml', '.main', '.git', '.git/']
+let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain', '.main', '.git', '.git/', 'pom.xml']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 
@@ -417,6 +417,7 @@ call add(g:pathogen_disabled, 'vim-session')
 call add(g:pathogen_disabled, 'vim-misc')
 call add(g:pathogen_disabled, 'vim-ctrlp')
 call add(g:pathogen_disabled, 'vim-bufferline')
+"call add(g:pathogen_disabled, 'tagbar')
 "call add(g:pathogen_disabled, 'eclim')
 
 if has('win32') || has('win64')
