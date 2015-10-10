@@ -1,9 +1,14 @@
 set number
-
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set expandtab
-
 set autoindent
 
+" block indent
+map <buffer> > :s/^/\ \ /<CR>
+map <buffer> < :s/^\ \ //<CR>
+
+" commenting
+map <buffer> // :s/^/\/\//<CR>
+map <buffer> \\ :s/^\(\s*\)\/\//\1/<CR>

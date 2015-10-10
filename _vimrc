@@ -400,10 +400,10 @@ command! Bak :w %.bak
 map <leader>nt <Esc>:NERDTreeToggle<cr>
 
 " Tagbar settings
-map <leader>tt <Esc>:TagbarToggle<CR>
+map <leader>a <Esc>:TagbarToggle<CR>
 
 " Tabularize - Helps in alignment
-map <leader>tb <Esc>:Tabularize<Space>
+map <leader>b <Esc>:Tabularize<Space>
 
 " Navigation Settings
 map <leader>pp <Esc><c-w><c-p>
