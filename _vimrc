@@ -285,10 +285,10 @@ set winaltkeys=no
 " ctrlp settings
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
-    set runtimepath^=~/vimfiles/bundle/ctrlp.vim
+    set runtimepath^=~/vimfiles/bundle/vim-ctrlp
 else
     set wildignore+=*/tmp/*,*.so,*.zip,*.swp
-    set runtimepath^=~/.vim/bundle/ctrlp.vim
+    set runtimepath^=~/.vim/bundle/vim-ctrlp
 endif
 let g:ctrlp_custom_ignore = {'file': '\.class$\|\.exe$\|\.pyc$', 'dir': '\v[\/]\.(git|hg|svn|bzr)$'}
 let g:ctrlp_working_path_mode = 'r'
@@ -400,10 +400,10 @@ command! Bak :w %.bak
 map <leader>nt <Esc>:NERDTreeToggle<cr>
 
 " Tagbar settings
-map <leader>tt <Esc>:TagbarToggle<CR>
+map <leader>a <Esc>:TagbarToggle<CR>
 
 " Tabularize - Helps in alignment
-map <leader>tb <Esc>:Tabularize<Space>
+map <leader>b <Esc>:Tabularize<Space>
 
 " Navigation Settings
 map <leader>pp <Esc><c-w><c-p>
