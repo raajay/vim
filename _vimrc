@@ -1,6 +1,6 @@
 set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
-set norelativenumber                " relative line numbers are awesome.
+set relativenumber                " relative line numbers are awesome.
                                     " we will use it when needed with ,rn map
 
 set numberwidth=5                   " the number of columns for line numbers
