@@ -33,7 +33,7 @@ map <buffer> <leader>re <Esc>:JavaRename<Space>
 " Auto import package
 map <buffer> <leader>pi <Esc>:JavaImport<cr>
 " Format the source file
-map <buffer> <leader>fm <Esc>:%JavaFormat<cr>
+map <buffer> <leader>ff <Esc>:%JavaFormat<cr>
 
 " new class
 map <buffer> <leader>nc <Esc>:JavaNew class<Space>
