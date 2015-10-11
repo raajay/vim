@@ -345,6 +345,9 @@ let g:tagbar_type_tex = {
     \ 'sort' : 0,
     \ }
 
+" vim-gitgutter settings
+let g:gitgutter_map_keys = 0
+
 " Function to toggle the to-do list
 let g:open_todo = 0
 function! OpenToDo()
