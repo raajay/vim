@@ -279,6 +279,12 @@ if has("multi_byte")
     setglobal fileencoding=utf-8
     set fileencodings=ucs-bom,utf-8,latin1
 endif
+" Jedi Settings
+let g:jedi#auto_initialization = 1
+let g:jedi#popup_on_dot = 0
+let g:jedi#goto_command = "<leader>gd"
+let g:jedi#usages_command = "<leader>fr"
+let g:jedi#rename_command = "<leader>re"
 
 set winaltkeys=no
 
