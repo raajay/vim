@@ -353,6 +353,15 @@ let g:tagbar_type_tex = {
 
 " vim-gitgutter settings
 let g:gitgutter_map_keys = 0
+nmap <Leader>hs <Plug>GitGutterStageHunk
+nmap <Leader>hr <Plug>GitGutterRevertHunk
+nmap <Leader>hd <Plug>GitGutterPreviewHunk
+nmap <Leader>hh <Plug>GitGutterNextHunk
+nmap <Leader>hp <Plug>GitGutterPrevHunk
+
+" vim-fugitive settings
+nmap <Leader>gs <Esc>:Gstatus<CR>
+nmap <Leader>gc <Esc>:Gcommit -m
 
 " Function to toggle the to-do list
 let g:open_todo = 0
