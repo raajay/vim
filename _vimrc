@@ -281,10 +281,7 @@ if has("multi_byte")
 endif
 " Jedi Settings
 let g:jedi#auto_initialization = 1
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_command = "<leader>gd"
-let g:jedi#usages_command = "<leader>fr"
-let g:jedi#rename_command = "<leader>re"
+" Other Jedi settings have been moved to ftplugin/python.vim
 
 set winaltkeys=no
 
