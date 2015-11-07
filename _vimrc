@@ -158,6 +158,11 @@ vnoremap <C-y> "+y
 nnoremap <C-p> "+gP
 vnoremap <C-p> "+gP
 
+" Common mappings for navigation
+nmap <space> zz
+nmap n nzz
+nmap N Nzz
+
 set timeoutlen=3000
 set ttimeoutlen=50
 set updatetime=30 " time taken by bufferline to redraw
