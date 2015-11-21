@@ -366,7 +366,7 @@ nmap <Leader>hp <Plug>GitGutterPrevHunk
 
 " vim-fugitive settings
 nmap <Leader>gs <Esc>:Gstatus<CR>
-nmap <Leader>gc <Esc>:Gcommit -m
+nmap <Leader>gc <Esc>:Gcommit -m<Space>
 nmap <Leader>gp <Esc>:Gpush<CR>
 
 " Function to toggle the to-do list
