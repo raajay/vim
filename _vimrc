@@ -368,6 +368,7 @@ nmap <Leader>hp <Plug>GitGutterPrevHunk
 nmap <Leader>gs <Esc>:Gstatus<CR>
 nmap <Leader>gc <Esc>:Gcommit -m<Space>
 nmap <Leader>gp <Esc>:Gpush<CR>
+nmap <Leader>gl <Esc>:Git log --oneline<CR>
 
 " Function to toggle the to-do list
 let g:open_todo = 0
