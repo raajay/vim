@@ -363,7 +363,7 @@ nmap <Leader>hp <Plug>GitGutterPrevHunk
 
 " vim-fugitive settings
 nmap <Leader>gs <Esc>:Gstatus<CR>
-nmap <Leader>gc <Esc>:Gcommit -m<Space>
+nmap <Leader>gc <Esc>:Gcommit -m<Space>""<left>
 nmap <Leader>gp <Esc>:Gpush<CR>
 nmap <Leader>gl <Esc>:Git log --oneline<CR>
 
