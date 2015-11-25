@@ -433,6 +433,11 @@ map <leader>pp <Esc><c-w><c-p>
 " Tasklist invocation (,t is mapped to Command-T)
 map <leader>v <Plug>TaskList
 
+" The Silver Searcher
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+endif
+
 " Disable certain plugins
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-session')
