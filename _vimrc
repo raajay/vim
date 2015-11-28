@@ -160,6 +160,7 @@ vnoremap <C-p> "+gP
 
 " Common mappings for navigation
 nmap <space> zz
+nmap <space><space> zt
 nmap n nzz
 nmap N Nzz
 
