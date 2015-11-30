@@ -179,9 +179,6 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.mutt set ft=muttrc
 endif
 
-" Vim - latex settings
-set grepprg=grep\ -nH\ $*
-
 " vim-airline settings
 let g:airline_section_b = '%{pathshorten(getcwd())."  ".airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 let g:airline_section_c = '%{pathshorten(expand("%:p"))}' " full file name
@@ -433,6 +430,8 @@ map <leader>pp <Esc><c-w><c-p>
 " Tasklist invocation (,t is mapped to Command-T)
 map <leader>v <Plug>TaskList
 
+" Vim - latex settings
+set grepprg=grep\ -nH\ $*
 " The Silver Searcher
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
