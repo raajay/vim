@@ -24,3 +24,6 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#goto_command = "<leader>gd"
 let g:jedi#usages_command = "<leader>fr"
 let g:jedi#rename_command = "<leader>re"
+
+" Code navigation when using Jedi with YCM
+nnoremap <leader>gd <Esc>:YcmCompleter GoToDefinitionElseDeclaration<CR>
