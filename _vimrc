@@ -434,7 +434,8 @@ map <leader>v <Plug>TaskList
 set grepprg=grep\ -nH\ $*
 " The Silver Searcher
 if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
+    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
+    set grepformat=%f:%l:%c:%m
 endif
 
 " Disable certain plugins
