@@ -74,3 +74,7 @@
 	path = bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
     branch = master
+[submodule "bundle/vim-ag"]
+	path = bundle/vim-ag
+	url = git@github.com:rking/ag.vim.git
+    branch = master
