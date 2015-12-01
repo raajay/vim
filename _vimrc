@@ -150,8 +150,8 @@ map :Q :qz<BS>
 map :B :bz<BS>
 
 " mapping for common patters in insert mode
-imap TODO TODO<Space>(raajay)<Space>
-imap XXX XXX<Space>(raajay)<Space>
+imap TODO TODO(raajay)<Space>
+imap XXX XXX(raajay)<Space>
 
 " sudo write
 cnoremap sudow w !sudo tee % > /dev/null
