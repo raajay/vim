@@ -32,7 +32,7 @@
     branch = master
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
+	url = https://github.com/raajay/vim-snippets.git
     branch = master
 [submodule "bundle/supertab"]
 	path = bundle/supertab
