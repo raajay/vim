@@ -127,10 +127,10 @@ endif
 
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Monospace\ 9
+        set guifont=Source\ Code\ Pro\ for\ Powerline
     elseif has("gui_macvim")
         set antialias
-        set guifont=Menlo\ Regular:h11
+        set guifont=Source\ Code\ Pro\ for\ Powerline
     elseif has("gui_win32")
         set guifont=Consolas:h9:cANSI
     endif
