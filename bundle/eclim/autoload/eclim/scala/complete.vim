@@ -2,7 +2,7 @@
 "
 " License: {{{
 "
-" Copyright (C) 2005 - 2014  Eric Van Dewoestine
+" Copyright (C) 2011 - 2014  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -19,21 +19,16 @@
 "
 " }}}
 
-" Global Varables {{{
-  call eclim#AddVimSetting(
-    \ 'Lang/Ruby', 'g:EclimRubySearchSingleResult', g:EclimDefaultFileOpenAction,
-    \ 'Sets the command to use when opening a single result from a ruby search.')
-
-  call eclim#AddVimSetting(
-    \ 'Lang/Ruby', 'g:EclimRubyValidate', 1,
-    \ 'Sets whether or not to validate ruby files on save.',
-    \ '\(0\|1\)')
-
-  call eclim#AddVimSetting(
-    \ 'Lang/Ruby', 'g:EclimRubySyntasticEnabled', 0,
-    \ "Only enable this if you want both eclim and syntastic to validate your ruby files.\n" .
-    \ "If you want to use syntastic instead of eclim, simply disable RubyValidate.",
-    \ '\(0\|1\)')
+" Script Varables {{{
+  let s:complete_command =
+    \ '-command scala_complete -p "<project>" -f "<file>" ' .
+    \ '-o <offset> -e <encoding> -l <layout>'
 " }}}
+
+function! eclim#scala#complete#CodeComplete(findstart, base) " {{{
+  return eclim#lang#CodeComplete(
+    \ s:complete_command, a:findstart, a:base,
+    \ {'temp': 0, 'layout': g:EclimScalaCompleteLayout})
+endfunction " }}}
 
 " vim:ft=vim:fdm=marker

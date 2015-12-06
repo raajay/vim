@@ -2,7 +2,7 @@
 "
 " License: {{{
 "
-" Copyright (C) 2005 - 2013  Eric Van Dewoestine
+" Copyright (C) 2012 - 2014  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -21,17 +21,21 @@
 
 " Command Declarations {{{
 
-if !exists(":RubyInterpreterList")
-  command -buffer RubyInterpreterList
-    \ :call eclim#dltk#interpreter#ListInterpreters('ruby')
-  command -buffer -nargs=*
-    \ -complete=customlist,eclim#dltk#interpreter#CommandCompleteInterpreterAdd
-    \ RubyInterpreterAdd
-    \ :call eclim#ruby#interpreter#AddInterpreter('<args>')
-  command -buffer -nargs=1
-    \ -complete=customlist,eclim#ruby#interpreter#CommandCompleteInterpreterPath
-    \ RubyInterpreterRemove
-    \ :call eclim#dltk#interpreter#RemoveInterpreter('ruby', '<args>')
+if !exists(":PythonInterpreter")
+  command! -nargs=?
+    \ -complete=customlist,eclim#python#project#CommandCompletePathOrInterpreterName
+    \ PythonInterpreter
+    \ :call eclim#python#project#ProjectInterpreter('<args>')
+  command! -nargs=0 PythonInterpreterList
+    \ :call eclim#python#project#InterpreterList()
+  command! -nargs=*
+    \ -complete=customlist,eclim#python#project#CommandCompleteInterpreterAdd
+    \ PythonInterpreterAdd
+    \ :call eclim#python#project#InterpreterAdd('<args>')
+  command! -nargs=1
+    \ -complete=customlist,eclim#python#project#CommandCompleteInterpreterPath
+    \ PythonInterpreterRemove
+    \ :call eclim#python#project#InterpreterRemove('<args>')
 endif
 
 " }}}

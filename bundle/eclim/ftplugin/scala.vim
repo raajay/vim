@@ -2,7 +2,7 @@
 "
 " License: {{{
 "
-" Copyright (C) 2005 - 2014  Eric Van Dewoestine
+" Copyright (C) 2011 - 2014  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -21,35 +21,31 @@
 
 " Options {{{
 
-exec 'setlocal ' . g:EclimCompletionMethod . '=eclim#ruby#complete#CodeComplete'
-
-call eclim#lang#DisableSyntasticIfValidationIsEnabled('ruby')
+exec 'setlocal ' . g:EclimCompletionMethod . '=eclim#scala#complete#CodeComplete'
 
 " }}}
 
 " Autocmds {{{
 
-augroup eclim_ruby
+augroup eclim_scala
   autocmd! BufWritePost <buffer>
-  autocmd BufWritePost <buffer> call eclim#lang#UpdateSrcFile('ruby')
+  autocmd BufWritePost <buffer> call eclim#lang#UpdateSrcFile('scala')
 augroup END
 
 " }}}
 
 " Command Declarations {{{
 
-command! -nargs=0 -buffer Validate :call eclim#lang#UpdateSrcFile('ruby', 1)
+command! -nargs=0 -buffer Validate :call eclim#lang#UpdateSrcFile('scala', 1)
 
-if !exists(":RubySearch")
-  command -buffer -nargs=*
-    \ -complete=customlist,eclim#ruby#search#CommandCompleteSearch
-    \ RubySearch :call eclim#ruby#search#Search('<args>')
+if !exists(":ScalaSearch")
+  command -buffer -nargs=0
+    \ -complete=customlist,eclim#scala#search#CommandCompleteSearch
+    \ ScalaSearch :call eclim#scala#search#Search('<args>')
 endif
 
-if !exists(":RubySearchContext")
-  command -buffer -nargs=*
-    \ -complete=customlist,eclim#ruby#search#CommandCompleteSearchContext
-    \ RubySearchContext :call eclim#ruby#search#SearchContext('<args>')
+if !exists(":ScalaImport")
+  command -buffer -nargs=0 ScalaImport :call eclim#scala#import#Import()
 endif
 
 " }}}
