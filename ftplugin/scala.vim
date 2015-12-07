@@ -14,4 +14,4 @@ map <buffer> <leader>gd <Esc>:ScalaSearch<cr>
 map <buffer> <leader>rr <Esc>:Validate<cr>
 
 " Scala settings
-g:EclimScalaValidate=0
+let g:EclimScalaValidate=0
