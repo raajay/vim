@@ -26,4 +26,12 @@ let g:jedi#usages_command = "<leader>fr"
 let g:jedi#rename_command = "<leader>re"
 
 " Code navigation when using Jedi with YCM
-nnoremap <leader>gd <Esc>:YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>jd <Esc>:YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Eclim mappings
+" Goto declaration
+map <buffer> <leader>gd <Esc>:PythonSearch -x declarations -i<cr>
+" Goto implementation
+map <buffer> <leader>gi <Esc>:PythonSearch -x implementors -i<cr>
+" Find references
+map <buffer> <leader>fr <Esc>:PythonSearch -x references -i<cr>
