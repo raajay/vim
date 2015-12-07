@@ -10,3 +10,6 @@ map <buffer> \\ :s/^\(\s*\)\/\//\1/<CR>
 map <buffer> <leader>q <Esc>:ScalaImport<cr>
 " Goto declaration
 map <buffer> <leader>gd <Esc>:ScalaSearch<cr>
+
+" Scala settings
+g:EclimScalaValidate=0
