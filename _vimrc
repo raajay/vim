@@ -335,6 +335,10 @@ let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain', '.main', '.gi
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 
+"vim-snippets settings
+let g:snips_author="Raajay Viswanathan"
+let g:snips_email="raajay.v@gmail.com"
+let g:snips_github="https://github.com/raajay"
 
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger="<c-j>"
