@@ -339,6 +339,7 @@ let g:rooter_use_lcd = 1
 let g:snips_author="Raajay Viswanathan"
 let g:snips_email="raajay.v@gmail.com"
 let g:snips_github="https://github.com/raajay"
+let g:pybin = substitute(system('which python'), '\n', '', '')
 
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger="<c-j>"
