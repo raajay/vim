@@ -27,3 +27,6 @@ let g:jedi#rename_command = "<leader>re"
 
 " Code navigation when using Jedi with YCM
 nnoremap <leader>gd <Esc>:YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Code formatting
+nnoremap <leader>fm <Esc>:
