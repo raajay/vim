@@ -325,6 +325,8 @@ endif
 
 " Eclim settings
 let g:EclimCompletionMethod='omnifunc'
+" Eclim - Scala settings
+let g:EclimScalaValidate=0
 
 " Delimitmate settings
 let delimitMate_expand_cr = 1
