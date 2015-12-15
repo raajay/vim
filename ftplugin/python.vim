@@ -35,4 +35,3 @@ map <buffer> <leader>gd <Esc>:PythonSearch -x declarations -i<cr>
 map <buffer> <leader>gi <Esc>:PythonSearch -x implementors -i<cr>
 " Find references
 map <buffer> <leader>fr <Esc>:PythonSearch -x references -i<cr>
->>>>>>> 4fb6b4b869b9ec3b487b4ecc4711b34ce633a612
