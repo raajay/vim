@@ -30,8 +30,8 @@ nnoremap <leader>jd <Esc>:YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Eclim mappings
 " Goto declaration
-map <buffer> <leader>gd <Esc>:PythonSearch -x declarations -i<cr>
+map <buffer> <leader>gd <Esc>:PythonSearch -x declarations<cr>
 " Goto implementation
-map <buffer> <leader>gi <Esc>:PythonSearch -x implementors -i<cr>
+map <buffer> <leader>gi <Esc>:PythonSearch -x implementors<cr>
 " Find references
-map <buffer> <leader>fr <Esc>:PythonSearch -x references -i<cr>
+map <buffer> <leader>fr <Esc>:PythonSearch -x references<cr>
