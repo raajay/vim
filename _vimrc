@@ -319,6 +319,7 @@ let g:ycm_disable_for_files_larger_than_kb = 0
 let g:ycm_server_log_level = 'debug'
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_path_to_python_interpreter=substitute(system('which python'), '\n', '', '')
+"let g:ycm_path_to_python_interpreter='/usr/bin/python'
 if(hostname() == "dove.cs.wisc.edu")
     let g:clang_library_path="/unsup/llvm-3.3/lib"
 endif
@@ -448,6 +449,11 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
     set grepformat=%f:%l:%c:%m
 endif
+
+" My custom settings
+
+" Number lines
+command -range=% -nargs=? Number :<line1>,<line2>s/^/\=printf("%d<args>", line(".") - line("'<") + 1)
 
 " Disable certain plugins
 let g:pathogen_disabled = []
