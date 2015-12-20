@@ -2,13 +2,13 @@
 
 ### Plugins
 
-1. [Pathogen][https://github.com/tpope/vim-pathogen.git]
-2. [command-t][https://git.wincent.com/command-t.git]
-3. [cscope][https://github.com/raajay/vim.git]
-4. [csv-vim][https://github.com/chrisbra/csv.vim.git]
-5. [delmitmate][https://github.com/Raimondi/delimitMate.git]
+1. [Pathogen](https://github.com/tpope/vim-pathogen.git)
+2. [command-t](https://git.wincent.com/command-t.git)
+3. [cscope](https://github.com/raajay/vim.git)
+4. [csv-vim](https://github.com/chrisbra/csv.vim.git)
+5. [delmitmate](https://github.com/Raimondi/delimitMate.git)
 6. [eclim][]
-7. [nerdtree][https://github.com/scrooloose/nerdtree.git]
+7. [nerdtree](https://github.com/scrooloose/nerdtree.git)
 8. [supertab]
 9. [surround]
 10. [switcher]
