@@ -47,6 +47,7 @@ set autochdir           " change to the directory of the current file
 set splitright          " the new windows opens on the right
 set splitbelow          " horizontal split below
 set termencoding=utf-8
+set printoptions=number:y
 
 " update the variables with environment variables
 let mapleader=$LEADER
