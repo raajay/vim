@@ -16,9 +16,9 @@ set pastetoggle=<F2>                " disable indenting while pasting code
 set hidden                          " allows us to move away from unsaved buffers
 set noshowmatch                     " do not jump to matching brace
 
-syntax on                           " Switch on syntax highlighting
 filetype plugin on                  " Detect filetype plugin and source them
 filetype indent on                  " Indent based on filetypes
+syntax on                           " Switch on syntax highlighting
 
 " setting the general tab setting to 4 spaces.
 set tabstop=4     " One tab is 4 spaces
