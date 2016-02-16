@@ -131,7 +131,7 @@ if has("gui_running")
         set guifont=Source\ Code\ Pro\ for\ Powerline
     elseif has("gui_macvim")
         set antialias
-        set guifont=Source\ Code\ Pro\ for\ Powerline
+        set guifont=Source\ Code\ Pro\ for\ Powerline:h13
     elseif has("gui_win32")
         set guifont=Consolas:h9:cANSI
     endif
