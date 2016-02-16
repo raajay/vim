@@ -89,10 +89,10 @@ if(g:my_colorscheme == 'solarized')
     let g:airline_theme=g:my_airlinetheme
     colorscheme solarized
 
-elseif(g:my_colorscheme == 'molokai')
+elseif(g:my_colorscheme == 'monokai')
 
-    let g:airline_theme=g:my_airlinetheme
-    colorscheme molokai
+    let g:airline_theme='molokai'
+    colorscheme monokai
 
 endif
 
