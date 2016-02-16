@@ -20,6 +20,7 @@ hi Normal       guifg=#F8F8F2 guibg=#272822 ctermfg=7 ctermbg=0
 " Main highlight groups
 hi Cursor       guibg=fg
 hi CursorLine   guibg=#3E3D32 gui=none ctermbg=9 cterm=none
+hi CursorColumn   guibg=#3E3D32 gui=none ctermbg=9 cterm=none
 hi ColorColumn  guibg=#3E3D32 gui=none ctermbg=9 cterm=none
 "hi CursorIM
 "hi CursorColumn
