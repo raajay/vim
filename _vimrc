@@ -65,11 +65,11 @@ if (g:my_background == '')
 endif
 
 if (g:my_colorscheme == '')
-    let g:my_colorscheme='monokai'
+    let g:my_colorscheme='solarized'
 endif
 
 if (g:my_airlinetheme == '')
-    let g:my_airlinetheme = 'molokai'
+    let g:my_airlinetheme = 'solarized'
 endif
 
 hi Normal ctermbg=None
