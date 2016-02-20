@@ -462,6 +462,9 @@ call add(g:pathogen_disabled, 'vim-session')
 call add(g:pathogen_disabled, 'vim-misc')
 call add(g:pathogen_disabled, 'vim-ctrlp')
 call add(g:pathogen_disabled, 'vim-bufferline')
+if has('mac')
+    call add(g:pathogen_disabled, 'vim-csexact')
+end
 " Super tab made defunct by You Complete Me
 call add(g:pathogen_disabled, 'supertab')
 "call add(g:pathogen_disabled, 'tagbar')
