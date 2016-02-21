@@ -84,3 +84,6 @@
 [submodule "bundle/vim-csexact"]
 	path = bundle/vim-csexact
 	url = https://github.com/KevinGoodsell/vim-csexact.git
+[submodule "bundle/vimtex"]
+	path = bundle/vimtex
+	url = https://github.com/lervag/vimtex.git
