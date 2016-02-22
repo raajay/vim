@@ -33,10 +33,10 @@ hi DiffText     guifg=bg guibg=#E6DB74 ctermfg=3 cterm=none
 hi ErrorMsg     guifg=#F92672 guibg=bg gui=none ctermfg=1 ctermbg=bg cterm=none
 hi VertSplit    guifg=#3B3A32 guibg=bg gui=none ctermfg=9 ctermbg=bg cterm=none
 hi Folded       guifg=#75715E guibg=bg gui=none ctermfg=8 ctermbg=bg cterm=none
-hi FoldColumn   guifg=#75715E guibg=#3E3D32 gui=none ctermfg=8 ctermbg=9 cterm=none
-hi SignColum    guifg=#75715E guibg=#3E3D32 gui=none ctermfg=8 ctermbg=9 cterm=none
+hi FoldColumn   guifg=#75715E guibg=#272822 gui=none ctermfg=8 ctermbg=9 cterm=none
+hi SignColum    guifg=#75715E guibg=#272822 gui=none ctermfg=8 ctermbg=9 cterm=none
 hi IncSearch    guifg=bg guibg=#E6DB74 gui=none ctermfg=bg ctermbg=3 cterm=none
-hi LineNr       guifg=#75715E guibg=#3E3D32 gui=none ctermfg=8 ctermbg=9 cterm=none
+hi LineNr       guifg=#75715E guibg=#272822 gui=none ctermfg=8 ctermbg=9 cterm=none
 hi MatchParen   guifg=fg guibg=bg gui=bold ctermfg=fg ctermbg=bg cterm=bold
 hi ModeMsg      gui=none cterm=none
 hi MoreMsg      guifg=#66D9EF gui=none ctermfg=4 cterm=none
