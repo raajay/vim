@@ -327,6 +327,7 @@ if(hostname() == "dove.cs.wisc.edu")
 endif
 let g:ycm_filetype_blacklist = {
             \}
+let g:ycm_cache_omnifunc=1
 
 " Eclim settings
 let g:EclimCompletionMethod='omnifunc'
@@ -385,11 +386,16 @@ if !exists('g:ycm_semantic_triggers')
     let g:ycm_semantic_triggers = {}
 endif
 let g:ycm_semantic_triggers.tex = [
-            \ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-            \ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-            \ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-            \ 're!\\(include(only)?|input){[^}]*'
+            \ 're!\\ref{',
+            \ 're!\\cite{',
+            \ 're!\\includegraphics{',
+            \ 're!\\include{',
+            \ 're!\\input{',
             \ ]
+"            \ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
+"            \ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
+"            \ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
+"            \ 're!\\(include(only)?|input){[^}]*'
 
 " Function to toggle the to-do list
 let g:open_todo = 0
@@ -481,11 +487,13 @@ call add(g:pathogen_disabled, 'vim-bufferline')
 " In iterm2, vim-csexact does not do a good job of changing colors
 if has('mac')
     call add(g:pathogen_disabled, 'vim-csexact')
+else
+    call add(g:pathogen_disabled, 'vim-csapprox')
 end
 " Super tab made defunct by You Complete Me
 call add(g:pathogen_disabled, 'supertab')
 call add(g:pathogen_disabled, 'latex-box')
-"call add(g:pathogen_disabled, 'tagbar')
+"call add(g:pathogen_disabled, 'delmitmate')
 "call add(g:pathogen_disabled, 'eclim')
 
 if has('win32') || has('win64')
