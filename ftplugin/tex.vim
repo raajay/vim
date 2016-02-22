@@ -1,4 +1,4 @@
-" indent 
+" indent
 setlocal tabstop=2
 setlocal shiftwidth=2
 setlocal expandtab
@@ -16,6 +16,6 @@ map <buffer> < :s/^\ \ //<CR>
 map <buffer> // :s/^/%/<CR>
 map <buffer> \\ :s/^\(\s*\)%/\1/<CR>
 
-set iskeyword+=_,;
+let g:tex_isk='48-57,a-z,A-Z,192-255,:,-'
 
 setlocal efm+=%E%f:%l:\ %m

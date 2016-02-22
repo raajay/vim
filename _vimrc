@@ -325,6 +325,8 @@ let g:ycm_path_to_python_interpreter=substitute(system('which python'), '\n', ''
 if(hostname() == "dove.cs.wisc.edu")
     let g:clang_library_path="/unsup/llvm-3.3/lib"
 endif
+let g:ycm_filetype_blacklist = {
+            \}
 
 " Eclim settings
 let g:EclimCompletionMethod='omnifunc'
@@ -377,6 +379,17 @@ nmap <Leader>gs <Esc>:Gstatus<CR>
 nmap <Leader>gc <Esc>:Gcommit -m<Space>""<left>
 nmap <Leader>gp <Esc>:Gpush<CR>
 nmap <Leader>gl <Esc>:Git log --oneline<CR>
+
+" vimtex settings
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = [
+            \ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
+            \ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
+            \ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
+            \ 're!\\(include(only)?|input){[^}]*'
+            \ ]
 
 " Function to toggle the to-do list
 let g:open_todo = 0
@@ -461,13 +474,17 @@ command -range=% -nargs=? Number :<line1>,<line2>s/^/\=printf("%d<args>", line("
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-session')
 call add(g:pathogen_disabled, 'vim-misc')
+" We shifted to Command-T plugin
 call add(g:pathogen_disabled, 'vim-ctrlp')
+" Made defunct by vim-airline
 call add(g:pathogen_disabled, 'vim-bufferline')
+" In iterm2, vim-csexact does not do a good job of changing colors
 if has('mac')
     call add(g:pathogen_disabled, 'vim-csexact')
 end
 " Super tab made defunct by You Complete Me
 call add(g:pathogen_disabled, 'supertab')
+call add(g:pathogen_disabled, 'latex-box')
 "call add(g:pathogen_disabled, 'tagbar')
 "call add(g:pathogen_disabled, 'eclim')
 
