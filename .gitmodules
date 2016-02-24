@@ -90,3 +90,6 @@
 [submodule "bundle/vim-csapprox"]
 	path = bundle/vim-csapprox
 	url = https://github.com/eudisd/vim-csapprox.git
+[submodule "bundle/vim-gundo"]
+	path = bundle/vim-gundo
+	url = https://github.com/vim-scripts/Gundo.git

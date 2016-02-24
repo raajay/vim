@@ -485,9 +485,12 @@ call add(g:pathogen_disabled, 'vim-ctrlp')
 " Made defunct by vim-airline
 call add(g:pathogen_disabled, 'vim-bufferline')
 " In iterm2, vim-csexact does not do a good job of changing colors
-if has('mac')
+if (has('mac') && g:my_colorscheme == 'monokai')
     call add(g:pathogen_disabled, 'vim-csexact')
+elseif (g:my_colorscheme == 'monokai')
+    call add(g:pathogen_disabled, 'vim-csapprox')
 else
+    call add(g:pathogen_disabled, 'vim-csexact')
     call add(g:pathogen_disabled, 'vim-csapprox')
 end
 " Super tab made defunct by You Complete Me
