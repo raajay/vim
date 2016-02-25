@@ -295,10 +295,10 @@ set winaltkeys=no
 
 " ctrlp settings
 if has('win32') || has('win64')
-    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
+    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
     set runtimepath^=~/vimfiles/bundle/vim-ctrlp
 else
-    set wildignore+=*/tmp/*,*.so,*.zip,*.swp
+    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc
     set runtimepath^=~/.vim/bundle/vim-ctrlp
 endif
 let g:ctrlp_custom_ignore = {'file': '\.class$\|\.exe$\|\.pyc$', 'dir': '\v[\/]\.(git|hg|svn|bzr)$'}
