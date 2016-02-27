@@ -83,15 +83,13 @@ endif
 set t_Co=256
 
 if(g:my_colorscheme == 'solarized')
-
     let g:solarized_termtrans=0
     let g:solarized_italic=1
     let g:airline_theme=g:my_airlinetheme
     colorscheme solarized
 
 elseif(g:my_colorscheme == 'monokai')
-
-    let g:airline_theme='molokai'
+    let g:airline_theme='airlineish'
     colorscheme monokai
 
 endif
