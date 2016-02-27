@@ -42,7 +42,7 @@ set cursorcolumn        " highlights the current column
 set lazyredraw          " to speed up the effects of highlighting row or column
 set laststatus=2        " to display the status line always
 set showtabline=2       " to show the tab line always
-set spell               " spell check, XXX where is the dictionary
+set nospell             " spell check, XXX where is the dictionary
 set autochdir           " change to the directory of the current file
 set splitright          " the new windows opens on the right
 set splitbelow          " horizontal split below
@@ -444,6 +444,8 @@ map <leader>rt4 <Esc>:%s/\t/\ \ /g<cr><c-o>
 map <leader>cc <Esc>:call ToggleBG()<cr>
 " reload file
 map <leader>re <Esc>:checktime<cr>
+" set spell
+map <leader>ss <Esc>:set spell<cr>
 
 " Take a backup of a file
 command! Bak :w %.bak
@@ -484,18 +486,22 @@ call add(g:pathogen_disabled, 'vim-misc')
 call add(g:pathogen_disabled, 'vim-ctrlp')
 " Made defunct by vim-airline
 call add(g:pathogen_disabled, 'vim-bufferline')
+
 " In iterm2, vim-csexact does not do a good job of changing colors
-if (has('mac') && g:my_colorscheme == 'monokai')
+"if (has('mac') && g:my_colorscheme == 'monokai')
+"    call add(g:pathogen_disabled, 'vim-csexact')
+"elseif (g:my_colorscheme == 'monokai')
+"    call add(g:pathogen_disabled, 'vim-csapprox')
+"else
     call add(g:pathogen_disabled, 'vim-csexact')
-elseif (g:my_colorscheme == 'monokai')
     call add(g:pathogen_disabled, 'vim-csapprox')
-else
-    call add(g:pathogen_disabled, 'vim-csexact')
-    call add(g:pathogen_disabled, 'vim-csapprox')
-end
+"end
+"
 " Super tab made defunct by You Complete Me
 call add(g:pathogen_disabled, 'supertab')
 call add(g:pathogen_disabled, 'latex-box')
+call add(g:pathogen_disabled, 'TagHighlight')
+call add(g:pathogen_disabled, 'vim-autotag')
 "call add(g:pathogen_disabled, 'delmitmate')
 "call add(g:pathogen_disabled, 'eclim')
 
