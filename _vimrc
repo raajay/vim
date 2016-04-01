@@ -182,6 +182,8 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.scala set ft=scala
     autocmd BufRead,BufNewFile _bash* set ft=sh
     autocmd BufRead,BufNewFile *.mutt set ft=muttrc
+
+    autocmd BufNewFile *.sh 0r $HOME/.vim/templates/sh.template
 endif
 
 " vim-airline settings
