@@ -54,6 +54,7 @@ let mapleader=$LEADER
 let g:my_background=$BACKGROUND
 let g:my_colorscheme=$COLORSCHEME
 let g:my_airlinetheme=$AIRLINE_THEME
+let g:my_spell=1
 
 " default values for configuration variables
 if (mapleader == '')
@@ -181,6 +182,8 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.scala set ft=scala
     autocmd BufRead,BufNewFile _bash* set ft=sh
     autocmd BufRead,BufNewFile *.mutt set ft=muttrc
+
+    autocmd BufNewFile *.sh 0r $HOME/.vim/templates/sh.template
 endif
 
 " vim-airline settings
@@ -419,6 +422,15 @@ function! ToggleBG()
     let g:airline_theme = g:my_airlinetheme
 endfunc
 
+function! ToggleSpell()
+    if g:my_spell==0
+        set nospell
+        let g:my_spell=1
+    else
+        set spell
+        let g:my_spell=0
+    endif
+endfunc
 
 map <leader>a <Esc>:call OpenToDo()<cr>
 " push vim to the background and give shell access
@@ -443,7 +455,7 @@ map <leader>cc <Esc>:call ToggleBG()<cr>
 " reload file
 map <leader>re <Esc>:checktime<cr>
 " set spell
-map <leader>ss <Esc>:set spell<cr>
+map <leader>ss <Esc>:call ToggleSpell()<cr>
 
 " Take a backup of a file
 command! Bak :w %.bak
