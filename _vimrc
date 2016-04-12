@@ -509,8 +509,12 @@ call add(g:pathogen_disabled, 'vim-bufferline')
 "
 " Super tab made defunct by You Complete Me
 call add(g:pathogen_disabled, 'supertab')
+
+" Deprecated in favor of vimtex
 call add(g:pathogen_disabled, 'latex-box')
+
 call add(g:pathogen_disabled, 'TagHighlight')
+
 call add(g:pathogen_disabled, 'vim-autotag')
 "call add(g:pathogen_disabled, 'delmitmate')
 "call add(g:pathogen_disabled, 'eclim')
