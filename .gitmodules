@@ -89,7 +89,7 @@
 	url = https://github.com/lervag/vimtex.git
 [submodule "bundle/vim-csapprox"]
 	path = bundle/vim-csapprox
-	url = https://github.com/eudisd/vim-csapprox.git
+	url = https://github.com/godlygeek/csapprox.git
 [submodule "bundle/vim-gundo"]
 	path = bundle/vim-gundo
 	url = https://github.com/vim-scripts/Gundo.git
