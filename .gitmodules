@@ -108,3 +108,6 @@
 [submodule "bundle/vim-shell"]
 	path = bundle/vim-shell
 	url = git@github.com:xolox/vim-shell.git
+[submodule "bundle/vim-geeknote"]
+	path = bundle/vim-geeknote
+	url = git@github.com:neilagabriel/vim-geeknote.git
