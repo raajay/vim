@@ -483,6 +483,14 @@ if executable('ag')
     set grepformat=%f:%l:%c:%m
 endif
 
+" Geeknote settings
+let g:GeeknoteFormat='markdown'
+let g:GeeknoteExplorerNodeClosed='+'
+let g:GeeknoteExplorerNodeOpened='-'
+
+" Vim session settings
+let g:session_autosave='no'
+
 " My custom settings
 
 " Number lines
@@ -490,34 +498,21 @@ command -range=% -nargs=? Number :<line1>,<line2>s/^/\=printf("%d<args>", line("
 
 " Disable certain plugins
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'vim-session')
-call add(g:pathogen_disabled, 'vim-misc')
-" We shifted to Command-T plugin
-call add(g:pathogen_disabled, 'vim-ctrlp')
-" Made defunct by vim-airline
-call add(g:pathogen_disabled, 'vim-bufferline')
+"call add(g:pathogen_disabled, 'vim-session')
+"call add(g:pathogen_disabled, 'vim-shell')
+"call add(g:pathogen_disabled, 'vim-misc')
 
-" In iterm2, vim-csexact does not do a good job of changing colors
-"if (has('mac') && g:my_colorscheme == 'monokai')
-"    call add(g:pathogen_disabled, 'vim-csexact')
-"elseif (g:my_colorscheme == 'monokai')
-"    call add(g:pathogen_disabled, 'vim-csapprox')
-"else
-    call add(g:pathogen_disabled, 'vim-csexact')
-    call add(g:pathogen_disabled, 'vim-csapprox')
-"end
-"
-" Super tab made defunct by You Complete Me
-call add(g:pathogen_disabled, 'supertab')
+call add(g:pathogen_disabled, 'vim-ctrlp') " replace by Command-T plugin
+call add(g:pathogen_disabled, 'vim-bufferline') " replaced by vim-airline
 
-" Deprecated in favor of vimtex
-call add(g:pathogen_disabled, 'latex-box')
+call add(g:pathogen_disabled, 'vim-csexact') " Replaced by our custom monokai
+call add(g:pathogen_disabled, 'vim-csapprox') " Replaced by our custom monokai
+call add(g:pathogen_disabled, 'supertab') " Replaced by YouCompleteMe
 
+call add(g:pathogen_disabled, 'latex-box') " Replaced by vimtex
 call add(g:pathogen_disabled, 'TagHighlight')
 
-call add(g:pathogen_disabled, 'vim-autotag')
-"call add(g:pathogen_disabled, 'delmitmate')
-"call add(g:pathogen_disabled, 'eclim')
+call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, replaced by YouCompleteMe
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
