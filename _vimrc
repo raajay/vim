@@ -148,6 +148,8 @@ endif
 map :W :wz<BS>
 map :Q :qz<BS>
 map :B :bz<BS>
+vnoremap ; :
+nnoremap ; :
 
 " mapping for common patters in insert mode
 imap TODO TODO(raajay)<Space>
