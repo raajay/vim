@@ -522,6 +522,16 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'vim-session')
 "call add(g:pathogen_disabled, 'vim-shell')
 "call add(g:pathogen_disabled, 'vim-misc')
+"call add(g:pathogen_disabled, 'vim-multiple-cursors')
+"call add(g:pathogen_disabled, 'vim-snippets')
+"call add(g:pathogen_disabled, 'vimtex')
+"call add(g:pathogen_disabled, 'command-t')
+"call add(g:pathogen_disabled, 'vim-ag')
+"call add(g:pathogen_disabled, 'vim-rooter')
+"call add(g:pathogen_disabled, 'vim-repeat')
+"call add(g:pathogen_disabled, 'vim-scala')
+"call add(g:pathogen_disabled, 'vim-gundo')
+"call add(g:pathogen_disabled, 'vim-gitgutter')
 
 call add(g:pathogen_disabled, 'vim-ctrlp') " replace by Command-T plugin
 call add(g:pathogen_disabled, 'vim-bufferline') " replaced by vim-airline
