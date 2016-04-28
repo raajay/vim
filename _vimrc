@@ -504,14 +504,11 @@ let g:pathogen_disabled = []
 
 call add(g:pathogen_disabled, 'vim-ctrlp') " replace by Command-T plugin
 call add(g:pathogen_disabled, 'vim-bufferline') " replaced by vim-airline
-
 call add(g:pathogen_disabled, 'vim-csexact') " Replaced by our custom monokai
 call add(g:pathogen_disabled, 'vim-csapprox') " Replaced by our custom monokai
 call add(g:pathogen_disabled, 'supertab') " Replaced by YouCompleteMe
-
 call add(g:pathogen_disabled, 'latex-box') " Replaced by vimtex
 call add(g:pathogen_disabled, 'TagHighlight')
-
 call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, replaced by YouCompleteMe
 
 if has('win32') || has('win64')
