@@ -150,6 +150,8 @@ map :Q :qz<BS>
 map :B :bz<BS>
 vnoremap ; :
 nnoremap ; :
+vnoremap <Leader>w :make!<cr>
+nnoremap <Leader>w :make!<cr>
 
 " mapping for common patters in insert mode
 imap TODO TODO(raajay)<Space>
@@ -388,8 +390,12 @@ nmap <Leader>gl <Esc>:Git log --oneline<CR>
 if !exists('g:ycm_semantic_triggers')
     let g:ycm_semantic_triggers = {}
 endif
+
 let g:ycm_semantic_triggers.tex = [
             \ 're!\\ref{',
+            \ 're!\\xref{',
+            \ 're!\\Cref{',
+            \ 're!\\cref{',
             \ 're!\\cite{',
             \ 're!\\includegraphics{',
             \ 're!\\include{',
