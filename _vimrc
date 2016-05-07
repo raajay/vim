@@ -432,10 +432,10 @@ endfunc
 
 function! ToggleSpell()
     if g:my_spell==0
-        set nospell
+        setlocal nospell
         let g:my_spell=1
     else
-        set spell
+        setlocal spell spelllang=en_us
         let g:my_spell=0
     endif
 endfunc
