@@ -1,6 +1,6 @@
 set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
-set relativenumber                " relative line numbers are awesome.
+set relativenumber                  " relative line numbers are awesome.
                                     " we will use it when needed with ,rn map
 
 set numberwidth=5                   " the number of columns for line numbers
@@ -155,7 +155,6 @@ nnoremap <Leader>w :make!<cr>
 
 " mapping for common patters in insert mode
 imap TODO TODO(raajay)<Space>
-imap XXX XXX(raajay)<Space>
 
 " sudo write
 cnoremap sudow w !sudo tee % > /dev/null
@@ -457,7 +456,7 @@ map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 " replace tabs with 4 spaces
 map <leader>rt4 <Esc>:%s/\t/\ \ \ \ /g<cr><c-o>
 " replace tabs with 2 spaces
-map <leader>rt4 <Esc>:%s/\t/\ \ /g<cr><c-o>
+map <leader>rt2 <Esc>:%s/\t/\ \ /g<cr><c-o>
 " toggle background
 map <leader>cc <Esc>:call ToggleBG()<cr>
 " reload file
