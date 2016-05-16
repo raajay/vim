@@ -107,7 +107,7 @@
 	url = https://github.com/rcabralc/monokai-airline.vim.git
 [submodule "bundle/vim-shell"]
 	path = bundle/vim-shell
-	url = git@github.com:xolox/vim-shell.git
+	url = https://github.com/xolox/vim-shell.git
 [submodule "bundle/vim-geeknote"]
 	path = bundle/vim-geeknote
 	url = https://github.com/neilagabriel/vim-geeknote.git
