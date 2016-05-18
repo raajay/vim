@@ -378,6 +378,8 @@ nmap <Leader>hr <Plug>GitGutterRevertHunk
 nmap <Leader>hd <Plug>GitGutterPreviewHunk
 nmap <Leader>hh <Plug>GitGutterNextHunk
 nmap <Leader>hp <Plug>GitGutterPrevHunk
+let g:gitgutter_realtime=0
+let g:gitgutter_eager=0
 
 " vim-fugitive settings
 nmap <Leader>gs <Esc>:Gstatus<CR>
@@ -517,6 +519,39 @@ call add(g:pathogen_disabled, 'supertab') " Replaced by YouCompleteMe
 call add(g:pathogen_disabled, 'latex-box') " Replaced by vimtex
 call add(g:pathogen_disabled, 'TagHighlight')
 call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, replaced by YouCompleteMe
+
+" Testing speeds
+"call add(g:pathogen_disabled, 'command-t')
+"call add(g:pathogen_disabled, 'cscope')
+"call add(g:pathogen_disabled, 'csv-vim')
+"call add(g:pathogen_disabled, 'delmitmate')
+"call add(g:pathogen_disabled, 'eclim')
+"call add(g:pathogen_disabled, 'latex-box')
+"call add(g:pathogen_disabled, 'nerdtree')
+"call add(g:pathogen_disabled, 'supertab')
+"call add(g:pathogen_disabled, 'surround')
+"call add(g:pathogen_disabled, 'switcher')
+"call add(g:pathogen_disabled, 'tabular')
+"call add(g:pathogen_disabled, 'tagbar')
+"call add(g:pathogen_disabled, 'tasklist')
+"call add(g:pathogen_disabled, 'tfs')
+"call add(g:pathogen_disabled, 'ultisnips')
+"call add(g:pathogen_disabled, 'vim-ag')
+"call add(g:pathogen_disabled, 'vim-airline')
+"call add(g:pathogen_disabled, 'vim-airlineish')
+"call add(g:pathogen_disabled, 'vim-autotag')
+"call add(g:pathogen_disabled, 'vim-bufferline')
+"call add(g:pathogen_disabled, 'vim-csapprox')
+"call add(g:pathogen_disabled, 'vim-csexact')
+"call add(g:pathogen_disabled, 'vim-ctrlp')
+"call add(g:pathogen_disabled, 'vim-dispatch')
+"call add(g:pathogen_disabled, 'vim-fugitive')
+"call add(g:pathogen_disabled, 'vim-geeknote')
+"call add(g:pathogen_disabled, 'vim-gitgutter')
+"call add(g:pathogen_disabled, 'vim-gundo')
+"call add(g:pathogen_disabled, 'vim-misc')
+"call add(g:pathogen_disabled, 'vimtex')
+"call add(g:pathogen_disabled, 'YouCompleteMe')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
