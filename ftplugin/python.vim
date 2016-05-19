@@ -28,13 +28,15 @@ let g:jedi#rename_command = "<leader>re"
 map <buffer> <leader>ds <Esc>O"""<Esc>yypkA
 
 " Code navigation when using Jedi with YCM
-nnoremap <leader>jd <Esc>:YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gd <Esc>:YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>fr <Esc>:YcmCompleter GoToReferences<CR>
+nnoremap <leader>cs <Esc>:YcmCompleter GetDoc<CR>
 
 " Eclim mappings
 "
 " Goto declaration
-map <buffer> <leader>gd <Esc>:PythonSearch -x declarations<cr>
+"map <buffer> <leader>gd <Esc>:PythonSearch -x declarations<cr>
 " Goto implementation
-map <buffer> <leader>gi <Esc>:PythonSearch -x implementors<cr>
+"map <buffer> <leader>gi <Esc>:PythonSearch -x implementors<cr>
 " Find references
-map <buffer> <leader>fr <Esc>:PythonSearch -x references<cr>
+"map <buffer> <leader>fr <Esc>:PythonSearch -x references<cr>
