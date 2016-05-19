@@ -150,10 +150,19 @@ map :Q :qz<BS>
 map :B :bz<BS>
 vnoremap ; :
 nnoremap ; :
+vnoremap ;q :q<cr>
+nnoremap ;q :q<cr>
+vnoremap ;w :w<cr>
+nnoremap ;w :w<cr>
 vnoremap <Leader>w :make!<cr>
 nnoremap <Leader>w :make!<cr>
 
-" mapping for common patters in insert mode
+" auto-save
+if has("autocmd")
+    au BufLeave,FocusLost * :update
+endif
+
+" mapping for common patterns in insert mode
 imap TODO TODO(raajay)<Space>
 
 " sudo write
