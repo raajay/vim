@@ -6,8 +6,8 @@
 # Pull all the required submodules
 git submodule update --init --recursive
 
-# Install YouCompleteme 
-cd ./bundle/YouCompleteMe/; python install.py; cd ../../
+# Install YouCompleteme
+cd ./bundle/YouCompleteMe/; python install.py --clang-completer; cd ../../
 
 # Install Command-t
 cd ./bundle/command-t/ruby/command-t/; ruby extconf.rb; make; cd ../../../..
