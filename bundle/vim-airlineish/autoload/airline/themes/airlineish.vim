@@ -49,6 +49,6 @@ let g:airline#themes#airlineish#palette.tabline = {
       \ 'airline_tab':     [ '#ffffff' , '#5f00af' ,  15 , 55  , '' ],
       \ 'airline_tabsel':  [ '#ffffff' , '#875fd7' ,  15 , 98  , '' ],
       \ 'airline_tabtype': [ '#ffffff' , '#875fd7' ,  15 , 98  , '' ],
-      \ 'airline_tabfill': [ '#ffffff' , '#121212' ,  15 , 233 , '' ],
+      \ 'airline_tabfill': [ '#ffffff' , '#303030' ,  15 , 236 , '' ],
       \ 'airline_tabmod':  [ '#ffffff' , '#ff5f5f' ,  15 , 33  , '' ]
       \ }
