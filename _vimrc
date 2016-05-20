@@ -148,8 +148,8 @@ endif
 map :W :wz<BS>
 map :Q :qz<BS>
 map :B :bz<BS>
-vnoremap ; :
-nnoremap ; :
+vnoremap ; <Esc>:
+nnoremap ; <Esc>:
 vnoremap ;q :q<cr>
 nnoremap ;q :q<cr>
 vnoremap ;w :w<cr>
