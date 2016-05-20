@@ -30,7 +30,7 @@ map <buffer> <leader>ds <Esc>O"""<Esc>yypkA
 " Code navigation when using Jedi with YCM
 nnoremap <leader>gd <Esc>:YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>fr <Esc>:YcmCompleter GoToReferences<CR>
-nnoremap <leader>cs <Esc>:YcmCompleter GetDoc<CR>
+nnoremap <leader>sd <Esc>:YcmCompleter GetDoc<CR>
 
 " Eclim mappings
 "
