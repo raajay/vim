@@ -194,7 +194,10 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.scala set ft=scala
     autocmd BufRead,BufNewFile _bash* set ft=sh
     autocmd BufRead,BufNewFile *.mutt set ft=muttrc
+endif
 
+" auto header insert
+if has("autocmd")
     autocmd BufNewFile *.sh 0r $HOME/.vim/templates/sh.template
 endif
 
