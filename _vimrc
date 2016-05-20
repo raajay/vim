@@ -204,7 +204,6 @@ endif
 " vim-airline settings
 let g:airline_section_b = '%{pathshorten(getcwd())."  ".airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 let g:airline_section_c = '%{pathshorten(expand("%:p"))}' " full file name
-"      \ [ 'x', 'y', 'z', 'warning' ]
 let g:airline#extensions#default#layout = [
       \ [ 'a', 'b', 'c' ],
       \ [ 'x', 'z', 'warning' ]
