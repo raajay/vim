@@ -15,6 +15,7 @@ hi Normal ctermfg=231 ctermbg=233 cterm=NONE guifg=#f8f8f2 guibg=#272822 gui=NON
 hi NonText ctermfg=59 ctermbg=234 cterm=NONE guifg=#49483e guibg=#31322c gui=NONE
 hi LineNr ctermfg=102 ctermbg=232 cterm=NONE guifg=#90908a guibg=#202020 gui=NONE
 
+hi EclimDebugLine ctermfg=154 ctermbg=233 cterm=NONE guifg=#afff00 guibg=#272822 gui=NONE
 
 hi SpecialKey ctermfg=59 ctermbg=233 cterm=NONE guifg=#49483e guibg=#3c3d37 gui=NONE
 hi CursorLine ctermfg=NONE ctermbg=234 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE

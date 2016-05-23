@@ -53,7 +53,7 @@ map <buffer> <leader>ig <Esc>:JavaGet<cr>
 map <buffer> <leader>el <Esc>:ProjectProblems<cr>
 
 
-hi EclimDebugLine ctermfg=NONE ctermbg=65 cterm=NONE guifg=NONE guibg=#5f873f gui=NONE
+" Java debug configurations
 let g:EclimJavaDebugLineHighlight='EclimDebugLine'
 let g:EclimJavaDebugLineSignText='>'
 let g:EclimJavaDebugStatusWinOrientation='vertical'
