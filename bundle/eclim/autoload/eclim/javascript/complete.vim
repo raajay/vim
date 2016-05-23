@@ -1,11 +1,11 @@
 " Author:  Eric Van Dewoestine
 "
 " Description: {{{
-"   see http://eclim.org/vim/java/classpath.html
+"   see http://eclim.org/vim/javascript/complete.html
 "
 " License:
 "
-" Copyright (C) 2005 - 2013  Eric Van Dewoestine
+" Copyright (C) 2005 - 2009  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -22,24 +22,16 @@
 "
 " }}}
 
-" load any xml related functionality
-runtime! ftplugin/xml.vim
-" pydev doesn't really parse the .pydevproject all that well, so avoid
-" additional indentation, etc. like they do by default.
-"runtime! indent/xml.vim
-setlocal indentexpr=
-
-augroup eclim_xml
-  autocmd! BufWritePost <buffer>
-  autocmd BufWritePost <buffer> call eclim#project#util#ProjectUpdate()
-augroup END
-
-" Command Declarations {{{
-if !exists(":NewSrcEntry")
-  command -nargs=1 -buffer
-    \ -complete=customlist,eclim#project#util#CommandCompleteAbsoluteOrProjectRelativeDir
-    \ NewSrcEntry call eclim#python#project#NewPathEntry('<args>')
-endif
+" Script Varables {{{
+  let s:complete_command =
+    \ '-command javascript_complete ' .
+    \ '-p "<project>" -f "<file>" -o <offset> -e <encoding>'
 " }}}
+
+" CodeComplete(findstart, base) {{{
+" Handles code completion.
+function! eclim#javascript#complete#CodeComplete(findstart, base)
+  return eclim#lang#CodeComplete(s:complete_command, a:findstart, a:base)
+endfunction " }}}
 
 " vim:ft=vim:fdm=marker

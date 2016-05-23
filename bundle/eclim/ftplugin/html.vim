@@ -2,7 +2,7 @@
 "
 " License: {{{
 "
-" Copyright (C) 2012 - 2014  Eric Van Dewoestine
+" Copyright (C) 2005 - 2014  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -19,23 +19,35 @@
 "
 " }}}
 
+" Options {{{
+
+exec 'setlocal ' . g:EclimCompletionMethod . '=eclim#html#complete#CodeComplete'
+
+call eclim#lang#DisableSyntasticIfValidationIsEnabled('html')
+
+" }}}
+
+" Autocmds {{{
+
+if g:EclimHtmlValidate
+  augroup eclim_html_validate
+    autocmd! BufWritePost <buffer>
+    autocmd BufWritePost <buffer> call eclim#html#validate#Validate(1)
+  augroup END
+endif
+
+" }}}
+
 " Command Declarations {{{
 
-if !exists(":PythonInterpreter")
-  command! -nargs=?
-    \ -complete=customlist,eclim#python#project#CommandCompletePathOrInterpreterName
-    \ PythonInterpreter
-    \ :call eclim#python#project#ProjectInterpreter('<args>')
-  command! -nargs=0 PythonInterpreterList
-    \ :call eclim#python#project#InterpreterList()
-  command! -nargs=*
-    \ -complete=customlist,eclim#python#project#CommandCompleteInterpreterAdd
-    \ PythonInterpreterAdd
-    \ :call eclim#python#project#InterpreterAdd('<args>')
-  command! -nargs=1
-    \ -complete=customlist,eclim#python#project#CommandCompleteInterpreterPath
-    \ PythonInterpreterRemove
-    \ :call eclim#python#project#InterpreterRemove('<args>')
+if !exists(":Validate")
+  command -nargs=0 -buffer Validate
+    \ :call eclim#lang#Validate('html', 0)
+endif
+
+if !exists(":BrowserOpen")
+  command -nargs=? -complete=file -buffer BrowserOpen
+    \ :call eclim#html#util#OpenInBrowser(<q-args>)
 endif
 
 " }}}

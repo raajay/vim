@@ -1,8 +1,10 @@
 " Author:  Eric Van Dewoestine
 "
-" License: {{{
+" Description: {{{
 "
-" Copyright (C) 2013  Eric Van Dewoestine
+" License:
+"
+" Copyright (C) 2005 - 2010  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -18,8 +20,18 @@
 " along with this program.  If not, see <http://www.gnu.org/licenses/>.
 "
 " }}}
-"
-autocmd BufRead .pydevproject
-  \ call EclimSetXmlFileType({'pydev_project': 'pydevproject'})
+
+if !exists('g:tlist_wsdl_settings')
+  let g:tlist_wsdl_settings = {
+      \ 'lang': 'wsdl',
+      \ 'parse': 'eclim#taglisttoo#lang#wsdl#Parse',
+      \ 'tags': {
+        \ 't': 'types',
+        \ 'm': 'messages',
+        \ 'p': 'ports',
+        \ 'b': 'bindings'
+      \ }
+    \ }
+endif
 
 " vim:ft=vim:fdm=marker

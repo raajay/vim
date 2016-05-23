@@ -1,8 +1,11 @@
 " Author:  Eric Van Dewoestine
 "
-" License: {{{
+" Description: {{{
+"   see http://eclim.org/vim/javascript/index.html
 "
-" Copyright (C) 2013  Eric Van Dewoestine
+" License:
+"
+" Copyright (C) 2005 - 2013  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -19,6 +22,28 @@
 "
 " }}}
 
-runtime! syntax/xml.vim
+" Options {{{
+
+" tern has better auto completion than eclipse
+if &omnifunc != 'tern#Complete'
+  exec 'setlocal ' . g:EclimCompletionMethod . '=eclim#javascript#complete#CodeComplete'
+endif
+
+" }}}
+
+" Autocmds {{{
+
+augroup eclim_javascript
+  autocmd! BufWritePost <buffer>
+  autocmd BufWritePost <buffer> call eclim#javascript#util#UpdateSrcFile(0)
+augroup END
+
+" }}}
+
+" Command Declarations {{{
+
+command! -nargs=0 -buffer Validate :call eclim#javascript#util#UpdateSrcFile(1)
+
+" }}}
 
 " vim:ft=vim:fdm=marker

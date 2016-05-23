@@ -1,8 +1,10 @@
 " Author:  Eric Van Dewoestine
 "
-" License: {{{
+" Description: {{{
 "
-" Copyright (C) 2011 - 2014  Eric Van Dewoestine
+" License:
+"
+" Copyright (C) 2005 - 2013  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -21,32 +23,7 @@
 
 " Options {{{
 
-exec 'setlocal ' . g:EclimCompletionMethod . '=eclim#scala#complete#CodeComplete'
-
-" }}}
-
-" Autocmds {{{
-
-augroup eclim_scala
-  autocmd! BufWritePost <buffer>
-  autocmd BufWritePost <buffer> call eclim#lang#UpdateSrcFile('scala')
-augroup END
-
-" }}}
-
-" Command Declarations {{{
-
-command! -nargs=0 -buffer Validate :call eclim#lang#UpdateSrcFile('scala', 1)
-
-if !exists(":ScalaSearch")
-  command -buffer -nargs=0
-    \ -complete=customlist,eclim#scala#search#CommandCompleteSearch
-    \ ScalaSearch :call eclim#scala#search#Search('<args>')
-endif
-
-if !exists(":ScalaImport")
-  command -buffer -nargs=0 ScalaImport :call eclim#scala#import#Import()
-endif
+exec 'setlocal ' . g:EclimCompletionMethod . '=eclim#xml#complete#CodeComplete'
 
 " }}}
 
