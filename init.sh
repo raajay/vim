@@ -10,4 +10,4 @@ git submodule update --init --recursive
 cd ./bundle/YouCompleteMe/; python install.py --clang-completer; cd ../../
 
 # Install Command-t
-cd ./bundle/command-t/ruby/command-t/; ruby extconf.rb; make; cd ../../../..
+cd ./bundle/command-t/ruby/command-t/; ruby extconf.rb; make clean; make; cd ../../../..
