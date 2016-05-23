@@ -27,6 +27,8 @@ flags = [
 '-Wall',
 '-Wextra',
 '-Werror',
+#'-Wno-sign-compare', # inserted by raajay
+#'-Wno-unused-but-set-variable', # inserted by raajay
 '-fexceptions',
 '-DNDEBUG',
 # THIS IS IMPORTANT! Without a "-std=<something>" flag, clang won't know which
@@ -45,13 +47,21 @@ flags = [
 '-isystem',
 '/usr/include',
 '-isystem',
-'.',
-'-isystem',
 '/usr/local/include',
 '-isystem',
 '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1',
 '-isystem',
 '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
+'-isystem',
+'~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/llvm/include',
+'-isystem',
+'~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/BoostParts',
+'-I',
+'~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/ClangCompleter',
+'-I',
+'.',
+'-I',
+'/usr/local/personal/tensorflow',
 ]
 
 

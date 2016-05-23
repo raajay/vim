@@ -15,3 +15,11 @@ map <buffer> < :s/^\ \ //<CR>
 " commenting
 map <buffer> // :s/^/\/\//<CR>
 map <buffer> \\ :s/^\(\s*\)\/\//\1/<CR>
+
+" Code navigation with clang-complete (YCM)
+nnoremap <leader>gi <Esc>:YcmCompleter GoToInclude<CR>
+nnoremap <leader>gd <Esc>:YcmCompleter GoToDefinition<CR>
+nnoremap <leader>ge <Esc>:YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gt <Esc>:YcmCompleter GetType<CR>
+nnoremap <leader>gp <Esc>:YcmCompleter GetParent<CR>
+nnoremap <leader>sd <Esc>:YcmCompleter GetDoc<CR>

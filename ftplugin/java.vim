@@ -52,14 +52,24 @@ map <buffer> <leader>ig <Esc>:JavaGet<cr>
 " List problems
 map <buffer> <leader>el <Esc>:ProjectProblems<cr>
 
+
+hi EclimDebugLine ctermfg=NONE ctermbg=65 cterm=NONE guifg=NONE guibg=#5f873f gui=NONE
+let g:EclimJavaDebugLineHighlight='EclimDebugLine'
+let g:EclimJavaDebugLineSignText='>'
+let g:EclimJavaDebugStatusWinOrientation='vertical'
+let g:EclimJavaDebugStatusWinWidth=80
+let g:EclimJavaDebugStatusWinHeight=10
+
 " Debug Start
-map <buffer> <leader>dd <Esc>:JavaDebugStart localhost 5005<cr>
+map <buffer> <leader>dd <Esc>:JavaDebugStart localhost 1044<cr>
 " Debug status
 map <buffer> <leader>ds <Esc>:JavaDebugStatus<cr>
+" Debug stop
+map <buffer> <leader>dS <Esc>:JavaDebugStop<cr>
 
 " Breakpoint toggle
 map <buffer> <leader>bt <Esc>:JavaDebugBreakpointToggle<cr>
-" Breakpoint delete
+" Breakpoint delete / add as opposed to enable / disable
 map <buffer> <leader>bd <Esc>:JavaDebugBreakpointToggle!<cr>
 " Breakpoint list
 map <buffer> <leader>bl <Esc>:JavaDebugBreakpointsList<cr>
