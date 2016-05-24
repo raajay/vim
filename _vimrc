@@ -51,7 +51,7 @@ set printoptions=number:y
 
 " Vim Folding
 set foldmethod=marker
-set foldtext
+set foldtext=foldtext()
 
 " update the variables with environment variables
 let mapleader=$LEADER
