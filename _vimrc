@@ -194,6 +194,7 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.scala set ft=scala
     autocmd BufRead,BufNewFile _bash* set ft=sh
     autocmd BufRead,BufNewFile *.mutt set ft=muttrc
+    autocmd BufRead,BufNewFile *conf set ft=conf
 endif
 
 " auto header insert
