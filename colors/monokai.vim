@@ -15,9 +15,6 @@ hi Normal ctermfg=231 ctermbg=233 cterm=NONE guifg=#f8f8f2 guibg=#272822 gui=NON
 hi Folded ctermfg=58 ctermbg=233 cterm=NONE guifg=#5f5f00 guibg=#272822 gui=NONE
 hi NonText ctermfg=59 ctermbg=234 cterm=NONE guifg=#49483e guibg=#31322c gui=NONE
 hi LineNr ctermfg=102 ctermbg=232 cterm=NONE guifg=#90908a guibg=#202020 gui=NONE
-
-hi EclimDebugLine ctermfg=154 ctermbg=233 cterm=NONE guifg=#afff00 guibg=#272822 gui=NONE
-
 hi SpecialKey ctermfg=59 ctermbg=233 cterm=NONE guifg=#49483e guibg=#3c3d37 gui=NONE
 hi CursorLine ctermfg=NONE ctermbg=234 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
 hi CursorColumn ctermfg=NONE ctermbg=234 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
@@ -123,3 +120,6 @@ hi cssClassName ctermfg=148 ctermbg=NONE cterm=NONE guifg=#a6e22e guibg=NONE gui
 hi cssValueLength ctermfg=141 ctermbg=NONE cterm=NONE guifg=#ae81ff guibg=NONE gui=NONE
 hi cssCommonAttr ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=NONE
 hi cssBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+
+"hi EclimDebugLine ctermfg=234 ctermbg=101 cterm=NONE guifg=#afff00 guibg=#272822 gui=NONE
+hi EclimDebugLine ctermfg=46 ctermbg=232 cterm=NONE guifg=#afff00 guibg=#272822 gui=NONE
