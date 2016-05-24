@@ -147,3 +147,5 @@ hi javaDocTags ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=
 " hi javaFuncDef
 " hi javaBraces
 ""}}}
+" Fugitive Git Highlighting"{{{
+""}}}
