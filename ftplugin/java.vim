@@ -22,6 +22,12 @@ map <buffer> <F5> :!javac "%:p"<CR> :!java "%:r"<CR>
 set omnifunc=javacomplete#Complete
 set completefunc=javacomplete#CompleteParamsInfo
 
+" Syntax
+"let java_highlight_functions=0
+"let java_highlight_all=0
+"let java_highlight_java_lang=0
+"let java_highlight_java=0
+
 " Goto declaration
 map <buffer> <leader>gd <Esc>:JavaSearch -x declarations -i<cr>
 " Goto implementation

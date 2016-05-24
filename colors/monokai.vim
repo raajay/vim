@@ -126,8 +126,24 @@ hi EclimDebugLine ctermfg=46 ctermbg=232 cterm=NONE guifg=#afff00 guibg=#272822 
 
 " JavaDoc Highlighting"{{{
 hi javaCommentStar ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
+hi javaCommentTitle ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
+hi javaDocComment ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
 hi javaDocParam ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
 hi javaDocTags ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
-hi javaDocComment ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
-hi javaCommentTitle ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
+""}}}
+" Java Highlighting"{{{
+" hi javaType
+" hi javaTypedef
+" hi javaScopeDecl
+" hi javaStorageClass
+" hi javaMethodDecl
+" hi javaLineComment
+" hi javaString
+" hi javaOperator
+" hi javaExceptions
+" hi javaConditional
+" hi javaStatement
+" hi javaExternal
+" hi javaFuncDef
+" hi javaBraces
 ""}}}
