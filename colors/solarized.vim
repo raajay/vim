@@ -806,6 +806,11 @@ exe "hi! rubyDefine"     . s:fg_base1  .s:bg_back   .s:fmt_bold
 "hi! link rubyClassVariable     Identifier
 "hi! link rubyConstant          Type
 "}}}
+" eclim debug highlighting"{{{
+" ---------------------------------------------------------------------
+"  For use with eclim
+exe "hi! EclimDebugLine" .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
+"}}}
 " haskell syntax highlighting"{{{
 " ---------------------------------------------------------------------
 " For use with syntax/haskell.vim : Haskell Syntax File

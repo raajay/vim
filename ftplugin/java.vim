@@ -55,7 +55,7 @@ map <buffer> <leader>el <Esc>:ProjectProblems<cr>
 
 " Java debug configurations
 let g:EclimJavaDebugLineHighlight='EclimDebugLine'
-let g:EclimJavaDebugLineSignText='>'
+let g:EclimJavaDebugLineSignText='@'
 let g:EclimJavaDebugStatusWinOrientation='vertical'
 let g:EclimJavaDebugStatusWinWidth=80
 let g:EclimJavaDebugStatusWinHeight=10
