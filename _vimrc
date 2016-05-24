@@ -403,6 +403,16 @@ nmap <Leader>gl <Esc>:Git log --oneline<CR>
 if !exists('g:ycm_semantic_triggers')
     let g:ycm_semantic_triggers = {}
 endif
+" set fillchars " set based on advice from vimtex plugin
+"set foldcolumn=2
+"let g:vimtex_fold_enabled=1
+let g:vimtex_fold_manual=1
+let g:vimtex_fold_comments=1
+let g:vimtex_fold_preamble=0
+let g:vimtex_fold_sections = [
+            \ "section",
+            \ "subsection",
+            \ ]
 
 let g:ycm_semantic_triggers.tex = [
             \ 're!\\ref{',
