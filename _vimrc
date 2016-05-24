@@ -49,6 +49,9 @@ set splitbelow          " horizontal split below
 set termencoding=utf-8
 set printoptions=number:y
 
+" Vim Folding
+set foldmethod=marker
+
 " update the variables with environment variables
 let mapleader=$LEADER
 let g:my_background=$BACKGROUND
