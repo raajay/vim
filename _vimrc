@@ -582,7 +582,7 @@ call add(g:pathogen_disabled, 'latex-box') " Replaced by vimtex
 call add(g:pathogen_disabled, 'TagHighlight')
 call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, replaced by YouCompleteMe
 
-" Testing speeds
+" Testing speeds"{{{
 "call add(g:pathogen_disabled, 'command-t')
 "call add(g:pathogen_disabled, 'cscope')
 "call add(g:pathogen_disabled, 'csv-vim')
@@ -600,6 +600,7 @@ call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, r
 "call add(g:pathogen_disabled, 'ultisnips')
 "call add(g:pathogen_disabled, 'vim-ag')
 "call add(g:pathogen_disabled, 'vim-airline')
+"call add(g:pathogen_disabled, 'vim-airline-themes')
 "call add(g:pathogen_disabled, 'vim-airlineish')
 "call add(g:pathogen_disabled, 'vim-autotag')
 "call add(g:pathogen_disabled, 'vim-bufferline')
@@ -612,8 +613,18 @@ call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, r
 "call add(g:pathogen_disabled, 'vim-gitgutter')
 "call add(g:pathogen_disabled, 'vim-gundo')
 "call add(g:pathogen_disabled, 'vim-misc')
+"call add(g:pathogen_disabled, 'vim-multiple-cursors')
+"call add(g:pathogen_disabled, 'vim-nertdtree-tabs')
+"call add(g:pathogen_disabled, 'vim-repeat')
+"call add(g:pathogen_disabled, 'vim-rooter')
+"call add(g:pathogen_disabled, 'vim-scala')
+"call add(g:pathogen_disabled, 'vim-session')
+"call add(g:pathogen_disabled, 'vim-shell')
+"call add(g:pathogen_disabled, 'vim-snippets')
 "call add(g:pathogen_disabled, 'vimtex')
+"call add(g:pathogen_disabled, 'TagHighlight')
 "call add(g:pathogen_disabled, 'YouCompleteMe')
+"call add(g:pathogen_disabled, 'YouCompleteMe-Windows')"}}}
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
