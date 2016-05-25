@@ -151,10 +151,10 @@ hi Folded ctermfg=95 ctermbg=NONE cterm=NONE guifg=#5f5f00 guibg=#272822 gui=NON
 ""}}}
 " JavaDoc Highlighting"{{{
 hi javaCommentStar ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
-hi javaCommentTitle ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
+hi javaCommentTitle ctermfg=186 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
 hi javaDocComment ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
-hi javaDocParam ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
-hi javaDocTags ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
+hi javaDocParam ctermfg=148 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
+hi javaDocTags ctermfg=64 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
 ""}}}
 " Java Highlighting"{{{
 " hi javaType
