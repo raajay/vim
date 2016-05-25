@@ -243,7 +243,7 @@ let g:airline_section_b = '%{pathshorten(getcwd())."  ".airline#util#wrap(airlin
 let g:airline_section_c = '%{pathshorten(expand("%:p"))}' " full file name
 let g:airline#extensions#default#layout = [
       \ [ 'a', 'b', 'c' ],
-      \ [ 'x', 'y', 'z', 'warning' ]
+      \ [ 'x', 'y', 'z', 'error', 'warning']
       \ ]
 
 " vim-airline-symbols
