@@ -199,7 +199,7 @@ hi vimMapRhs ctermbg=NONE ctermfg=231 cterm=NONE
 hi vimMapModKey ctermbg=NONE ctermfg=88 cterm=NONE
 hi vimNotation ctermbg=NONE ctermfg=88 cterm=NONE
 hi vimBracket ctermbg=NONE ctermfg=88 cterm=NONE
-hi vimTodo ctermbg=NONE ctermfg=46 cterm=bold
+hi vimTodo ctermbg=NONE ctermfg=198 cterm=bold
 hi vimHiNmbr ctermbg=NONE ctermfg=141 cterm=NONE
 hi vimHiAttrib ctermbg=NONE ctermfg=67 cterm=NONE
 hi vimHiGuiRgb ctermbg=NONE ctermfg=186 cterm=NONE
