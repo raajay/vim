@@ -1,6 +1,5 @@
 " Vim color file
 " Converted from Textmate theme Monokai using Coloration v0.3.2 (http://github.com/sickill/coloration)
-
 set background=dark
 highlight clear
 
@@ -8,6 +7,7 @@ highlight clear
 " 141 - violet
 
 " 24 - blue1
+" 67 - powder blue
 "
 " 46 - green3
 " 148  - green2
@@ -176,32 +176,35 @@ hi javaDocTags ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=
 hi gitcommitBranch ctermbg=NONE ctermfg=141 cterm=NONE
 hi gitcommitHeader ctermbg=NONE ctermfg=242 cterm=NONE
 hi gitcommitSelectedType ctermbg=NONE ctermfg=148 cterm=NONE
-hi gitcommitSelectedFile ctermbg=NONE ctermfg=148 cterm=NONE
+hi gitcommitSelectedFile ctermbg=NONE ctermfg=148 cterm=bold
 hi gitcommitDiscardedType ctermbg=NONE ctermfg=197 cterm=NONE
-hi gitcommitDiscardedFile ctermbg=NONE ctermfg=197 cterm=NONE
-hi gitcommitUntrackedFile ctermbg=NONE ctermfg=208 cterm=NONE
+hi gitcommitDiscardedFile ctermbg=NONE ctermfg=197 cterm=bold
+hi gitcommitUntrackedFile ctermbg=NONE ctermfg=208 cterm=bold
 ""}}}
 " Vim Highlighting"{{{
 hi vimCommand ctermbg=NONE ctermfg=208 cterm=NONE
 hi vimAutoCmd ctermbg=NONE ctermfg=208 cterm=NONE
 hi vimAutoEvent ctermbg=NONE ctermfg=197 cterm=NONE
-hi vimOption ctermbg=NONE ctermfg=88 cterm=NONE
+hi vimOption ctermbg=NONE ctermfg=197 cterm=NONE
 hi vimFTOption ctermbg=NONE ctermfg=197 cterm=NONE
 hi vimFunction ctermbg=NONE ctermfg=64 cterm=NONE
 hi vimFuncName ctermbg=NONE ctermfg=64 cterm=NONE
 hi vimLet ctermbg=NONE ctermfg=24 cterm=NONE
-
 hi vimVar ctermbg=NONE ctermfg=231 cterm=NONE
 hi vimEnvvar ctermbg=NONE ctermfg=141 cterm=NONE
-
 hi vimSetEqual ctermbg=NONE ctermfg=231 cterm=NONE
 hi vimSet ctermbg=NONE ctermfg=231 cterm=NONE
-
 hi vimMapLhs ctermbg=NONE ctermfg=81 cterm=NONE
 hi vimMapRhs ctermbg=NONE ctermfg=231 cterm=NONE
-hi vimMapModKey ctermbg=NONE ctermfg=242 cterm=NONE
-hi vimNotation ctermbg=NONE ctermfg=242 cterm=NONE
-hi vimBracket ctermbg=NONE ctermfg=242 cterm=NONE
-
-hi vimTodo ctermbg=NONE ctermfg=46 cterm=NONE
+hi vimMapModKey ctermbg=NONE ctermfg=88 cterm=NONE
+hi vimNotation ctermbg=NONE ctermfg=88 cterm=NONE
+hi vimBracket ctermbg=NONE ctermfg=88 cterm=NONE
+hi vimTodo ctermbg=NONE ctermfg=46 cterm=bold
+hi vimHiNmbr ctermbg=NONE ctermfg=141 cterm=NONE
+hi vimHiAttrib ctermbg=NONE ctermfg=67 cterm=NONE
+hi vimHiGuiRgb ctermbg=NONE ctermfg=186 cterm=NONE
+hi vimHiCTerm ctermbg=NONE ctermfg=64 cterm=NONE
+hi vimHiCTermFgBg ctermbg=NONE ctermfg=64 cterm=NONE
+hi vimHiGui ctermbg=NONE ctermfg=64 cterm=NONE
+hi vimHiGuiFgBg ctermbg=NONE ctermfg=64 cterm=NONE
 ""}}}
