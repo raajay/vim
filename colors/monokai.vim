@@ -155,4 +155,11 @@ hi javaDocTags ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=
 " hi javaBraces
 ""}}}
 " Fugitive Git Highlighting"{{{
+hi gitcommitBranch ctermbg=233 ctermfg=141 cterm=NONE
+hi gitcommitHeader ctermbg=233 ctermfg=242 cterm=NONE
+hi gitcommitSelectedType ctermbg=233 ctermfg=148 cterm=NONE
+hi gitcommitSelectedFile ctermbg=233 ctermfg=148 cterm=NONE
+hi gitcommitDiscardedType ctermbg=233 ctermfg=197 cterm=NONE
+hi gitcommitDiscardedFile ctermbg=233 ctermfg=197 cterm=NONE
+hi gitcommitUntrackedFile ctermbg=233 ctermfg=136 cterm=NONE
 ""}}}
