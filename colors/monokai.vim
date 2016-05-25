@@ -203,8 +203,8 @@ hi vimTodo ctermbg=NONE ctermfg=198 cterm=bold
 hi vimHiNmbr ctermbg=NONE ctermfg=141 cterm=NONE
 hi vimHiAttrib ctermbg=NONE ctermfg=67 cterm=NONE
 hi vimHiGuiRgb ctermbg=NONE ctermfg=186 cterm=NONE
-hi vimHiCTerm ctermbg=NONE ctermfg=64 cterm=NONE
-hi vimHiCTermFgBg ctermbg=NONE ctermfg=64 cterm=NONE
-hi vimHiGui ctermbg=NONE ctermfg=64 cterm=NONE
-hi vimHiGuiFgBg ctermbg=NONE ctermfg=64 cterm=NONE
+hi vimHiCTerm ctermbg=NONE ctermfg=231 cterm=NONE
+hi vimHiCTermFgBg ctermbg=NONE ctermfg=231 cterm=NONE
+hi vimHiGui ctermbg=NONE ctermfg=231 cterm=NONE
+hi vimHiGuiFgBg ctermbg=NONE ctermfg=231 cterm=NONE
 ""}}}
