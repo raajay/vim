@@ -4,6 +4,24 @@
 set background=dark
 highlight clear
 
+" 81 - cyan
+" 141 - violet
+
+" 24 - blue1
+"
+" 46 - green3
+" 148  - green2
+" 64 - green1
+
+" 186 - yellow
+" 208 - orange
+"
+" 197 - red1
+" 88 - red2
+"
+" 95 - magenta - other comment stuff
+" 59 - gray - comment
+
 if exists("syntax_on")
   syntax reset
 endif
@@ -129,7 +147,7 @@ hi cssBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi EclimDebugLine ctermfg=46 ctermbg=232 cterm=NONE guifg=#afff00 guibg=#272822 gui=NONE
 ""}}}
 " Folding"{{{
-hi Folded ctermfg=136 ctermbg=233 cterm=NONE guifg=#5f5f00 guibg=#272822 gui=NONE
+hi Folded ctermfg=95 ctermbg=NONE cterm=NONE guifg=#5f5f00 guibg=#272822 gui=NONE
 ""}}}
 " JavaDoc Highlighting"{{{
 hi javaCommentStar ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
@@ -155,11 +173,35 @@ hi javaDocTags ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=
 " hi javaBraces
 ""}}}
 " Fugitive Git Highlighting"{{{
-hi gitcommitBranch ctermbg=233 ctermfg=141 cterm=NONE
-hi gitcommitHeader ctermbg=233 ctermfg=242 cterm=NONE
-hi gitcommitSelectedType ctermbg=233 ctermfg=148 cterm=NONE
-hi gitcommitSelectedFile ctermbg=233 ctermfg=148 cterm=NONE
-hi gitcommitDiscardedType ctermbg=233 ctermfg=197 cterm=NONE
-hi gitcommitDiscardedFile ctermbg=233 ctermfg=197 cterm=NONE
-hi gitcommitUntrackedFile ctermbg=233 ctermfg=136 cterm=NONE
+hi gitcommitBranch ctermbg=NONE ctermfg=141 cterm=NONE
+hi gitcommitHeader ctermbg=NONE ctermfg=242 cterm=NONE
+hi gitcommitSelectedType ctermbg=NONE ctermfg=148 cterm=NONE
+hi gitcommitSelectedFile ctermbg=NONE ctermfg=148 cterm=NONE
+hi gitcommitDiscardedType ctermbg=NONE ctermfg=197 cterm=NONE
+hi gitcommitDiscardedFile ctermbg=NONE ctermfg=197 cterm=NONE
+hi gitcommitUntrackedFile ctermbg=NONE ctermfg=208 cterm=NONE
+""}}}
+" Vim Highlighting"{{{
+hi vimCommand ctermbg=NONE ctermfg=208 cterm=NONE
+hi vimAutoCmd ctermbg=NONE ctermfg=208 cterm=NONE
+hi vimAutoEvent ctermbg=NONE ctermfg=197 cterm=NONE
+hi vimOption ctermbg=NONE ctermfg=88 cterm=NONE
+hi vimFTOption ctermbg=NONE ctermfg=197 cterm=NONE
+hi vimFunction ctermbg=NONE ctermfg=64 cterm=NONE
+hi vimFuncName ctermbg=NONE ctermfg=64 cterm=NONE
+hi vimLet ctermbg=NONE ctermfg=24 cterm=NONE
+
+hi vimVar ctermbg=NONE ctermfg=231 cterm=NONE
+hi vimEnvvar ctermbg=NONE ctermfg=141 cterm=NONE
+
+hi vimSetEqual ctermbg=NONE ctermfg=231 cterm=NONE
+hi vimSet ctermbg=NONE ctermfg=231 cterm=NONE
+
+hi vimMapLhs ctermbg=NONE ctermfg=81 cterm=NONE
+hi vimMapRhs ctermbg=NONE ctermfg=231 cterm=NONE
+hi vimMapModKey ctermbg=NONE ctermfg=242 cterm=NONE
+hi vimNotation ctermbg=NONE ctermfg=242 cterm=NONE
+hi vimBracket ctermbg=NONE ctermfg=242 cterm=NONE
+
+hi vimTodo ctermbg=NONE ctermfg=46 cterm=NONE
 ""}}}
