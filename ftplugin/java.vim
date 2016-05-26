@@ -12,6 +12,7 @@ setlocal noautochdir
 " block indent
 map <buffer> > :s/^/\ \ /<CR>
 map <buffer> < :s/^\ \ //<CR>
+let g:indentLine_enabled=1
 
 " commenting
 map <buffer> // :s/^/\/\//<CR>

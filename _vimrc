@@ -349,7 +349,6 @@ let g:jedi#auto_initialization = 1
 " Other Jedi settings have been moved to ftplugin/python.vim
 ""}}}
 
-
 " ctrlp settings"{{{
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
@@ -389,13 +388,15 @@ let g:ycm_filetype_blacklist = {
 let g:ycm_cache_omnifunc=1
 ""}}}
 
-" Eclim settings
+" Eclim settings"{{{
 let g:EclimCompletionMethod='omnifunc'
 " Eclim - Scala settings
 let g:EclimScalaValidate=0
+""}}}
 
-" Delimitmate settings
+" Delimitmate settings"{{{
 let delimitMate_expand_cr = 1
+""}}}
 
 " vim-rooter settings"{{{
 "let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
@@ -474,6 +475,13 @@ let g:ycm_semantic_triggers.tex = [
             \ 're!\\include{',
             \ 're!\\input{',
             \ ]
+""}}}
+
+" indentLine settings"{{{
+let g:indentLine_enabled=0
+let g:indentLine_color_term = 237
+let g:indentLine_concealcursor=''
+map <leader>il <Esc>:IndentLinesToggle
 ""}}}
 
 " Function to toggle the to-do list"{{{
