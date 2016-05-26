@@ -4,6 +4,7 @@ syntax keyword javaCommonDataStruct Set HashSet containedin=JavaParen
 syntax keyword javaCommonDataStruct Map HashMap SortedMap TreeMap containedin=JavaParen
 syntax keyword javaCommonDataStruct List ArrayList containedin=JavaParen
 syntax keyword javaCommonDataType String Integer Double Long containedin=JavaParen
+syntax keyword javaCommonUtils Files File Path Paths containedin=JavaParen
 
 syntax cluster javaTop add=javaCommonDataType
 syntax cluster javaTop add=javaCommonDataStruct
