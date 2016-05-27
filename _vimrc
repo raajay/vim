@@ -1,8 +1,7 @@
+" Common Vim Settings"{{{
 set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
 set relativenumber                  " relative line numbers are awesome.
-                                    " we will use it when needed with ,rn map
-
 set numberwidth=5                   " the number of columns for line numbers
 set mouse=a                         " enable mouse clicks for all modes
 set backspace=eol,indent,start      " characters that backspace can erase
@@ -10,45 +9,38 @@ set wrap                            " do not wrap lines
 set ruler                           " ruler format can be set; but I use vim-airline
 set noerrorbells novisualbell t_vb= " I have no idea what to do here
 au GUIEnter * set vb t_vb=          " Values get reset when GUI starts
-                                    " Set them once we enter GUIEnter
-
 set pastetoggle=<F2>                " disable indenting while pasting code
 set hidden                          " allows us to move away from unsaved buffers
 set noshowmatch                     " do not jump to matching brace
-
 filetype plugin on                  " Detect filetype plugin and source them
 filetype indent on                  " Indent based on filetypes
 syntax on                           " Switch on syntax highlighting
-
-" setting the general tab setting to 4 spaces.
-set tabstop=4     " One tab is 4 spaces
-set shiftwidth=4  " Indent to use 4 spaces
-set expandtab     " no more tabs; replace with spaces
-set softtabstop=4 " backspace can run over 4 spaces in one key press
-
-set scrolloff=3   " retain 3 lines for context while scrolling
-set autoindent    " automatically indent the files
-set incsearch     " search before we press enter for search
-" set hlsearch    " highlight search
-" set smartindent " removed since it interferes with python commenting
-
+set tabstop=4                       " One tab is 4 spaces
+set shiftwidth=4                    " Indent to use 4 spaces
+set expandtab                       " no more tabs; replace with spaces
+set softtabstop=4                   " backspace can run over 4 spaces in one key press
+set scrolloff=3                     " retain 3 lines for context while scrolling
+set autoindent                      " automatically indent the files
+set incsearch                       " search before we press enter for search
+" set hlsearch                       " highlight search
+" set smartindent                    " removed since it interferes with python commenting
 if exists('+colorcolumn')
-    set colorcolumn=80 " highlights the 80th column
+    set colorcolumn=80              " highlights the 80th column
 endif
-
-set textwidth=0         " no text width (moved to ft specific)
-set cursorline          " highlights the row the cursor is on
-set cursorcolumn        " highlights the current column
-set lazyredraw          " to speed up the effects of highlighting row or column
-set laststatus=2        " to display the status line always
-set showtabline=2       " to show the tab line always
-set nospell             " spell check, XXX where is the dictionary
-set autochdir           " change to the directory of the current file
-set splitright          " the new windows opens on the right
-set splitbelow          " horizontal split below
+set textwidth=0                     " no text width (moved to ft specific)
+set cursorline                      " highlights the row the cursor is on
+set cursorcolumn                    " highlights the current column
+set lazyredraw                      " to speed up the effects of highlighting row or column
+set laststatus=2                    " to display the status line always
+set showtabline=2                   " to show the tab line always
+set nospell                         " spell check, XXX where is the dictionary
+set autochdir                       " change to the directory of the current file
+set splitright                      " the new windows opens on the right
+set splitbelow                      " horizontal split below
 set termencoding=utf-8
 set printoptions=number:y
-set winaltkeys=no       " disable use of alt keys for accessing gvim menus
+set winaltkeys=no                   " disable use of alt keys for accessing gvim menus
+""}}}
 
 " My vim folding settings"{{{
 " Custom function for folded text
@@ -81,6 +73,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+" Vim Variable update"{{{
 " update the variables with environment variables
 let mapleader=$LEADER
 let g:my_background=$BACKGROUND
@@ -104,8 +97,7 @@ endif
 if (g:my_airlinetheme == '')
     let g:my_airlinetheme = 'solarized'
 endif
-
-hi Normal ctermbg=None
+""}}}
 
 if(g:my_background == 'light')
     set background=light
@@ -113,6 +105,7 @@ else
     set background=dark
 endif
 
+hi Normal ctermbg=None
 set t_Co=256
 
 if(g:my_colorscheme == 'solarized')
