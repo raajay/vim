@@ -230,11 +230,14 @@ hi texBeginEndName ctermfg=186 ctermbg=NONE cterm=bold
 hi texBeginEnd ctermfg=64 ctermbg=NONE cterm=bold
 hi texSection ctermfg=148 ctermbg=NONE cterm=bold
 hi texRefZone ctermfg=141 ctermbg=NONE cterm=NONE
-hi texSectionZone ctermfg=NONE ctermbg=NONE cterm=bold
-hi texSubSectionZone ctermfg=NONE ctermbg=NONE cterm=bold
-hi texSubSubSectionZone ctermfg=NONE ctermbg=NONE cterm=bold
+hi texSectionZone ctermfg=NONE ctermbg=NONE cterm=NONE
+hi texSubSectionZone ctermfg=NONE ctermbg=NONE cterm=NONE
+hi texSubSubSectionZone ctermfg=NONE ctermbg=NONE cterm=NONE
 hi texTypeStyle ctermfg=81 ctermbg=NONE cterm=bold
 hi texItalStyle ctermfg=NONE ctermbg=NONE cterm=NONE
-hi texNewCmd ctermfg=64 ctermbg=NONE cterm=NONE
+hi texNewCmd ctermfg=208 ctermbg=NONE cterm=NONE
+hi texCmdName ctermfg=64 ctermbg=NONE cterm=NONE
 hi texStatement ctermfg=67 ctermbg=NONE cterm=NONE
+hi texUrl ctermfg=186 ctermbg=NONE cterm=NONE
+hi texDocType ctermfg=208 ctermbg=NONE cterm=NONE
 "
