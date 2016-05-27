@@ -225,3 +225,16 @@ hi markdownH2 ctermfg=148 ctermbg=NONE cterm=bold
 hi markdownH3 ctermfg=64 ctermbg=NONE cterm=bold
 hi markdownH4 ctermfg=186 ctermbg=NONE cterm=bold
 ""}}}
+" Tex Highlighting
+hi texBeginEndName ctermfg=186 ctermbg=NONE cterm=bold
+hi texBeginEnd ctermfg=64 ctermbg=NONE cterm=bold
+hi texSection ctermfg=148 ctermbg=NONE cterm=bold
+hi texRefZone ctermfg=141 ctermbg=NONE cterm=NONE
+hi texSectionZone ctermfg=NONE ctermbg=NONE cterm=bold
+hi texSubSectionZone ctermfg=NONE ctermbg=NONE cterm=bold
+hi texSubSubSectionZone ctermfg=NONE ctermbg=NONE cterm=bold
+hi texTypeStyle ctermfg=81 ctermbg=NONE cterm=bold
+hi texItalStyle ctermfg=NONE ctermbg=NONE cterm=NONE
+hi texNewCmd ctermfg=64 ctermbg=NONE cterm=NONE
+hi texStatement ctermfg=67 ctermbg=NONE cterm=NONE
+"
