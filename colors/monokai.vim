@@ -225,7 +225,7 @@ hi markdownH2 ctermfg=148 ctermbg=NONE cterm=bold
 hi markdownH3 ctermfg=64 ctermbg=NONE cterm=bold
 hi markdownH4 ctermfg=186 ctermbg=NONE cterm=bold
 ""}}}
-" Tex Highlighting
+" Tex Highlighting"{{{
 hi texBeginEndName ctermfg=186 ctermbg=NONE cterm=bold
 hi texBeginEnd ctermfg=64 ctermbg=NONE cterm=bold
 hi texSection ctermfg=148 ctermbg=NONE cterm=bold
@@ -240,4 +240,6 @@ hi texCmdName ctermfg=64 ctermbg=NONE cterm=NONE
 hi texStatement ctermfg=67 ctermbg=NONE cterm=NONE
 hi texUrl ctermfg=186 ctermbg=NONE cterm=NONE
 hi texDocType ctermfg=208 ctermbg=NONE cterm=NONE
-"
+hi texDefCmd ctermfg=208 ctermbg=NONE cterm=NONE
+hi texDefName ctermfg=64 ctermbg=NONE cterm=NONE
+""}}}
