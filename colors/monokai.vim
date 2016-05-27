@@ -217,3 +217,11 @@ hi vimHiCTermFgBg ctermbg=NONE ctermfg=231 cterm=NONE
 hi vimHiGui ctermbg=NONE ctermfg=231 cterm=NONE
 hi vimHiGuiFgBg ctermbg=NONE ctermfg=231 cterm=NONE
 ""}}}
+" Markdown Highlighting"{{{
+hi markdownBold ctermfg=252 ctermbg=NONE cterm=bold
+hi markdownItalic ctermfg=252 ctermbg=NONE cterm=bold
+hi markdownH1 ctermfg=208 ctermbg=NONE cterm=bold
+hi markdownH2 ctermfg=148 ctermbg=NONE cterm=bold
+hi markdownH3 ctermfg=64 ctermbg=NONE cterm=bold
+hi markdownH4 ctermfg=186 ctermbg=NONE cterm=bold
+""}}}
