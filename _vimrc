@@ -393,7 +393,7 @@ let delimitMate_expand_cr = 1
 
 " vim-rooter settings"{{{
 "let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
-let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain', '.main', '.git', '.git/', 'pom.xml']
+let g:rooter_patterns = ['.gradlemain', '.latexmain', '.htmlmain', '.main', '.git', '.git/', 'pom.xml', 'build.xml']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 ""}}}
