@@ -568,6 +568,8 @@ endif
 let g:GeeknoteFormat='markdown'
 let g:GeeknoteExplorerNodeClosed='+'
 let g:GeeknoteExplorerNodeOpened='-'
+let g:GeeknoteMaxExplorerWidth=40
+nmap <leader>gn <Esc>:Geeknote<cr>
 ""}}}
 
 " Vim session settings"{{{
