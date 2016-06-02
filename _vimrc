@@ -477,6 +477,11 @@ let g:indentLine_concealcursor=''
 map <leader>il <Esc>:IndentLinesToggle
 ""}}}
 
+" vim-markdown settings"{{{
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+let g:markdown_syntax_conceal=1
+""}}}
+
 " Function to toggle the to-do list"{{{
 let g:open_todo = 0
 function! OpenToDo()
