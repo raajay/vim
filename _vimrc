@@ -40,7 +40,7 @@ set splitbelow                      " horizontal split below
 set termencoding=utf-8
 set printoptions=number:y
 set winaltkeys=no                   " disable use of alt keys for accessing gvim menus
-set conceallevel=2
+set conceallevel=0
 set concealcursor=""
 ""}}}
 
