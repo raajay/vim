@@ -4,9 +4,12 @@ setlocal shiftwidth=2
 setlocal expandtab
 setlocal softtabstop=2
 
-setlocal autoindent
 setlocal colorcolumn=80
-setlocal textwidth=80
+setlocal textwidth=0
+setlocal wrap
+setlocal linebreak
+setlocal nolist
+setlocal breakindent
 
 " block indent
 map <buffer> > :s/^/\ \ /<CR>

@@ -23,7 +23,7 @@ set scrolloff=3                     " retain 3 lines for context while scrolling
 set autoindent                      " automatically indent the files
 set incsearch                       " search before we press enter for search
 " set hlsearch                       " highlight search
-" set smartindent                    " removed since it interferes with python commenting
+set smartindent                     " removed since it interferes with python commenting
 if exists('+colorcolumn')
     set colorcolumn=80              " highlights the 80th column
 endif
@@ -42,6 +42,7 @@ set printoptions=number:y
 set winaltkeys=no                   " disable use of alt keys for accessing gvim menus
 set conceallevel=0
 set concealcursor=""
+set fo+=jn
 ""}}}
 
 " My vim folding settings"{{{
