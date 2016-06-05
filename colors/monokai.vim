@@ -21,6 +21,12 @@ highlight clear
 "
 " 95 - magenta - other comment stuff
 " 59 - gray - comment
+"
+" HTML colors
+" Pink: F92672, red2
+" Blue: 66D9EF, 81
+" Green: A6E22E, 148
+" Orange: FD971F, 208
 
 if exists("syntax_on")
   syntax reset
