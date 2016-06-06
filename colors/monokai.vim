@@ -3,30 +3,31 @@
 set background=dark
 highlight clear
 
-" 81 - cyan
-" 141 - violet
+" xterm 256 colors"{{{
+" Cyan : 81
+" Violet : 141
+" Powder Blue : 67
+" Dark Blue : 24
+" Green Dark : 64
+" Green Light : 148
+" Green Light 2 : 46
+" Yellow : 186
+" Orange : 208
+" Red : 88
+" Red Light : 197
+" Magenta : 95 (used for folding)
+" Gray : 59 (used for comments)"}}}
 
-" 24 - blue1
-" 67 - powder blue
-"
-" 46 - green3
-" 148  - green2
-" 64 - green1
-
-" 186 - yellow
-" 208 - orange
-"
-" 197 - red1
-" 88 - red2
-"
-" 95 - magenta - other comment stuff
-" 59 - gray - comment
-"
-" HTML colors
-" Pink: F92672, red2
-" Blue: 66D9EF, 81
-" Green: A6E22E, 148
-" Orange: FD971F, 208
+" HTML colors"{{{
+" Blue light (powder blue) : #89BDFF
+" Green : #A6E22A
+" Green Light : #A6E22E
+" Magenta : #F92672
+" Purple : AE81FF
+" Purple Light : FD5FF1
+" Yellow : E6DB74
+" Yellow Dark : 75715E
+" Yellow Light : F8F8F2"}}}
 
 if exists("syntax_on")
   syntax reset
@@ -232,20 +233,20 @@ hi markdownH3 ctermfg=64 ctermbg=NONE cterm=bold
 hi markdownH4 ctermfg=186 ctermbg=NONE cterm=bold
 ""}}}
 " Tex Highlighting"{{{
-hi texBeginEndName ctermfg=186 ctermbg=NONE cterm=bold
-hi texBeginEnd ctermfg=64 ctermbg=NONE cterm=bold
-hi texSection ctermfg=148 ctermbg=NONE cterm=bold
-hi texRefZone ctermfg=141 ctermbg=NONE cterm=NONE
-hi texSectionZone ctermfg=NONE ctermbg=NONE cterm=NONE
-hi texSubSectionZone ctermfg=NONE ctermbg=NONE cterm=NONE
-hi texSubSubSectionZone ctermfg=NONE ctermbg=NONE cterm=NONE
-hi texTypeStyle ctermfg=81 ctermbg=NONE cterm=bold
-hi texItalStyle ctermfg=NONE ctermbg=NONE cterm=NONE
-hi texNewCmd ctermfg=208 ctermbg=NONE cterm=NONE
-hi texCmdName ctermfg=64 ctermbg=NONE cterm=NONE
-hi texStatement ctermfg=67 ctermbg=NONE cterm=NONE
-hi texUrl ctermfg=186 ctermbg=NONE cterm=NONE
-hi texDocType ctermfg=208 ctermbg=NONE cterm=NONE
-hi texDefCmd ctermfg=208 ctermbg=NONE cterm=NONE
-hi texDefName ctermfg=64 ctermbg=NONE cterm=NONE
+hi texBeginEndName ctermfg=186 ctermbg=NONE cterm=bold guifg=#E6DB74 guibg=NONE gui=bold
+hi texBeginEnd ctermfg=64 ctermbg=NONE cterm=bold guifg=#A6E22A guibg=NONE gui=bold
+hi texSection ctermfg=148 ctermbg=NONE cterm=bold guifg=#A6E22E guibg=NONE gui=bold
+hi texRefZone ctermfg=141 ctermbg=NONE cterm=NONE guifg=#AE81FF guibg=NONE gui=NONE
+hi texSectionZone ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+hi texSubSectionZone ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+hi texSubSubSectionZone ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+hi texTypeStyle ctermfg=81 ctermbg=NONE cterm=bold guifg=#FD5FF1 guibg=NONE gui=bold
+hi texItalStyle ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+hi texNewCmd ctermfg=208 ctermbg=NONE cterm=NONE guifg=#75715E guibg=NONE gui=NONE
+hi texCmdName ctermfg=64 ctermbg=NONE cterm=NONE guifg=#A6E22A guibg=NONE gui=NONE
+hi texStatement ctermfg=67 ctermbg=NONE cterm=NONE guifg=#89BDFF guibg=NONE gui=NONE
+hi texUrl ctermfg=186 ctermbg=NONE cterm=NONE guifg=#E6DB74 guibg=NONE gui=NONE
+hi texDocType ctermfg=208 ctermbg=NONE cterm=NONE guifg=#75715E guibg=NONE gui=NONE
+hi texDefCmd ctermfg=208 ctermbg=NONE cterm=NONE guifg=#75715E guibg=NONE gui=NONE
+hi texDefName ctermfg=64 ctermbg=NONE cterm=NONE guifg=#A6E22A guibg=NONE gui=NONE
 ""}}}
