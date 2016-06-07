@@ -1,0 +1,25 @@
+set number
+"set relativenumber
+set expandtab
+set shiftwidth=4
+set tabstop=4
+
+let mapleader=","
+map <leader>b :action ToggleLineBreakpoint<CR>
+map <leader>gi :action GotoImplementation<CR>
+map <leader>re :action RenameElement<cr>
+map <leader>fr :action ReformatCode<cr>
+
+nnoremap <leader>w :action Compile<cr>
+nnoremap ;w :w<cr>
+
+" Find and replace
+"nnoremap / :action Find<CR>
+"nnoremap n :action FindNext<CR>
+"nnoremap N :action FindPrevious<CR>
+
+" Emulations
+"set vim-surround
+
+" Git stuff
+map <leader>ga :action Git.Add<cr>
