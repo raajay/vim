@@ -3,6 +3,8 @@
 set background=dark
 highlight clear
 
+" https://github.com/oneKelvinSmith/monokai-emacs/blob/master/monokai-theme.el
+
 " xterm 256 colors"{{{
 " Cyan : 81
 " Violet : 141
@@ -19,8 +21,13 @@ highlight clear
 " Gray : 59 (used for comments)"}}}
 
 " HTML colors"{{{
-" Blue light (powder blue) : #89BDFF
+" Blue : #66D9EF
+" Blue Dark : #40CAE4
+" Blue light : #89BDFF
+" Violet : #AE81FF
+" Cyan : #A1EFE4
 " Green : #A6E22A
+" Green Dark : #86C30D
 " Green Light : #A6E22E
 " Magenta : #F92672
 " Purple : AE81FF
@@ -28,6 +35,9 @@ highlight clear
 " Yellow : E6DB74
 " Yellow Dark : 75715E
 " Yellow Light : F8F8F2"}}}
+" Orange : #FD971F
+" Red : #F92672
+" White : #F8F8F2
 
 if exists("syntax_on")
   syntax reset
@@ -198,31 +208,31 @@ hi gitcommitDiscardedFile ctermbg=NONE ctermfg=197 cterm=bold
 hi gitcommitUntrackedFile ctermbg=NONE ctermfg=208 cterm=bold
 ""}}}
 " Vim Highlighting"{{{
-hi vimCommand ctermbg=NONE ctermfg=208 cterm=NONE
-hi vimAutoCmd ctermbg=NONE ctermfg=208 cterm=NONE
-hi vimAutoEvent ctermbg=NONE ctermfg=197 cterm=NONE
-hi vimOption ctermbg=NONE ctermfg=197 cterm=NONE
-hi vimFTOption ctermbg=NONE ctermfg=197 cterm=NONE
-hi vimFunction ctermbg=NONE ctermfg=64 cterm=NONE
-hi vimFuncName ctermbg=NONE ctermfg=64 cterm=NONE
-hi vimLet ctermbg=NONE ctermfg=24 cterm=NONE
-hi vimVar ctermbg=NONE ctermfg=231 cterm=NONE
-hi vimEnvvar ctermbg=NONE ctermfg=141 cterm=NONE
-hi vimSetEqual ctermbg=NONE ctermfg=231 cterm=NONE
-hi vimSet ctermbg=NONE ctermfg=231 cterm=NONE
-hi vimMapLhs ctermbg=NONE ctermfg=81 cterm=NONE
-hi vimMapRhs ctermbg=NONE ctermfg=231 cterm=NONE
-hi vimMapModKey ctermbg=NONE ctermfg=88 cterm=NONE
-hi vimNotation ctermbg=NONE ctermfg=88 cterm=NONE
-hi vimBracket ctermbg=NONE ctermfg=88 cterm=NONE
+hi vimCommand ctermbg=NONE ctermfg=208 cterm=NONE guibg=NONE guifg=#FD971F gui=NONE
+hi vimAutoCmd ctermbg=NONE ctermfg=208 cterm=NONE guibg=NONE guifg=#FD971F gui=NONE
+hi vimAutoEvent ctermbg=NONE ctermfg=197 cterm=NONE guibg=NONE guifg=#F92672 gui=NONE
+hi vimOption ctermbg=NONE ctermfg=197 cterm=NONE guibg=NONE guifg=#F92672 gui=NONE
+hi vimFTOption ctermbg=NONE ctermfg=197 cterm=NONE guibg=NONE guifg=#F92672 gui=NONE
+hi vimFunction ctermbg=NONE ctermfg=64 cterm=NONE guibg=NONE guifg=#86C30D gui=NONE
+hi vimFuncName ctermbg=NONE ctermfg=64 cterm=NONE guibg=NONE guifg=#86C30D gui=NONE
+hi vimLet ctermbg=NONE ctermfg=24 cterm=NONE guibg=NONE guifg=#40CAE4 gui=NONE
+hi vimVar ctermbg=NONE ctermfg=231 cterm=NONE guibg=NONE guifg=#F8F8F2 gui=NONE
+hi vimEnvvar ctermbg=NONE ctermfg=141 cterm=NONE guibg=NONE guifg=#AE81FF gui=NONE
+hi vimSetEqual ctermbg=NONE ctermfg=231 cterm=NONE guibg=NONE guifg=#F8F8F2 gui=NONE
+hi vimSet ctermbg=NONE ctermfg=231 cterm=NONE guibg=NONE guifg=#F8F8F2 gui=NONE
+hi vimMapLhs ctermbg=NONE ctermfg=81 cterm=NONE guibg=NONE guifg=#A1EFE4 gui=NONE
+hi vimMapRhs ctermbg=NONE ctermfg=231 cterm=NONE guibg=NONE guifg=#F8F8F2 gui=NONE
+hi vimMapModKey ctermbg=NONE ctermfg=88 cterm=NONE guibg=NONE guifg=#F92672 gui=NONE
+hi vimNotation ctermbg=NONE ctermfg=88 cterm=NONE guibg=NONE guifg=#F92672 gui=NONE
+hi vimBracket ctermbg=NONE ctermfg=88 cterm=NONE guibg=NONE guifg=#F92672 gui=NONE
 hi vimTodo ctermbg=NONE ctermfg=198 cterm=bold
-hi vimHiNmbr ctermbg=NONE ctermfg=141 cterm=NONE
-hi vimHiAttrib ctermbg=NONE ctermfg=67 cterm=NONE
-hi vimHiGuiRgb ctermbg=NONE ctermfg=186 cterm=NONE
-hi vimHiCTerm ctermbg=NONE ctermfg=231 cterm=NONE
-hi vimHiCTermFgBg ctermbg=NONE ctermfg=231 cterm=NONE
-hi vimHiGui ctermbg=NONE ctermfg=231 cterm=NONE
-hi vimHiGuiFgBg ctermbg=NONE ctermfg=231 cterm=NONE
+hi vimHiNmbr ctermbg=NONE ctermfg=141 cterm=NONE guibg=NONE guifg=#AE81FF gui=NONE
+hi vimHiAttrib ctermbg=NONE ctermfg=67 cterm=NONE guibg=NONE guifg=#89BDFF gui=NONE
+hi vimHiGuiRgb ctermbg=NONE ctermfg=186 cterm=NONE guibg=NONE guifg=#E6DB74 gui=NONE
+hi vimHiCTerm ctermbg=NONE ctermfg=231 cterm=NONE guibg=NONE guifg=#F8F8F2 gui=NONE
+hi vimHiCTermFgBg ctermbg=NONE ctermfg=231 cterm=NONE guibg=NONE guifg=#F8F8F2 gui=NONE
+hi vimHiGui ctermbg=NONE ctermfg=231 cterm=NONE guibg=NONE guifg=#F8F8F2 gui=NONE
+hi vimHiGuiFgBg ctermbg=NONE ctermfg=231 cterm=NONE guibg=NONE guifg=#F8F8F2 gui=NONE
 ""}}}
 " Markdown Highlighting"{{{
 hi markdownBold ctermfg=252 ctermbg=NONE cterm=bold
