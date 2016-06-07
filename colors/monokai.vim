@@ -246,7 +246,8 @@ hi texNewCmd ctermfg=208 ctermbg=NONE cterm=NONE guifg=#75715E guibg=NONE gui=NO
 hi texCmdName ctermfg=64 ctermbg=NONE cterm=NONE guifg=#A6E22A guibg=NONE gui=NONE
 hi texStatement ctermfg=67 ctermbg=NONE cterm=NONE guifg=#89BDFF guibg=NONE gui=NONE
 hi texUrl ctermfg=186 ctermbg=NONE cterm=NONE guifg=#E6DB74 guibg=NONE gui=NONE
-hi texDocType ctermfg=208 ctermbg=NONE cterm=NONE guifg=#75715E guibg=NONE gui=NONE
-hi texDefCmd ctermfg=208 ctermbg=NONE cterm=NONE guifg=#75715E guibg=NONE gui=NONE
+hi texDocType ctermfg=208 ctermbg=NONE cterm=NONE guifg=#FD5FF1 guibg=NONE gui=NONE
+hi texDefCmd ctermfg=208 ctermbg=NONE cterm=NONE guifg=#FD5FF1 guibg=NONE gui=NONE
 hi texDefName ctermfg=64 ctermbg=NONE cterm=NONE guifg=#A6E22A guibg=NONE gui=NONE
+hi bibEntryKw ctermfg=64 ctermbg=NONE cterm=NONE guifg=#E6DB74 guibg=NONE gui=NONE
 ""}}}
