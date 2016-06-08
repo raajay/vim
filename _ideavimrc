@@ -5,12 +5,16 @@ set shiftwidth=4
 set tabstop=4
 
 let mapleader=","
+
+map <leader>ff :action ToggleFullScreen<cr>
+
 map <leader>b :action ToggleLineBreakpoint<CR>
-map <leader>gi :action GotoImplementation<CR>
+map <leader>gd :action GotoImplementation<CR>
 map <leader>re :action RenameElement<cr>
 map <leader>fr :action ReformatCode<cr>
 
-nnoremap <leader>w :action Compile<cr>
+nnoremap <leader>w :action MakeModule<cr>
+nnoremap <leader>c :action Compile<cr>
 nnoremap ;w :w<cr>
 
 " Find and replace
@@ -23,3 +27,4 @@ nnoremap ;w :w<cr>
 
 " Git stuff
 map <leader>ga :action Git.Add<cr>
+map <leader>hh :action Diff.NextChange<cr>
