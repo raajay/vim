@@ -186,8 +186,8 @@ vnoremap ;q :q<cr>
 nnoremap ;q :q<cr>
 vnoremap ;w :w<cr>
 nnoremap ;w :w<cr>
-vnoremap <Leader>w :make!<cr>
-nnoremap <Leader>w :make!<cr>
+vnoremap <leader>w :make!<cr>
+nnoremap <leader>w :make!<cr>
 " C-y copies to global buffer, copying across applications
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
@@ -430,20 +430,20 @@ let g:tagbar_type_tex = {
 
 " vim-gitgutter settings"{{{
 let g:gitgutter_map_keys = 0
-nmap <Leader>hs <Plug>GitGutterStageHunk
-nmap <Leader>hr <Plug>GitGutterRevertHunk
-nmap <Leader>hd <Plug>GitGutterPreviewHunk
-nmap <Leader>hh <Plug>GitGutterNextHunk
-nmap <Leader>hp <Plug>GitGutterPrevHunk
+nmap <leader>hs <Plug>GitGutterStageHunk
+nmap <leader>hr <Plug>GitGutterRevertHunk
+nmap <leader>hd <Plug>GitGutterPreviewHunk
+nmap <leader>hh <Plug>GitGutterNextHunk
+nmap <leader>hp <Plug>GitGutterPrevHunk
 let g:gitgutter_realtime=0
 let g:gitgutter_eager=0
 ""}}}
 
 " vim-fugitive settings"{{{
-nmap <Leader>gs <Esc>:Gstatus<CR>
-nmap <Leader>gc <Esc>:Gcommit -m<Space>""<left>
-nmap <Leader>gp <Esc>:Gpush<CR>
-nmap <Leader>gl <Esc>:Git log --oneline<CR>
+nmap <leader>gs <Esc>:Gstatus<CR>
+nmap <leader>gc <Esc>:Gcommit -m<Space>""<left>
+nmap <leader>gp <Esc>:Gpush<CR>
+nmap <leader>gl <Esc>:Git log --oneline<CR>
 ""}}}
 
 " vimtex settings"{{{
