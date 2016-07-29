@@ -191,8 +191,8 @@ nnoremap <leader>w :make!<cr>
 " C-y copies to global buffer, copying across applications
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
-nnoremap <C-p> "+gP
-vnoremap <C-p> "+gP
+nnoremap <C-i> "+gP
+vnoremap <C-i> "+gP
 " Common mappings for navigation
 nmap <space> zz
 nmap n nzz
@@ -544,7 +544,7 @@ map <leader>rt4 <Esc>:%s/\t/\ \ \ \ /g<cr><c-o>
 " replace tabs with 2 spaces
 map <leader>rt2 <Esc>:%s/\t/\ \ /g<cr><c-o>
 " reload file
-map <leader>re <Esc>:checktime<cr>
+map <leader>re <Esc>:redraw!<cr>
 
 " Take a backup of a file
 command! Bak :w %.bak
@@ -600,6 +600,8 @@ call add(g:pathogen_disabled, 'supertab') " Replaced by YouCompleteMe
 call add(g:pathogen_disabled, 'latex-box') " Replaced by vimtex
 call add(g:pathogen_disabled, 'TagHighlight')
 call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, replaced by YouCompleteMe
+call add(g:pathogen_disabled, 'indentLink') " show indent line
+call add(g:pathogen_disabled, 'vim-markdown') " show indent line
 
 " Testing speeds"{{{
 "call add(g:pathogen_disabled, 'command-t')
@@ -607,6 +609,7 @@ call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, r
 "call add(g:pathogen_disabled, 'csv-vim')
 "call add(g:pathogen_disabled, 'delmitmate')
 "call add(g:pathogen_disabled, 'eclim')
+"call add(g:pathogen_disabled, 'indentLink')
 "call add(g:pathogen_disabled, 'latex-box')
 "call add(g:pathogen_disabled, 'nerdtree')
 "call add(g:pathogen_disabled, 'supertab')
@@ -631,6 +634,7 @@ call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, r
 "call add(g:pathogen_disabled, 'vim-geeknote')
 "call add(g:pathogen_disabled, 'vim-gitgutter')
 "call add(g:pathogen_disabled, 'vim-gundo')
+"call add(g:pathogen_disabled, 'vim-markdown')
 "call add(g:pathogen_disabled, 'vim-misc')
 "call add(g:pathogen_disabled, 'vim-multiple-cursors')
 "call add(g:pathogen_disabled, 'vim-nertdtree-tabs')
