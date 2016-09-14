@@ -3,7 +3,7 @@ set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
 set relativenumber                  " relative line numbers are awesome.
 set numberwidth=5                   " the number of columns for line numbers
-set mouse=a                         " enable mouse clicks for all modes
+set mouse=                          " disable mouse clicks for all modes
 set backspace=eol,indent,start      " characters that backspace can erase
 set wrap                            " do not wrap lines
 set ruler                           " ruler format can be set; but I use vim-airline
