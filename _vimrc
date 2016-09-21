@@ -382,6 +382,9 @@ endif
 let g:ycm_filetype_blacklist = {
             \}
 let g:ycm_cache_omnifunc=1
+let g:ycm_filetype_blacklist = {
+    \ 'go' : 1
+    \}
 ""}}}
 
 " Eclim settings"{{{
@@ -483,6 +486,14 @@ map <leader>il <Esc>:IndentLinesToggle
 " vim-markdown settings"{{{
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 let g:markdown_syntax_conceal=1
+""}}}
+
+" vim-go settings"{{{
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 0
+let g:go_highlight_structs = 1
+let g:ycm_semantic_triggers.go = ['.']
 ""}}}
 
 " Function to toggle the to-do list"{{{
