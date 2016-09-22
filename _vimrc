@@ -191,9 +191,9 @@ nnoremap <leader>w :make!<cr>
 " C-y copies to global buffer, copying across applications
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
-nnoremap <C-j> "+gP
-vnoremap <C-j> "+gP
-inoremap <C-j> "+gP
+nnoremap <C-l> "+gP
+vnoremap <C-l> "+gP
+inoremap <C-l> "+gP
 " Common mappings for navigation
 nmap <space> zz
 nmap n nzz
