@@ -202,10 +202,10 @@ hi javaMethodDecl ctermfg=197 ctermbg=NONE cterm=NONE
 ""}}}
 " Fugitive Git Highlighting"{{{
 hi gitcommitBranch ctermbg=NONE ctermfg=141 cterm=NONE guibg=NONE guifg=#ae81ff
-hi gitcommitHeader ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guibg=none guifg=#6c6c6c gui=none
-hi gitcommitSelectedType ctermbg=NONE ctermfg=148 cterm=NONE guibg=NONE guifg=#a6e22e gui=none
+hi gitcommitHeader ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guibg=NONE guifg=#6c6c6c gui=NONE
+hi gitcommitSelectedType ctermbg=NONE ctermfg=148 cterm=NONE guibg=NONE guifg=#a6e22e gui=NONE
 hi gitcommitSelectedFile ctermbg=NONE ctermfg=148 cterm=bold guibg=NONE guifg=#a6e22e gui=bold
-hi gitcommitDiscardedType ctermbg=NONE ctermfg=197 cterm=NONE guibg=NONE guifg=#ff4d4d gui=none
+hi gitcommitDiscardedType ctermbg=NONE ctermfg=197 cterm=NONE guibg=NONE guifg=#ff4d4d gui=NONE
 hi gitcommitDiscardedFile ctermbg=NONE ctermfg=197 cterm=bold guibg=NONE guifg=#ff4d4d gui=bold
 hi gitcommitUntrackedFile ctermbg=NONE ctermfg=208 cterm=bold guibg=NONE guifg=#fd971f gui=bold
 ""}}}
