@@ -34,10 +34,12 @@ highlight clear
 " Purple Light : FD5FF1
 " Yellow : E6DB74
 " Yellow Dark : 75715E
-" Yellow Light : F8F8F2"}}}
+" Yellow Light : F8F8F2
 " Orange : #FD971F
 " Red : #F92672
 " White : #F8F8F2
+" Gray : #6c6c6c : 242
+" "}}}
 
 if exists("syntax_on")
   syntax reset
@@ -199,13 +201,13 @@ hi javaMethodDecl ctermfg=197 ctermbg=NONE cterm=NONE
 " hi javaBraces
 ""}}}
 " Fugitive Git Highlighting"{{{
-hi gitcommitBranch ctermbg=NONE ctermfg=141 cterm=NONE
-hi gitcommitHeader ctermbg=NONE ctermfg=242 cterm=NONE
-hi gitcommitSelectedType ctermbg=NONE ctermfg=148 cterm=NONE
-hi gitcommitSelectedFile ctermbg=NONE ctermfg=148 cterm=bold
-hi gitcommitDiscardedType ctermbg=NONE ctermfg=197 cterm=NONE
-hi gitcommitDiscardedFile ctermbg=NONE ctermfg=197 cterm=bold
-hi gitcommitUntrackedFile ctermbg=NONE ctermfg=208 cterm=bold
+hi gitcommitBranch ctermbg=NONE ctermfg=141 cterm=NONE guibg=NONE guifg=#ae81ff
+hi gitcommitHeader ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guibg=none guifg=#6c6c6c gui=none
+hi gitcommitSelectedType ctermbg=NONE ctermfg=148 cterm=NONE guibg=NONE guifg=#a6e22e gui=none
+hi gitcommitSelectedFile ctermbg=NONE ctermfg=148 cterm=bold guibg=NONE guifg=#a6e22e gui=bold
+hi gitcommitDiscardedType ctermbg=NONE ctermfg=197 cterm=NONE guibg=NONE guifg=#ff4d4d gui=none
+hi gitcommitDiscardedFile ctermbg=NONE ctermfg=197 cterm=bold guibg=NONE guifg=#ff4d4d gui=bold
+hi gitcommitUntrackedFile ctermbg=NONE ctermfg=208 cterm=bold guibg=NONE guifg=#fd971f gui=bold
 ""}}}
 " Vim Highlighting"{{{
 hi vimCommand ctermbg=NONE ctermfg=208 cterm=NONE guibg=NONE guifg=#FD971F gui=NONE
