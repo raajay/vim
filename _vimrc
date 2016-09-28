@@ -391,7 +391,7 @@ let g:ycm_filetype_blacklist = {
 " Eclim settings"{{{
 let g:EclimCompletionMethod='omnifunc'
 " Eclim - Scala settings
-let g:EclimScalaValidate=0
+let g:EclimScalaValidate=1
 ""}}}
 
 " Delimitmate settings"{{{
