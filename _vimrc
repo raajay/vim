@@ -44,9 +44,8 @@ set conceallevel=0
 set concealcursor=""
 set fo+=jn
 ""}}}
-
-" My vim folding settings"{{{
-" Custom function for folded text
+" My Custom Mappings (as opposed to plugins)
+" My text folding settings"{{{
 fu! CustomFoldText()
     let fs = v.foldstart
     while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
@@ -70,24 +69,15 @@ endf
 set foldtext=foldtext()
 set foldmethod=marker
 ""}}}
-
-" Vim syntax highlighting
+" Show current highlight configuration command"{{{
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-" Vim Variable update"{{{
-" update the variables with environment variables
-let mapleader=$LEADER
+"}}}
+" My color scheme configurations"{{{
 let g:my_background=$BACKGROUND
 let g:my_colorscheme=$COLORSCHEME
 let g:my_airlinetheme=$AIRLINE_THEME
-let g:my_spell=1
-
-" default values for configuration variables
-if (mapleader == '')
-    let mapleader=','
-endif
 
 if (g:my_background == '')
     let g:my_background='light'
@@ -100,7 +90,6 @@ endif
 if (g:my_airlinetheme == '')
     let g:my_airlinetheme = 'solarized'
 endif
-""}}}
 
 if(g:my_background == 'light')
     set background=light
@@ -123,38 +112,20 @@ elseif(g:my_colorscheme == 'monokai')
 
 endif
 
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "sansa"
-    let g:vim_folder = "/scratch/raajay/vimfiles/"
-elseif has('win32') || has('win64')
-    let g:vim_folder = '~/vimfiles/'
-else
-    let g:vim_folder = '~/.vim/'
-endif
-
-" system specific settings
-let g:vimrc = g:vim_folder . '_vimrc'
-let g:local_vimrc = g:vim_folder . '_local_vimrc'
-exec "set backupdir=".g:vim_folder."vimbackup//"
-exec "set dir=".g:vim_folder."vimswap//"
-"exec "source ".g:local_vimrc
-
-" Block indent general mapping - overridden in ftplugins
-map > :s/^/\ \ \ \ /<CR>
-map < :s/^\ \ \ \ //<CR>
-
-" Commenting has been handled in ftplugins"{{{
+" Function to toggle between light and dark background
+function! ToggleBG()
+    if g:my_background=="light"
+        let g:my_background="dark"
+        set background=dark
+    else
+        let g:my_background="light"
+        set background=light
+    endif
+    let g:airline_theme = g:my_airlinetheme
+endfunc
+map <leader>cc <Esc>:call ToggleBG()<cr>
 ""}}}
-
-" remembering the previous edits - this is a gem
-set viminfo='10,\"100,:20,%,n~/.viminfo
-
-" remembering the last position
-if has("autocmd")
-    au BufReadPost * if line("'\"") > 1 && line("'\"") < line("$") | exe "normal! g'\"" | endif
-endif
-
-" Some gVim specific font/display settings"{{{
+" gui Vim (gvim/macvim) - font/display settings"{{{
 if has("gui_running")
     if has("gui_gtk2")
         set guifont=Source\ Code\ Pro\ for\ Powerline
@@ -174,48 +145,106 @@ if has("gui_running")
     set lines=120     " specifies the height of the GVim window
 endif
 ""}}}
+" Host specfic directory and config files"{{{
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "sansa"
+    let g:vim_folder = "/scratch/raajay/vimfiles/"
+elseif has('win32') || has('win64')
+    let g:vim_folder = '~/vimfiles/'
+else
+    let g:vim_folder = '~/.vim/'
+endif
 
-" My custom vim mappings"{{{
+" system specific settings
+let g:vimrc = g:vim_folder . '_vimrc'
+let g:local_vimrc = g:vim_folder . '_local_vimrc'
+exec "set backupdir=".g:vim_folder."vimbackup//"
+exec "set dir=".g:vim_folder."vimswap//"
+"exec "source ".g:local_vimrc
+"}}}
+" Vim keyboard Shortcuts"{{{
+let mapleader=$LEADER
+if (mapleader == '')
+    let mapleader=','
+endif
 " mappings to avoid common mistakes in Vim
 map :W :wz<BS>
 map :Q :qz<BS>
 map :B :bz<BS>
+" mappings to avoid going to command mode for common operations
 vnoremap ; <Esc>:
 nnoremap ; <Esc>:
 vnoremap ;q :q<cr>
 nnoremap ;q :q<cr>
 vnoremap ;w :w<cr>
 nnoremap ;w :w<cr>
+" Build / Compile related (requires a Makefile)
 vnoremap <leader>w :make!<cr>
 nnoremap <leader>w :make!<cr>
 " C-y copies to global buffer, copying across applications
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
+" C-l pastes from the global buffer
 nnoremap <C-l> "+gP
 vnoremap <C-l> "+gP
 inoremap <C-l> "+gP
-" Common mappings for navigation
+" Space moves current cursor location to center of screen
 nmap <space> zz
 nmap n nzz
 nmap N Nzz
+" Block indentation (can be overridden in ftplugins)
+map > :s/^/\ \ \ \ /<CR>
+map < :s/^\ \ \ \ //<CR>
+" push vim to the background and give shell access
+map <leader>q <Esc><c-z>
+" edit vimrc
+map <leader>ev <Esc>:edit $MYVIMRC<cr>
+" source vimrc
+map <leader>sv <Esc>:source $MYVIMRC<cr>
+" edit bash
+map <leader>eb <Esc>:edit ~/.bashrc<cr>
+
+" toggle relative numbers
+map <leader>rn :set relativenumber!<cr>
+" remove trailing characters
+map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
+" replace tabs with 4 spaces
+map <leader>rt4 <Esc>:%s/\t/\ \ \ \ /g<cr><c-o>
+" replace tabs with 2 spaces
+map <leader>rt2 <Esc>:%s/\t/\ \ /g<cr><c-o>
+" reload file
+map <leader>re <Esc>:redraw!<cr>
+" Function to toggle the to-do list"{{{
+let g:open_todo = 0
+function! OpenToDo()
+    if g:open_todo == 0
+        let g:open_todo = 1
+        :vsplit ~/Dropbox/todo/todo.txt
+    elseif g:open_todo == 1
+        let g:open_todo = 0
+        :bdelete ~/Dropbox/todo/todo.txt
+    endif
+endfunc
+map <leader>a <Esc>:call OpenToDo()<cr>
 ""}}}
-
-" auto-save
-if has("autocmd")
-    au BufLeave,FocusLost * :update
-endif
-
-" mapping for common patterns in insert mode
+" Spelling toggle "{{{
+let g:my_spell=1
+function! ToggleSpell()
+    if g:my_spell==0
+        setlocal nospell
+        let g:my_spell=1
+    else
+        setlocal spell spelllang=en_us
+        let g:my_spell=0
+    endif
+endfunc
+map <leader>ss <Esc>:call ToggleSpell()<cr>
+""}}}
+""}}}
+" Vim keyword mappings"{{{
 imap TODO TODO(raajay)<Space>
-
-" sudo write
-cnoremap sudow w !sudo tee % > /dev/null
-
-set timeoutlen=3000
-set ttimeoutlen=50
-set updatetime=30 " time taken by bufferline to redraw
-
-" file type detection"{{{
+"}}}
+" Filetype detection"{{{
 if has("autocmd")
     autocmd BufRead,BufNewFile *.tex set ft=tex
     autocmd BufRead,BufNewFile *.gms set ft=gams
@@ -229,12 +258,34 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *conf set ft=conf
 endif
 ""}}}
-
+" Vim niceties (write with sudo, autosave, remember last pos, etc..)"{{{
+" Remembering the previous edits - this is a gem
+set viminfo='10,\"100,:20,%,n~/.viminfo
+" Remembering the last position
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 1 && line("'\"") < line("$") | exe "normal! g'\"" | endif
+endif
+" Auto save
+if has("autocmd")
+    au BufLeave,FocusLost * :update
+endif
 " auto header insert
 if has("autocmd")
     autocmd BufNewFile *.sh 0r $HOME/.vim/templates/sh.template
 endif
-
+" Sudo write
+cnoremap sudow w !sudo tee % > /dev/null
+" Number lines visually selected
+command -range=% -nargs=? Number :<line1>,<line2>s/^/\=printf("%d<args>", line(".") - line("'<") + 1)
+" Take a backup of a file
+command! Bak :w %.bak
+"}}}
+" Time out settings for redrawing the screen"{{{
+set timeoutlen=3000
+set ttimeoutlen=50
+set updatetime=30 " time taken by bufferline to redraw
+"}}}
+" PLUGIN SETTINGS (installed via pathogen)
 " vim-airline settings"{{{
 let g:airline_section_b = '%{pathshorten(getcwd())."  ".airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 let g:airline_section_c = '%{pathshorten(expand("%:p"))}' " full file name
@@ -275,7 +326,6 @@ let g:airline_mode_map = {
     \ '' : 'S',
     \ }
 ""}}}
-
 " vim-airline-tabline settings"{{{
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
@@ -301,7 +351,6 @@ let g:airline#extensions#bufferline#overwrite_variables = 0
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_format = 'mi[%s]'
 ""}}}
-
 " vim-bufferline settings"{{{
 " The next two lines are required for status line integration
 "let g:bufferline_echo = 0 " avoid displaying in the command line
@@ -313,7 +362,6 @@ let g:airline#extensions#whitespace#mixed_indent_format = 'mi[%s]'
 "let g:bufferline_modified = '+'
 "let g:bufferline_excludes = [] " TODO include the auto generated files
 ""}}}
-
 " NERDTree settings"{{{
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
 let g:nerdtree_tabs_open_on_gui_startup = 0
@@ -324,12 +372,10 @@ let NERDTreeChDirMode = 2
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeShowLineNumbers = 1
 ""}}}
-
 "super tab settings"{{{
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-p>'
 ""}}}
-
 " jedi-vim settings"{{{
 " this is put under jedi vim because with out this jedi-vim seems to
 " throw errors
@@ -345,7 +391,6 @@ endif
 let g:jedi#auto_initialization = 1
 " Other Jedi settings have been moved to ftplugin/python.vim
 ""}}}
-
 " ctrlp settings"{{{
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
@@ -360,14 +405,12 @@ let g:ctrlp_max_files=10000
 let g:ctrlp_max_depth=40
 let g:ctrlp_user_command = 'find %s -type f \( -name "*.tex" -o -name "*.py" -o -name "*.java" -o -name "*.q" \)'
 ""}}}
-
 " Command-T settings"{{{
 let g:CommandTMaxDepth = 20
 let g:CommandTMaxHeight = 10
 let g:CommandTMatchWindowReverse = 1
 let g:CommandTTraverseSCM='pwd'
 ""}}}
-
 " YouCompleteMe settings"{{{
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_warning_symbol = '>'
@@ -387,37 +430,31 @@ let g:ycm_filetype_blacklist = {
     \ 'go' : 1
     \}
 ""}}}
-
 " Eclim settings"{{{
 let g:EclimCompletionMethod='omnifunc'
 " Eclim - Scala settings
 let g:EclimScalaValidate=1
 ""}}}
-
 " Delimitmate settings"{{{
 let delimitMate_expand_cr = 1
 ""}}}
-
 " vim-rooter settings"{{{
 "let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
 let g:rooter_patterns = ['.main', '.gradlemain', '.latexmain', '.htmlmain', 'pom.xml', 'build.xml', 'build.sbt', '.git', '.git/']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 ""}}}
-
 "vim-snippets settings"{{{
 let g:snips_author="Raajay Viswanathan"
 let g:snips_email="raajay.v@gmail.com"
 let g:snips_github="https://github.com/raajay"
 let g:pybin = substitute(system('which python'), '\n', '', '')
 ""}}}
-
 " UltiSnips settings"{{{
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 ""}}}
-
 " Tagbar settings"{{{
 let g:tagbar_type_tex = {
     \ 'ctagstype' : 'latex',
@@ -431,7 +468,6 @@ let g:tagbar_type_tex = {
     \ 'sort' : 0,
     \ }
 ""}}}
-
 " vim-gitgutter settings"{{{
 let g:gitgutter_map_keys = 0
 nmap <leader>hs <Plug>GitGutterStageHunk
@@ -442,14 +478,12 @@ nmap <leader>hp <Plug>GitGutterPrevHunk
 let g:gitgutter_realtime=0
 let g:gitgutter_eager=0
 ""}}}
-
 " vim-fugitive settings"{{{
 nmap <leader>gs <Esc>:Gstatus<CR>
 nmap <leader>gc <Esc>:Gcommit -m<Space>""<left>
 nmap <leader>gp <Esc>:Gpush<CR>
 nmap <leader>gl <Esc>:Git log --oneline<CR>
 ""}}}
-
 " vimtex settings"{{{
 if !exists('g:ycm_semantic_triggers')
     let g:ycm_semantic_triggers = {}
@@ -476,19 +510,16 @@ let g:ycm_semantic_triggers.tex = [
             \ 're!\\input{',
             \ ]
 ""}}}
-
 " indentLine settings"{{{
-let g:indentLine_enabled=0
+let g:indentLine_enabled=1
 let g:indentLine_color_term = 237
 let g:indentLine_concealcursor=''
-map <leader>il <Esc>:IndentLinesToggle
+map <leader>il <Esc>:IndentLinesToggle<cr>
 ""}}}
-
 " vim-markdown settings"{{{
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 let g:markdown_syntax_conceal=1
 ""}}}
-
 " vim-go settings"{{{
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
@@ -496,94 +527,14 @@ let g:go_highlight_methods = 0
 let g:go_highlight_structs = 1
 let g:ycm_semantic_triggers.go = ['.']
 ""}}}
-
-" Function to toggle the to-do list"{{{
-let g:open_todo = 0
-function! OpenToDo()
-    if g:open_todo == 0
-        let g:open_todo = 1
-        :vsplit ~/Dropbox/todo/todo.txt
-    elseif g:open_todo == 1
-        let g:open_todo = 0
-        :bdelete ~/Dropbox/todo/todo.txt
-    endif
-endfunc
-map <leader>a <Esc>:call OpenToDo()<cr>
-""}}}
-
-" Function to toggle between light and dark background"{{{
-function! ToggleBG()
-    if g:my_background=="light"
-        let g:my_background="dark"
-        set background=dark
-    else
-        let g:my_background="light"
-        set background=light
-    endif
-    let g:airline_theme = g:my_airlinetheme
-endfunc
-map <leader>cc <Esc>:call ToggleBG()<cr>
-""}}}
-
-" Function to toggle spelling error highlighting"{{{
-function! ToggleSpell()
-    if g:my_spell==0
-        setlocal nospell
-        let g:my_spell=1
-    else
-        setlocal spell spelllang=en_us
-        let g:my_spell=0
-    endif
-endfunc
-map <leader>ss <Esc>:call ToggleSpell()<cr>
-""}}}
-
-" push vim to the background and give shell access
-map <leader>q <Esc><c-z>
-" edit vimrc
-map <leader>ev <Esc>:edit $MYVIMRC<cr>
-" source vimrc
-map <leader>sv <Esc>:source $MYVIMRC<cr>
-" edit bash
-map <leader>eb <Esc>:edit ~/.bashrc<cr>
-
-" toggle relative numbers
-map <leader>rn :set relativenumber!<cr>
-" remove trailing characters
-map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
-" replace tabs with 4 spaces
-map <leader>rt4 <Esc>:%s/\t/\ \ \ \ /g<cr><c-o>
-" replace tabs with 2 spaces
-map <leader>rt2 <Esc>:%s/\t/\ \ /g<cr><c-o>
-" reload file
-map <leader>re <Esc>:redraw!<cr>
-
-" Take a backup of a file
-command! Bak :w %.bak
-
-" NERDTree settings
-map <leader>nt <Esc>:NERDTreeToggle<cr>
-
-" Tagbar settings
-map <leader>a <Esc>:TagbarToggle<CR>
-
-" Tabularize - Helps in alignment
-map <leader>b <Esc>:Tabularize<Space>
-
-" Navigation Settings
-map <leader>pp <Esc><c-w><c-p>
-
-" Tasklist invocation (,t is mapped to Command-T)
-map <leader>v <Plug>TaskList
-
-" Vim - latex settings
+" Vim - latex settings"{{{
 set grepprg=grep\ -nH\ $*
 " The Silver Searcher
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
     set grepformat=%f:%l:%c:%m
 endif
-
+"}}}
 " Geeknote settings"{{{
 let g:GeeknoteFormat='markdown'
 let g:GeeknoteExplorerNodeClosed='+'
@@ -591,19 +542,24 @@ let g:GeeknoteExplorerNodeOpened='-'
 let g:GeeknoteMaxExplorerWidth=40
 nmap <leader>gn <Esc>:Geeknote<cr>
 ""}}}
-
 " Vim session settings"{{{
 let g:session_autosave='no'
 ""}}}
-
-" My custom settings
-
-" Number lines
-command -range=% -nargs=? Number :<line1>,<line2>s/^/\=printf("%d<args>", line(".") - line("'<") + 1)
-
-" Disable certain plugins
+" Mappings invoking plugin commands
+" NERDTree settings"{{{
+map <leader>nt <Esc>:NERDTreeToggle<cr>
+" Tagbar settings
+map <leader>a <Esc>:TagbarToggle<CR>
+" Tabularize - Helps in alignment
+map <leader>b <Esc>:Tabularize<Space>
+" Navigation Settings
+map <leader>pp <Esc><c-w><c-p>
+" Tasklist invocation (,t is mapped to Command-T)
+map <leader>v <Plug>TaskList
+"}}}
+" Pathogen related settings (pathogen is a plugin manager)"{{{
+" Plugins disabled through pathogen"{{{
 let g:pathogen_disabled = []
-
 call add(g:pathogen_disabled, 'vim-ctrlp') " replace by Command-T plugin
 call add(g:pathogen_disabled, 'vim-bufferline') " replaced by vim-airline
 call add(g:pathogen_disabled, 'vim-csexact') " Replaced by our custom monokai
@@ -612,9 +568,13 @@ call add(g:pathogen_disabled, 'supertab') " Replaced by YouCompleteMe
 call add(g:pathogen_disabled, 'latex-box') " Replaced by vimtex
 call add(g:pathogen_disabled, 'TagHighlight')
 call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, replaced by YouCompleteMe
-call add(g:pathogen_disabled, 'indentLink') " show indent line
-call add(g:pathogen_disabled, 'vim-markdown') " show indent line
-
+call add(g:pathogen_disabled, 'vim-markdown')
+if has('win32') || has('win64')
+    call add(g:pathogen_disabled, 'YouCompleteMe')
+else
+    call add(g:pathogen_disabled, 'YouCompleteMe-Windows')
+end
+"}}}
 " Testing speeds"{{{
 "call add(g:pathogen_disabled, 'command-t')
 "call add(g:pathogen_disabled, 'cscope')
@@ -660,13 +620,6 @@ call add(g:pathogen_disabled, 'vim-markdown') " show indent line
 "call add(g:pathogen_disabled, 'TagHighlight')
 "call add(g:pathogen_disabled, 'YouCompleteMe')
 "call add(g:pathogen_disabled, 'YouCompleteMe-Windows')"}}}
-
-if has('win32') || has('win64')
-    call add(g:pathogen_disabled, 'YouCompleteMe')
-else
-    call add(g:pathogen_disabled, 'YouCompleteMe-Windows')
-end
-
-" Pathogen Settings - Used to handle the various plug-ins
 call pathogen#infect()
 call pathogen#helptags()
+"}}}
