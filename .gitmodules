@@ -58,17 +58,9 @@
 	path = bundle/vim-misc
 	url = https://github.com/xolox/vim-misc.git
     branch = master
-[submodule "bundle/vim-ctrlp"]
-	path = bundle/vim-ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
-    branch = master
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/command-t.git
-    branch = master
-[submodule "bundle/csv-vim"]
-	path = bundle/csv-vim
-	url = https://github.com/chrisbra/csv.vim.git
     branch = master
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
@@ -78,18 +70,9 @@
 	path = bundle/vim-ag
 	url = https://github.com/rking/ag.vim.git
     branch = master
-[submodule "bundle/latex-box"]
-	path = bundle/latex-box
-	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
-[submodule "bundle/vim-csexact"]
-	path = bundle/vim-csexact
-	url = https://github.com/KevinGoodsell/vim-csexact.git
 [submodule "bundle/vimtex"]
 	path = bundle/vimtex
 	url = https://github.com/lervag/vimtex.git
-[submodule "bundle/vim-csapprox"]
-	path = bundle/vim-csapprox
-	url = https://github.com/godlygeek/csapprox.git
 [submodule "bundle/vim-gundo"]
 	path = bundle/vim-gundo
 	url = https://github.com/vim-scripts/Gundo.git
@@ -105,9 +88,6 @@
 [submodule "bundle/vim-shell"]
 	path = bundle/vim-shell
 	url = https://github.com/xolox/vim-shell.git
-[submodule "bundle/vim-geeknote"]
-	path = bundle/vim-geeknote
-	url = https://github.com/neilagabriel/vim-geeknote.git
 [submodule "bundle/vim-airline-themes"]
 	path = bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
