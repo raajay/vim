@@ -186,9 +186,9 @@ nnoremap <leader>w :make!<cr>
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
 " C-l pastes from the global buffer
-nnoremap <C-l> "+gP
-vnoremap <C-l> "+gP
-inoremap <C-l> "+gP
+nnoremap <C-p> "+gP
+vnoremap <C-p> "+gP
+inoremap <C-p> "+gP
 " Space moves current cursor location to center of screen
 nmap <space> zz
 nmap n nzz
