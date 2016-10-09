@@ -547,7 +547,7 @@ nmap <leader>gn <Esc>:Geeknote<cr>
 let g:session_autosave='no'
 ""}}}
 " Mappings invoking plugin commands
-" NERDTree settings"{{{
+" NERDTree/Tagbar/Tabularize/TaskList settings"{{{
 map <leader>nt <Esc>:NERDTreeToggle<cr>
 " Tagbar settings
 map <leader>a <Esc>:TagbarToggle<CR>
@@ -561,70 +561,20 @@ map <leader>v <Plug>TaskList
 " Pathogen related settings (pathogen is a plugin manager)"{{{
 " Plugins disabled through pathogen"{{{
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'vim-ctrlp') " replace by Command-T plugin
 call add(g:pathogen_disabled, 'vim-bufferline') " replaced by vim-airline
-call add(g:pathogen_disabled, 'vim-csexact') " Replaced by our custom monokai
-call add(g:pathogen_disabled, 'vim-csapprox') " Replaced by our custom monokai
 call add(g:pathogen_disabled, 'supertab') " Replaced by YouCompleteMe
-call add(g:pathogen_disabled, 'latex-box') " Replaced by vimtex
 call add(g:pathogen_disabled, 'TagHighlight')
 call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, replaced by YouCompleteMe
 call add(g:pathogen_disabled, 'vim-markdown')
 
-call add(g:pathogen_disabled, 'YouCompleteMe')
-call add(g:pathogen_disabled, 'vimtex')
-call add(g:pathogen_disabled, 'vim-gitgutter')
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
 else
     call add(g:pathogen_disabled, 'YouCompleteMe-Windows')
 end
 "}}}
-" Testing speeds"{{{
-"call add(g:pathogen_disabled, 'command-t')
-"call add(g:pathogen_disabled, 'cscope')
-"call add(g:pathogen_disabled, 'csv-vim')
-"call add(g:pathogen_disabled, 'delmitmate')
-"call add(g:pathogen_disabled, 'eclim')
-"call add(g:pathogen_disabled, 'indentLink')
-"call add(g:pathogen_disabled, 'latex-box')
-"call add(g:pathogen_disabled, 'nerdtree')
-"call add(g:pathogen_disabled, 'supertab')
-"call add(g:pathogen_disabled, 'surround')
-"call add(g:pathogen_disabled, 'switcher')
-"call add(g:pathogen_disabled, 'tabular')
-"call add(g:pathogen_disabled, 'tagbar')
-"call add(g:pathogen_disabled, 'tasklist')
-"call add(g:pathogen_disabled, 'tfs')
-"call add(g:pathogen_disabled, 'ultisnips')
-"call add(g:pathogen_disabled, 'vim-ag')
-"call add(g:pathogen_disabled, 'vim-airline')
-"call add(g:pathogen_disabled, 'vim-airline-themes')
-"call add(g:pathogen_disabled, 'vim-airlineish')
-"call add(g:pathogen_disabled, 'vim-autotag')
-"call add(g:pathogen_disabled, 'vim-bufferline')
-"call add(g:pathogen_disabled, 'vim-csapprox')
-"call add(g:pathogen_disabled, 'vim-csexact')
-"call add(g:pathogen_disabled, 'vim-ctrlp')
-"call add(g:pathogen_disabled, 'vim-dispatch')
-"call add(g:pathogen_disabled, 'vim-fugitive')
-"call add(g:pathogen_disabled, 'vim-geeknote')
-"call add(g:pathogen_disabled, 'vim-gitgutter')
-"call add(g:pathogen_disabled, 'vim-gundo')
-"call add(g:pathogen_disabled, 'vim-markdown')
-"call add(g:pathogen_disabled, 'vim-misc')
-"call add(g:pathogen_disabled, 'vim-multiple-cursors')
-"call add(g:pathogen_disabled, 'vim-nertdtree-tabs')
-"call add(g:pathogen_disabled, 'vim-repeat')
-"call add(g:pathogen_disabled, 'vim-rooter')
-"call add(g:pathogen_disabled, 'vim-scala')
-"call add(g:pathogen_disabled, 'vim-session')
-"call add(g:pathogen_disabled, 'vim-shell')
-"call add(g:pathogen_disabled, 'vim-snippets')
-"call add(g:pathogen_disabled, 'vimtex')
-"call add(g:pathogen_disabled, 'TagHighlight')
-"call add(g:pathogen_disabled, 'YouCompleteMe')
-"call add(g:pathogen_disabled, 'YouCompleteMe-Windows')"}}}
+" Testing speeds -- TODO(raajay) Update with latest plugins"{{{
+"}}}
 call pathogen#infect()
 call pathogen#helptags()
 "}}}
