@@ -188,7 +188,7 @@ vnoremap <C-y> "+y
 " C-l pastes from the global buffer
 nnoremap <C-p> "+gP
 vnoremap <C-p> "+gP
-inoremap <C-p> "+gP
+inoremap <C-p> <Esc>"+gP
 " Space moves current cursor location to center of screen
 nmap <space> zz
 nmap n nzz
