@@ -10,10 +10,6 @@
 	path = bundle/vim-airline
 	url = git://github.com/bling/vim-airline
     branch = master
-[submodule "bundle/vim-bufferline"]
-	path = bundle/vim-bufferline
-	url = git://github.com/bling/vim-bufferline
-    branch = master
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
