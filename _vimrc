@@ -502,6 +502,10 @@ let g:ycm_semantic_triggers.go = ['.']
 " Vim session settings"{{{
 let g:session_autosave='no'
 ""}}}
+" goyo.vim settings
+let g:goyo_width=100
+"
+
 " Mappings invoking plugin commands
 " NERDTree settings"{{{
 map <leader>nt <Esc>:NERDTreeToggle<cr>
