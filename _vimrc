@@ -286,6 +286,14 @@ set timeoutlen=3000
 set ttimeoutlen=50
 set updatetime=30 " time taken by bufferline to redraw
 "}}}
+" vim grep settings"{{{
+set grepprg=grep\ -nH\ $*
+" The Silver Searcher
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
+    set grepformat=%f:%l:%c:%m
+endif
+"}}}
 " PLUGIN SETTINGS (installed via pathogen)
 " vim-airline settings"{{{
 let g:airline_section_b = '%{pathshorten(getcwd())."  ".airline#util#wrap(airline#extensions#branch#get_head(),0)}'
@@ -352,17 +360,6 @@ let g:airline#extensions#bufferline#overwrite_variables = 0
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_format = 'mi[%s]'
 ""}}}
-" vim-bufferline settings"{{{
-" The next two lines are required for status line integration
-"let g:bufferline_echo = 0 " avoid displaying in the command line
-"autocmd VimEnter * let &statusline='%{bufferline#refresh_status()}' .bufferline#get_status_string()
-"let g:bufferline_active_buffer_left = '['
-"let g:bufferline_active_buffer_right = ']'
-"let g:bufferline_active_highlight = 'airline_c_bold'
-"let g:bufferline_inactive_highlight = 'airline_c'
-"let g:bufferline_modified = '+'
-"let g:bufferline_excludes = [] " TODO include the auto generated files
-""}}}
 " NERDTree settings"{{{
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
 let g:nerdtree_tabs_open_on_gui_startup = 0
@@ -377,22 +374,7 @@ let NERDTreeShowLineNumbers = 1
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-p>'
 ""}}}
-" jedi-vim settings"{{{
-" this is put under jedi vim because with out this jedi-vim seems to
-" throw errors
-if has("multi_byte")
-    if &termencoding == ""
-        let &termencoding = &encoding
-    endif
-    set encoding=utf-8
-    setglobal fileencoding=utf-8
-    set fileencodings=ucs-bom,utf-8,latin1
-endif
-" Jedi Settings
-let g:jedi#auto_initialization = 1
-" Other Jedi settings have been moved to ftplugin/python.vim
-""}}}
-" ctrlp settings"{{{
+" Command-T settings"{{{
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
     set runtimepath^=~/vimfiles/bundle/vim-ctrlp
@@ -400,13 +382,6 @@ else
     set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*
     set runtimepath^=~/.vim/bundle/vim-ctrlp
 endif
-let g:ctrlp_custom_ignore = {'file': '\.class$\|\.exe$\|\.pyc$', 'dir': '\v[\/]\.(git|hg|svn|bzr)$'}
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_max_files=10000
-let g:ctrlp_max_depth=40
-let g:ctrlp_user_command = 'find %s -type f \( -name "*.tex" -o -name "*.py" -o -name "*.java" -o -name "*.q" \)'
-""}}}
-" Command-T settings"{{{
 let g:CommandTMaxDepth = 20
 let g:CommandTMaxHeight = 10
 let g:CommandTMatchWindowReverse = 1
@@ -517,31 +492,12 @@ let g:indentLine_color_term = 237
 let g:indentLine_concealcursor=''
 map <leader>il <Esc>:IndentLinesToggle<cr>
 ""}}}
-" vim-markdown settings"{{{
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-let g:markdown_syntax_conceal=1
-""}}}
 " vim-go settings"{{{
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 0
 let g:go_highlight_structs = 1
 let g:ycm_semantic_triggers.go = ['.']
-""}}}
-" Vim - latex settings"{{{
-set grepprg=grep\ -nH\ $*
-" The Silver Searcher
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
-    set grepformat=%f:%l:%c:%m
-endif
-"}}}
-" Geeknote settings"{{{
-let g:GeeknoteFormat='markdown'
-let g:GeeknoteExplorerNodeClosed='+'
-let g:GeeknoteExplorerNodeOpened='-'
-let g:GeeknoteMaxExplorerWidth=40
-nmap <leader>gn <Esc>:Geeknote<cr>
 ""}}}
 " Vim session settings"{{{
 let g:session_autosave='no'
@@ -561,23 +517,12 @@ map <leader>v <Plug>TaskList
 " Pathogen related settings (pathogen is a plugin manager)"{{{
 " Plugins disabled through pathogen"{{{
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'vim-ctrlp') " replace by Command-T plugin
-call add(g:pathogen_disabled, 'vim-bufferline') " replaced by vim-airline
-call add(g:pathogen_disabled, 'vim-csexact') " Replaced by our custom monokai
-call add(g:pathogen_disabled, 'vim-csapprox') " Replaced by our custom monokai
-call add(g:pathogen_disabled, 'supertab') " Replaced by YouCompleteMe
-call add(g:pathogen_disabled, 'latex-box') " Replaced by vimtex
-call add(g:pathogen_disabled, 'TagHighlight')
-call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, replaced by YouCompleteMe
-call add(g:pathogen_disabled, 'vim-markdown')
 
 call add(g:pathogen_disabled, 'YouCompleteMe')
 call add(g:pathogen_disabled, 'vimtex')
 call add(g:pathogen_disabled, 'vim-gitgutter')
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
-else
-    call add(g:pathogen_disabled, 'YouCompleteMe-Windows')
 end
 "}}}
 " Testing speeds"{{{
