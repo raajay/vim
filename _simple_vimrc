@@ -364,7 +364,8 @@ let g:airline#extensions#whitespace#mixed_indent_format = 'mi[%s]'
 "let g:bufferline_excludes = [] " TODO include the auto generated files
 ""}}}
 " NERDTree settings"{{{
-let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$',
+            \ '\.bbl', '\.fls', '\.blg', '\.fdb_latexmk', '\.log', '\.out', '\.aux']
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_open_on_new_tabs = 0
 let g:nerdtree_tabs_autoclose = 0
@@ -424,11 +425,10 @@ let g:ycm_path_to_python_interpreter=substitute(system('which python'), '\n', ''
 if(hostname() == "dove.cs.wisc.edu")
     let g:clang_library_path="/unsup/llvm-3.3/lib"
 endif
-let g:ycm_filetype_blacklist = {
-            \}
 let g:ycm_cache_omnifunc=1
 let g:ycm_filetype_blacklist = {
-    \ 'go' : 1
+    \ 'go' : 1,
+    \ 'tex' : 1
     \}
 ""}}}
 " Eclim settings"{{{
@@ -566,6 +566,7 @@ call add(g:pathogen_disabled, 'supertab') " Replaced by YouCompleteMe
 call add(g:pathogen_disabled, 'TagHighlight')
 call add(g:pathogen_disabled, 'vim-autotag') " automatically update tags file, replaced by YouCompleteMe
 call add(g:pathogen_disabled, 'vim-markdown')
+call add(g:pathogen_disabled, "vimtex")
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')

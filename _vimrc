@@ -379,7 +379,7 @@ if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
     set runtimepath^=~/vimfiles/bundle/vim-ctrlp
 else
-    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*
+    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*
     set runtimepath^=~/.vim/bundle/vim-ctrlp
 endif
 let g:CommandTMaxDepth = 20
@@ -502,10 +502,9 @@ let g:ycm_semantic_triggers.go = ['.']
 " Vim session settings"{{{
 let g:session_autosave='no'
 ""}}}
-" goyo.vim settings
+" goyo.vim settings"{{{
 let g:goyo_width=100
-"
-
+""}}}
 " Mappings invoking plugin commands
 " NERDTree settings"{{{
 map <leader>nt <Esc>:NERDTreeToggle<cr>
