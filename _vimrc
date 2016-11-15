@@ -80,16 +80,17 @@ let g:my_background=$BACKGROUND
 let g:my_colorscheme=$COLORSCHEME
 let g:my_airlinetheme=$AIRLINE_THEME
 
+" configuring the defaults
 if (g:my_background == '')
-    let g:my_background='light'
+    let g:my_background='dark'
 endif
 
 if (g:my_colorscheme == '')
-    let g:my_colorscheme='solarized'
+    let g:my_colorscheme='monokai'
 endif
 
 if (g:my_airlinetheme == '')
-    let g:my_airlinetheme = 'solarized'
+    let g:my_airlinetheme = 'airlineish'
 endif
 
 if(g:my_background == 'light')
@@ -97,20 +98,16 @@ if(g:my_background == 'light')
 else
     set background=dark
 endif
+let g:airline_theme=g:my_airlinetheme
 
 hi Normal ctermbg=None
 set t_Co=256
-
 if(g:my_colorscheme == 'solarized')
     let g:solarized_termtrans=0
     let g:solarized_italic=1
-    let g:airline_theme=g:my_airlinetheme
     colorscheme solarized
-
 elseif(g:my_colorscheme == 'monokai')
-    let g:airline_theme='airlineish'
     colorscheme monokai
-
 endif
 
 " Function to toggle between light and dark background
