@@ -517,6 +517,23 @@ map <leader>v <Plug>TaskList
 " Pathogen related settings (pathogen is a plugin manager)"{{{
 " Plugins disabled through pathogen"{{{
 let g:pathogen_disabled = []
+let g:pathogen_ycm_enabled=0
+let g:pathogen_vimtex_enabled=0
+let g:pathogen_gitgutter_enabled=0
+
+function! ToggleYCM()
+    if g:pathogen_ycm_enabled
+        " if enabled add YCM to disabled list and infect.
+        call add(g:pathogen_disabled, 'YouCompleteMe')
+        call pathogen#infect()
+        let g:pathogen_ycm_enabled = 0
+    else
+        let idx = index(g:pathogen_disabled, "YouCompleteMe")
+        call remove(g:pathogen_disabled, idx)
+        call pathogen#infect()
+        let g:pathogen_ycm_enabled = 1
+    endif
+endfunc
 
 call add(g:pathogen_disabled, 'YouCompleteMe')
 call add(g:pathogen_disabled, 'vimtex')
