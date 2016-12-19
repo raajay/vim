@@ -386,6 +386,7 @@ let g:CommandTTraverseSCM='pwd'
 ""}}}
 " YouCompleteMe settings"{{{
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_warning_symbol = '>'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_disable_for_files_larger_than_kb = 0
@@ -517,25 +518,7 @@ map <leader>v <Plug>TaskList
 " Pathogen related settings (pathogen is a plugin manager)"{{{
 " Plugins disabled through pathogen"{{{
 let g:pathogen_disabled = []
-let g:pathogen_ycm_enabled=0
-let g:pathogen_vimtex_enabled=0
-let g:pathogen_gitgutter_enabled=0
-
-function! ToggleYCM()
-    if g:pathogen_ycm_enabled
-        " if enabled add YCM to disabled list and infect.
-        call add(g:pathogen_disabled, 'YouCompleteMe')
-        call pathogen#infect()
-        let g:pathogen_ycm_enabled = 0
-    else
-        let idx = index(g:pathogen_disabled, "YouCompleteMe")
-        call remove(g:pathogen_disabled, idx)
-        call pathogen#infect()
-        let g:pathogen_ycm_enabled = 1
-    endif
-endfunc
-
-call add(g:pathogen_disabled, 'YouCompleteMe')
+"call add(g:pathogen_disabled, 'YouCompleteMe')
 call add(g:pathogen_disabled, 'vimtex')
 call add(g:pathogen_disabled, 'vim-gitgutter')
 if has('win32') || has('win64')
