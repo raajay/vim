@@ -379,13 +379,11 @@ let NERDTreeShowLineNumbers = 1
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-p>'
 ""}}}
-" Command-T settings"{{{
+" Command-T settings"{{{,*/third_party/*
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
-    set runtimepath^=~/vimfiles/bundle/vim-ctrlp
 else
-    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*
-    set runtimepath^=~/.vim/bundle/vim-ctrlp
+    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*,*/third_party/*
 endif
 let g:CommandTMaxDepth = 20
 let g:CommandTMaxHeight = 10
