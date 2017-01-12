@@ -375,6 +375,7 @@ let NERDTreeHijackNetrw = 0
 let NERDTreeChDirMode = 2
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeShowLineNumbers = 1
+let NERDTreeDirArrows=0
 ""}}}
 "super tab settings"{{{
 let g:SuperTabDefaultCompletionType = 'context'
@@ -384,7 +385,7 @@ let g:SuperTabContextDefaultCompletionType = '<c-p>'
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
 else
-    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*,*/third_party/*
+    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*,*/third_party/*,*.o
 endif
 let g:CommandTMaxDepth = 20
 let g:CommandTMaxHeight = 10

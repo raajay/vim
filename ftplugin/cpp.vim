@@ -23,3 +23,7 @@ nnoremap <leader>ge <Esc>:YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gt <Esc>:YcmCompleter GetType<CR>
 nnoremap <leader>gp <Esc>:YcmCompleter GetParent<CR>
 nnoremap <leader>sd <Esc>:YcmCompleter GetDoc<CR>
+
+" Code navigation with gtags-csope
+nnoremap <leader>fr <Esc>:cs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>fd <Esc>:cs find g <C-R>=expand("<cword>")<CR><CR>
