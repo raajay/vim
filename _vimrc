@@ -527,6 +527,7 @@ map <leader>v <Plug>TaskList
 let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'YouCompleteMe')
 call add(g:pathogen_disabled, 'vimtex')
+call add(g:pathogen_disabled, 'vim-gtags-cscope')
 "call add(g:pathogen_disabled, 'vim-gitgutter')
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
