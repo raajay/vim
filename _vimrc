@@ -43,6 +43,8 @@ set winaltkeys=no                   " disable use of alt keys for accessing gvim
 set conceallevel=0
 set concealcursor=""
 set fo+=jn
+"set exrc
+"set secure
 ""}}}
 " My Custom Mappings (as opposed to plugins)
 " My text folding settings"{{{
@@ -390,6 +392,7 @@ let g:CommandTMaxDepth = 20
 let g:CommandTMaxHeight = 10
 let g:CommandTMatchWindowReverse = 1
 let g:CommandTTraverseSCM='pwd'
+map <leader>ff <Esc>:CommandT<CR>
 ""}}}
 " YouCompleteMe settings"{{{
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
@@ -495,6 +498,7 @@ let g:ycm_semantic_triggers.tex = [
 let g:indentLine_enabled=1
 let g:indentLine_color_term = 237
 let g:indentLine_concealcursor=''
+let g:indentLine_conceallevel=0
 map <leader>il <Esc>:IndentLinesToggle<cr>
 ""}}}
 " vim-go settings"{{{
