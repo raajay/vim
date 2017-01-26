@@ -1,9 +1,14 @@
 " Vim color file
-" Converted from Textmate theme Monokai using Coloration v0.3.2 (http://github.com/sickill/coloration)
-set background=dark
-highlight clear
+" Author: Raajay Viswanathan <raajay.v@gmail.com>
+"
+" Note:
+" 1. Converted from Textmate theme Monokai using Coloration v0.3.2
+"    (http://github.com/sickill/coloration)
+" 2. https://github.com/oneKelvinSmith/monokai-emacs/blob/master/monokai-theme.el
+"
 
-" https://github.com/oneKelvinSmith/monokai-emacs/blob/master/monokai-theme.el
+highlight clear
+set background=dark
 
 " xterm 256 colors"{{{
 " Cyan : 81
@@ -20,7 +25,6 @@ highlight clear
 " Red Light : 197
 " Magenta : 95 (used for folding)
 " Gray : 59 (used for comments)"}}}
-
 " HTML colors"{{{
 " Blue : #66D9EF
 " Blue Dark : #40CAE4
@@ -48,6 +52,7 @@ endif
 
 set t_Co=256
 let g:colors_name = "monokai"
+
 
 hi Normal ctermfg=252 ctermbg=233 cterm=NONE guifg=#f8f8f2 guibg=#272822 gui=NONE
 hi NonText ctermfg=59 ctermbg=234 cterm=NONE guifg=#49483e guibg=#31322c gui=NONE
