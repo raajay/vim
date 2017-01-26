@@ -272,3 +272,8 @@ hi texDefCmd ctermfg=208 ctermbg=NONE cterm=NONE guifg=#FD5FF1 guibg=NONE gui=NO
 hi texDefName ctermfg=64 ctermbg=NONE cterm=NONE guifg=#A6E22A guibg=NONE gui=NONE
 hi bibEntryKw ctermfg=64 ctermbg=NONE cterm=NONE guifg=#E6DB74 guibg=NONE gui=NONE
 ""}}}
+" NERDTree Highlighting "{{{
+hi NERDTreeUp ctermfg=81 ctermbg=NONE cterm=NONE
+hi NERDTreeDir ctermfg=141 ctermbg=NONE cterm=NONE guifg=#ae81ff guibg=NONE gui=NONE
+hi NERDTreeExecFile ctermfg=118 ctermbg=NONE cterm=bold
+""}}}

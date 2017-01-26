@@ -1,7 +1,7 @@
 " Common Vim Settings"{{{
 set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
-set relativenumber                  " relative line numbers are awesome.
+set norelativenumber                " relative line numbers are awesome.
 set numberwidth=5                   " the number of columns for line numbers
 set mouse=                          " disable mouse clicks for all modes
 set backspace=eol,indent,start      " characters that backspace can erase
@@ -368,15 +368,16 @@ let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_format = 'mi[%s]'
 ""}}}
 " NERDTree settings"{{{
-let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_open_on_new_tabs = 0
 let g:nerdtree_tabs_autoclose = 0
 let NERDTreeHijackNetrw = 0
 let NERDTreeChDirMode = 2
 let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeShowLineNumbers = 1
+let NERDTreeShowLineNumbers = 0
 let NERDTreeDirArrows=0
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
+let NERDTreeRespectWildIgnore = 1
 ""}}}
 "super tab settings"{{{
 let g:SuperTabDefaultCompletionType = 'context'
@@ -424,7 +425,7 @@ let delimitMate_expand_cr = 1
 ""}}}
 " vim-rooter settings"{{{
 "let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
-let g:rooter_patterns = ['.main', '.gradlemain', '.latexmain', '.htmlmain', 'pom.xml', 'build.xml', 'build.sbt', '.git', '.git/']
+let g:rooter_patterns = ['__vimrc', '.main', '.gradlemain', '.latexmain', '.htmlmain', 'pom.xml', 'build.xml', 'build.sbt', '.git', '.git/']
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 ""}}}
@@ -526,6 +527,10 @@ map <leader>pp <Esc><c-w><c-p>
 " Tasklist invocation (,t is mapped to Command-T)
 map <leader>v <Plug>TaskList
 "}}}
+" Source local VIMRC
+if !empty(glob("__vimrc"))
+    source __vimrc
+endif
 " Pathogen related settings (pathogen is a plugin manager)"{{{
 " Plugins disabled through pathogen"{{{
 let g:pathogen_disabled = []
