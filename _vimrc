@@ -37,6 +37,7 @@ set nospell                         " spell check, XXX where is the dictionary
 set autochdir                       " change to the directory of the current file
 set splitright                      " the new windows opens on the right
 set splitbelow                      " horizontal split below
+set encoding=utf-8
 set termencoding=utf-8
 set printoptions=number:y
 set winaltkeys=no                   " disable use of alt keys for accessing gvim menus
@@ -71,11 +72,6 @@ endf
 set foldtext=foldtext()
 set foldmethod=marker
 ""}}}
-" Show current highlight configuration command"{{{
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-"}}}
 " My color scheme configurations"{{{
 let g:my_background=$BACKGROUND
 let g:my_colorscheme=$COLORSCHEME
@@ -166,6 +162,10 @@ let mapleader=$LEADER
 if (mapleader == '')
     let mapleader=','
 endif
+" Show current highlight configuration command
+map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 " mappings to avoid common mistakes in Vim
 map :W :wz<BS>
 map :Q :qz<BS>
@@ -213,6 +213,11 @@ map <leader>rt4 <Esc>:%s/\t/\ \ \ \ /g<cr><c-o>
 map <leader>rt2 <Esc>:%s/\t/\ \ /g<cr><c-o>
 " reload file
 map <leader>re <Esc>:redraw!<cr>
+" Jump to the first window (leftmost)
+map <C-1> <C-w>200h
+" Jump to the last window (rightmost)
+map <C-\> <C-w>200l
+
 " Function to toggle the to-do list"{{{
 let g:open_todo = 0
 function! OpenToDo()
@@ -375,7 +380,9 @@ let NERDTreeHijackNetrw = 0
 let NERDTreeChDirMode = 2
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeShowLineNumbers = 0
-let NERDTreeDirArrows=0
+"let NERDTreeDirArrowExpandable="+"
+"let NERDTreeDirArrowCollapsible="-"
+let g:NERDTreeDirArrows=0
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
 let NERDTreeRespectWildIgnore = 1
 ""}}}
@@ -513,11 +520,13 @@ let g:ycm_semantic_triggers.go = ['.']
 let g:session_autosave='no'
 ""}}}
 " goyo.vim settings"{{{
-let g:goyo_width=100
+let g:goyo_width=120
+let g:goyo_height=60
+map <leader>z <Esc>:Goyo<cr>
 ""}}}
 " Mappings invoking plugin commands
 " NERDTree settings"{{{
-map <leader>nt <Esc>:NERDTreeToggle<cr>
+map <leader>ss <Esc>:NERDTreeToggle<CR>
 " Tagbar settings
 map <leader>a <Esc>:TagbarToggle<CR>
 " Tabularize - Helps in alignment
