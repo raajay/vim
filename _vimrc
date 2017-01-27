@@ -537,8 +537,8 @@ map <leader>pp <Esc><c-w><c-p>
 map <leader>v <Plug>TaskList
 "}}}
 " Source local VIMRC
-if !empty(glob("__vimrc"))
-    source __vimrc
+if !empty(glob("_vimrc_"))
+    source _vimrc_
 endif
 " Pathogen related settings (pathogen is a plugin manager)"{{{
 " Plugins disabled through pathogen"{{{
