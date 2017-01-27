@@ -57,6 +57,8 @@ flags = [
 '-isystem',
 '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/BoostParts',
 '-I',
+'./src'
+'-I',
 '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/ClangCompleter',
 '-I',
 '.',
