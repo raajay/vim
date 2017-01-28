@@ -242,7 +242,7 @@ function! ToggleSpell()
         let g:my_spell=0
     endif
 endfunc
-map <leader>ss <Esc>:call ToggleSpell()<cr>
+map <leader>sp <Esc>:call ToggleSpell()<cr>
 ""}}}
 ""}}}
 " Vim keyword mappings"{{{
