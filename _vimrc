@@ -118,7 +118,7 @@ function! ToggleBG()
     endif
     let g:airline_theme = g:my_airlinetheme
 endfunc
-map <leader>cc <Esc>:call ToggleBG()<cr>
+map <leader>bg <Esc>:call ToggleBG()<cr>
 ""}}}
 " gui Vim (gvim/macvim) - font/display settings"{{{
 if has("gui_running")
@@ -524,6 +524,9 @@ let g:goyo_width=120
 let g:goyo_height=60
 map <leader>z <Esc>:Goyo<cr>
 ""}}}
+" NERDCommenter"{{{
+"map <leader>// <Esc>:NERDComComment<CR>
+""}}}
 " Mappings invoking plugin commands
 " NERDTree settings"{{{
 map <leader>ss <Esc>:NERDTreeToggle<CR>
@@ -541,7 +544,7 @@ map <leader>v <Plug>TaskList
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vimtex')
 call add(g:pathogen_disabled, 'vim-gtags-cscope')
-call add(g:pathogen_disabled, 'nerdcommenter')
+"call add(g:pathogen_disabled, 'nerdcommenter')
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
 end
