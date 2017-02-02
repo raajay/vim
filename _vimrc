@@ -44,6 +44,7 @@ set winaltkeys=no                   " disable use of alt keys for accessing gvim
 set conceallevel=0
 set concealcursor=""
 set fo+=jn
+set clipboard=unnamed
 "set exrc
 "set secure
 ""}}}
