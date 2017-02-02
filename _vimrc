@@ -450,7 +450,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 ""}}}
 " Tagbar settings"{{{
 let g:tagbar_type_tex = {
-    \ 'ctagstype' : 'latex',
+    \ 'ctagstype' : 'tex',
     \ 'kinds' : [
     \ 's:sections',
     \ 'g:graphics:0:0',
@@ -543,6 +543,7 @@ map <leader>v <Plug>TaskList
 " Pathogen related settings (pathogen is a plugin manager)"{{{
 " Plugins disabled through pathogen"{{{
 let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'vim-gtags-cscope')
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
 end
