@@ -521,9 +521,9 @@ let g:ycm_semantic_triggers.go = ['.']
 let g:session_autosave='no'
 ""}}}
 " goyo.vim settings"{{{
-let g:goyo_width=120
-let g:goyo_height=60
-map <leader>z <Esc>:Goyo<cr>
+"let g:goyo_width=120
+"let g:goyo_height=60
+map <leader>z <Esc>:Goyo 120x50<CR>
 ""}}}
 " NERDCommenter"{{{
 "map <leader>// <Esc>:NERDComComment<CR>
