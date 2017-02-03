@@ -44,7 +44,7 @@ set winaltkeys=no                   " disable use of alt keys for accessing gvim
 set conceallevel=0
 set concealcursor=""
 set fo+=jn
-set clipboard=unnamed
+"set clipboard=unnamed "interferes with regular yank
 "set exrc
 "set secure
 ""}}}
@@ -547,6 +547,9 @@ call add(g:pathogen_disabled, 'vim-gtags-cscope')
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
 end
+if (executable('global') == 0)
+    call add(g:pathogen_disabled, 'vim-gtags-cscope')
+endif
 "}}}
 " Source local VIMRC
 if !empty(glob("_vimrc_"))
