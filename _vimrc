@@ -528,6 +528,9 @@ map <leader>z <Esc>:Goyo<cr>
 " NERDCommenter"{{{
 "map <leader>// <Esc>:NERDComComment<CR>
 ""}}}
+" vim-mru"{{{
+map <leader>ls <Esc>:MRU<CR>
+""}}}
 " Mappings invoking plugin commands
 " NERDTree settings"{{{
 map <leader>ss <Esc>:NERDTreeToggle<CR>
