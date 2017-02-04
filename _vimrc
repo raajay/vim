@@ -523,7 +523,7 @@ let g:session_autosave='no'
 " goyo.vim settings"{{{
 "let g:goyo_width=120
 "let g:goyo_height=60
-map <leader>z <Esc>:Goyo 120x50<CR>
+map <leader>z <Esc>:Goyo 100x50<CR>
 ""}}}
 " NERDCommenter"{{{
 "map <leader>// <Esc>:NERDComComment<CR>

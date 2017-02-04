@@ -34,3 +34,8 @@
 30. [vim-snippets](https://github.com/raajay/vim-snippets.git)
 31. [YouCompleteMe](https://github.com/Valloric/YouCompleteMe.git)
 32. [YouCompleteMe-Windows]
+
+### Plugins to consider
+
+1. [vim-lexical]()
+2. [vim-pencil](https://github.com/reedes/vim-pencil)

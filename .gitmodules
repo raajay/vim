@@ -101,3 +101,6 @@
 [submodule "bundle/vim-mru"]
 	path = bundle/vim-mru
 	url = https://github.com/yegappan/mru.git
+[submodule "bundle/vim-pencil"]
+	path = bundle/vim-pencil
+	url = https://github.com/reedes/vim-pencil
