@@ -523,13 +523,16 @@ let g:session_autosave='no'
 " goyo.vim settings"{{{
 "let g:goyo_width=120
 "let g:goyo_height=60
-map <leader>z <Esc>:Goyo 100x50<CR>
+map <leader>z <Esc>:Goyo 80x40<CR>
 ""}}}
 " NERDCommenter"{{{
 "map <leader>// <Esc>:NERDComComment<CR>
 ""}}}
 " vim-mru"{{{
 map <leader>ls <Esc>:MRU<CR>
+""}}}
+" vim-pencil "{{{
+let g:pencil#conceallevel=0
 ""}}}
 " Mappings invoking plugin commands
 " NERDTree settings"{{{
