@@ -54,7 +54,7 @@ set t_Co=256
 let g:colors_name = "monokai"
 
 
-hi Normal ctermfg=252 ctermbg=233 cterm=NONE guifg=#f8f8f2 guibg=#272822 gui=NONE
+hi Normal ctermfg=252 ctermbg=233 cterm=NONE guifg=#d0d0d0 guibg=#272822 gui=NONE
 hi NonText ctermfg=59 ctermbg=234 cterm=NONE guifg=#49483e guibg=#31322c gui=NONE
 hi LineNr ctermfg=102 ctermbg=232 cterm=NONE guifg=#90908a guibg=#202020 gui=NONE
 hi SpecialKey ctermfg=59 ctermbg=233 cterm=NONE guifg=#49483e guibg=#3c3d37 gui=NONE
