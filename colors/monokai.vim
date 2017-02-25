@@ -54,10 +54,11 @@ set t_Co=256
 let g:colors_name = "monokai"
 
 
-hi Normal ctermfg=252 ctermbg=233 cterm=NONE guifg=#d0d0d0 guibg=#272822 gui=NONE
+hi Normal ctermfg=252 ctermbg=233 cterm=NONE guifg=#f8f8f2 guibg=#272822 gui=NONE
 hi NonText ctermfg=59 ctermbg=234 cterm=NONE guifg=#49483e guibg=#31322c gui=NONE
 hi LineNr ctermfg=102 ctermbg=232 cterm=NONE guifg=#90908a guibg=#202020 gui=NONE
 hi SpecialKey ctermfg=59 ctermbg=233 cterm=NONE guifg=#49483e guibg=#3c3d37 gui=NONE
+
 hi CursorLine ctermfg=NONE ctermbg=234 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
 hi CursorColumn ctermfg=NONE ctermbg=234 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
 hi ColorColumn ctermfg=NONE ctermbg=234 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
@@ -175,7 +176,7 @@ hi cssBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi EclimDebugLine ctermfg=46 ctermbg=232 cterm=NONE guifg=#afff00 guibg=#272822 gui=NONE
 ""}}}
 " Folding"{{{
-hi Folded ctermfg=95 ctermbg=NONE cterm=NONE guifg=#a3c2c2 guibg=#272822 gui=NONE
+hi Folded ctermfg=95 ctermbg=NONE cterm=NONE guifg=#855c1b guibg=#272822 gui=NONE
 ""}}}
 " JavaDoc Highlighting"{{{
 hi javaCommentStar ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
@@ -208,6 +209,9 @@ hi javaMethodDecl ctermfg=197 ctermbg=NONE cterm=NONE
 " hi javaExternal
 " hi javaFuncDef
 " hi javaBraces
+""}}}
+" Python Highlighting"{{{
+hi pythonFunction guifg=#a6e22e guibg=#272822 gui=NONE
 ""}}}
 " Fugitive Git Highlighting"{{{
 hi gitcommitBranch ctermbg=NONE ctermfg=141 cterm=NONE guibg=NONE guifg=#ae81ff
@@ -277,3 +281,25 @@ hi NERDTreeUp ctermfg=81 ctermbg=NONE cterm=NONE
 hi NERDTreeDir ctermfg=141 ctermbg=NONE cterm=NONE guifg=#ae81ff guibg=NONE gui=NONE
 hi NERDTreeExecFile ctermfg=118 ctermbg=NONE cterm=bold
 ""}}}
+
+" Colors from https://www.emacswiki.org/emacs/monokai-theme.el
+" foreground-color f8f8f2
+" background-color 272822
+"
+" function a6e22e green
+" cursor-color 73d216 - medium chameleon green
+" mouse-color 73d216 - medium chameleon green
+" constant face 4e9a06 dark green
+"
+" comment 75715e - dark aluminium
+"
+" string e6db74 - some weid kind of yellow
+"
+" string f92672 plum
+"
+" 855c1b chocolate medium
+"
+" variable name fd971f orange (not used currently)
+"
+" pre-processor 66d9ef sky blue
+" lock type face 66d9ef sky blue
