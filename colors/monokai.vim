@@ -175,7 +175,7 @@ hi cssBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi EclimDebugLine ctermfg=46 ctermbg=232 cterm=NONE guifg=#afff00 guibg=#272822 gui=NONE
 ""}}}
 " Folding"{{{
-hi Folded ctermfg=95 ctermbg=NONE cterm=NONE guifg=#5f5f00 guibg=#272822 gui=NONE
+hi Folded ctermfg=95 ctermbg=NONE cterm=NONE guifg=#a3c2c2 guibg=#272822 gui=NONE
 ""}}}
 " JavaDoc Highlighting"{{{
 hi javaCommentStar ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
