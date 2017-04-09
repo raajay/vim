@@ -433,7 +433,19 @@ let delimitMate_expand_cr = 1
 ""}}}
 " vim-rooter settings"{{{
 "let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
-let g:rooter_patterns = ['_vimrc_', '.main', '.gradlemain', '.latexmain', '.htmlmain', 'pom.xml', 'build.xml', 'build.sbt', '.git', '.git/']
+let g:rooter_patterns = [
+    \ '_vimrc_',
+    \ '.main',
+    \ '.gradlemain',
+    \ '.latexmain',
+    \ '.htmlmain',
+    \ 'pom.xml',
+    \ 'build.xml',
+    \ 'build.sbt',
+    \ '.git',
+    \ '.git/',
+    \ '__init__.py'
+    \ ]
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 ""}}}
