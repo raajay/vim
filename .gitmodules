@@ -1,30 +1,30 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
     branch = master
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
-	url = git://github.com/tpope/vim-repeat.git
+	url = https://github.com/tpope/vim-repeat.git
     branch = master
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
-	url = git://github.com/bling/vim-airline
+	url = https://github.com/bling/vim-airline
     branch = master
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
     branch = master
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
-	url = git://github.com/SirVer/ultisnips.git
+	url = https://github.com/SirVer/ultisnips.git
     branch = master
 [submodule "bundle/tabular"]
 	path = bundle/tabular
-	url = git://github.com/godlygeek/tabular.git
+	url = https://github.com/godlygeek/tabular.git
     branch = master
 [submodule "bundle/delmitmate"]
 	path = bundle/delmitmate
-	url = git://github.com/Raimondi/delimitMate.git
+	url = https://github.com/Raimondi/delimitMate.git
     branch = master
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
