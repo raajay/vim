@@ -107,3 +107,6 @@
 [submodule "bundle/vim-wordy"]
 	path = bundle/vim-wordy
 	url = https://github.com/reedes/vim-wordy.git
+[submodule "tools/YCM-Generator"]
+	path = tools/YCM-Generator
+	url = https://github.com/rdnetto/YCM-Generator.git
