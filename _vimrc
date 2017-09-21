@@ -404,7 +404,8 @@ let g:CommandTTraverseSCM='pwd'
 map <leader>ff <Esc>:CommandT<CR>
 ""}}}
 " YouCompleteMe settings"{{{
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+" disabling it since configuration should be done per project
+"let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_warning_symbol = '>'
 let g:ycm_autoclose_preview_window_after_completion = 1
