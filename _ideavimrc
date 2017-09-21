@@ -4,7 +4,7 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 
-let mapleader=" "
+let mapleader=","
 
 map <leader>ff :action ToggleFullScreen<cr>
 map <leader>qq :action CloseProject<cr>
@@ -15,6 +15,10 @@ map <leader>b :action ToggleLineBreakpoint<CR>
 map <leader>gd :action GotoImplementation<CR>
 map <leader>re :action RenameElement<cr>
 map <leader>fr :action ReformatCode<cr>
+
+map <leader>a :action GotoRelated<cr>
+map <leader>su :action GotoSuperMethod<cr>
+map <leader>ch :action TypeHierarchy<cr>
 
 nnoremap <leader>w :action MakeModule<cr>
 nnoremap <leader>c :action Compile<cr>
