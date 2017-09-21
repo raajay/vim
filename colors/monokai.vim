@@ -24,7 +24,9 @@ set background=dark
 " Red : 88
 " Red Light : 197
 " Magenta : 95 (used for folding)
-" Gray : 59 (used for comments)"}}}
+" Gray : 59 (used for comments)
+" "}}}
+
 " HTML colors"{{{
 " Blue : #66D9EF
 " Blue Dark : #40CAE4
@@ -54,7 +56,7 @@ set t_Co=256
 let g:colors_name = "monokai"
 
 
-hi Normal ctermfg=252 ctermbg=233 cterm=NONE guifg=#f8f8f2 guibg=#272822 gui=NONE
+hi Normal ctermfg=247 ctermbg=233 cterm=NONE guifg=#f8f8f2 guibg=#272822 gui=NONE
 hi NonText ctermfg=59 ctermbg=234 cterm=NONE guifg=#49483e guibg=#31322c gui=NONE
 hi LineNr ctermfg=102 ctermbg=232 cterm=NONE guifg=#90908a guibg=#202020 gui=NONE
 hi SpecialKey ctermfg=59 ctermbg=233 cterm=NONE guifg=#49483e guibg=#3c3d37 gui=NONE
@@ -281,6 +283,21 @@ hi NERDTreeUp ctermfg=81 ctermbg=NONE cterm=NONE
 hi NERDTreeDir ctermfg=141 ctermbg=NONE cterm=NONE guifg=#ae81ff guibg=NONE gui=NONE
 hi NERDTreeExecFile ctermfg=118 ctermbg=NONE cterm=bold
 ""}}}
+" C / C++ Highlighting "{{{
+hi cInclude ctermfg=64 ctermbg=NONE cterm=NONE
+hi cIncluded ctermfg=186 ctermbg=NONE cterm=NONE
+hi cCustomFunc ctermfg=251 ctermbg=NONE cterm=NONE
+hi cType ctermfg=67 ctermbg=NONE cterm=NONE
+hi cStorageClass ctermfg=67 ctermbg=NONE cterm=NONE
+hi cppStructure ctermfg=67 ctermbg=NONE cterm=NONE
+hi cConditional ctermfg=208 ctermbg=NONE cterm=NONE
+hi cRepeat ctermfg=208 ctermbg=NONE cterm=NONE
+hi cStatement ctermfg=197 ctermbg=NONE cterm=NONE
+hi cppStatement ctermfg=197 ctermbg=NONE cterm=NONE
+hi cPreProc ctermfg=164 ctermbg=NONE cterm=NONE
+hi cppSTLfunction ctermfg=252 ctermbg=NONE cterm=NONE
+hi cTodo ctermfg=164 ctermbg=NONE cterm=NONE
+" "}}}
 
 " Colors from https://www.emacswiki.org/emacs/monokai-theme.el
 " foreground-color f8f8f2
