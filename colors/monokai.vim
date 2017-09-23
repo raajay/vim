@@ -288,6 +288,7 @@ hi cInclude ctermfg=64 ctermbg=NONE cterm=NONE
 hi cIncluded ctermfg=186 ctermbg=NONE cterm=NONE
 hi cCustomFunc ctermfg=251 ctermbg=NONE cterm=NONE
 hi cType ctermfg=67 ctermbg=NONE cterm=NONE
+hi cppType ctermfg=67 ctermbg=NONE cterm=NONE
 hi cStorageClass ctermfg=67 ctermbg=NONE cterm=NONE
 hi cppStructure ctermfg=67 ctermbg=NONE cterm=NONE
 hi cConditional ctermfg=208 ctermbg=NONE cterm=NONE
