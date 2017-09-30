@@ -1,7 +1,7 @@
 " Common Vim Settings"{{{
 set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
-set norelativenumber                " relative line numbers are awesome.
+set relativenumber                  " relative line numbers are awesome.
 set numberwidth=5                   " the number of columns for line numbers
 set mouse=                          " disable mouse clicks for all modes
 set backspace=eol,indent,start      " characters that backspace can erase
@@ -29,7 +29,7 @@ if exists('+colorcolumn')
 endif
 set textwidth=0                     " no text width (moved to ft specific)
 set cursorline                      " highlights the row the cursor is on
-set cursorcolumn                    " highlights the current column
+"set cursorcolumn                    " highlights the current column
 set lazyredraw                      " to speed up the effects of highlighting row or column
 set laststatus=2                    " to display the status line always
 set showtabline=2                   " to show the tab line always
@@ -47,6 +47,9 @@ set fo+=jn
 "set clipboard=unnamed "interferes with regular yank
 "set exrc
 "set secure
+set termguicolors
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 ""}}}
 " My Custom Mappings (as opposed to plugins)
 " My text folding settings"{{{
@@ -105,7 +108,7 @@ if(g:my_colorscheme == 'solarized')
     let g:solarized_italic=1
     colorscheme solarized
 elseif(g:my_colorscheme == 'monokai')
-    colorscheme monokai
+    colorscheme monokai2
 endif
 
 " Function to toggle between light and dark background
@@ -170,7 +173,7 @@ map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
 " mappings to avoid common mistakes in Vim
 map :W :wz<BS>
 map :Q :qz<BS>
-map :B :bz<BS>
+"map :B :bz<BS>
 " mappings to avoid going to command mode for common operations
 vnoremap ; <Esc>:
 nnoremap ; <Esc>:
@@ -356,6 +359,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_buffers = 1       " show buffers in the tabline
 let g:airline#extensions#tabline#tab_nr_type = 2        " splits and tab number
 let g:airline#extensions#tabline#buffer_idx_mode = 1    " allow navigation using hot keys
+let g:airline#extensions#tabline#buffer_nr_format = '%s: '
 " mappings to use for selecting buffers
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
@@ -386,6 +390,8 @@ let NERDTreeShowLineNumbers = 0
 let g:NERDTreeDirArrows=0
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
 let NERDTreeRespectWildIgnore = 1
+let NERDTreeWinPos = "right"
+map <leader>ss <Esc>:NERDTreeToggle<CR>
 ""}}}
 "super tab settings"{{{
 let g:SuperTabDefaultCompletionType = 'context'
@@ -398,10 +404,11 @@ else
     set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*,*/third_party/*,*.o,*.out
 endif
 let g:CommandTMaxDepth = 20
-let g:CommandTMaxHeight = 10
+let g:CommandTMaxHeight = 20
 let g:CommandTMatchWindowReverse = 1
 let g:CommandTTraverseSCM='pwd'
 map <leader>ff <Esc>:CommandT<CR>
+map <leader>fj <Esc>:CommandTJump<CR>
 ""}}}
 " YouCompleteMe settings"{{{
 " disabling it since configuration should be done per project
@@ -489,6 +496,7 @@ nmap <leader>gs <Esc>:Gstatus<CR>
 nmap <leader>gc <Esc>:Gcommit -m<Space>""<left>
 nmap <leader>gp <Esc>:Gpush<CR>
 nmap <leader>gl <Esc>:Git log --oneline<CR>
+set previewheight=30
 ""}}}
 " vimtex settings"{{{
 if !exists('g:ycm_semantic_triggers')
@@ -540,43 +548,57 @@ map <leader>z <Esc>:Goyo 80x40<CR>
 ""}}}
 " NERDCommenter"{{{
 "map <leader>// <Esc>:NERDComComment<CR>
+let g:NERDSpaceDelims=1
 ""}}}
-" vim-mru"{{{
-map <leader>ls <Esc>:MRU<CR>
+" vim-mru settings"{{{
+"map <leader>ls <Esc>:MRU<CR>
 ""}}}
-" vim-pencil "{{{
+" vim-buffergator settings"{{{
+let g:buffergator_suppress_keymaps=1
+let g:buffergator_show_full_directory_path=0
+let g:buffergator_viewport_split_policy='n'
+map <leader>lb <Esc>:BuffergatorOpen<CR>
+map <leader>ls <Esc>:BuffergatorOpen<CR>
+map <leader>lt <Esc>:BuffergatorTabsOpen<CR>
+map <leader>lr <Esc>:BuffergatorMruList<CR>
+""}}}
+" vim-pencil settings"{{{
 let g:pencil#conceallevel=0
 ""}}}
-" Mappings invoking plugin commands
-" NERDTree settings"{{{
-map <leader>ss <Esc>:NERDTreeToggle<CR>
-" Tagbar settings
+" vim-cpp-enhanced-highlight"{{{
+" note the file are in build/syntax
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+""}}}
+" vim-tagbar settings"{{{
 map <leader>a <Esc>:TagbarToggle<CR>
+let g:tagbar_left = 1
+""}}}
+" Misc settings"{{{
 " Tabularize - Helps in alignment
 map <leader>b <Esc>:Tabularize<Space>
 " Navigation Settings
 map <leader>pp <Esc><c-w><c-p>
 " Tasklist invocation (,t is mapped to Command-T)
 map <leader>v <Plug>TaskList
-"}}}
-" Pathogen related settings (pathogen is a plugin manager)"{{{
-" Plugins disabled through pathogen"{{{
+""}}}
+" Pathogen settings"{{{
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-gtags-cscope')
-call add(g:pathogen_disabled, 'YouCompleteMe')
-call add(g:pathogen_disabled, 'ultisnips')
+"call add(g:pathogen_disabled, 'ultisnips')
 call add(g:pathogen_disabled, 'vim-gtags-cscope')
+call add(g:pathogen_disabled, 'vim-mru')
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
 end
 if (executable('global') == 0)
     call add(g:pathogen_disabled, 'vim-gtags-cscope')
 endif
-"}}}
+""}}}
 " Source local VIMRC
-if !empty(glob("_vimrc_"))
-    source _vimrc_
+if !empty(glob(".localvimrc"))
+    source .localvimrc
 endif
 call pathogen#infect()
 call pathogen#helptags()
-"}}}
