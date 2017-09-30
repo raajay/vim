@@ -46,7 +46,7 @@ set background=dark
 " Red : #F92672
 " White : #F8F8F2
 " Gray : #6c6c6c : 242
-" "}}}
+""}}}
 
 if exists("syntax_on")
   syntax reset
@@ -288,6 +288,7 @@ hi cInclude ctermfg=64 ctermbg=NONE cterm=NONE
 hi cIncluded ctermfg=186 ctermbg=NONE cterm=NONE
 hi cCustomFunc ctermfg=251 ctermbg=NONE cterm=NONE
 hi cType ctermfg=67 ctermbg=NONE cterm=NONE
+hi cppType ctermfg=67 ctermbg=NONE cterm=NONE
 hi cStorageClass ctermfg=67 ctermbg=NONE cterm=NONE
 hi cppStructure ctermfg=67 ctermbg=NONE cterm=NONE
 hi cConditional ctermfg=208 ctermbg=NONE cterm=NONE
