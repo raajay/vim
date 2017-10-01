@@ -110,3 +110,6 @@
 [submodule "tools/YCM-Generator"]
 	path = tools/YCM-Generator
 	url = https://github.com/rdnetto/YCM-Generator.git
+[submodule "bundle/vim-signature"]
+	path = bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature.git
