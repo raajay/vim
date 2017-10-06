@@ -468,19 +468,6 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 ""}}}
-" Tagbar settings"{{{
-let g:tagbar_type_tex = {
-    \ 'ctagstype' : 'tex',
-    \ 'kinds' : [
-    \ 's:sections',
-    \ 'g:graphics:0:0',
-    \ 'l:labels',
-    \ 'r:refs:1:0',
-    \ 'p:pagerefs:1:0'
-    \ ],
-    \ 'sort' : 0,
-    \ }
-""}}}
 " vim-gitgutter settings"{{{
 let g:gitgutter_map_keys = 0
 nmap <leader>hs <Plug>GitGutterStageHunk
@@ -572,7 +559,18 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 ""}}}
 " vim-tagbar settings"{{{
-map <leader>a <Esc>:TagbarToggle<CR>
+let g:tagbar_type_tex = {
+    \ 'ctagstype' : 'tex',
+    \ 'kinds' : [
+    \ 's:sections',
+    \ 'g:graphics:0:0',
+    \ 'l:labels',
+    \ 'r:refs:1:0',
+    \ 'p:pagerefs:1:0'
+    \ ],
+    \ 'sort' : 0,
+    \ }
+map <leader>aa <Esc>:TagbarToggle<CR>
 let g:tagbar_left = 1
 ""}}}
 " Misc settings"{{{
