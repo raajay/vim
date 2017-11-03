@@ -29,7 +29,7 @@ if exists('+colorcolumn')
 endif
 set textwidth=0                     " no text width (moved to ft specific)
 set cursorline                      " highlights the row the cursor is on
-"set cursorcolumn                    " highlights the current column
+set cursorcolumn                    " highlights the current column
 set lazyredraw                      " to speed up the effects of highlighting row or column
 set laststatus=2                    " to display the status line always
 set showtabline=2                   " to show the tab line always
@@ -401,7 +401,7 @@ let g:SuperTabContextDefaultCompletionType = '<c-p>'
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
 else
-    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*,*/third_party/*,*.o,*.out
+    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*,*/third_party/*,*.o,*.out,*.JPEG,*.tar,*.tar.gz
 endif
 let g:CommandTMaxDepth = 20
 let g:CommandTMaxHeight = 20
@@ -575,13 +575,12 @@ let g:tagbar_left = 1
 ""}}}
 " vim-rtags"{{{
 let g:rtagsUseDefaultMappings = 0
-let g:rtagsUseLocationList = 0
 map <leader>rd <Esc>:call rtags#Diagnostics()<CR>
 map <leader>rc <Esc>:call rtags#FindSubClasses()<CR>
 map <leader>rC <Esc>:call rtags#FindSuperClasses()<CR>
 map <leader>rb <Esc>:call rtags#JumpBack()<CR>
 map <leader>rv <Esc>:call rtags#FindVirtuals()<CR>
-map <leader>re <Esc>:call rtags#RenameSymbolUnderCursor<CR>
+map <leader>re <Esc>:call rtags#RenameSymbolUnderCursor()<CR>
 map <leader>rl <Esc>:call rtags#ProjectList()<CR>
 map <leader>rr <Esc>:call rtags#ReindexFile()<CR>
 map <leader>rs <Esc>:call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
@@ -606,7 +605,6 @@ map <leader>v <Plug>TaskList
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-gtags-cscope')
 "call add(g:pathogen_disabled, 'ultisnips')
-call add(g:pathogen_disabled, 'vim-gtags-cscope')
 call add(g:pathogen_disabled, 'vim-mru')
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
