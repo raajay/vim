@@ -606,6 +606,7 @@ let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-gtags-cscope')
 "call add(g:pathogen_disabled, 'ultisnips')
 call add(g:pathogen_disabled, 'vim-mru')
+call add(g:pathogen_disabled, 'color_coded')
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
 end

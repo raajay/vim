@@ -119,3 +119,6 @@
 [submodule "bundle/vim-rtags"]
 	path = bundle/vim-rtags
 	url = https://github.com/lyuts/vim-rtags.git
+[submodule "bundle/color_coded"]
+	path = bundle/color_coded
+	url = https://github.com/jeaye/color_coded.git
