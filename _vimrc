@@ -289,7 +289,7 @@ command -range=% -nargs=? Number :<line1>,<line2>s/^/\=printf("%d<args>", line("
 " Take a backup of a file
 command! Bak :w %.bak
 "}}}
-" Time out settings for redrawing the screen"{{{
+" time out settings for redrawing the screen"{{{
 set timeoutlen=3000
 set ttimeoutlen=50
 set updatetime=30 " time taken by bufferline to redraw
@@ -302,6 +302,11 @@ if executable('ag')
     set grepformat=%f:%l:%c:%m
 endif
 "}}}
+" quickfix and location list{{{
+nnoremap <leader>lo <Esc>:lopen<CR>
+nnoremap <leader>lp <Esc>:lprevious<CR>
+nnoremap <leader>ln <Esc>:lnext<CR>
+""}}}
 " PLUGIN SETTINGS (installed via pathogen)
 " vim-airline settings"{{{
 let g:airline_section_b = '%{pathshorten(getcwd())."  ".airline#util#wrap(airline#extensions#branch#get_head(),0)}'
@@ -575,24 +580,20 @@ let g:tagbar_left = 1
 ""}}}
 " vim-rtags"{{{
 let g:rtagsUseDefaultMappings = 0
-map <leader>rd <Esc>:call rtags#Diagnostics()<CR>
-map <leader>rc <Esc>:call rtags#FindSubClasses()<CR>
-map <leader>rC <Esc>:call rtags#FindSuperClasses()<CR>
-map <leader>rb <Esc>:call rtags#JumpBack()<CR>
-map <leader>rv <Esc>:call rtags#FindVirtuals()<CR>
-map <leader>re <Esc>:call rtags#RenameSymbolUnderCursor()<CR>
-map <leader>rl <Esc>:call rtags#ProjectList()<CR>
-map <leader>rr <Esc>:call rtags#ReindexFile()<CR>
-map <leader>rs <Esc>:call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
-map <leader>rf <Esc>:call rtags#FindRefs()<CR>
-map <leader>rp <Esc>:call rtags#JumpToParent()<CR>
-map <leader>rT <Esc>:call rtags#JumpTo(g:NEW_TAB)<CR>
-map <leader>rV <Esc>:call rtags#JumpTo(g:V_SPLIT)<CR>
-map <leader>rS <Esc>:call rtags#JumpTo(g:H_SPLIT)<CR>
-map <leader>rJ <Esc>:call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
-map <leader>rj <Esc>:call rtags#JumpTo(g:SAME_WINDOW)<CR>
-map <leader>ri <Esc>:call rtags#SymbolInfo()<CR>
+" All the key mappings are defined in ftplugin/cpp.vim
 ""}}}
+" ALE lint settings "{{{
+let g:ale_lint_on_text_changed='never'
+let g:ale_lint_delay=1000
+"}}}
+" ropevim settings "{{{
+let ropevim_vim_completion=1
+let ropevim_extended_complete=1
+"}}}
+" SimpylFold settings "{{{
+let g:SimpylFold_fold_docstring=0
+let g:SimpylFold_fold_import=0
+"}}}
 " Misc settings"{{{
 " Tabularize - Helps in alignment
 map <leader>b <Esc>:Tabularize<Space>
@@ -614,6 +615,10 @@ if (executable('global') == 0)
     call add(g:pathogen_disabled, 'vim-gtags-cscope')
 endif
 ""}}}
+" Source private VIMRC
+if !empty(glob("~/_vimrc_private"))
+    source ~/_vimrc_private
+endif
 " Source local VIMRC
 if !empty(glob(".localvimrc"))
     source .localvimrc
