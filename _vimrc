@@ -303,10 +303,20 @@ if executable('ag')
 endif
 "}}}
 " quickfix and location list{{{
+nnoremap <leader>co <Esc>:copen<CR>
+nnoremap ]q <Esc>:cnext<CR>
+nnoremap [q <Esc>:cprevious<CR>
+
 nnoremap <leader>lo <Esc>:lopen<CR>
 nnoremap <leader>lp <Esc>:lprevious<CR>
 nnoremap <leader>ln <Esc>:lnext<CR>
+
+autocmd QuickFixCmdPost *grep* cwindow
 ""}}}
+" buffer, tab and pane settings{{{
+cnoreabbrev <expr> help getcmdtype() == ":" && getcmdline() == 'help' ? 'tab help' : 'help'
+cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab h' : 'h'
+"}}}
 " PLUGIN SETTINGS (installed via pathogen)
 " vim-airline settings"{{{
 let g:airline_section_b = '%{pathshorten(getcwd())."  ".airline#util#wrap(airline#extensions#branch#get_head(),0)}'
@@ -548,7 +558,7 @@ let g:NERDSpaceDelims=1
 " vim-buffergator settings"{{{
 let g:buffergator_suppress_keymaps=1
 let g:buffergator_show_full_directory_path=0
-let g:buffergator_viewport_split_policy='n'
+let g:buffergator_viewport_split_policy='B'
 map <leader>lb <Esc>:BuffergatorOpen<CR>
 map <leader>ls <Esc>:BuffergatorOpen<CR>
 map <leader>lt <Esc>:BuffergatorTabsOpen<CR>
@@ -575,8 +585,11 @@ let g:tagbar_type_tex = {
     \ ],
     \ 'sort' : 0,
     \ }
+" open and jump to tagbar, if already open jump to tagbar
 map <leader>aa <Esc>:TagbarToggle<CR>
+map <leader>aj <Esc>:TagbarOpen j<CR>
 let g:tagbar_left = 1
+let g:tagbar_autoclose = 0
 ""}}}
 " vim-rtags"{{{
 let g:rtagsUseDefaultMappings = 0
@@ -585,6 +598,9 @@ let g:rtagsUseDefaultMappings = 0
 " ALE lint settings "{{{
 let g:ale_lint_on_text_changed='never'
 let g:ale_lint_delay=1000
+let g:ale_linters = {
+    \   'cpp' : ['cpplint'],
+    \}
 "}}}
 " ropevim settings "{{{
 let ropevim_vim_completion=1
@@ -604,6 +620,7 @@ map <leader>v <Plug>TaskList
 ""}}}
 " Pathogen settings"{{{
 let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'ale')
 call add(g:pathogen_disabled, 'vim-gtags-cscope')
 "call add(g:pathogen_disabled, 'ultisnips')
 call add(g:pathogen_disabled, 'vim-mru')
