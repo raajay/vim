@@ -221,6 +221,9 @@ map <leader>re <Esc>:redraw!<cr>
 map <C-1> <C-w>200h
 " Jump to the last window (rightmost)
 map <C-\> <C-w>200l
+" Show the TODO / WISH list
+nnoremap <leader>dd <Esc>:Ag "TODO.*\(raajay\)"<CR>
+nnoremap <leader>ee <Esc>:Ag "XXX.*\(raajay\)"<CR>
 
 " Function to toggle the to-do list"{{{
 let g:open_todo = 0
@@ -306,6 +309,9 @@ endif
 nnoremap <leader>co <Esc>:copen<CR>
 nnoremap ]q <Esc>:cnext<CR>
 nnoremap [q <Esc>:cprevious<CR>
+" moves the quick fix list to the bottom. Upon entering the 'qf' filetye
+" execut the command to move a window to the bottom
+autocmd FileType qf wincmd J
 
 nnoremap <leader>lo <Esc>:lopen<CR>
 nnoremap <leader>lp <Esc>:lprevious<CR>
@@ -316,6 +322,9 @@ autocmd QuickFixCmdPost *grep* cwindow
 " buffer, tab and pane settings{{{
 cnoreabbrev <expr> help getcmdtype() == ":" && getcmdline() == 'help' ? 'tab help' : 'help'
 cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab h' : 'h'
+"}}}
+" syntax settings {{{
+autocmd Syntax * syntax keyword Todo NOTE WISH containedin=.*Comment
 "}}}
 " PLUGIN SETTINGS (installed via pathogen)
 " vim-airline settings"{{{
