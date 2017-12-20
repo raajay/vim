@@ -181,6 +181,8 @@ vnoremap ;q :q<cr>
 nnoremap ;q :q<cr>
 vnoremap ;w :w<cr>
 nnoremap ;w :w<cr>
+vnoremap ;d :bd<cr>
+nnoremap ;d :bd<cr>
 " Build / Compile related (requires a Makefile)
 vnoremap <leader>w :make!<cr>
 nnoremap <leader>w :make!<cr>
@@ -506,8 +508,10 @@ let g:gitgutter_eager=0
 nmap <leader>gs <Esc>:Gstatus<CR>
 nmap <leader>gc <Esc>:Gcommit -m<Space>""<left>
 nmap <leader>gp <Esc>:Gpush<CR>
-nmap <leader>gl <Esc>:Git log --oneline<CR>
+nmap <leader>gl <Esc>:Glog -n 10 --<CR>
 set previewheight=30
+" make the status window the bottom most one
+autocmd FileType gitcommit wincmd J
 ""}}}
 " vimtex settings"{{{
 if !exists('g:ycm_semantic_triggers')

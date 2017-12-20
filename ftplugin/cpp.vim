@@ -29,7 +29,6 @@ nnoremap <leader>sd <Esc>:YcmCompleter GetDoc<CR>
 nnoremap <leader>fr <Esc>:Gtags -r <C-R>=expand("<cword>")<CR><CR>
 "nnoremap <leader>fd <Esc>:cs find g <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>fd <Esc>:GtagsCursor<CR>
-nnoremap <leader>gl <Esc>:Gozilla<CR>
 
 " vim-rtags settings
 map <leader>rd <Esc>:call rtags#Diagnostics()<CR>
