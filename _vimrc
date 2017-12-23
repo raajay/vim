@@ -633,16 +633,26 @@ let g:SimpylFold_fold_import=0
 map <leader>b <Esc>:Tabularize<Space>
 " Navigation Settings
 map <leader>pp <Esc><c-w><c-p>
-" Tasklist invocation (,t is mapped to Command-T)
-map <leader>v <Plug>TaskList
 ""}}}
 " Pathogen settings"{{{
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'ale')
-call add(g:pathogen_disabled, 'vim-gtags-cscope')
-"call add(g:pathogen_disabled, 'ultisnips')
-call add(g:pathogen_disabled, 'vim-mru')
 call add(g:pathogen_disabled, 'color_coded')
+call add(g:pathogen_disabled, 'vim-gtags-cscope')
+call add(g:pathogen_disabled, 'tabular')
+call add(g:pathogen_disabled, 'tasklist')
+call add(g:pathogen_disabled, 'vim-ansible')
+call add(g:pathogen_disabled, 'vim-gtags')
+call add(g:pathogen_disabled, 'vim-gtags-cscope')
+call add(g:pathogen_disabled, 'vim-gundo')
+call add(g:pathogen_disabled, 'vim-mru')
+call add(g:pathogen_disabled, 'vim-multiple-cursors')
+call add(g:pathogen_disabled, 'vim-pencil')
+call add(g:pathogen_disabled, 'vim-session')
+call add(g:pathogen_disabled, 'vim-shell')
+call add(g:pathogen_disabled, 'vimtex')
+call add(g:pathogen_disabled, 'vim-wordy')
+
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
 end
