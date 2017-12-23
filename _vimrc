@@ -183,6 +183,10 @@ vnoremap ;w :w<cr>
 nnoremap ;w :w<cr>
 vnoremap ;d :bd<cr>
 nnoremap ;d :bd<cr>
+vnoremap ;s :split<cr>
+nnoremap ;s :split<cr>
+vnoremap ;v :vsplit<cr>
+nnoremap ;v :vsplit<cr>
 " Build / Compile related (requires a Makefile)
 vnoremap <leader>w :make!<cr>
 nnoremap <leader>w :make!<cr>
@@ -255,7 +259,8 @@ map <leader>sp <Esc>:call ToggleSpell()<cr>
 ""}}}
 ""}}}
 " Vim keyword mappings"{{{
-imap TODO TODO(raajay)<Space>
+imap TODO TODO(raajay):<Space>
+imap XXX XXX(raajay):<Space>
 "}}}
 " Filetype detection"{{{
 if has("autocmd")
