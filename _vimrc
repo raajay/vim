@@ -628,6 +628,12 @@ let ropevim_extended_complete=1
 let g:SimpylFold_fold_docstring=0
 let g:SimpylFold_fold_import=0
 "}}}
+" vim-alternate settings "{{{
+nnoremap ;a <Esc>:AlternateVSplit<CR>
+vnoremap ;a <Esc>:AlternateVSplit<CR>
+nnoremap ;A <Esc>:AlternateSplit<CR>
+vnoremap ;A <Esc>:AlternateSplit<CR>
+"}}}
 " Misc settings"{{{
 " Tabularize - Helps in alignment
 map <leader>b <Esc>:Tabularize<Space>
