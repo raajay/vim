@@ -171,9 +171,8 @@ map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 " mappings to avoid common mistakes in Vim
-map :W :wz<BS>
-map :Q :qz<BS>
-"map :B :bz<BS>
+cnoreabbrev <expr> W getcmdtype() == ":" && getcmdline() == 'W' ? 'w' : 'W'
+cnoreabbrev <expr> Q getcmdtype() == ":" && getcmdline() == 'Q' ? 'q' : 'Q'
 " mappings to avoid going to command mode for common operations
 vnoremap ; <Esc>:
 nnoremap ; <Esc>:
@@ -199,8 +198,8 @@ vnoremap <C-p> "+gP
 inoremap <C-p> <Esc>"+gP
 " Space moves current cursor location to center of screen
 nmap <space> zz
-nmap n nzz
-nmap N Nzz
+nnoremap n nzz
+nnoremap N Nzz
 " Block indentation (can be overridden in ftplugins)
 map > :s/^/\ \ \ \ /<CR>
 map < :s/^\ \ \ \ //<CR>
@@ -259,8 +258,8 @@ map <leader>sp <Esc>:call ToggleSpell()<cr>
 ""}}}
 ""}}}
 " Vim keyword mappings"{{{
-imap TODO TODO(raajay):<Space>
-imap XXX XXX(raajay):<Space>
+inoremap TODO TODO(raajay):<Space>
+inoremap XXX XXX(raajay):<Space>
 "}}}
 " Filetype detection"{{{
 if has("autocmd")
