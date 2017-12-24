@@ -516,6 +516,7 @@ nmap <leader>gl <Esc>:Glog -n 10 --<CR>
 set previewheight=30
 " make the status window the bottom most one
 autocmd FileType gitcommit wincmd J
+autocmd FileType gitcommit nnoremap ;w <Esc>:wq<CR>
 ""}}}
 " vimtex settings"{{{
 if !exists('g:ycm_semantic_triggers')
