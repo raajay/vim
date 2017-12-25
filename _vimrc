@@ -48,6 +48,7 @@ set fo+=jn
 "set exrc
 "set secure
 set termguicolors
+set undofile
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 ""}}}
@@ -159,6 +160,7 @@ let g:vimrc = g:vim_folder . '_vimrc'
 let g:local_vimrc = g:vim_folder . '_local_vimrc'
 exec "set backupdir=".g:vim_folder."vimbackup//"
 exec "set dir=".g:vim_folder."vimswap//"
+exec "set undodir=".g:vim_folder."vimundo//"
 "exec "source ".g:local_vimrc
 "}}}
 " Vim keyboard Shortcuts"{{{
