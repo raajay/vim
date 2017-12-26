@@ -12,7 +12,6 @@ endif
 let g:loaded_vim_todo = 1
 "}}}
 
-
 " Commands: {{{
 "command! -bar TodoOpenNew call
 command! -bar TodoClose :s/^.\ /x\ /g
@@ -21,7 +20,7 @@ command! -bar TodoOpen :s/^.\ /o\ /g
 "}}}
 
 " Keyword mappings: {{{
-nnoremap ;tx <Esc>:TodoClose<CR>
-nnoremap ;to <Esc>:TodoOpen<CR>
-nnoremap ;tw <Esc>:TodoWorking<CR>
+nnoremap ;tx <Esc>:TodoClose<CR>:w<CR>
+nnoremap ;to <Esc>:TodoOpen<CR>:w<CR>
+nnoremap ;tw <Esc>:TodoWorking<CR>:w<CR>
 "}}}
