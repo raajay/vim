@@ -276,6 +276,7 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.mutt set ft=muttrc
     autocmd BufRead,BufNewFile *conf set ft=conf
     autocmd BufRead,BufNewFile *.yml set ft=ansible
+    autocmd BufRead,BufNewFile *.todo set ft=todo
 endif
 ""}}}
 " Vim niceties (write with sudo, autosave, remember last pos, etc..)"{{{
