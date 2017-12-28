@@ -262,6 +262,8 @@ map <leader>sp <Esc>:call ToggleSpell()<cr>
 " Vim keyword mappings"{{{
 inoremap TODO TODO(raajay):<Space>
 inoremap XXX XXX(raajay):<Space>
+" insert data at current location
+iab <expr> ;dt strftime("%e-%b-%Y %H:%M")
 "}}}
 " Filetype detection"{{{
 if has("autocmd")
