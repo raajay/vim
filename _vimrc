@@ -229,6 +229,7 @@ map <C-1> <C-w>200h
 " Jump to the last window (rightmost)
 map <C-\> <C-w>200l
 " Show the TODO / WISH list
+" works only with silver searcher plugin
 nnoremap <leader>dd <Esc>:Ag "TODO.*\(raajay\)"<CR>
 nnoremap <leader>ee <Esc>:Ag "XXX.*\(raajay\)"<CR>
 
@@ -263,7 +264,7 @@ map <leader>sp <Esc>:call ToggleSpell()<cr>
 inoremap TODO TODO(raajay):<Space>
 inoremap XXX XXX(raajay):<Space>
 " insert data at current location
-iab <expr> ;dt strftime("%e-%b-%Y %H:%M")
+iab <expr> ddt strftime("%e-%b-%Y %H:%M")
 "}}}
 " Filetype detection"{{{
 if has("autocmd")
@@ -479,6 +480,7 @@ let delimitMate_expand_cr = 1
 "let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
 let g:rooter_patterns = [
     \ '_vimrc_',
+    \ '.localvimrc',
     \ '.main',
     \ '.gradlemain',
     \ '.latexmain',
