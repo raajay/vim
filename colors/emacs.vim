@@ -42,7 +42,7 @@ hi SpecialKey guifg=Blue
 hi Title gui=bold guifg=Magenta
 hi WarningMsg guifg=Red
 hi WildMenu guibg=Yellow guifg=Black
-hi Folded guibg=White guifg=DarkBlue
+hi Folded guibg=Grey guifg=DarkBlue
 hi FoldColumn guibg=Grey guifg=DarkBlue
 hi DiffAdd guibg=LightBlue
 hi DiffChange guibg=LightMagenta

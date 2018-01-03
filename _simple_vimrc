@@ -1,5 +1,4 @@
 " Common Vim Settings"{{{
-colorscheme stackoverflow
 set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
 set relativenumber                  " relative line numbers are awesome.
@@ -26,7 +25,7 @@ set incsearch                       " search before we press enter for search
 " set hlsearch                       " highlight search
 set smartindent                     " removed since it interferes with python commenting
 "if exists('+colorcolumn')
-"    set colorcolumn=80              " highlights the 80th column
+"    set colorcolumn=80             " highlights the 80th column
 "endif
 set textwidth=0                     " no text width (moved to ft specific)
 set cursorline                      " highlights the row the cursor is on
@@ -34,7 +33,6 @@ set cursorline                      " highlights the row the cursor is on
 set lazyredraw                      " to speed up the effects of highlighting row or column
 set laststatus=2                    " to display the status line always
 set showtabline=2                   " to show the tab line always
-set nospell                         " spell check, XXX where is the dictionary
 set autochdir                       " change to the directory of the current file
 set splitright                      " the new windows opens on the right
 set splitbelow                      " horizontal split below
@@ -178,20 +176,6 @@ nnoremap <leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>dd <Esc>:Ag "TODO.*\(raajay\)"<CR>
 nnoremap <leader>ee <Esc>:Ag "XXX.*\(raajay\)"<CR>
 
-" Spelling toggle "{{{
-let g:my_spell=1
-function! ToggleSpell()
-    if g:my_spell==0
-        setlocal nospell
-        let g:my_spell=1
-    else
-        setlocal spell spelllang=en_us
-        let g:my_spell=0
-    endif
-endfunc
-map <leader>sp <Esc>:call ToggleSpell()<cr>
-""}}}
-
 ""}}} " end vim key board shortcuts
 
 
@@ -300,6 +284,7 @@ autocmd Syntax * syntax keyword Todo NOTE WISH containedin=.*Comment
 " PLUGIN SETTINGS (installed via pathogen)
 "
 " vim-airline settings"{{{
+let g:airline_theme='airlineish'
 let g:airline_section_b = '%{pathshorten(getcwd())."  ".airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 let g:airline_section_c = '%{pathshorten(expand("%:p"))}' " full file name
 let g:airline#extensions#default#layout = [
@@ -421,10 +406,14 @@ if !empty(glob(".localvimrc"))
 endif
 
 call pathogen#interpose('bundle/vim-airline')
+call pathogen#interpose('bundle/vim-airline-themes')
+call pathogen#interpose('bundle/vim-airlineish')
 call pathogen#interpose('bundle/vim-gitgutter')
 call pathogen#interpose('bundle/vim-fugitive')
 call pathogen#interpose('bundle/delmitmate')
 call pathogen#interpose('bundle/command-t')
 call pathogen#interpose('bundle/surround')
 call pathogen#interpose('bundle/vim-ag')
+call pathogen#interpose('bundle/vimspectr')
 
+colorscheme vimspectrgrey-light
