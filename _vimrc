@@ -684,3 +684,5 @@ if !empty(glob(".localvimrc"))
 endif
 call pathogen#infect()
 call pathogen#helptags()
+
+colorscheme vimspectrgrey-light
