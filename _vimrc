@@ -685,4 +685,6 @@ endif
 call pathogen#infect()
 call pathogen#helptags()
 
-colorscheme vimspectrgrey-light
+let g:vimspectrCursorLineNr = 'off'
+let g:vimspectrLineNr = 'on'
+colorscheme vimspectrgrey-dark
