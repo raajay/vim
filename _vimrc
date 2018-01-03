@@ -428,6 +428,7 @@ let g:NERDTreeDirArrows=0
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
 let NERDTreeRespectWildIgnore = 1
 let NERDTreeWinPos = "right"
+let NERDTreeWinSize = 36
 map <leader>ss <Esc>:NERDTreeToggle<CR>
 ""}}}
 "super tab settings"{{{
