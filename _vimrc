@@ -687,4 +687,4 @@ call pathogen#helptags()
 
 let g:vimspectrCursorLineNr = 'off'
 let g:vimspectrLineNr = 'on'
-colorscheme vimspectrgrey-dark
+"colorscheme vimspectrgrey-light
