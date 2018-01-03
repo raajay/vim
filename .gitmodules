@@ -131,3 +131,6 @@
 [submodule "bundle/SimpylFold"]
 	path = bundle/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule "bundle/vimspectr"]
+	path = bundle/vimspectr
+	url = https://github.com/nightsense/vimspectr.git
