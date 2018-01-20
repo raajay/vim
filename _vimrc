@@ -47,84 +47,25 @@ set fo+=jn
 "set clipboard=unnamed "interferes with regular yank
 "set exrc
 "set secure
-set termguicolors
+"set termguicolors
 set undofile
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-""}}}
-" My Custom Mappings (as opposed to plugins)
-" My text folding settings"{{{
-fu! CustomFoldText()
-    let fs = v.foldstart
-    while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
-    endwhile
-    if fs > v:foldend
-        let line = getline(v:foldstart)
-    else
-        let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
-    endif
-
-    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-    let foldSize = 1 + v:foldend - v:foldstart
-    let foldSizeStr = " " . foldSize . " lines "
-    let foldLevelStr = repeat("+--", v:foldlevel)
-    let lineCount = line("$")
-    let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
-    let expansionString = repeat(".", w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
-    return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
-endf
-"set foldtext=CustomFoldText()
 set foldtext=foldtext()
 set foldmethod=marker
-""}}}
 " My color scheme configurations"{{{
-let g:my_background=$BACKGROUND
-let g:my_colorscheme=$COLORSCHEME
-let g:my_airlinetheme=$AIRLINE_THEME
-
-" configuring the defaults
-if (g:my_background == '')
-    let g:my_background='dark'
-endif
-
-if (g:my_colorscheme == '')
-    let g:my_colorscheme='monokai'
-endif
-
-if (g:my_airlinetheme == '')
-    let g:my_airlinetheme = 'airlineish'
-endif
-
-if(g:my_background == 'light')
-    set background=light
-else
-    set background=dark
-endif
-let g:airline_theme=g:my_airlinetheme
-
-hi Normal ctermbg=None
-set t_Co=256
-if(g:my_colorscheme == 'solarized')
-    let g:solarized_termtrans=0
-    let g:solarized_italic=1
-    colorscheme solarized
-elseif(g:my_colorscheme == 'monokai')
-    colorscheme monokai2
-endif
-
-" Function to toggle between light and dark background
-function! ToggleBG()
-    if g:my_background=="light"
-        let g:my_background="dark"
-        set background=dark
-    else
-        let g:my_background="light"
-        set background=light
-    endif
-    let g:airline_theme = g:my_airlinetheme
-endfunc
-map <leader>bg <Esc>:call ToggleBG()<cr>
+"hi Normal ctermbg=None
+"set t_Co=256
+set background=light
+colorscheme rj_white
+"hi CursorLine ctermfg=NONE ctermbg=253 cterm=NONE guifg=NONE guibg=#575b61 gui=NONE
+"hi CursorColumn ctermfg=NONE ctermbg=253 cterm=NONE guifg=NONE guibg=#575b61 gui=NONE
+"hi ColorColumn ctermfg=NONE ctermbg=253 cterm=NONE guifg=NONE guibg=#575b61 gui=NONE
+"hi Folded ctermfg=243 ctermbg=NONE cterm=NONE guifg=#855c1b guibg=#575b61 gui=NONE
+let g:airline_theme='airlineish'
 ""}}}
+""}}}
+" My Custom Mappings (as opposed to plugins)
 " gui Vim (gvim/macvim) - font/display settings"{{{
 if has("gui_running")
     if has("gui_gtk2")
@@ -684,7 +625,3 @@ if !empty(glob(".localvimrc"))
 endif
 call pathogen#infect()
 call pathogen#helptags()
-
-"let g:vimspectrCursorLineNr = 'off'
-"let g:vimspectrLineNr = 'on'
-"colorscheme vimspectrgrey-light

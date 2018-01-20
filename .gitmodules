@@ -134,3 +134,6 @@
 [submodule "bundle/vimspectr"]
 	path = bundle/vimspectr
 	url = https://github.com/nightsense/vimspectr.git
+[submodule "bundle/vim-clang-format"]
+	path = bundle/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format.git
