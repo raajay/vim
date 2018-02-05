@@ -56,8 +56,10 @@ set foldmethod=marker
 " My color scheme configurations"{{{
 "hi Normal ctermbg=None
 "set t_Co=256
-set background=light
-colorscheme rj_white
+"set background=light
+"colorscheme rj_white
+set background=dark
+colorscheme monokai2
 "hi CursorLine ctermfg=NONE ctermbg=253 cterm=NONE guifg=NONE guibg=#575b61 gui=NONE
 "hi CursorColumn ctermfg=NONE ctermbg=253 cterm=NONE guifg=NONE guibg=#575b61 gui=NONE
 "hi ColorColumn ctermfg=NONE ctermbg=253 cterm=NONE guifg=NONE guibg=#575b61 gui=NONE
