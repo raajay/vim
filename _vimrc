@@ -564,6 +564,10 @@ vnoremap ;a <Esc>:AlternateVSplit<CR>
 nnoremap ;A <Esc>:AlternateSplit<CR>
 vnoremap ;A <Esc>:AlternateSplit<CR>
 "}}}
+" vim-clang-format settings "{{{
+let g:clang_format#auto_format=1
+let g:clang_format#auto_formatexpr=1
+"}}}
 " Misc settings"{{{
 " Tabularize - Helps in alignment
 map <leader>b <Esc>:Tabularize<Space>

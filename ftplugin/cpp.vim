@@ -3,7 +3,7 @@ setlocal tabstop=2
 setlocal shiftwidth=2
 setlocal expandtab
 setlocal softtabstop=2
-setlocal textwidth=79
+setlocal textwidth=0
 
 setlocal autoindent
 setlocal colorcolumn=80
