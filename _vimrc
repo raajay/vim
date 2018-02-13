@@ -49,15 +49,15 @@ set fo+=jn
 "set secure
 "set termguicolors
 set undofile
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+"let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set foldtext=foldtext()
 set foldmethod=marker
 " My color scheme configurations"{{{
 "hi Normal ctermbg=None
 "set t_Co=256
-set background=dark
-colorscheme monokai2
+"set background=dark
+"colorscheme monokai2
 let g:airline_theme='airlineish'
 ""}}}
 ""}}}
