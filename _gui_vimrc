@@ -1,0 +1,25 @@
+if has("gui_gtk2")
+  set guifont=Source\ Code\ Pro\ for\ Powerline
+elseif has("gui_macvim")
+  set antialias
+  set guifont=Source\ Code\ Pro\ Medium:h13
+  if has('python3')
+    command! -nargs=1 Py py3 <args>
+    set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/3.6/Python
+    set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/3.6
+  else
+    command! -nargs=1 Py py <args>
+    set pythondll=/usr/local/Frameworks/Python.framework/Versions/2.7/Python
+    set pythonhome=/usr/local/Frameworks/Python.framework/Versions/2.7
+  endif
+elseif has("gui_win32")
+  set guifont=Consolas:h9:cANSI
+endif
+
+set guioptions-=m " removes the menu bar
+set guioptions-=T " removes the tool bar
+set guioptions-=L " removes the left scroll bar with Nerd Tree
+set guioptions-=r " removes the right scroll bar
+set guioptions-=e " removes the tab label
+set columns=120   " specifies the width of the GVim window
+set lines=120     " specifies the height of the GVim window

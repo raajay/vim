@@ -56,36 +56,15 @@ set foldmethod=marker
 " My color scheme configurations"{{{
 "hi Normal ctermbg=None
 "set t_Co=256
-"set background=light
-"colorscheme rj_white
 set background=dark
 colorscheme monokai2
-"hi CursorLine ctermfg=NONE ctermbg=253 cterm=NONE guifg=NONE guibg=#575b61 gui=NONE
-"hi CursorColumn ctermfg=NONE ctermbg=253 cterm=NONE guifg=NONE guibg=#575b61 gui=NONE
-"hi ColorColumn ctermfg=NONE ctermbg=253 cterm=NONE guifg=NONE guibg=#575b61 gui=NONE
-"hi Folded ctermfg=243 ctermbg=NONE cterm=NONE guifg=#855c1b guibg=#575b61 gui=NONE
 let g:airline_theme='airlineish'
 ""}}}
 ""}}}
 " My Custom Mappings (as opposed to plugins)
 " gui Vim (gvim/macvim) - font/display settings"{{{
 if has("gui_running")
-    if has("gui_gtk2")
-        set guifont=Source\ Code\ Pro\ for\ Powerline
-    elseif has("gui_macvim")
-        set antialias
-        set guifont=Source\ Code\ Pro\ Medium:h13
-    elseif has("gui_win32")
-        set guifont=Consolas:h9:cANSI
-    endif
-
-    set guioptions-=m " removes the menu bar
-    set guioptions-=T " removes the tool bar
-    set guioptions-=L " removes the left scroll bar with Nerd Tree
-    set guioptions-=r " removes the right scroll bar
-    set guioptions-=e " removes the tab label
-    set columns=120   " specifies the width of the GVim window
-    set lines=120     " specifies the height of the GVim window
+    source ~/.vim/_gui_vimrc
 endif
 ""}}}
 " Host specfic directory and config files"{{{
@@ -585,6 +564,10 @@ vnoremap ;a <Esc>:AlternateVSplit<CR>
 nnoremap ;A <Esc>:AlternateSplit<CR>
 vnoremap ;A <Esc>:AlternateSplit<CR>
 "}}}
+" vim-clang-format settings "{{{
+let g:clang_format#auto_format=1
+let g:clang_format#auto_formatexpr=1
+"}}}
 " Misc settings"{{{
 " Tabularize - Helps in alignment
 map <leader>b <Esc>:Tabularize<Space>
@@ -625,5 +608,6 @@ endif
 if !empty(glob(".localvimrc"))
     source .localvimrc
 endif
+
 call pathogen#infect()
 call pathogen#helptags()
