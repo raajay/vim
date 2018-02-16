@@ -56,8 +56,8 @@ set foldmethod=marker
 " My color scheme configurations"{{{
 "hi Normal ctermbg=None
 "set t_Co=256
-"set background=dark
-"colorscheme monokai2
+set background=dark
+colorscheme monokai2
 let g:airline_theme='airlineish'
 ""}}}
 ""}}}
