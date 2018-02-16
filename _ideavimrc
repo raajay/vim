@@ -1,15 +1,25 @@
 set number
 "set relativenumber
 set expandtab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 let mapleader=","
 
-map <leader>ff :action ToggleFullScreen<cr>
-map <leader>qq :action CloseProject<cr>
+" environment settings
+nnoremap ;f :action ToggleFullScreen<cr>
+nnoremap ;qq :action CloseProject<cr>
+nnoremap ;q :q<cr>
+nnoremap ;w :w<cr>
+nnoremap ;v :vs<cr>
+nnoremap ;s :split<cr>
 
-map <leader>t :action SearchEverywhere<cr>
+" build related
+nnoremap <leader>w :action MakeModule<cr>
+nnoremap <leader>c :action Compile<cr>
+
+" code surfing
+map <leader>ff :action SearchEverywhere<cr>
 
 map <leader>b :action ToggleLineBreakpoint<CR>
 map <leader>gd :action GotoImplementation<CR>
@@ -20,9 +30,6 @@ map <leader>a :action GotoRelated<cr>
 map <leader>su :action GotoSuperMethod<cr>
 map <leader>ch :action TypeHierarchy<cr>
 
-nnoremap <leader>w :action MakeModule<cr>
-nnoremap <leader>c :action Compile<cr>
-nnoremap ;w :w<cr>
 
 " Find and replace
 "nnoremap / :action Find<CR>

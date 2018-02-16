@@ -418,4 +418,5 @@ call pathogen#interpose('bundle/vimspectr')
 
 let g:vimspectrCursorLineNr = 'off'
 let g:vimspectrLineNr = 'on'
-colorscheme vimspectrgrey-dark
+"colorscheme vimspectrgrey-light
+colorscheme rj_white
