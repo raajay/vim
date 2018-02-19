@@ -7,7 +7,7 @@ endif
 
 runtime colors/default.vim
 
-let g:colors_name='rj_emacs'
+let g:colors_name='rj_white'
 
 hi clear CursorLine
 hi clear CursorColumn
