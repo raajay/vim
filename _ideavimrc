@@ -8,7 +8,6 @@ let mapleader=","
 
 " environment settings
 nnoremap ;f :action ToggleFullScreen<cr>
-nnoremap ;qq :action CloseProject<cr>
 nnoremap ;q :q<cr>
 nnoremap ;w :w<cr>
 nnoremap ;v :vs<cr>
@@ -19,6 +18,7 @@ nnoremap <leader>w :action MakeModule<cr>
 nnoremap <leader>c :action Compile<cr>
 
 " code surfing
+nnoremap <leader>qq :action CloseProject<cr>
 map <leader>ff :action SearchEverywhere<cr>
 
 map <leader>b :action ToggleLineBreakpoint<CR>
