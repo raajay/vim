@@ -7,3 +7,6 @@ setlocal softtabstop=2
 " block indent
 map <buffer> > :s/^/\ \ /<CR>
 map <buffer> < :s/^\ \ //<CR>
+
+" enable tag jumping
+runtime macros/matchit.vim
