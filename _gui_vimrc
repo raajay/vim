@@ -1,4 +1,4 @@
-if has("gui_gtk2")
+if has("gui_gtk3")
   set guifont=Source\ Code\ Pro\ for\ Powerline
 elseif has("gui_macvim")
   set antialias

@@ -116,7 +116,7 @@ nnoremap <leader>w :make!<cr>
 " C-y copies to global buffer, copying across applications
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
-" C-l pastes from the global buffer
+" C-p pastes from the global buffer
 nnoremap <C-p> "+gP
 vnoremap <C-p> "+gP
 inoremap <C-p> <Esc>"+gP
