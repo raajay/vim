@@ -22,11 +22,7 @@ set softtabstop=4                   " backspace can run over 4 spaces in one key
 set scrolloff=0                     " retain 3 lines for context while scrolling
 set autoindent                      " automatically indent the files
 set incsearch                       " search before we press enter for search
-" set hlsearch                       " highlight search
 set smartindent                     " removed since it interferes with python commenting
-"if exists('+colorcolumn')
-"    set colorcolumn=80             " highlights the 80th column
-"endif
 set textwidth=0                     " no text width (moved to ft specific)
 set cursorline                      " highlights the row the cursor is on
 "set cursorcolumn                    " highlights the current column
@@ -43,10 +39,8 @@ set winaltkeys=no                   " disable use of alt keys for accessing gvim
 set conceallevel=0
 set concealcursor=""
 set fo+=jn
-"set clipboard=unnamed "interferes with regular yank
-"set exrc
-"set secure
-set termguicolors                   " use gui colors in terminal
+set background=dark
+colorscheme monokai2
 
 set undofile
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -54,28 +48,6 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
 set foldtext=foldtext()
 set foldmethod=marker
-
-""}}}
-
-" gui Vim (gvim/macvim) - font/display settings"{{{
-if has("gui_running")
-    if has("gui_gtk2")
-        set guifont=Source\ Code\ Pro\ for\ Powerline
-    elseif has("gui_macvim")
-        set antialias
-        set guifont=Source\ Code\ Pro\ Medium:h13
-    elseif has("gui_win32")
-        set guifont=Consolas:h9:cANSI
-    endif
-
-    set guioptions-=m " removes the menu bar
-    set guioptions-=T " removes the tool bar
-    set guioptions-=L " removes the left scroll bar with Nerd Tree
-    set guioptions-=r " removes the right scroll bar
-    set guioptions-=e " removes the tab label
-    set columns=120   " specifies the width of the GVim window
-    set lines=120     " specifies the height of the GVim window
-endif
 ""}}}
 
 let g:vim_folder = '~/.vim/'
@@ -297,16 +269,6 @@ if !exists('g:airline_symbols')
       let g:airline_symbols = {}
 endif
 let g:airline_powerline_fonts = 1
-
-" Power line symbols - just used for separation
-"let g:airline_left_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
-
 let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 let g:airline_left_alt_sep = ' '
@@ -360,20 +322,6 @@ let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_format = 'mi[%s]'
 ""}}}
 
-" Command-T settings"{{{,*/third_party/*
-if has('win32') || has('win64')
-    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
-else
-    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*,*/third_party/*,*.o,*.out,*.JPEG,*.tar,*.tar.gz
-endif
-let g:CommandTMaxDepth = 20
-let g:CommandTMaxHeight = 20
-let g:CommandTMatchWindowReverse = 1
-let g:CommandTTraverseSCM='pwd'
-map <leader>ff <Esc>:CommandT<CR>
-map <leader>fj <Esc>:CommandTJump<CR>
-""}}}
-
 " vim-gitgutter settings"{{{
 let g:gitgutter_map_keys = 0
 nmap <leader>hs <Plug>GitGutterStageHunk
@@ -400,23 +348,16 @@ autocmd FileType gitcommit wincmd J
 if !empty(glob("~/_vimrc_private"))
     source ~/_vimrc_private
 endif
+
 " Source local VIMRC
 if !empty(glob(".localvimrc"))
     source .localvimrc
 endif
 
 call pathogen#interpose('bundle/vim-airline')
-call pathogen#interpose('bundle/vim-airline-themes')
 call pathogen#interpose('bundle/vim-airlineish')
 call pathogen#interpose('bundle/vim-gitgutter')
 call pathogen#interpose('bundle/vim-fugitive')
 call pathogen#interpose('bundle/delmitmate')
-call pathogen#interpose('bundle/command-t')
 call pathogen#interpose('bundle/surround')
 call pathogen#interpose('bundle/vim-ag')
-call pathogen#interpose('bundle/vimspectr')
-
-let g:vimspectrCursorLineNr = 'off'
-let g:vimspectrLineNr = 'on'
-"colorscheme vimspectrgrey-light
-colorscheme rj_white
