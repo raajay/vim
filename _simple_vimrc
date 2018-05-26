@@ -343,6 +343,30 @@ set previewheight=30
 autocmd FileType gitcommit wincmd J
 ""}}}
 
+" vim-rooter settings"{{{
+"let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
+let g:rooter_patterns = [
+    \ '_vimrc_',
+    \ '.localvimrc',
+    \ '.main',
+    \ '.gradlemain',
+    \ '.latexmain',
+    \ '.htmlmain',
+    \ 'pom.xml',
+    \ 'build.xml',
+    \ 'build.sbt',
+    \ '.git',
+    \ '.git/',
+    \ '__init__.py'
+    \ ]
+let g:rooter_use_lcd = 1
+"let g:rooter_manual_only = 1
+""}}}
+
+" Ctrl-P settings {{{
+let g:ctrlp_user_command = 'find %s -type f'
+let g:ctrlp_working_path_mode = 'c'
+"}}}
 
 " Source private VIMRC
 if !empty(glob("~/_vimrc_private"))
@@ -354,6 +378,8 @@ if !empty(glob(".localvimrc"))
     source .localvimrc
 endif
 
+call pathogen#interpose('bundle/ctrlp.vim')
+call pathogen#interpose('bundle/vim-rooter')
 call pathogen#interpose('bundle/vim-airline')
 call pathogen#interpose('bundle/vim-airlineish')
 call pathogen#interpose('bundle/vim-gitgutter')
