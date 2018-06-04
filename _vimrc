@@ -1,11 +1,37 @@
-" Common Vim Settings"{{{
+" Vim is the editor I am most comfortable with. Over the years, I have tried
+" different editors including Sublime Text, Emacs (with Spacemacs), Atom,
+" Notepad++. Each of these editors are great with amazing functionality, which
+" is the reason I even tried them in the first place. For example, when I
+" started using Mac I tried Sublime Text; it was super easy to use editor with
+" an amazing user interface. I liked how easy it is to manage packages,
+" projects, etc..
+"
+" However, during times of power use (like paper deadlines), I
+" find myself missing the comfort of Vim and would give up on the current
+" editor I am testing out. Perhaps, if I continued using alternate editors, I
+" would get comfortable using them. But for now, I think I am stuck with Vim
+" :)
+"
+" <Pluging usage vs features with native support>
+"
+" Index                                 *vimrc-index*
+" 1. Common Vim Settings                |common-settings|
+" 2. Colorscheme Settings               |color-settings|
+" 3. GUI Settings                       |gui-settings|
+" 4. Host parameters                    |host-params|
+" 5. Files and folders                  |files-folders|
+" 6. Leader key                         |vimrc-leader|
+" x. Filetype detection                 |vimrc-ft-detect|
+" x. Custom function definitions        |vimrc-functions|
+
+" Common Vim Settings   *common-settings*   |vimrc-index| "{{{
 set nocompatible                    " do not force it to be vi compatible
 set number                          " set line numbers
 set relativenumber                  " relative line numbers are awesome.
 set numberwidth=5                   " the number of columns for line numbers
 set mouse=                          " disable mouse clicks for all modes
 set backspace=eol,indent,start      " characters that backspace can erase
-set wrap                            " do not wrap lines
+set wrap                            " wrap lines
 set ruler                           " ruler format can be set; but I use vim-airline
 set noerrorbells novisualbell t_vb= " I have no idea what to do here
 au GUIEnter * set vb t_vb=          " Values get reset when GUI starts
@@ -22,8 +48,8 @@ set softtabstop=4                   " backspace can run over 4 spaces in one key
 set scrolloff=3                     " retain 3 lines for context while scrolling
 set autoindent                      " automatically indent the files
 set incsearch                       " search before we press enter for search
-" set hlsearch                       " highlight search
-set smartindent                     " removed since it interferes with python commenting
+set nohlsearch                      " do not highlight all matching terms
+set smartindent                     " auto indent
 if exists('+colorcolumn')
     set colorcolumn=80              " highlights the 80th column
 endif
@@ -44,31 +70,29 @@ set winaltkeys=no                   " disable use of alt keys for accessing gvim
 set conceallevel=0
 set concealcursor=""
 set fo+=jn
-"set clipboard=unnamed "interferes with regular yank
-"set exrc
-"set secure
-"set termguicolors
 set undofile
-"let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-"let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set foldtext=foldtext()
 set foldmethod=marker
-" My color scheme configurations"{{{
-"hi Normal ctermbg=None
-"set t_Co=256
-set background=dark " default setting
-colorscheme monokai2 " default color scheme
+set iskeyword+=-                    " Can select hyphenated words
+""}}}
+
+" My color scheme configurations    *color-settings*    |vimrc-index|   "{{{
+set background=dark
+colorscheme monokai2
 let g:airline_theme='airlineish'
 ""}}}
-""}}}
-" My Custom Mappings (as opposed to plugins)
-" gui Vim (gvim/macvim) - font/display settings"{{{
+
+" GUI vim (gvim/macvim) *gui-settings*  |vimrc-index|   "{{{
 if has("gui_running")
     source ~/.vim/_gui_vimrc
 endif
 ""}}}
-" Host specfic directory and config files"{{{
+
+" Host parameters   *host-params*   |vimrc-index|   "{{{
 let hostname = substitute(system('hostname'), '\n', '', '')
+"}}}
+
+" Files and Folders *files-folders* |vimrc-index| "{{{
 if hostname == "sansa"
     let g:vim_folder = "/scratch/raajay/vimfiles/"
 elseif has('win32') || has('win64')
@@ -76,27 +100,31 @@ elseif has('win32') || has('win64')
 else
     let g:vim_folder = '~/.vim/'
 endif
-
-" system specific settings
 let g:vimrc = g:vim_folder . '_vimrc'
 let g:local_vimrc = g:vim_folder . '_local_vimrc'
 exec "set backupdir=".g:vim_folder."vimbackup//"
 exec "set dir=".g:vim_folder."vimswap//"
 exec "set undodir=".g:vim_folder."vimundo//"
-"exec "source ".g:local_vimrc
 "}}}
-" Vim keyboard Shortcuts"{{{
+
+" Vim keyboard Shortcuts    *vimrc-leader*  |vimrc-index|  "{{{
 let mapleader=$LEADER
 if (mapleader == '')
     let mapleader=','
 endif
+"}}}
+
+"{{{
+
 " Show current highlight configuration command
 map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 " mappings to avoid common mistakes in Vim
-cnoreabbrev <expr> W getcmdtype() == ":" && getcmdline() == 'W' ? 'w' : 'W'
-cnoreabbrev <expr> Q getcmdtype() == ":" && getcmdline() == 'Q' ? 'q' : 'Q'
+"cnoreabbrev <expr> W getcmdtype() == ":" && getcmdline() == 'W' ? 'w' : 'W'
+"cnoreabbrev <expr> Q getcmdtype() == ":" && getcmdline() == 'Q' ? 'q' : 'Q'
+
 " mappings to avoid going to command mode for common operations
 vnoremap ; <Esc>:
 nnoremap ; <Esc>:
@@ -110,6 +138,7 @@ vnoremap ;s :split<cr>
 nnoremap ;s :split<cr>
 vnoremap ;v :vsplit<cr>
 nnoremap ;v :vsplit<cr>
+
 " Build / Compile related (requires a Makefile)
 vnoremap <leader>w :make!<cr>
 nnoremap <leader>w :make!<cr>
@@ -150,10 +179,31 @@ map <leader>re <Esc>:redraw!<cr>
 map <C-1> <C-w>200h
 " Jump to the last window (rightmost)
 map <C-\> <C-w>200l
-" Show the TODO / WISH list
-" works only with silver searcher plugin
+
+" Show the TODO / WISH list (works only with silver searcher plugin)
 nnoremap <leader>dd <Esc>:Ag "TODO.*\(raajay\)"<CR>
 nnoremap <leader>ee <Esc>:Ag "XXX.*\(raajay\)"<CR>
+
+map <leader>a <Esc>:call OpenToDo()<cr>
+map <leader>sp <Esc>:call ToggleSpell()<cr>
+""}}}
+
+
+" Custom function defs  *vimrc-functions*   |vimrc-index|   "{{{
+
+" Spelling toggle "{{{
+let g:my_spell=1
+function! ToggleSpell()
+    if g:my_spell==0
+        setlocal nospell
+        let g:my_spell=1
+    else
+        setlocal spell spelllang=en_us
+        let g:my_spell=0
+    endif
+endfunc
+""}}}
+
 
 " Function to toggle the to-do list"{{{
 let g:open_todo = 0
@@ -166,29 +216,19 @@ function! OpenToDo()
         :bdelete ~/Dropbox/todo/todo.txt
     endif
 endfunc
-map <leader>a <Esc>:call OpenToDo()<cr>
+"}}}
+
 ""}}}
-" Spelling toggle "{{{
-let g:my_spell=1
-function! ToggleSpell()
-    if g:my_spell==0
-        setlocal nospell
-        let g:my_spell=1
-    else
-        setlocal spell spelllang=en_us
-        let g:my_spell=0
-    endif
-endfunc
-map <leader>sp <Esc>:call ToggleSpell()<cr>
-""}}}
-""}}}
+
 " Vim keyword mappings"{{{
 inoremap TODO TODO(raajay):<Space>
 inoremap XXX XXX(raajay):<Space>
 " insert data at current location
 iab <expr> ddt strftime("%e-%b-%Y %H:%M")
 "}}}
-" Filetype detection"{{{
+
+
+" Filetype detection    *vimrc-ft-detect*   |vimrc-index|  "{{{
 if has("autocmd")
     autocmd BufRead,BufNewFile *.tex set ft=tex
     autocmd BufRead,BufNewFile *.gms set ft=gams
@@ -204,6 +244,7 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.todo set ft=todo
 endif
 ""}}}
+
 " Vim niceties (write with sudo, autosave, remember last pos, etc..)"{{{
 " Remembering the previous edits - this is a gem
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -260,8 +301,9 @@ cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab h' : 'h'
 " syntax settings {{{
 autocmd Syntax * syntax keyword Todo NOTE WISH containedin=.*Comment
 "}}}
-" PLUGIN SETTINGS (installed via pathogen)
-" vim-airline settings"{{{
+
+
+" vim-airline settings  *vimrc-vim-airline*   |vimrc-index|   "{{{
 let g:airline_section_b = '%{pathshorten(getcwd())."  ".airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 let g:airline_section_c = '%{pathshorten(expand("%:p"))}' " full file name
 let g:airline#extensions#default#layout = [
@@ -274,16 +316,6 @@ if !exists('g:airline_symbols')
       let g:airline_symbols = {}
 endif
 let g:airline_powerline_fonts = 1
-
-" Power line symbols - just used for separation
-"let g:airline_left_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
-
 let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 let g:airline_left_alt_sep = ' '
@@ -309,7 +341,8 @@ let g:airline_mode_map = {
     \ '' : 'S',
     \ }
 ""}}}
-" vim-airline-tabline settings"{{{
+
+" vim-airline-tabline settings  *vimrc-tabline* |vimrc-index|   "{{{
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
@@ -335,7 +368,8 @@ let g:airline#extensions#bufferline#overwrite_variables = 0
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_format = 'mi[%s]'
 ""}}}
-" NERDTree settings"{{{
+
+" NERDTree settings *vimrc-nerdtree*   |vimrc-index|   "{{{
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_open_on_new_tabs = 0
 let g:nerdtree_tabs_autoclose = 1
@@ -353,15 +387,12 @@ let NERDTreeWinPos = "right"
 let NERDTreeWinSize = 36
 map <leader>ss <Esc>:NERDTreeToggle<CR>
 ""}}}
-"super tab settings"{{{
-let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = '<c-p>'
-""}}}
-" Command-T settings"{{{,*/third_party/*
+
+" Command-T settings    *vimrc-command-t*   |vimrc-index|  "{{{
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
 else
-    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*,*/third_party/*,*.o,*.out,*.JPEG,*.tar,*.tar.gz
+    set wildignore+=*/tmp/*,*.so,*.zip,*.swp,*.class,*.pyc,*/bin/*,*/project/*,*/target/*,*/.git/*,*.o
 endif
 let g:CommandTMaxDepth = 20
 let g:CommandTMaxHeight = 20
@@ -370,7 +401,8 @@ let g:CommandTTraverseSCM='pwd'
 map <leader>ff <Esc>:CommandT<CR>
 map <leader>fj <Esc>:CommandTJump<CR>
 ""}}}
-" YouCompleteMe settings"{{{
+
+" YouCompleteMe settings    *vimrc-youcompleteme*   |vimrc-index|  "{{{
 " disabling it since configuration should be done per project
 "let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
@@ -391,15 +423,17 @@ let g:ycm_filetype_blacklist = {
     \ 'go' : 1
     \}
 ""}}}
-" Eclim settings"{{{
+
+" Eclim settings    *vimrc-eclim*   |vimrc-index|  "{{{
 let g:EclimCompletionMethod='omnifunc'
-" Eclim - Scala settings
 let g:EclimScalaValidate=1
 ""}}}
-" Delimitmate settings"{{{
+
+" Delimitmate settings *vimrc-delimitmate*  |vimrc-index|  "{{{
 let delimitMate_expand_cr = 1
 ""}}}
-" vim-rooter settings"{{{
+
+" vim-rooter settings   *vimrc-rooter*  |vimrc-index|  "{{{
 "let g:rooter_autocmd_patterns = '*.java,*.tex,*vimrc,*.vim'
 let g:rooter_patterns = [
     \ '_vimrc_',
@@ -418,18 +452,21 @@ let g:rooter_patterns = [
 let g:rooter_use_lcd = 1
 "let g:rooter_manual_only = 1
 ""}}}
-"vim-snippets settings"{{{
+
+"vim-snippets settings  *vimrc-snippets*    |vimrc-index|  "{{{
 let g:snips_author="Raajay Viswanathan"
 let g:snips_email="raajay.v@gmail.com"
 let g:snips_github="https://github.com/raajay"
 let g:pybin = substitute(system('which python'), '\n', '', '')
 ""}}}
-" UltiSnips settings"{{{
+
+" UltiSnips settings    *vimrc-ultisnips*   |vimrc-index|  "{{{
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 ""}}}
-" vim-gitgutter settings"{{{
+
+" vim-gitgutter settings    *vimrc-gitgutter*   |vimrc-index|  "{{{
 let g:gitgutter_map_keys = 0
 nmap <leader>hs <Plug>GitGutterStageHunk
 nmap <leader>hr <Plug>GitGutterRevertHunk
@@ -439,7 +476,8 @@ nmap <leader>hp <Plug>GitGutterPrevHunk
 let g:gitgutter_realtime=0
 let g:gitgutter_eager=0
 ""}}}
-" vim-fugitive settings"{{{
+
+" vim-fugitive settings *vimrc-fugitive*    |vimrc-index|  "{{{
 nmap <leader>gs <Esc>:Gstatus<CR>
 nmap <leader>gc <Esc>:Gcommit -m<Space>""<left>
 nmap <leader>gp <Esc>:Gpush<CR>
@@ -448,7 +486,8 @@ set previewheight=30
 " make the status window the bottom most one
 autocmd FileType gitcommit wincmd J
 ""}}}
-" vimtex settings"{{{
+
+" vimtex settings   *vimrc-vimtex*  |vimrc-index|  "{{{
 if !exists('g:ycm_semantic_triggers')
     let g:ycm_semantic_triggers = {}
 endif
@@ -474,36 +513,43 @@ let g:ycm_semantic_triggers.tex = [
             \ 're!\\input{',
             \ ]
 ""}}}
-" indentLine settings"{{{
+
+" indentLine settings   *vimrc-indexline*  |vimrc-index|  "{{{
 let g:indentLine_enabled=1
 let g:indentLine_color_term = 237
 let g:indentLine_concealcursor=''
 let g:indentLine_conceallevel=0
 map <leader>il <Esc>:IndentLinesToggle<cr>
 ""}}}
-" vim-go settings"{{{
+
+" vim-go settings   *vimrc-vimgo*   |vimrc-index|  "{{{
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 0
 let g:go_highlight_structs = 1
 let g:ycm_semantic_triggers.go = ['.']
 ""}}}
+
 " Vim session settings"{{{
 let g:session_autosave='no'
 ""}}}
+
 " goyo.vim settings"{{{
 "let g:goyo_width=120
 "let g:goyo_height=60
 map <leader>z <Esc>:Goyo 80x40<CR>
 ""}}}
+
 " NERDCommenter"{{{
 "map <leader>// <Esc>:NERDComComment<CR>
 let g:NERDSpaceDelims=1
 ""}}}
+
 " vim-mru settings"{{{
 "map <leader>ls <Esc>:MRU<CR>
 ""}}}
-" vim-buffergator settings"{{{
+
+" vim-buffergator settings *vimrc-buffergator*  |vimrc-index|  "{{{
 let g:buffergator_suppress_keymaps=1
 let g:buffergator_show_full_directory_path=0
 let g:buffergator_viewport_split_policy='B'
@@ -512,15 +558,18 @@ map <leader>ls <Esc>:BuffergatorOpen<CR>
 map <leader>lt <Esc>:BuffergatorTabsOpen<CR>
 map <leader>lr <Esc>:BuffergatorMruList<CR>
 ""}}}
+
 " vim-pencil settings"{{{
 let g:pencil#conceallevel=0
 ""}}}
+
 " vim-cpp-enhanced-highlight"{{{
 " note the file are in build/syntax
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 ""}}}
+
 " vim-tagbar settings"{{{
 let g:tagbar_type_tex = {
     \ 'ctagstype' : 'tex',
@@ -539,6 +588,7 @@ map <leader>aj <Esc>:TagbarOpen j<CR>
 let g:tagbar_left = 1
 let g:tagbar_autoclose = 0
 ""}}}
+
 " vim-rtags"{{{
 let g:rtagsUseDefaultMappings = 0
 " All the key mappings are defined in ftplugin/cpp.vim
@@ -550,31 +600,37 @@ let g:ale_linters = {
     \   'cpp' : ['cpplint'],
     \}
 "}}}
+
 " ropevim settings "{{{
 let ropevim_vim_completion=1
 let ropevim_extended_complete=1
 "}}}
+
 " SimpylFold settings "{{{
 let g:SimpylFold_fold_docstring=0
 let g:SimpylFold_fold_import=0
 "}}}
+
 " vim-alternate settings "{{{
 nnoremap ;a <Esc>:AlternateVSplit<CR>
 vnoremap ;a <Esc>:AlternateVSplit<CR>
 nnoremap ;A <Esc>:AlternateSplit<CR>
 vnoremap ;A <Esc>:AlternateSplit<CR>
 "}}}
+
 " vim-clang-format settings "{{{
 let g:clang_format#auto_format=1
 let g:clang_format#auto_formatexpr=1
 "}}}
+
 " Misc settings"{{{
 " Tabularize - Helps in alignment
 map <leader>b <Esc>:Tabularize<Space>
 " Navigation Settings
 map <leader>pp <Esc><c-w><c-p>
 ""}}}
-" Pathogen settings"{{{
+
+" Pathogen settings *vimrc-pathogen*    |vimrc-index|  "{{{
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'ale')
 call add(g:pathogen_disabled, 'color_coded')
@@ -600,14 +656,17 @@ if (executable('global') == 0)
     call add(g:pathogen_disabled, 'vim-gtags-cscope')
 endif
 ""}}}
+
 " Source private VIMRC
 if !empty(glob("~/_vimrc_private"))
     source ~/_vimrc_private
 endif
+
 " Source local VIMRC
 if !empty(glob(".localvimrc"))
     source .localvimrc
 endif
 
+" Activate plugins
 call pathogen#infect()
 call pathogen#helptags()

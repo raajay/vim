@@ -1,0 +1,16 @@
+" Index for vimrc *index*
+set nocompatible                    " do not force it to be vi compatible
+set number                          " set line numbers
+set relativenumber                  " relative line numbers are awesome.
+set mouse=                          " disable mouse clicks for all modes
+set backspace=eol,indent,start      " characters that backspace can erase
+set noerrorbells novisualbell t_vb= " I have no idea what to do here
+au GUIEnter * set vb t_vb=          " Values get reset when GUI starts
+set tabstop=4                       " One tab is 4 spaces
+set shiftwidth=4                    " Indent to use 4 spaces
+set expandtab                       " no more tabs; replace with spaces
+set softtabstop=4                   " backspace can run over 4 spaces in one key press
+
+
+" Some other settings
+" Go to |index|
