@@ -28,6 +28,10 @@
 " 6. Leader key                         |vimrc-leader|
 " x. Filetype detection                 |vimrc-ft-detect|
 " x. Custom function definitions        |vimrc-functions|
+" x. Custom Ex commands                 |vimrc-custom-commands|
+" x. Custom key mappings                |vimrc-custom-mappings|
+" x. Vim timeout settings               |vimrc-timeout|
+" x. Vim grep settings                  |vimrc-grep|
 
 " Common Vim Settings   *common-settings*   |vimrc-index| "{{{
 set nocompatible                    " do not force it to be vi compatible
@@ -81,6 +85,21 @@ set foldmethod=marker
 set iskeyword+=-                    " Can select hyphenated words
 ""}}}
 
+" Time out settings for redrawing the screen    *vimrc-timeout* |vimrc-index|   "{{{
+set timeoutlen=3000
+set ttimeoutlen=50
+set updatetime=30       " time taken by bufferline to redraw
+"}}}
+
+" Vim grep settings *vimrc-grep*    |vimrc-index|   "{{{
+set grepprg=grep\ -nH\ $*
+" The Silver Searcher
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
+    set grepformat=%f:%l:%c:%m
+endif
+"}}}
+
 " My color scheme configurations    *color-settings*    |vimrc-index|   "{{{
 set background=dark
 colorscheme monokai2
@@ -119,16 +138,31 @@ if (mapleader == '')
 endif
 "}}}
 
-"{{{
-
+" Custom command line mappings  *vimrc-custom-commands* |vimrc-index|    "{{{
 " Show current highlight configuration command
 map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" Commands to avoid common mistakes in Vim
+cnoreabbrev <expr> W getcmdtype() == ":" && getcmdline() == 'W' ? 'w' : 'W'
+cnoreabbrev <expr> Q getcmdtype() == ":" && getcmdline() == 'Q' ? 'q' : 'Q'
+" Help
+cnoreabbrev <expr> help getcmdtype() == ":" && getcmdline() == 'help' ? 'tab help' : 'help'
+cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab h' : 'h'
+" Sudo write
+cnoremap sudow w !sudo tee % > /dev/null
+" Number lines visually selected
+command -range=% -nargs=? Number :<line1>,<line2>s/^/\=printf("%d<args>", line(".") - line("'<") + 1)
+" Take a backup of a file
+command! Bak :w %.bak
+" Insert mode mapping
+inoremap TODO TODO(raajay):<Space>
+inoremap XXX XXX(raajay):<Space>
+" Insert data at current location
+iab <expr> ddt strftime("%e-%b-%Y %H:%M")
+""}}}
 
-" mappings to avoid common mistakes in Vim
-"cnoreabbrev <expr> W getcmdtype() == ":" && getcmdline() == 'W' ? 'w' : 'W'
-"cnoreabbrev <expr> Q getcmdtype() == ":" && getcmdline() == 'Q' ? 'q' : 'Q'
+" Vim custom key mappings   *vimrc-custom-mappings* |vimrc-index|   "{{{
 
 " mappings to avoid going to command mode for common operations
 vnoremap ; <Esc>:
@@ -193,7 +227,6 @@ map <leader>a <Esc>:call OpenToDo()<cr>
 map <leader>sp <Esc>:call ToggleSpell()<cr>
 ""}}}
 
-
 " Custom function defs  *vimrc-functions*   |vimrc-index|   "{{{
 
 " Spelling toggle "{{{
@@ -225,14 +258,6 @@ endfunc
 
 ""}}}
 
-" Vim keyword mappings"{{{
-inoremap TODO TODO(raajay):<Space>
-inoremap XXX XXX(raajay):<Space>
-" insert data at current location
-iab <expr> ddt strftime("%e-%b-%Y %H:%M")
-"}}}
-
-
 " Filetype detection    *vimrc-ft-detect*   |vimrc-index|  "{{{
 if has("autocmd")
     autocmd BufRead,BufNewFile *.tex set ft=tex
@@ -250,8 +275,8 @@ if has("autocmd")
 endif
 ""}}}
 
-" Vim niceties (write with sudo, autosave, remember last pos, etc..)"{{{
-" Remembering the previous edits - this is a gem
+" Vim niceties (write with sudo, autosave, remember last pos, etc..) "{{{
+" Remembering the previous edits
 set viminfo='10,\"100,:20,%,n~/.viminfo
 " Remembering the last position
 if has("autocmd")
@@ -265,26 +290,8 @@ endif
 if has("autocmd")
     autocmd BufNewFile *.sh 0r $HOME/.vim/templates/sh.template
 endif
-" Sudo write
-cnoremap sudow w !sudo tee % > /dev/null
-" Number lines visually selected
-command -range=% -nargs=? Number :<line1>,<line2>s/^/\=printf("%d<args>", line(".") - line("'<") + 1)
-" Take a backup of a file
-command! Bak :w %.bak
 "}}}
-" time out settings for redrawing the screen"{{{
-set timeoutlen=3000
-set ttimeoutlen=50
-set updatetime=30 " time taken by bufferline to redraw
-"}}}
-" vim grep settings"{{{
-set grepprg=grep\ -nH\ $*
-" The Silver Searcher
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
-    set grepformat=%f:%l:%c:%m
-endif
-"}}}
+
 " quickfix and location list{{{
 nnoremap <leader>co <Esc>:copen<CR>
 nnoremap ]q <Esc>:cnext<CR>
@@ -299,10 +306,7 @@ nnoremap <leader>ln <Esc>:lnext<CR>
 
 autocmd QuickFixCmdPost *grep* cwindow
 ""}}}
-" buffer, tab and pane settings{{{
-cnoreabbrev <expr> help getcmdtype() == ":" && getcmdline() == 'help' ? 'tab help' : 'help'
-cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab h' : 'h'
-"}}}
+
 " syntax settings {{{
 autocmd Syntax * syntax keyword Todo NOTE WISH containedin=.*Comment
 "}}}
