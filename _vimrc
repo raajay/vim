@@ -14,6 +14,11 @@
 "
 " <Pluging usage vs features with native support>
 "
+" I go the idea to create tags for navigating the vimrc from this
+" (http://ifacethoughts.net/2008/05/02/vim-as-a-personal-wiki/) article.
+" I learnt how to configure Exuberant Ctags to create custom tags file from
+" here: http://ctags.sourceforge.net/EXTENDING.html
+"
 " Index                                 *vimrc-index*
 " 1. Common Vim Settings                |common-settings|
 " 2. Colorscheme Settings               |color-settings|
