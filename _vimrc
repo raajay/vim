@@ -106,6 +106,28 @@ colorscheme monokai2
 let g:airline_theme='airlineish'
 ""}}}
 
+" Vim leader setting    *vimrc-leader*  |vimrc-index|  "{{{
+let mapleader=$LEADER
+if (mapleader == '')
+    let mapleader=','
+endif
+"}}}
+
+" Quick fix and location list   *vimrc-quickfix*    |vimrc-quickfix|    "{{{
+nnoremap <leader>co <Esc>:copen<CR>
+nnoremap ]q <Esc>:cnext<CR>
+nnoremap [q <Esc>:cprevious<CR>
+
+nnoremap <leader>lo <Esc>:lopen<CR>
+nnoremap <leader>lp <Esc>:lprevious<CR>
+nnoremap <leader>ln <Esc>:lnext<CR>
+
+" moves the quick fix list to the bottom. Upon entering the 'qf' file type
+" execute the command to move a window to the bottom
+autocmd FileType qf wincmd J
+autocmd QuickFixCmdPost *grep* cwindow
+""}}}
+
 " GUI vim (gvim/macvim) *gui-settings*  |vimrc-index|   "{{{
 if has("gui_running")
     source ~/.vim/_gui_vimrc
@@ -131,14 +153,7 @@ exec "set dir=".g:vim_folder."vimswap//"
 exec "set undodir=".g:vim_folder."vimundo//"
 "}}}
 
-" Vim keyboard Shortcuts    *vimrc-leader*  |vimrc-index|  "{{{
-let mapleader=$LEADER
-if (mapleader == '')
-    let mapleader=','
-endif
-"}}}
-
-" Custom command line mappings  *vimrc-custom-commands* |vimrc-index|    "{{{
+" Vim custom command line mappings  *vimrc-custom-commands* |vimrc-index|    "{{{
 " Show current highlight configuration command
 map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -177,7 +192,6 @@ vnoremap ;s :split<cr>
 nnoremap ;s :split<cr>
 vnoremap ;v :vsplit<cr>
 nnoremap ;v :vsplit<cr>
-
 " Build / Compile related (requires a Makefile)
 vnoremap <leader>w :make!<cr>
 nnoremap <leader>w :make!<cr>
@@ -203,7 +217,6 @@ map <leader>ev <Esc>:edit $MYVIMRC<cr>
 map <leader>sv <Esc>:source $MYVIMRC<cr>
 " edit bash
 map <leader>eb <Esc>:edit ~/.bashrc<cr>
-
 " toggle relative numbers
 map <leader>rn :set relativenumber!<cr>
 " remove trailing characters
@@ -214,22 +227,22 @@ map <leader>rt4 <Esc>:%s/\t/\ \ \ \ /g<cr><c-o>
 map <leader>rt2 <Esc>:%s/\t/\ \ /g<cr><c-o>
 " reload file
 map <leader>re <Esc>:redraw!<cr>
-" Jump to the first window (leftmost)
+" jump to the first window (leftmost)
 map <C-1> <C-w>200h
-" Jump to the last window (rightmost)
+" jump to the last window (rightmost)
 map <C-\> <C-w>200l
-
-" Show the TODO / WISH list (works only with silver searcher plugin)
+" show the TODO / WISH list (works only with silver searcher plugin)
 nnoremap <leader>dd <Esc>:Ag "TODO.*\(raajay\)"<CR>
 nnoremap <leader>ee <Esc>:Ag "XXX.*\(raajay\)"<CR>
-
+" open a todo file
 map <leader>a <Esc>:call OpenToDo()<cr>
+" toggle the spell file
 map <leader>sp <Esc>:call ToggleSpell()<cr>
 ""}}}
 
 " Custom function defs  *vimrc-functions*   |vimrc-index|   "{{{
 
-" Spelling toggle "{{{
+" Spelling toggle
 let g:my_spell=1
 function! ToggleSpell()
     if g:my_spell==0
@@ -240,10 +253,8 @@ function! ToggleSpell()
         let g:my_spell=0
     endif
 endfunc
-""}}}
 
-
-" Function to toggle the to-do list"{{{
+" Function to toggle the to-do list
 let g:open_todo = 0
 function! OpenToDo()
     if g:open_todo == 0
@@ -254,7 +265,6 @@ function! OpenToDo()
         :bdelete ~/Dropbox/todo/todo.txt
     endif
 endfunc
-"}}}
 
 ""}}}
 
@@ -275,42 +285,35 @@ if has("autocmd")
 endif
 ""}}}
 
-" Vim niceties (write with sudo, autosave, remember last pos, etc..) "{{{
+" Vim niceties  *vimrc-niceties*    |vimrc-index|   "{{{
+
 " Remembering the previous edits
 set viminfo='10,\"100,:20,%,n~/.viminfo
+
 " Remembering the last position
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") < line("$") | exe "normal! g'\"" | endif
 endif
+
 " Auto save
 if has("autocmd")
     au BufLeave,FocusLost * :update
 endif
-" auto header insert
+
+"}}}
+
+" File templates    *vimrc-templates*   |vimrc-index|   "{{{
+
+" Auto header insert for shell files
 if has("autocmd")
     autocmd BufNewFile *.sh 0r $HOME/.vim/templates/sh.template
 endif
-"}}}
 
-" quickfix and location list{{{
-nnoremap <leader>co <Esc>:copen<CR>
-nnoremap ]q <Esc>:cnext<CR>
-nnoremap [q <Esc>:cprevious<CR>
-" moves the quick fix list to the bottom. Upon entering the 'qf' filetye
-" execut the command to move a window to the bottom
-autocmd FileType qf wincmd J
-
-nnoremap <leader>lo <Esc>:lopen<CR>
-nnoremap <leader>lp <Esc>:lprevious<CR>
-nnoremap <leader>ln <Esc>:lnext<CR>
-
-autocmd QuickFixCmdPost *grep* cwindow
 ""}}}
 
-" syntax settings {{{
+" Vim syntax settings   *vimrc-syntax*  |vimrc-index|   "{{{
 autocmd Syntax * syntax keyword Todo NOTE WISH containedin=.*Comment
 "}}}
-
 
 " vim-airline settings  *vimrc-vim-airline*   |vimrc-index|   "{{{
 let g:airline_section_b = '%{pathshorten(getcwd())."  ".airline#util#wrap(airline#extensions#branch#get_head(),0)}'
@@ -539,22 +542,22 @@ let g:go_highlight_structs = 1
 let g:ycm_semantic_triggers.go = ['.']
 ""}}}
 
-" Vim session settings"{{{
+" Vim session settings  *vimrc-settings*    |vimrc-index|   "{{{
 let g:session_autosave='no'
 ""}}}
 
-" goyo.vim settings"{{{
+" goyo.vim settings *vimrc-goyo*  |vimrc-index|   "{{{
 "let g:goyo_width=120
 "let g:goyo_height=60
 map <leader>z <Esc>:Goyo 80x40<CR>
 ""}}}
 
-" NERDCommenter"{{{
+" NERDCommenter *vimrc-nerdcommenter* |vimrc-index|   "{{{
 "map <leader>// <Esc>:NERDComComment<CR>
 let g:NERDSpaceDelims=1
 ""}}}
 
-" vim-mru settings"{{{
+" vim-mru settings  *vimrc-mru* |vimrc-index|   "{{{
 "map <leader>ls <Esc>:MRU<CR>
 ""}}}
 
