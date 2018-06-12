@@ -2,7 +2,7 @@ if has("gui_gtk3")
   set guifont=Source\ Code\ Pro\ for\ Powerline
 elseif has("gui_macvim")
   set antialias
-  set guifont=Source\ Code\ Pro\ Medium:h13
+  set guifont=Source\ Code\ Pro\ Medium:h11
   if has('python3')
     command! -nargs=1 Py py3 <args>
     set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/3.6/Python
