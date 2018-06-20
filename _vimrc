@@ -101,6 +101,8 @@ endif
 "}}}
 
 " My color scheme configurations    *color-settings*    |vimrc-index|   "{{{
+let g:wwdc17_frame_color=10
+let g:wwdc17_transp_bg=0
 set background=dark
 colorscheme monokai2
 let g:airline_theme='airlineish'
