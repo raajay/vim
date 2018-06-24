@@ -684,3 +684,11 @@ endif
 " Activate plugins
 call pathogen#infect()
 call pathogen#helptags()
+
+" Vim compile instructions
+" For MacVim
+" git clone macvim
+" cd src; ./configure --enable-multibyte --enable-pythoninterp --enable-rubyinterp --enable-cscope
+" cd MacVim/build/Release; open MacVim.app
+" cp MacVim/build/Release/MacVim.app /Applications
+"  syn region texRefZone		matchgroup=texStatement start="\\\(page\|eq\|sec\|fig\|c\|C\)ref{"	end="}\|%stopzone\>"	contains=@texRefGroup
