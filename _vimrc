@@ -1,3 +1,5 @@
+" vim:set syntax=off:
+
 " Vim is the editor I am most comfortable with. Over the years, I have tried
 " different editors including Sublime Text, Emacs (with Spacemacs), Atom,
 " Notepad++. Each of these editors are great with amazing functionality, which
