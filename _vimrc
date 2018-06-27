@@ -314,7 +314,8 @@ endif
 ""}}}
 
 " Vim syntax settings   *vimrc-syntax*  |vimrc-index|   "{{{
-autocmd Syntax * syntax keyword Todo NOTE WISH containedin=.*Comment
+" Moved to specific syntax ftplugin
+"autocmd Syntax * syntax keyword Todo NOTE WISH containedin=.*Comment
 "}}}
 
 " vim-airline settings  *vimrc-vim-airline*   |vimrc-index|   "{{{
@@ -672,12 +673,12 @@ endif
 ""}}}
 
 " Source private VIMRC
-if !empty(glob("~/_vimrc_private"))
+if !empty(glob('~/_vimrc_private'))
     source ~/_vimrc_private
 endif
 
 " Source local VIMRC
-if !empty(glob(".localvimrc"))
+if !empty(glob('.localvimrc'))
     source .localvimrc
 endif
 
@@ -691,3 +692,6 @@ call pathogen#helptags()
 " cd src; ./configure --enable-multibyte --enable-pythoninterp --enable-rubyinterp --enable-cscope
 " cd MacVim/build/Release; open MacVim.app
 " cp MacVim/build/Release/MacVim.app /Applications
+"
+" Regex for Vim
+" 1. http://vimregex.com
