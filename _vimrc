@@ -208,9 +208,7 @@ inoremap <C-p> <Esc>"+gP
 nmap <space> zz
 nnoremap n nzz
 nnoremap N Nzz
-" Block indentation (can be overridden in ftplugins)
-map > :s/^/\ \ \ \ /<CR>
-map < :s/^\ \ \ \ //<CR>
+" Block indentation (<, > are native vim commands). Shifts by shiftwidth chrs.
 xnoremap > >gv
 xnoremap < <gv
 " push vim to the background and give shell access
