@@ -211,6 +211,8 @@ nnoremap N Nzz
 " Block indentation (can be overridden in ftplugins)
 map > :s/^/\ \ \ \ /<CR>
 map < :s/^\ \ \ \ //<CR>
+xnoremap > >gv
+xnoremap < <gv
 " push vim to the background and give shell access
 map <leader>q <Esc><c-z>
 " edit vimrc
