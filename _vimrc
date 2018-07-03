@@ -175,7 +175,7 @@ command! Bak :w %.bak
 " Insert mode mapping
 inoremap TODO TODO(raajay):<Space>
 inoremap XXX XXX(raajay):<Space>
-" Insert data at current location
+" Insert date at current location
 iab <expr> ddt strftime("%e-%b-%Y %H:%M")
 ""}}}
 
