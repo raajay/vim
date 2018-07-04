@@ -176,7 +176,7 @@ command! Bak :w %.bak
 inoremap TODO TODO(raajay):<Space>
 inoremap XXX XXX(raajay):<Space>
 " Insert date at current location
-iab <expr> ddt strftime("%e-%b-%Y %H:%M")
+iab <expr> mydate strftime("%e-%b-%Y %H:%M")
 ""}}}
 
 " Vim custom key mappings   *vimrc-custom-mappings* |vimrc-index|   "{{{
