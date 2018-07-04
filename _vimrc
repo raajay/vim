@@ -183,7 +183,7 @@ iab <expr> mydate strftime("%e-%b-%Y %H:%M")
 
 " mappings to avoid going to command mode for common operations
 vnoremap <unique> ; <Esc>:
-nnoremap <unique> ; <Esc>:
+nnoremap <unique> ;; <Esc>:
 nnoremap <unique> ;q :q<cr>
 nnoremap <unique> ;w :w<cr>
 nnoremap <unique> ;d :bd<cr>
