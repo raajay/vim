@@ -182,64 +182,58 @@ iab <expr> mydate strftime("%e-%b-%Y %H:%M")
 " Vim custom key mappings   *vimrc-custom-mappings* |vimrc-index|   "{{{
 
 " mappings to avoid going to command mode for common operations
-vnoremap ; <Esc>:
-nnoremap ; <Esc>:
-vnoremap ;q :q<cr>
-nnoremap ;q :q<cr>
-vnoremap ;w :w<cr>
-nnoremap ;w :w<cr>
-vnoremap ;d :bd<cr>
-nnoremap ;d :bd<cr>
-vnoremap ;s :split<cr>
-nnoremap ;s :split<cr>
-vnoremap ;v :vsplit<cr>
-nnoremap ;v :vsplit<cr>
+vnoremap <unique> ; <Esc>:
+nnoremap <unique> ; <Esc>:
+nnoremap <unique> ;q :q<cr>
+nnoremap <unique> ;w :w<cr>
+nnoremap <unique> ;d :bd<cr>
+nnoremap <unique> ;s :split<cr>
+nnoremap <unique> ;v :vsplit<cr>
 " Build / Compile related (requires a Makefile)
-vnoremap <leader>w :make!<cr>
-nnoremap <leader>w :make!<cr>
+nnoremap <unique> <leader>w :make!<cr>
 " C-y copies to global buffer, copying across applications
-nnoremap <C-y> "+y
-vnoremap <C-y> "+y
+nnoremap <unique> <C-y> "+y
+vnoremap <unique> <C-y> "+y
 " C-p pastes from the global buffer
-nnoremap <C-p> "+gP
-vnoremap <C-p> "+gP
-inoremap <C-p> <Esc>"+gP
+nnoremap <unique> <C-p> "+gP
+vnoremap <unique> <C-p> "+gP
+inoremap <unique> <C-p> <Esc>"+gP
 " Space moves current cursor location to center of screen
-nmap <space> zz
-nnoremap n nzz
-nnoremap N Nzz
+nnoremap <unique> <space> zz
+nnoremap <unique> n nzz
+nnoremap <unique> N Nzz
 " Block indentation (<, > are native vim commands). Shifts by shiftwidth chrs.
-xnoremap > >gv
-xnoremap < <gv
+xnoremap <unique> > >gv
+xnoremap <unique> < <gv
 " push vim to the background and give shell access
-map <leader>q <Esc><c-z>
+noremap <unique> <leader>q <Esc><c-z>
 " edit vimrc
-map <leader>ev <Esc>:edit $MYVIMRC<cr>
+noremap <unique> <leader>ev <Esc>:edit $MYVIMRC<cr>
 " source vimrc
-map <leader>sv <Esc>:source $MYVIMRC<cr>
+noremap <unique> <leader>sv <Esc>:source $MYVIMRC<cr>
 " edit bash
-map <leader>eb <Esc>:edit ~/.bashrc<cr>
+noremap <unique> <leader>eb <Esc>:edit ~/.bashrc<cr>
 " toggle relative numbers
-map <leader>rn :set relativenumber!<cr>
+noremap <unique> <leader>rn :set relativenumber!<cr>
 " remove trailing characters
-map <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
+noremap <unique> <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
 " replace tabs with 4 spaces
-map <leader>rt4 <Esc>:%s/\t/\ \ \ \ /g<cr><c-o>
+noremap <unique> <leader>rt4 <Esc>:%s/\t/\ \ \ \ /g<cr><c-o>
 " replace tabs with 2 spaces
-map <leader>rt2 <Esc>:%s/\t/\ \ /g<cr><c-o>
+noremap <unique> <leader>rt2 <Esc>:%s/\t/\ \ /g<cr><c-o>
 " reload file
-map <leader>re <Esc>:redraw!<cr>
+noremap <unique> <leader>re <Esc>:redraw!<cr>
 " jump to the first window (leftmost)
-map <C-1> <C-w>200h
+noremap <unique> <C-1> <C-w>200h
 " jump to the last window (rightmost)
-map <C-\> <C-w>200l
+noremap <unique> <C-\> <C-w>200l
 " show the TODO / WISH list (works only with silver searcher plugin)
-nnoremap <leader>dd <Esc>:Ag "TODO.*\(raajay\)"<CR>
-nnoremap <leader>ee <Esc>:Ag "XXX.*\(raajay\)"<CR>
+nnoremap <unique> <leader>dd <Esc>:Ag "TODO.*\(raajay\)"<CR>
+nnoremap <unique> <leader>ee <Esc>:Ag "XXX.*\(raajay\)"<CR>
 " open a todo file
-map <leader>a <Esc>:call OpenToDo()<cr>
-" toggle the spell file
-map <leader>sp <Esc>:call ToggleSpell()<cr>
+noremap <unique> <leader>a <Esc>:call OpenToDo()<cr>
+" toggle<unique>  the spell file
+noremap <unique> <leader>sp <Esc>:call ToggleSpell()<cr>
 ""}}}
 
 " Custom function defs  *vimrc-functions*   |vimrc-index|   "{{{
@@ -628,9 +622,7 @@ let g:SimpylFold_fold_import=0
 
 " vim-alternate settings "{{{
 nnoremap ;a <Esc>:AlternateVSplit<CR>
-vnoremap ;a <Esc>:AlternateVSplit<CR>
 nnoremap ;A <Esc>:AlternateSplit<CR>
-vnoremap ;A <Esc>:AlternateSplit<CR>
 "}}}
 
 " vim-clang-format settings "{{{
