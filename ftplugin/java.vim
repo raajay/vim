@@ -9,14 +9,7 @@ setlocal colorcolumn=80
 setlocal textwidth=79
 setlocal noautochdir
 
-" block indent
-map <buffer> > :s/^/\ \ /<CR>
-map <buffer> < :s/^\ \ //<CR>
 let g:indentLine_enabled=1
-
-" commenting
-map <buffer> // :s/^/\/\//<CR>
-map <buffer> \\ :s/^\(\s*\)\/\//\1/<CR>
 
 " run
 map <buffer> <F5> :!javac "%:p"<CR> :!java "%:r"<CR>

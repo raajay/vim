@@ -8,14 +8,6 @@ setlocal textwidth=79
 setlocal autoindent
 setlocal colorcolumn=80
 
-" block indent
-map <buffer> > :s/^/\ \ /<CR>
-map <buffer> < :s/^\ \ //<CR>
-
-" commenting
-map <buffer> // :s/^/\/\//<CR>
-map <buffer> \\ :s/^\(\s*\)\/\//\1/<CR>
-
 " vim-rtags settings
 map <leader>rd <Esc>:call rtags#Diagnostics()<CR>
 map <leader>rc <Esc>:call rtags#FindSubClasses()<CR>

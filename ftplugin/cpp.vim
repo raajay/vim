@@ -8,14 +8,6 @@ setlocal textwidth=0
 setlocal autoindent
 setlocal colorcolumn=80
 
-" block indent
-map <buffer> > :s/^/\ \ /<CR>
-map <buffer> < :s/^\ \ //<CR>
-
-" commenting
-map <buffer> // :s/^/\/\//<CR>
-map <buffer> \\ :s/^\(\s*\)\/\//\1/<CR>
-
 " Code navigation with clang-complete (YCM)
 nnoremap <leader>gi <Esc>:YcmCompleter GoToInclude<CR>
 nnoremap <leader>gd <Esc>:YcmCompleter GoToDefinition<CR>
