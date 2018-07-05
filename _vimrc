@@ -678,12 +678,13 @@ endif
 call pathogen#infect()
 call pathogen#helptags()
 
-" Vim compile instructions
+" Vim compile instructions      *vim-compile*   {{{
 " For MacVim
 " git clone macvim
 " cd src; ./configure --enable-multibyte --enable-pythoninterp --enable-rubyinterp --enable-cscope
 " cd MacVim/build/Release; open MacVim.app
 " cp MacVim/build/Release/MacVim.app /Applications
-"
+"}}}
+
 " Regex for Vim
 " 1. http://vimregex.com
