@@ -8,7 +8,10 @@ syn clear
 " match comments
 syn match texComment "\(\\\)\@<!%.*$"
 " match statements
-syn match texStatement "\\[a-zA-Z]*"
+syn match texStatement "\\[a-zA-Z]*" contains=@NoSpell
+
+syn keyword texTodo TODO WISH XXX containedin=.*Comment
 "
 hi def link texComment Comment
 hi def link texStatement Statement
+hi def link texTodo Todo
