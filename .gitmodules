@@ -23,11 +23,6 @@
 	url = https://github.com/SirVer/ultisnips.git
     ignore = dirty
     branch = master
-[submodule "bundle/tabular"]
-	path = bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
-    ignore = dirty
-    branch = master
 [submodule "bundle/delmitmate"]
 	path = bundle/delmitmate
 	url = https://github.com/Raimondi/delimitMate.git
@@ -78,21 +73,9 @@
 	url = https://github.com/rking/ag.vim.git
     ignore = dirty
     branch = master
-[submodule "bundle/vimtex"]
-	path = bundle/vimtex
-	url = https://github.com/lervag/vimtex.git
-    ignore = dirty
 [submodule "bundle/vim-gundo"]
 	path = bundle/vim-gundo
 	url = https://github.com/vim-scripts/Gundo.git
-    ignore = dirty
-[submodule "bundle/vim-multiple-cursors"]
-	path = bundle/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors.git
-    ignore = dirty
-[submodule "bundle/vim-shell"]
-	path = bundle/vim-shell
-	url = https://github.com/xolox/vim-shell.git
     ignore = dirty
 [submodule "bundle/vim-airline-themes"]
 	path = bundle/vim-airline-themes
@@ -110,10 +93,6 @@
 	path = bundle/goyo.vim
 	url = https://github.com/junegunn/goyo.vim.git
     ignore = dirty
-[submodule "bundle/vim-ansible"]
-	path = bundle/vim-ansible
-	url = https://github.com/pearofducks/ansible-vim.git
-    ignore = dirty
 [submodule "bundle/syntax"]
 	path = bundle/syntax
 	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
@@ -125,18 +104,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-    ignore = dirty
-[submodule "bundle/vim-mru"]
-	path = bundle/vim-mru
-	url = https://github.com/yegappan/mru.git
-    ignore = dirty
-[submodule "bundle/vim-pencil"]
-	path = bundle/vim-pencil
-	url = https://github.com/reedes/vim-pencil
-    ignore = dirty
-[submodule "bundle/vim-wordy"]
-	path = bundle/vim-wordy
-	url = https://github.com/reedes/vim-wordy.git
     ignore = dirty
 [submodule "tools/YCM-Generator"]
 	path = tools/YCM-Generator
@@ -153,14 +120,6 @@
 [submodule "bundle/vim-rtags"]
 	path = bundle/vim-rtags
 	url = https://github.com/lyuts/vim-rtags.git
-    ignore = dirty
-[submodule "bundle/color_coded"]
-	path = bundle/color_coded
-	url = https://github.com/jeaye/color_coded.git
-    ignore = dirty
-[submodule "bundle/ale"]
-	path = bundle/ale
-	url = https://github.com/w0rp/ale.git
     ignore = dirty
 [submodule "bundle/ropevim"]
 	path = bundle/ropevim

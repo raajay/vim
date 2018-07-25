@@ -639,22 +639,8 @@ map <leader>pp <Esc><c-w><c-p>
 
 " Pathogen settings *vimrc-pathogen*    |vimrc-index|  "{{{
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'ale')
-call add(g:pathogen_disabled, 'color_coded')
-call add(g:pathogen_disabled, 'vim-gtags-cscope')
-call add(g:pathogen_disabled, 'tabular')
-call add(g:pathogen_disabled, 'tasklist')
-call add(g:pathogen_disabled, 'vim-ansible')
-call add(g:pathogen_disabled, 'vim-gtags')
-call add(g:pathogen_disabled, 'vim-gtags-cscope')
 call add(g:pathogen_disabled, 'vim-gundo')
-call add(g:pathogen_disabled, 'vim-mru')
-call add(g:pathogen_disabled, 'vim-multiple-cursors')
-call add(g:pathogen_disabled, 'vim-pencil')
 call add(g:pathogen_disabled, 'vim-session')
-call add(g:pathogen_disabled, 'vim-shell')
-call add(g:pathogen_disabled, 'vimtex')
-call add(g:pathogen_disabled, 'vim-wordy')
 
 if has('win32') || has('win64')
     call add(g:pathogen_disabled, 'YouCompleteMe')
@@ -688,3 +674,22 @@ call pathogen#helptags()
 
 " Regex for Vim
 " 1. http://vimregex.com
+"
+" Manage pathogen plugins
+"
+" Nixed the following plugins on
+" Tue Jul 24 23:27:47 CDT 2018
+" call add(g:pathogen_disabled, 'ale')
+" call add(g:pathogen_disabled, 'color_coded')
+" call add(g:pathogen_disabled, 'vim-gtags-cscope')
+" call add(g:pathogen_disabled, 'tabular')
+" call add(g:pathogen_disabled, 'tasklist')
+" call add(g:pathogen_disabled, 'vim-ansible')
+" call add(g:pathogen_disabled, 'vim-gtags')
+" call add(g:pathogen_disabled, 'vim-gtags-cscope')
+" call add(g:pathogen_disabled, 'vim-mru')
+" call add(g:pathogen_disabled, 'vim-multiple-cursors')
+" call add(g:pathogen_disabled, 'vim-pencil')
+" call add(g:pathogen_disabled, 'vim-shell')
+" call add(g:pathogen_disabled, 'vimtex')
+" call add(g:pathogen_disabled, 'vim-wordy')
