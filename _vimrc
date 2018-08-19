@@ -202,6 +202,11 @@ inoremap <unique> <C-p> <Esc>"+gP
 nnoremap <unique> <space> zz
 nnoremap <unique> n nzz
 nnoremap <unique> N Nzz
+" Line navigation mappings
+nnoremap <unique> gh ^
+nnoremap <unique> gl $
+nnoremap <unique> gk gg
+nnoremap <unique> gj G
 " Block indentation (<, > are native vim commands). Shifts by shiftwidth chrs.
 xnoremap <unique> > >gv
 xnoremap <unique> < <gv
