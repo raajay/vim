@@ -170,8 +170,6 @@ cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab h' : 'h'
 cnoremap sudow w !sudo tee % > /dev/null
 " Number lines visually selected
 command -range=% -nargs=? Number :<line1>,<line2>s/^/\=printf("%d<args>", line(".") - line("'<") + 1)
-" Take a backup of a file
-command! Bak :w %.bak
 " Insert mode mapping
 inoremap TODO TODO(raajay):<Space>
 inoremap XXX XXX(raajay):<Space>
@@ -216,16 +214,10 @@ noremap <unique> <leader>q <Esc><c-z>
 noremap <unique> <leader>ev <Esc>:edit $MYVIMRC<cr>
 " source vimrc
 noremap <unique> <leader>sv <Esc>:source $MYVIMRC<cr>
-" edit bash
-noremap <unique> <leader>eb <Esc>:edit ~/.bashrc<cr>
 " toggle relative numbers
 noremap <unique> <leader>rn :set relativenumber!<cr>
 " remove trailing characters
 noremap <unique> <leader>tr <Esc>:%s/\ *$//g<cr><c-o>
-" replace tabs with 4 spaces
-noremap <unique> <leader>rt4 <Esc>:%s/\t/\ \ \ \ /g<cr><c-o>
-" replace tabs with 2 spaces
-noremap <unique> <leader>rt2 <Esc>:%s/\t/\ \ /g<cr><c-o>
 " reload file
 noremap <unique> <leader>re <Esc>:redraw!<cr>
 " jump to the first window (leftmost)
@@ -235,38 +227,9 @@ noremap <unique> <C-\> <C-w>200l
 " show the TODO / WISH list (works only with silver searcher plugin)
 nnoremap <unique> <leader>dd <Esc>:Ag "TODO.*\(raajay\)"<CR>
 nnoremap <unique> <leader>ee <Esc>:Ag "XXX.*\(raajay\)"<CR>
-" open a todo file
-noremap <unique> <leader>a <Esc>:call OpenToDo()<cr>
-" toggle<unique>  the spell file
-noremap <unique> <leader>sp <Esc>:call ToggleSpell()<cr>
 ""}}}
 
 " Custom function defs  *vimrc-functions*   |vimrc-index|   "{{{
-
-" Spelling toggle
-let g:my_spell=1
-function! ToggleSpell()
-    if g:my_spell==0
-        setlocal nospell
-        let g:my_spell=1
-    else
-        setlocal spell spelllang=en_us
-        let g:my_spell=0
-    endif
-endfunc
-
-" Function to toggle the to-do list
-let g:open_todo = 0
-function! OpenToDo()
-    if g:open_todo == 0
-        let g:open_todo = 1
-        :vsplit ~/Dropbox/todo/todo.txt
-    elseif g:open_todo == 1
-        let g:open_todo = 0
-        :bdelete ~/Dropbox/todo/todo.txt
-    endif
-endfunc
-
 ""}}}
 
 " Filetype detection    *vimrc-ft-detect*   |vimrc-index|  "{{{
