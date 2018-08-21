@@ -80,7 +80,6 @@ set conceallevel=0
 set concealcursor=""
 set fo+=jn
 set undofile
-set foldtext=foldtext()
 set foldmethod=marker
 set iskeyword+=-                    " Can select hyphenated words
 ""}}}
@@ -141,9 +140,7 @@ let hostname = substitute(system('hostname'), '\n', '', '')
 "}}}
 
 " Files and Folders *files-folders* |vimrc-index| "{{{
-if hostname == "sansa"
-    let g:vim_folder = "/scratch/raajay/vimfiles/"
-elseif has('win32') || has('win64')
+if has('win32') || has('win64')
     let g:vim_folder = '~/vimfiles/'
 else
     let g:vim_folder = '~/.vim/'
