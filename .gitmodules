@@ -106,10 +106,6 @@
 	path = bundle/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold.git
     ignore = dirty
-[submodule "bundle/vimspectr"]
-	path = bundle/vimspectr
-	url = https://github.com/nightsense/vimspectr.git
-    ignore = dirty
 [submodule "bundle/vim-clang-format"]
 	path = bundle/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format.git
