@@ -102,8 +102,13 @@ endif
 " My color scheme configurations    *color-settings*    |vimrc-index|   "{{{
 let g:wwdc17_frame_color=10
 let g:wwdc17_transp_bg=0
-set background=dark
-colorscheme monokai2
+if $ITERM_PROFILE == 'white'
+    set background=light
+    colorscheme rj_white
+else
+    set background=dark
+    colorscheme monokai2
+endif
 let g:airline_theme='airlineish'
 ""}}}
 
@@ -249,7 +254,7 @@ endif
 " Vim niceties  *vimrc-niceties*    |vimrc-index|   "{{{
 
 " Remembering the previous edits
-set viminfo='10,\"100,:20,%,n~/.viminfo
+" set viminfo='10,\"100,:20,%,n~/.viminfo
 
 " Remembering the last position
 if has("autocmd")
@@ -363,6 +368,9 @@ map <leader>ss <Esc>:NERDTreeToggle<CR>
 ""}}}
 
 " Command-T settings    *vimrc-command-t*   |vimrc-index|  "{{{
+" let $RUBYHOME=$HOME."/.rbenv/versions/2.3.7"
+" set rubydll=$HOME/.rbenv/versions/2.5.1/lib/libruby.2.5.1.dylib
+
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
 else
@@ -412,6 +420,7 @@ let delimitMate_expand_cr = 1
 let g:rooter_patterns = [
     \ '_vimrc_',
     \ '.localvimrc',
+    \ '.envrc',
     \ '.main',
     \ '.gradlemain',
     \ '.latexmain',
@@ -606,13 +615,11 @@ map <leader>pp <Esc><c-w><c-p>
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-gundo')
 call add(g:pathogen_disabled, 'vim-session')
-
-if has('win32') || has('win64')
-    call add(g:pathogen_disabled, 'YouCompleteMe')
-end
-if (executable('global') == 0)
-    call add(g:pathogen_disabled, 'vim-gtags-cscope')
-endif
+call add(g:pathogen_disabled, 'YouCompleteMe')
+call add(g:pathogen_disabled, 'ropevim')
+call add(g:pathogen_disabled, 'vim-gtags-cscope')
+" call add(g:pathogen_disabled, 'command-t')
+call add(g:pathogen_disabled, 'ultisnips')
 ""}}}
 
 " Source private VIMRC
