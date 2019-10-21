@@ -104,7 +104,11 @@ let g:wwdc17_frame_color=10
 let g:wwdc17_transp_bg=0
 if $ITERM_PROFILE == 'white'
     set background=light
-    colorscheme rj_white
+    if !has('nvim')
+        colorscheme rj_white
+    else 
+        colorscheme rj_github
+    endif
 else
     set background=dark
     colorscheme monokai2
