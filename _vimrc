@@ -608,13 +608,7 @@ map <leader>pp <Esc><c-w><c-p>
 
 " Pathogen settings *vimrc-pathogen*    |vimrc-index|  "{{{
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'vim-gundo')
-call add(g:pathogen_disabled, 'vim-session')
-call add(g:pathogen_disabled, 'YouCompleteMe')
-call add(g:pathogen_disabled, 'ropevim')
-call add(g:pathogen_disabled, 'vim-gtags-cscope')
 " call add(g:pathogen_disabled, 'command-t')
-call add(g:pathogen_disabled, 'ultisnips')
 ""}}}
 
 " Source private VIMRC
@@ -660,3 +654,11 @@ call pathogen#helptags()
 " call add(g:pathogen_disabled, 'vim-shell')
 " call add(g:pathogen_disabled, 'vimtex')
 " call add(g:pathogen_disabled, 'vim-wordy')
+" Nixed the following on
+" 20-Oct-2019 20:45
+" call add(g:pathogen_disabled, 'vim-gundo')
+" call add(g:pathogen_disabled, 'vim-session')
+" call add(g:pathogen_disabled, 'YouCompleteMe')
+" call add(g:pathogen_disabled, 'ropevim')
+" call add(g:pathogen_disabled, 'vim-gtags-cscope')
+" call add(g:pathogen_disabled, 'ultisnips')
