@@ -254,7 +254,9 @@ endif
 " Vim niceties  *vimrc-niceties*    |vimrc-index|   "{{{
 
 " Remembering the previous edits
-" set viminfo='10,\"100,:20,%,n~/.viminfo
+if !has('nvim')
+    set viminfo='10,\"100,:20,%,n~/.viminfo
+endif
 
 " Remembering the last position
 if has("autocmd")
@@ -452,7 +454,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " vim-gitgutter settings    *vimrc-gitgutter*   |vimrc-index|  "{{{
 let g:gitgutter_map_keys = 0
 nmap <leader>hs <Plug>GitGutterStageHunk
-nmap <leader>hr <Plug>GitGutterRevertHunk
+nmap <leader>hr <Plug>GitGutterUndoHunk
 nmap <leader>hd <Plug>GitGutterPreviewHunk
 nmap <leader>hh <Plug>GitGutterNextHunk
 nmap <leader>hp <Plug>GitGutterPrevHunk
@@ -576,13 +578,6 @@ let g:tagbar_autoclose = 0
 let g:rtagsUseDefaultMappings = 0
 " All the key mappings are defined in ftplugin/cpp.vim
 ""}}}
-" ALE lint settings "{{{
-let g:ale_lint_on_text_changed='never'
-let g:ale_lint_delay=1000
-let g:ale_linters = {
-    \   'cpp' : ['cpplint'],
-    \}
-"}}}
 
 " ropevim settings "{{{
 let ropevim_vim_completion=1
@@ -648,7 +643,7 @@ call pathogen#helptags()
 " 1. http://vimregex.com
 "
 " Manage pathogen plugins
-"
+
 " Nixed the following plugins on
 " Tue Jul 24 23:27:47 CDT 2018
 " call add(g:pathogen_disabled, 'ale')
