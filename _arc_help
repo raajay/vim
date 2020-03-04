@@ -1,0 +1,129 @@
+NAME
+      arc - arcanist, a code review and revision management utility
+
+SYNOPSIS
+      arc command [options] [args]
+      This help file provides a detailed command reference.
+
+COMMAND REFERENCE
+
+      alias
+      alias command
+      alias command target -- [options]
+
+      amend [--revision revision_id] [--show]
+
+      anoid
+
+      backout
+
+      bookmark [options]
+      bookmark name [start]
+
+      branch [options]
+      branch name [start]
+
+      browse [options] path ...
+      browse [options] object ...
+
+      call-conduit method
+
+      cascade [--halt-on-conflict]
+
+      close task_id [options]
+
+      close-revision [options] revision
+
+      commit [--revision revision_id] [--show]
+
+      cover [--rev revision] [path ...]
+
+      diff [paths] (svn)
+      diff [commit] (git, hg)
+
+      download file [--as name] [--show]
+
+      export [paths] format (svn)
+      export [commit_range] format (git, hg)
+      export --revision revision_id format
+      export --diff diff_id format
+
+      feature [options]
+      feature name [start]
+
+      flag [object ...]
+      flag object --clear
+      flag object [--edit] [--color color] [--note note]
+
+      flow [options]
+      flow name [options]
+      flow name upstream [options]
+
+      get-config [options] -- [name ...]
+
+      graft revision
+
+      help [command]
+      help --full
+
+      install-certificate [uri]
+
+      land [options] [ref]
+
+      liberate [path]
+
+      lint [options] [paths]
+      lint [options] --rev [rev]
+
+      linters [options] [name]
+
+      list
+
+      paste [--title title] [--lang language] [--json]
+      paste id [--json]
+
+      patch D12345
+      patch --revision revision_id
+      patch --diff diff_id
+      patch --patch file
+      patch --arcbundle bundlefile
+
+      revert
+
+      set-config [options] -- name value
+
+      shell-complete --current N -- [argv]
+
+      stack [options] [ref]
+
+      start object
+
+      stop [--note note] [objects]
+
+      submit [options] [ref]
+
+      sync
+
+      tasks [options]
+
+      tidy
+
+      time
+
+      todo summary [options]
+
+      unit [options] [paths]
+      unit [options] --rev [rev]
+
+      upgrade
+
+      upload file [file ...] [--json]
+
+      version [options]
+
+      weld [options] file file ...
+
+      which [options] (svn)
+      which [options] [commit] (hg, git)
+
+Run 'arc help --full' to get commands and options descriptions.

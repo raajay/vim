@@ -82,6 +82,8 @@ set fo+=jn
 set undofile
 set foldmethod=marker
 set iskeyword+=-                    " Can select hyphenated words
+set shell=/bin/zsh
+tnoremap <Esc> <C-\><C-n>
 ""}}}
 
 " Time out settings for redrawing the screen    *vimrc-timeout* |vimrc-index|   "{{{
@@ -105,7 +107,7 @@ let g:wwdc17_transp_bg=0
 if $ITERM_PROFILE == 'white'
     set background=light
     if !has('nvim')
-        colorscheme rj_white
+        colorscheme rj_github
     else 
         colorscheme rj_github
     endif
@@ -211,6 +213,11 @@ nnoremap <unique> gh ^
 nnoremap <unique> gl $
 nnoremap <unique> gk gg
 nnoremap <unique> gj G
+" Window navigation mappings
+nnoremap <unique> H <c-w>h
+" nnoremap <unique> J <c-w>j
+nnoremap <unique> K <c-w>k
+nnoremap <unique> L <c-w>l
 " Block indentation (<, > are native vim commands). Shifts by shiftwidth chrs.
 xnoremap <unique> > >gv
 xnoremap <unique> < <gv
@@ -399,17 +406,22 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_disable_for_files_larger_than_kb = 0
 let g:ycm_server_log_level = 'debug'
 let g:ycm_server_keep_logfiles = 1
-let g:ycm_path_to_python_interpreter=substitute(system('which python'), '\n', '', '')
-"let g:ycm_path_to_python_interpreter='/usr/bin/python'
-if(hostname() == "dove.cs.wisc.edu")
-    let g:clang_library_path="/unsup/llvm-3.3/lib"
-endif
-let g:ycm_filetype_blacklist = {
-            \}
 let g:ycm_cache_omnifunc=1
-let g:ycm_filetype_blacklist = {
-    \ 'go' : 1
+let g:ycm_filetype_whitelist = {
+    \ 'python': 1,
     \}
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar': 1,
+      \ 'notes': 1,
+      \ 'markdown': 1,
+      \ 'netrw': 1,
+      \ 'unite': 1,
+      \ 'text': 1,
+      \ 'vimwiki': 1,
+      \ 'pandoc': 1,
+      \ 'infolog': 1,
+      \ 'mail': 1
+      \}
 ""}}}
 
 " Eclim settings    *vimrc-eclim*   |vimrc-index|  "{{{

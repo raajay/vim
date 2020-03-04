@@ -6,39 +6,76 @@ set tabstop=2
 
 let mapleader=","
 
-" environment settings
-nnoremap ;f :action ToggleFullScreen<cr>
-nnoremap ;q :q<cr>
-nnoremap ;w :w<cr>
-nnoremap ;v :vs<cr>
-nnoremap ;s :split<cr>
+" environment/window settings
+nnoremap <buffer> ;d :action CloseActiveTab<cr>
+nnoremap <buffer> ;f :action ToggleFullScreen<cr>
+nnoremap <buffer> ;q :q<cr>
+nnoremap <buffer> ;w :w<cr>
+nnoremap <buffer> ;W :action CloseEditorsGroup<cr>
+nnoremap <buffer> ;v :vs<cr>
+nnoremap <buffer> ;s :split<cr>
+
+" Window navigation mappings
+nnoremap <unique> H <c-w>h
+" nnoremap <unique> J <c-w>j
+nnoremap <unique> K <c-w>k
+nnoremap <unique> L <c-w>l
+
+nnoremap <leader>qq :action CloseProject<cr>
 
 " build related
 nnoremap <leader>w :action MakeModule<cr>
 nnoremap <leader>c :action Compile<cr>
 
 " code surfing
-nnoremap <leader>qq :action CloseProject<cr>
-map <leader>ff :action SearchEverywhere<cr>
+nnoremap <buffer> <unique> -q :action GoToTab1<cr>
+nnoremap <buffer> <unique> -w :action GoToTab2<cr>
+nnoremap <buffer> <unique> -e :action GoToTab3<cr>
+nnoremap <buffer> <unique> -r :action GoToTab4<cr>
+nnoremap <buffer> <unique> -t :action GoToTab5<cr>
+nnoremap <buffer> <unique> -y :action GoToTab6<cr>
+nnoremap <buffer> <unique> <leader>to :action MoveEditorToOppositeTabGroup<cr>
 
-map <leader>b :action ToggleLineBreakpoint<CR>
-map <leader>gd :action GotoImplementation<CR>
 map <leader>re :action RenameElement<cr>
-map <leader>fr :action ReformatCode<cr>
 
-map <leader>a :action GotoRelated<cr>
-map <leader>su :action GotoSuperMethod<cr>
+" all auto formatting stuff
+nnoremap == :action ReformatCode<cr>
+nnoremap =i :action OptimizeImports<cr>
+
+" all debug shortcuts
+map b- :action ToggleLineBreakpoint<cr>
+
+" all find/list shortcuts
+map <leader>fa :action GotoAction<cr>
+map <leader>fb :action ViewBreakpoints<cr>
+map <leader>fc :action GotoClass<cr>
+map <leader>ff :action GotoFile<cr>
+map <leader>fm :action ShowBookmarks<cr>
+map <leader>fs :action GotoSymbol<cr>
+map <leader>fu :action FindUsages<cr>
+
+" Jump
+map <leader>jt :action GotoTest<cr>
+map <leader>ji :action GotoImplementation<CR>
+map <leader>jM :action GotoSuperMethod<cr>
 map <leader>ch :action TypeHierarchy<cr>
-
-
-" Find and replace
-"nnoremap / :action Find<CR>
-"nnoremap n :action FindNext<CR>
-"nnoremap N :action FindPrevious<CR>
 
 " Emulations
 set vim-surround
+set ideajoin
+set ideamarks
+
+" Bookmark
+map m- :action ToggleBookmark<cr>
 
 " Git stuff
-map <leader>ga :action Git.Add<cr>
-map <leader>hh :action Diff.NextChange<cr>
+map <leader>ga :action Annotate<cr>
+map <leader>gb :action Git.Branches<cr>
+map <leader>gl :action Vcs.Show.Log<cr>
+map <leader>gn :action Diff.NextChange<cr>
+map <leader>gp :action Git.Pull<cr>
+map <leader>gr :action Vcs.RollbackChangedLines<cr>
+map <leader>gs :action Vcs.MoveChangedLinesToChangelist<cr>
+map <leader>gw :action Vcs.Show.Local.Changes<cr>
+map <leader>gR :action Git.Rebase<cr>
+
