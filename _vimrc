@@ -86,6 +86,9 @@ set shell=/bin/zsh
 tnoremap <Esc> <C-\><C-n>
 ""}}}
 
+set pythonthreedll=/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7.dylib
+
+
 " Time out settings for redrawing the screen    *vimrc-timeout* |vimrc-index|   "{{{
 set timeoutlen=3000
 set ttimeoutlen=50
@@ -108,7 +111,7 @@ if $ITERM_PROFILE == 'white'
     set background=light
     if !has('nvim')
         colorscheme rj_github
-    else 
+    else
         colorscheme rj_github
     endif
 else
@@ -374,15 +377,15 @@ let NERDTreeShowLineNumbers = 0
 "let NERDTreeDirArrowCollapsible="-"
 let g:NERDTreeDirArrows=0
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.sln$', '\.suo$', '\.swp$']
-let NERDTreeRespectWildIgnore = 1
+let NERDTreeRespectWildIgnore = 0
 let NERDTreeWinPos = "right"
 let NERDTreeWinSize = 36
 map <leader>ss <Esc>:NERDTreeToggle<CR>
 ""}}}
 
 " Command-T settings    *vimrc-command-t*   |vimrc-index|  "{{{
-" let $RUBYHOME=$HOME."/.rbenv/versions/2.3.7"
-" set rubydll=$HOME/.rbenv/versions/2.5.1/lib/libruby.2.5.1.dylib
+let $RUBYHOME="/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/"
+set rubydll=/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/libruby.2.6.dylib
 
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.class,*.pyc
@@ -550,16 +553,6 @@ let g:NERDSpaceDelims=1
 "map <leader>ls <Esc>:MRU<CR>
 ""}}}
 
-" vim-buffergator settings *vimrc-buffergator*  |vimrc-index|  "{{{
-let g:buffergator_suppress_keymaps=1
-let g:buffergator_show_full_directory_path=0
-let g:buffergator_viewport_split_policy='B'
-map <leader>lb <Esc>:BuffergatorOpen<CR>
-map <leader>ls <Esc>:BuffergatorOpen<CR>
-map <leader>lt <Esc>:BuffergatorTabsOpen<CR>
-map <leader>lr <Esc>:BuffergatorMruList<CR>
-""}}}
-
 " vim-pencil settings"{{{
 let g:pencil#conceallevel=0
 ""}}}
@@ -615,6 +608,14 @@ let g:clang_format#auto_format=1
 let g:clang_format#auto_formatexpr=1
 "}}}
 
+" fzf settings "{{{
+set rtp+=/usr/local/opt/fzf
+map <leader>lf :Files<cr>
+map <leader>ls :GFiles<cr>
+map <leader>lb :Buffers<cr>
+map <leader>lm :Marks<cr>
+"}}}
+
 " Misc settings"{{{
 " Tabularize - Helps in alignment
 map <leader>b <Esc>:Tabularize<Space>
@@ -624,7 +625,8 @@ map <leader>pp <Esc><c-w><c-p>
 
 " Pathogen settings *vimrc-pathogen*    |vimrc-index|  "{{{
 let g:pathogen_disabled = []
-" call add(g:pathogen_disabled, 'command-t')
+call add(g:pathogen_disabled, 'command-t')
+call add(g:pathogen_disabled, 'YouCompleteMe')
 ""}}}
 
 " Source private VIMRC

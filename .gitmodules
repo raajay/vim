@@ -94,10 +94,6 @@
 	path = bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
     ignore = dirty
-[submodule "bundle/vim-buffergator"]
-	path = bundle/vim-buffergator
-	url = https://github.com/jeetsukumaran/vim-buffergator.git
-    ignore = dirty
 [submodule "bundle/vim-rtags"]
 	path = bundle/vim-rtags
 	url = https://github.com/lyuts/vim-rtags.git
@@ -113,3 +109,9 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
+[submodule "bundle/fzf"]
+	path = bundle/fzf
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git

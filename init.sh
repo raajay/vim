@@ -11,7 +11,7 @@
 git submodule update --init --recursive
 
 # Install YouCompleteme
-cd ./bundle/YouCompleteMe/; python install.py --clang-completer; cd ../../
+cd ./bundle/YouCompleteMe/; python3 install.py --clang-completer; cd ../../
 
 # Install Command-t
 echo "Installing command-t"
