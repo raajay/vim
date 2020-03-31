@@ -486,6 +486,7 @@ nmap <leader>gs <Esc>:Gstatus<CR>
 nmap <leader>gc <Esc>:Gcommit -m<Space>""<left>
 nmap <leader>gp <Esc>:Gpush<CR>
 nmap <leader>gl <Esc>:Glog -n 10 --<CR>
+command -nargs=+ Gg execute 'silent Ggrep!' <q-args> | cw | redraw!
 set previewheight=30
 " make the status window the bottom most one
 autocmd FileType gitcommit wincmd J
@@ -626,7 +627,7 @@ map <leader>pp <Esc><c-w><c-p>
 " Pathogen settings *vimrc-pathogen*    |vimrc-index|  "{{{
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'command-t')
-call add(g:pathogen_disabled, 'YouCompleteMe')
+" call add(g:pathogen_disabled, 'YouCompleteMe')
 ""}}}
 
 " Source private VIMRC
