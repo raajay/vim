@@ -83,7 +83,7 @@ set undofile
 set foldmethod=marker
 set iskeyword+=-                    " Can select hyphenated words
 set shell=/bin/zsh
-tnoremap <Esc> <C-\><C-n>
+tnoremap ii <C-\><C-n>
 ""}}}
 
 set pythonthreedll=/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7.dylib
@@ -110,9 +110,9 @@ let g:wwdc17_transp_bg=0
 if $ITERM_PROFILE == 'white'
     set background=light
     if !has('nvim')
-        colorscheme rj_github
+        colorscheme onehalflight
     else
-        colorscheme rj_github
+        colorscheme onehalflight
     endif
 else
     set background=dark
@@ -277,10 +277,11 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") < line("$") | exe "normal! g'\"" | endif
 endif
 
-" Auto save
-if has("autocmd")
-    au BufLeave,FocusLost * :update
-endif
+" Auto save (disabled since i have not figured out how to disable only for
+" terminal
+" if has("autocmd")
+    " au BufLeave,FocusLost * :update
+" endif
 
 "}}}
 
@@ -482,11 +483,12 @@ let g:gitgutter_eager=0
 ""}}}
 
 " vim-fugitive settings *vimrc-fugitive*    |vimrc-index|  "{{{
-nmap <leader>gs <Esc>:Gstatus<CR>
-nmap <leader>gc <Esc>:Gcommit -m<Space>""<left>
-nmap <leader>gp <Esc>:Gpush<CR>
-nmap <leader>gl <Esc>:Glog -n 10 --<CR>
+nnoremap <leader>gs <Esc>:Gstatus<CR>
+nnoremap <leader>gc <Esc>:Gcommit -m<Space>""<left>
+nnoremap <leader>gp <Esc>:Gpush<CR>
+nnoremap <leader>gl <Esc>:Glog -n 10 --<CR>
 command -nargs=+ Gg execute 'silent Ggrep!' <q-args> | cw | redraw!
+
 set previewheight=30
 " make the status window the bottom most one
 autocmd FileType gitcommit wincmd J
