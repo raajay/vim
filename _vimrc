@@ -83,7 +83,7 @@ set undofile
 set foldmethod=marker
 set iskeyword+=-                    " Can select hyphenated words
 set shell=/bin/zsh
-tnoremap ii <C-\><C-n>
+tnoremap ,e <C-\><C-n>
 ""}}}
 
 set pythonthreedll=/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7.dylib
@@ -116,7 +116,7 @@ if $ITERM_PROFILE == 'white'
     endif
 else
     set background=dark
-    colorscheme monokai2
+    colorscheme onehalfdark
 endif
 let g:airline_theme='airlineish'
 ""}}}
@@ -212,15 +212,15 @@ nnoremap <unique> <space> zz
 nnoremap <unique> n nzz
 nnoremap <unique> N Nzz
 " Line navigation mappings
-nnoremap <unique> gh ^
-nnoremap <unique> gl $
-nnoremap <unique> gk gg
-nnoremap <unique> gj G
+nnoremap <unique> gh <c-w>h
+nnoremap <unique> gl <c-w>l
+nnoremap <unique> gk <c-w>k
+nnoremap <unique> gj <c-w>j
 " Window navigation mappings
-nnoremap <unique> H <c-w>h
+" nnoremap <unique> H <c-w>h
 " nnoremap <unique> J <c-w>j
-nnoremap <unique> K <c-w>k
-nnoremap <unique> L <c-w>l
+" nnoremap <unique> K <c-w>k
+" nnoremap <unique> L <c-w>l
 " Block indentation (<, > are native vim commands). Shifts by shiftwidth chrs.
 xnoremap <unique> > >gv
 xnoremap <unique> < <gv
@@ -617,6 +617,16 @@ map <leader>lf :Files<cr>
 map <leader>ls :GFiles<cr>
 map <leader>lb :Buffers<cr>
 map <leader>lm :Marks<cr>
+"}}}
+
+" vim-repl settings "{{{
+nnoremap <leader>rr :SendCurrentLine<cr>
+vnoremap <leader>rr :SendLineToREPL<cr>
+nnoremap <leader>ro :REPLToggle<cr>
+let g:repl_program = {
+            \	'python': 'python3',
+            \	'default': 'zsh'
+            \	}
 "}}}
 
 " Misc settings"{{{
