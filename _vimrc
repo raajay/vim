@@ -547,11 +547,6 @@ let g:session_autosave='no'
 map <leader>z <Esc>:Goyo 80x40<CR>
 ""}}}
 
-" NERDCommenter *vimrc-nerdcommenter* |vimrc-index|   "{{{
-"map <leader>// <Esc>:NERDComComment<CR>
-let g:NERDSpaceDelims=1
-""}}}
-
 " vim-mru settings  *vimrc-mru* |vimrc-index|   "{{{
 "map <leader>ls <Esc>:MRU<CR>
 ""}}}
