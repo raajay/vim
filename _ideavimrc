@@ -16,10 +16,10 @@ nnoremap <buffer> ;v :vs<cr>
 nnoremap <buffer> ;s :split<cr>
 
 " Window navigation mappings
-nnoremap <unique> H <c-w>h
-" nnoremap <unique> J <c-w>j
-nnoremap <unique> K <c-w>k
-nnoremap <unique> L <c-w>l
+nnoremap <unique> gh <c-w>h
+nnoremap <unique> gj <c-w>j
+nnoremap <unique> gk <c-w>k
+nnoremap <unique> gl <c-w>l
 
 nnoremap <leader>qq :action CloseProject<cr>
 
@@ -34,6 +34,7 @@ nnoremap <buffer> <unique> -e :action GoToTab3<cr>
 nnoremap <buffer> <unique> -r :action GoToTab4<cr>
 nnoremap <buffer> <unique> -t :action GoToTab5<cr>
 nnoremap <buffer> <unique> -y :action GoToTab6<cr>
+
 nnoremap <buffer> <unique> <leader>to :action MoveEditorToOppositeTabGroup<cr>
 
 map <leader>re :action RenameElement<cr>
