@@ -105,9 +105,15 @@ endif
 "}}}
 
 " My color scheme configurations    *color-settings*    |vimrc-index|   "{{{
+try
+    source ${HOME}/.vim/_user_env
+catch
+    let g:background='white'
+endtry
+
 let g:wwdc17_frame_color=10
 let g:wwdc17_transp_bg=0
-if $ITERM_PROFILE == 'white'
+if g:background == 'white'
     set background=light
     if !has('nvim')
         colorscheme onehalflight
@@ -634,7 +640,8 @@ map <leader>pp <Esc><c-w><c-p>
 " Pathogen settings *vimrc-pathogen*    |vimrc-index|  "{{{
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'command-t')
-" call add(g:pathogen_disabled, 'YouCompleteMe')
+call add(g:pathogen_disabled, 'YouCompleteMe')
+call add(g:pathogen_disabled, 'ultisnips')
 ""}}}
 
 " Source private VIMRC

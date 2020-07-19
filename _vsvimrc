@@ -1,0 +1,20 @@
+set expandtab
+set shiftwidth=2
+set tabstop=2
+
+let mapleader=","
+
+" environment/window settings
+nnoremap <buffer> ;f :action ToggleFullScreen<cr>
+nnoremap <buffer> ;q :q<cr>
+nnoremap <buffer> ;w :w<cr>
+nnoremap <unique> ;d :bd<cr>
+nnoremap <buffer> ;W :action CloseEditorsGroup<cr>
+nnoremap <buffer> ;v <c-w>v
+nnoremap <buffer> ;s <c-w>s
+
+" Window navigation mappings
+nnoremap <unique> gh <c-w>h
+nnoremap <unique> gj <c-w>j
+nnoremap <unique> gk <c-w>k
+nnoremap <unique> gl <c-w>l
