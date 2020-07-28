@@ -82,6 +82,7 @@ set fo+=jn
 set undofile
 set foldmethod=marker
 set iskeyword+=-                    " Can select hyphenated words
+set autoread
 set shell=/bin/zsh
 tnoremap ,e <C-\><C-n>
 ""}}}
@@ -630,6 +631,16 @@ let g:repl_program = {
             \	}
 "}}}
 
+" ale settings "{{{
+let g:ale_linters = {
+            \   'python': ['flake8', 'mypy', 'pylint']
+            \   }
+let g:ale_python_flake8_options = '--docstring-style sphinx --strictness full'
+let g:ale_fixers = {
+            \   'python': ['black', 'isort']
+            \   }
+""}}}
+
 " Misc settings"{{{
 " Tabularize - Helps in alignment
 map <leader>b <Esc>:Tabularize<Space>
@@ -640,8 +651,8 @@ map <leader>pp <Esc><c-w><c-p>
 " Pathogen settings *vimrc-pathogen*    |vimrc-index|  "{{{
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'command-t')
-call add(g:pathogen_disabled, 'YouCompleteMe')
-call add(g:pathogen_disabled, 'ultisnips')
+" call add(g:pathogen_disabled, 'YouCompleteMe')
+" call add(g:pathogen_disabled, 'ultisnips')
 ""}}}
 
 " Source private VIMRC

@@ -118,3 +118,6 @@
 [submodule "bundle/vim-repl"]
 	path = bundle/vim-repl
 	url = https://github.com/sillybun/vim-repl.git
+[submodule "bundle/vim-pydocstring"]
+	path = bundle/vim-pydocstring
+	url = https://github.com/heavenshell/vim-pydocstring.git
